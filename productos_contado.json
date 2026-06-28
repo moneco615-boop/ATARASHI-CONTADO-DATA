@@ -1,0 +1,61 @@
+{
+  "productos": [
+    {
+      "nombre": "ADIDAS REPETITOR",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782663111/atarashi_contado/grgzzwwyg0tjtm2eihfu.jpg"
+      ],
+      "id": 1782663136991
+    }
+  ],
+  "categorias": [
+    {
+      "emoji": "👩",
+      "nombre": "Dama"
+    },
+    {
+      "emoji": "👨",
+      "nombre": "Caballero"
+    },
+    {
+      "emoji": "👟",
+      "nombre": "Calzado"
+    },
+    {
+      "emoji": "👕",
+      "nombre": "Ropa"
+    },
+    {
+      "emoji": "💻",
+      "nombre": "Tecnología"
+    },
+    {
+      "emoji": "🎧",
+      "nombre": "Audio"
+    },
+    {
+      "emoji": "🖥️",
+      "nombre": "Cómputo"
+    },
+    {
+      "emoji": "🏠",
+      "nombre": "Hogar"
+    },
+    {
+      "emoji": "💍",
+      "nombre": "Accesorios"
+    },
+    {
+      "emoji": "🏍️",
+      "nombre": "Moto"
+    },
+    {
+      "emoji": "📱",
+      "nombre": "Accesorios Celular"
+    }
+  ]
+}
