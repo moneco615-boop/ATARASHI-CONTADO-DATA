@@ -10,6 +10,17 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782663111/atarashi_contado/grgzzwwyg0tjtm2eihfu.jpg"
       ],
       "id": 1782663136991
+    },
+    {
+      "nombre": "INFLADOR AUTOMATICO",
+      "categoria": "Tecnología",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782678869/atarashi_contado/r6y1r9p3pxxj3zaklry0.jpg"
+      ],
+      "id": 1782678900752
     }
   ],
   "categorias": [
