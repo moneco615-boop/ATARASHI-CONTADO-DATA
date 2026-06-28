@@ -90,7 +90,7 @@
   <h1 class="tit-p">Moda y Tecnología<br><span class="oro">a tu Puerta</span></h1>
   <p class="desc-p">Pide desde tu casa y <strong>PAGA AL RECIBIR</strong> en la puerta.<br>100% Sin Riesgos · Domicilio Express en Cali.</p>
   <div class="pills"><span class="pill">🚚 Entrega a domicilio</span><span class="pill">✅ Paga al recibir</span><span class="pill">📦 Sin riesgos</span></div>
-  <button class="btn-p" onclick="cerrarPortada()">VER CATÁLOGO →</button>
+  <button class="btn-p" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity 0.35s';p.style.opacity='0';setTimeout(function(){p.style.display='none';},360);})()">VER CATÁLOGO →</button>
   <span class="nota-p">Cali · Colombia · Pagos en efectivo al recibir</span>
 </div>
 <header class="site-header">
@@ -136,7 +136,7 @@
   var prodActivo = null;
   var filtroActivo = 'todos';
 
-  function cerrarPortada(){var p=document.getElementById('portada');p.classList.add('oculta');setTimeout(function(){p.style.display='none';},550);}
+  function cerrarPortada(){var p=document.getElementById('portada');if(!p)return;p.style.transition='opacity 0.35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360);}
   function formatPrecio(v){return '$'+Math.round(v).toLocaleString('es-CO');}
   function getEmoji(n){var c=catData.find(function(x){return x.nombre===n;});return c?c.emoji:'📦';}
 
