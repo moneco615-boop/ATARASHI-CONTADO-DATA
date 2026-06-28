@@ -21,6 +21,17 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782678869/atarashi_contado/r6y1r9p3pxxj3zaklry0.jpg"
       ],
       "id": 1782678900752
+    },
+    {
+      "nombre": "SMART WATCH LENOVO FIT",
+      "categoria": "Tecnología",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 160000,
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782680133/atarashi_contado/frf6tnty2wy75yburwyr.jpg"
+      ],
+      "id": 1782680186957
     }
   ],
   "categorias": [
