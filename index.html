@@ -185,29 +185,40 @@
     var nombre=document.getElementById('mNombre').value.trim();
     var celular=document.getElementById('mCelular').value.trim();
     var direccion=document.getElementById('mDireccion').value.trim();
-    if(!nombre||!celular||!direccion){alert('Por favor completa tu nombre, celular y dirección.');return;}
+    if(!nombre||!celular||!direccion){alert('Por favor completa tu nombre, celular y direccion de entrega.');return;}
     var emoji=getEmoji(prodActivo.categoria);
-    var msg='Hola Atarashi Outlet, estoy interesado en el producto '+prodActivo.nombre+' ('+emoji+' '+prodActivo.categoria+') para pago contra entrega. coordinamos para que envies '+prodActivo.nombre+'.
-
-📋 *Mis datos de entrega:*
-👤 Nombre: '+nombre+'
-📞 Celular: '+celular+'
-📍 Dirección: '+direccion+'
-💰 Precio confirmado: '+formatPrecio(prodActivo.precioContado);
+    var NL=String.fromCharCode(10);
+    var msg='Hola Atarashi Outlet, estoy interesado en el producto '+prodActivo.nombre+' ('+emoji+' '+prodActivo.categoria+') para pago contra entrega. coordinamos para que envies '+prodActivo.nombre+'.'+NL+NL+'Mis datos de entrega:'+NL+'Nombre: '+nombre+NL+'Celular: '+celular+NL+'Direccion: '+direccion+NL+'Precio: '+formatPrecio(prodActivo.precioContado);
     window.open('https://wa.me/'+WA_NUMERO+'?text='+encodeURIComponent(msg),'_blank');
     cerrarModal();
   }
 
   // ── Carga dinámica del catálogo desde GitHub Pages ──
+  function mostrarMensajeGrid(html) {
+    var el = document.getElementById('gridProductos');
+    if (el) el.innerHTML = html;
+  }
+
   async function inicializar(){
+    mostrarMensajeGrid('<p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif;">⏳ Cargando productos...</p>');
     try{
-      var res=await fetch('./productos_contado.json?t='+Date.now());
-      if(!res.ok)throw new Error('HTTP '+res.status);
-      var data=await res.json();
-      prodData=data.productos||[];catData=data.categorias||[];
-      generarFiltros();renderGrid();
+      var res = await fetch('./productos_contado.json?t=' + Date.now());
+      if(res.status === 404){
+        mostrarMensajeGrid('<div style="text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif;"><p style="font-size:48px;margin-bottom:16px;">🛒</p><p style="color:#c8c4b4;font-size:16px;font-weight:700;">Catálogo en preparación</p><p style="color:#888;font-size:13px;margin-top:8px;line-height:1.6;">El propietario publicará los productos muy pronto.<br>Vuelve en unos minutos.</p></div>');
+        return;
+      }
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      var data = await res.json();
+      prodData = data.productos  || [];
+      catData  = data.categorias || [];
+      if(prodData.length === 0){
+        mostrarMensajeGrid('<div style="text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif;"><p style="font-size:48px;margin-bottom:16px;">🛒</p><p style="color:#c8c4b4;font-size:16px;font-weight:700;">Pronto habrá productos</p><p style="color:#888;font-size:13px;margin-top:8px;">Vuelve en unos minutos.</p></div>');
+        return;
+      }
+      generarFiltros();
+      renderGrid();
     }catch(e){
-      document.getElementById('gridProductos').innerHTML='<p style="color:#e74c3c;text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif;">Error al cargar el catálogo. Recarga la página.</p>';
+      mostrarMensajeGrid('<div style="text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif;"><p style="font-size:48px;margin-bottom:16px;">🔄</p><p style="color:#c8c4b4;font-size:16px;font-weight:700;">No se pudo cargar</p><p style="color:#888;font-size:13px;margin-top:8px;">Recarga la página para intentar de nuevo.</p></div>');
     }
   }
   inicializar();
