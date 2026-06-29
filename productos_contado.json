@@ -32,6 +32,17 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782680133/atarashi_contado/frf6tnty2wy75yburwyr.jpg"
       ],
       "id": 1782680186957
+    },
+    {
+      "nombre": "SPEAKER LENOVO",
+      "categoria": "Audio",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 90000,
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782717228/atarashi_contado/qivciwxxr4omms7dqke4.jpg"
+      ],
+      "id": 1782717254847
     }
   ],
   "categorias": [
