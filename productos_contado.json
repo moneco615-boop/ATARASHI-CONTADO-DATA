@@ -59,6 +59,19 @@
       ],
       "video": "",
       "id": 1782780053491
+    },
+    {
+      "nombre": "ADIDAS SUPERSTAR",
+      "categoria": "Dama",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/fc9cjeimlovtbbtulkvc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/xozvklwqepkw41ikdulj.jpg"
+      ],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1782780383/atarashi_contado/videos/cbve6lcagdzhny6jw0na.mp4",
+      "id": 1782780400826
     }
   ],
   "categorias": [
