@@ -72,6 +72,18 @@
       ],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1782780383/atarashi_contado/videos/cbve6lcagdzhny6jw0na.mp4",
       "id": 1782780400826
+    },
+    {
+      "nombre": "LACOSTE RED",
+      "categoria": "Accesorios",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782796537/atarashi_contado/n4xx1qqqjszdxf6xziic.jpg"
+      ],
+      "video": "",
+      "id": 1782796585492
     }
   ],
   "categorias": [
