@@ -74,11 +74,12 @@
       "id": 1782780400826
     },
     {
-      "nombre": "LACOSTE RED.",
+      "nombre": "LACOSTE RED....",
       "categoria": "Accesorios",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
+      "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782796537/atarashi_contado/n4xx1qqqjszdxf6xziic.jpg"
       ],
