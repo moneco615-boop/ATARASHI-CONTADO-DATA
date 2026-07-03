@@ -16,6 +16,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .p-lb{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-logo{font-family:var(--T);font-size:clamp(48px,11vw,88px);letter-spacing:8px;line-height:1;animation:fD .8s ease forwards;opacity:0;}
 .p-logo span{color:var(--br);}
+.p-logo-img{width:min(260px,72vw);max-height:150px;object-fit:contain;display:block;margin:0 auto 10px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.55));animation:fD .8s ease forwards;opacity:0;}
 .p-sub{font-size:11px;text-transform:uppercase;letter-spacing:6px;color:var(--gr);margin:6px 0 28px;animation:fD .8s .2s ease forwards;opacity:0;}
 .p-div{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--go),transparent);margin:0 auto 26px;animation:eW .6s .4s ease forwards;transform:scaleX(0);}
 .p-tit{font-size:clamp(22px,5.5vw,40px);font-weight:900;line-height:1.25;max-width:560px;margin:0 auto 14px;animation:fU .8s .5s ease forwards;opacity:0;}
@@ -188,6 +189,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
   function fmtP(v){return '$'+Math.round(v).toLocaleString('es-CO');}
   function getEm(n){var x=CATS.find(function(c){return c.nombre===n;});return x?x.emoji:'📦';}
+  function esc(t){return String(t||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
   /* FETCH */
   function showMsg(h){var e=document.getElementById('grid');if(e)e.innerHTML=h;}
@@ -239,7 +241,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     var cntH=n>1?'<div class="m-cnt" id="mCnt">1 / '+n+'</div>':'';
     var zExH='<button class="m-zoom-x" id="mZX" onclick="event.stopPropagation();zoomOut()">✕ Salir zoom</button>';
     var thumbH='';if(n>1){slideImgs.forEach(function(s,i){thumbH+='<img src="'+s+'" class="m-thumb'+(i===0?' on':'')+'" onclick="irA('+i+')" loading="lazy">';});}
-    var descH='';if(prod.descripcion&&String(prod.descripcion).trim().length>0){descH='<div class="m-desc"><p class="m-desc-lbl">📝 Detalles del producto</p><p class="m-desc-txt">'+String(prod.descripcion).trim()+'</p></div>';}
+    var descH='';if(prod.descripcion&&String(prod.descripcion).trim().length>0){descH='<div class="m-desc"><p class="m-desc-lbl">📝 Detalles del producto</p><p class="m-desc-txt">'+esc(String(prod.descripcion).trim())+'</p></div>';}
     var videoH='';if(prod.video&&String(prod.video).trim().length>0){videoH='<div class="m-video"><p class="m-video-lbl">🎥 Video del producto</p><video src="'+prod.video+'" controls playsinline preload="metadata"></video></div>';}
     document.getElementById('mBox').innerHTML=
       '<div class="m-hdr"><div class="m-hdr-t">ATARASHI <span>STORE</span></div><button class="m-close" onclick="cerrarModal()">&#x2715;</button></div>'+
