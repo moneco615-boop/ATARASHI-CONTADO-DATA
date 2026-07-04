@@ -46,10 +46,11 @@
     },
     {
       "nombre": "TACOMETRO DIGITAL YAMAHA CRYPTON FI",
-      "categoria": "Moto",
+      "categoria": "Accesorios moto",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 260000,
+      "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782779993/atarashi_contado/ktw7cz4neoc0akl5zray.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780008/atarashi_contado/w1onbs8h05lvoly45x8u.jpg",
@@ -62,10 +63,11 @@
     },
     {
       "nombre": "ADIDAS SUPERSTAR..",
-      "categoria": "Dama",
+      "categoria": "Calzado",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/fc9cjeimlovtbbtulkvc.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/xozvklwqepkw41ikdulj.jpg"
@@ -88,10 +90,11 @@
     },
     {
       "nombre": "SMATR WHATCH Z1",
-      "categoria": "Dama",
+      "categoria": "Tecnología",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
+      "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783093394/atarashi_contado/ynx7qvwugp86q1rydvxy.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783093402/atarashi_contado/ney4t0omxlsd26ikksog.jpg",
@@ -125,17 +128,25 @@
       ],
       "video": "",
       "id": 1783094820943
+    },
+    {
+      "nombre": "AUDIFONOS LENOVO ORIGINAL",
+      "categoria": "Audio",
+      "badge": "💰 SÚPER PRECIO",
+      "disponibilidad": "inmediata",
+      "precioContado": 90000,
+      "descripcion": "Los auriculares inalámbricos Lenovo ofrecen sonido estéreo de alta definición, bajos profundos y una conexión estable para disfrutar música, llamadas, series y juegos con gran calidad. Su diseño con aislamiento de ruido mejora la concentración y la experiencia en cualquier momento del día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783185138/atarashi_contado/v175iqw579ihpeh92w0y.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783185138/atarashi_contado/p0rm4dhyjfpwhq45ffbj.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783185138/atarashi_contado/fjc9gs60cvzxehqmq4bf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783185138/atarashi_contado/q7mj6uvivnwqnovbcb1i.jpg"
+      ],
+      "video": "",
+      "id": 1783185731901
     }
   ],
   "categorias": [
-    {
-      "emoji": "👩",
-      "nombre": "Dama"
-    },
-    {
-      "emoji": "👨",
-      "nombre": "Caballero"
-    },
     {
       "emoji": "👟",
       "nombre": "Calzado"
@@ -165,12 +176,12 @@
       "nombre": "Accesorios"
     },
     {
-      "emoji": "🏍️",
-      "nombre": "Moto"
-    },
-    {
       "emoji": "📱",
       "nombre": "Accesorios Celular"
+    },
+    {
+      "emoji": "🏍️",
+      "nombre": "Accesorios moto"
     }
   ]
 }
