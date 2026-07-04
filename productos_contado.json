@@ -203,6 +203,23 @@
       ],
       "video": "",
       "id": 1783186884954
+    },
+    {
+      "nombre": "NIKE DN8",
+      "categoria": "Calzado",
+      "badge": "💰 SÚPER PRECIO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "descripcion": "Nike DN8 es la evolución del clásico Air Max, con un diseño de perfil bajo, estilo moderno y una amortiguación que se siente reactiva en cada paso. Su sistema de aire comprimido a lo largo del pie ofrece una pisada más fluida, cómoda y con una presencia visual muy potente.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783187439/atarashi_contado/a11vusg4ywcdx6o1hkv7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783187439/atarashi_contado/oonjp8vvmb1uuviwcj3k.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783187439/atarashi_contado/txrnir99ehjvrxz5sy36.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783187440/atarashi_contado/wuoigig5injgxgslmnrp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783187440/atarashi_contado/arkbo5ihofqjovc7bio6.jpg"
+      ],
+      "video": "",
+      "id": 1783187558162
     }
   ],
   "categorias": [
