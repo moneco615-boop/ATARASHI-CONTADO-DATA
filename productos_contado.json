@@ -105,19 +105,6 @@
       "id": 1782780400826
     },
     {
-      "nombre": "LACOSTE RED....",
-      "categoria": "Accesorios",
-      "badge": "🔥 TOP VENTAS",
-      "disponibilidad": "inmediata",
-      "precioContado": 80000,
-      "descripcion": "",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782796537/atarashi_contado/n4xx1qqqjszdxf6xziic.jpg"
-      ],
-      "video": "",
-      "id": 1782796585492
-    },
-    {
       "nombre": "SMATR WHATCH Z1",
       "categoria": "Tecnología",
       "badge": "🔥 TOP VENTAS",
@@ -257,6 +244,22 @@
       ],
       "video": "",
       "id": 1783219447745
+    },
+    {
+      "nombre": "NIKE TN DAMA Y CABALLERO VARIOS COLORES",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "descripcion": "Nike TN es el nombre corto más usado para las Air Max Plus , unas zapatillas icónicas con estilo urbano, gran comodidad y una silueta inconfundible. Nacidas en 1998, destacan por su diseño agresivo y su amortiguación visible que las hace tan llamativas como cómodas",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220120/atarashi_contado/qonx5ulax3kundluwmpp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220120/atarashi_contado/iaovxn8jglsjo0gu6kgq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220127/atarashi_contado/yyejf6c0ubkmdz0puvrc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220136/atarashi_contado/rrbsntaza2vqudgihrx8.jpg"
+      ],
+      "video": "",
+      "id": 1783220346311
     }
   ],
   "categorias": [
