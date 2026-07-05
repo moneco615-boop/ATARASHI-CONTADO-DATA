@@ -311,6 +311,20 @@
       ],
       "video": "",
       "id": 1783221466538
+    },
+    {
+      "nombre": "ESCURRIDOR DE PLATOS",
+      "categoria": "Hogar",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "descripcion": "Soporte para platos de cocina 4 en 1, práctico y resistente, ideal para mantener tu vajilla, vasos, tablas y utensilios organizados y secos en un solo lugar. Su diseño multifuncional en color negro aprovecha mejor el espacio y aporta orden y estilo a tu cocina.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221760/atarashi_contado/t5l3mb73uqwiluhpmyrv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221783/atarashi_contado/otluvjz48ri5q1i9xl6j.jpg"
+      ],
+      "video": "",
+      "id": 1783222079645
     }
   ],
   "categorias": [
