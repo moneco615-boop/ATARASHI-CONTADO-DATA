@@ -39,12 +39,21 @@
     {
       "nombre": "SMART WATCH LENOVO FIT",
       "categoria": "Tecnología",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 160000,
+      "descripcion": "Reloj inteligente con pantalla AMOLED de 1,95” de alta definición, cuerpo metálico y correa cómoda, diseñado para uso diario y deportivo.  Ofrece monitoreo 24/7 de frecuencia cardíaca, oxígeno en sangre, sueño y estrés, más de 50 modos deportivos y notificaciones inteligentes de llamadas y mensajes.  Su batería de 300 mAh brinda hasta 10–14 días de uso típico y cuenta con resistencia al agua y polvo IP68, ideal para acompañarte en entrenamientos, trabajo y actividades al aire libre.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782680133/atarashi_contado/frf6tnty2wy75yburwyr.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782680133/atarashi_contado/frf6tnty2wy75yburwyr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218641/atarashi_contado/mv6ylc8yy3r16bgiovbq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218641/atarashi_contado/x5pwswzmkquemslaolkp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218671/atarashi_contado/jcj6qykjz6t3ndnoy4gg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218679/atarashi_contado/nkvzkfywhdt5otn3lggo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218694/atarashi_contado/rsbiwrwf1rbxurx7xowr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218716/atarashi_contado/azwmawgb9rsurhq9mjmp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218725/atarashi_contado/zaphrhx63jowbdiyhvav.jpg"
       ],
+      "video": "",
       "id": 1782680186957
     },
     {
