@@ -357,6 +357,21 @@
       ],
       "video": "",
       "id": 1783224408231
+    },
+    {
+      "nombre": "NEW BALANCE 2000",
+      "categoria": "Calzado",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "descripcion": "New Balance 2000 es una zapatilla de estilo futurista con inspiración retro, pensada para destacar por su comodidad y diseño moderno. Incorpora amortiguación ABZORB en toda la suela para ofrecer una pisada más suave y con buen soporte",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224582/atarashi_contado/ngcp3fvjfvsug33yjclu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224602/atarashi_contado/tis4jdiiu3prqduw4jyl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224602/atarashi_contado/pijjjxbnjlrazh19kqgh.jpg"
+      ],
+      "video": "",
+      "id": 1783224670739
     }
   ],
   "categorias": [
