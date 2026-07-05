@@ -235,6 +235,22 @@
       ],
       "video": "",
       "id": 1783187558162
+    },
+    {
+      "nombre": "SMART WHATCH LADYFIT",
+      "categoria": "Tecnología",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "descripcion": "Smartwatch LadyFit : estilo moderno y conexión total en tu muñeca.\nReloj inteligente de última generación con llamadas y textos inalámbricos, ideal para mantenerte siempre conectado sin sacar el teléfono. Incorpora múltiples modos deportivos y rastreador de actividad física para registrar tus pasos, calorías, distancia y entrenamientos diarios con precisión.\nIncluye control remoto de cámara para tomar fotos desde la muñeca, carga USB práctica y correa de silicona cómoda para uso prolongado. Es compatible con iPhone y Android y ofrece interconexión inteligente con tus apps, combinando funcionalidad avanzada con un diseño moderno perfecto para uso diario y deportivo.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783219007/atarashi_contado/opniqrkzpdnisrnndpnq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783219014/atarashi_contado/olm7bz16tx6i00ucqajb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783219014/atarashi_contado/pstlmk3anfaaudrcscoh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783219024/atarashi_contado/jibfzbp9qh4bzbrkipsf.jpg"
+      ],
+      "video": "",
+      "id": 1783219447745
     }
   ],
   "categorias": [
