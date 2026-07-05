@@ -325,6 +325,23 @@
       ],
       "video": "",
       "id": 1783222079645
+    },
+    {
+      "nombre": "PEINE INALAMBRICO MINI STYLER",
+      "categoria": "Belleza",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 75000,
+      "descripcion": "Peine inalámbrico 2 en 1 para flequillo, ideal para alisar y dar forma al cabello con rapidez y comodidad. Su calentamiento rápido, diseño anti-escaldado y pantalla digital LED lo hacen práctico y seguro para usar en todo tipo de cabello. Además, es recargable por USB, cuenta con apagado automático y un diseño ligero y portátil para llevarlo a cualquier parte.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783223742/atarashi_contado/v1k3mzjeamzammhy63go.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783223752/atarashi_contado/dphrjqsspcgp8g3y9c6u.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783223753/atarashi_contado/znrdbo4l7voskhvebnwu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783223753/atarashi_contado/qci1zypaqwsztajm9h6z.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783223753/atarashi_contado/yzwdcty3tdjouqv5eerd.jpg"
+      ],
+      "video": "",
+      "id": 1783224119240
     }
   ],
   "categorias": [
@@ -363,6 +380,10 @@
     {
       "emoji": "🏍️",
       "nombre": "Accesorios moto"
+    },
+    {
+      "emoji": "🧴",
+      "nombre": "Belleza"
     }
   ]
 }
