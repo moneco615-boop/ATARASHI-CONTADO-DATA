@@ -519,6 +519,19 @@
       ],
       "video": "",
       "id": 1783350439695
+    },
+    {
+      "nombre": "212 AQUA DE CAROLINA HERRERA (AAA)",
+      "categoria": "Lociones",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "descripcion": "212 Men Aqua de Carolina Herrera (lanzado en 2017) es una fragancia amaderada acuática. Ideal para climas cálidos y uso diurno, destaca por sus notas de salida a agua de mar y jengibre, su corazón de gardenia, y su fondo de sándalo y almizcle",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783351576/atarashi_contado/dsxyhfjgtewboddlwai9.jpg"
+      ],
+      "video": "",
+      "id": 1783351786996
     }
   ],
   "categorias": [
@@ -561,6 +574,10 @@
     {
       "emoji": "🧴",
       "nombre": "Belleza"
+    },
+    {
+      "emoji": "⭐",
+      "nombre": "Lociones"
     }
   ]
 }
