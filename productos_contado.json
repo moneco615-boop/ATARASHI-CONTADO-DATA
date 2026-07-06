@@ -702,6 +702,22 @@
       ],
       "video": "",
       "id": 1783375664996
+    },
+    {
+      "nombre": "CAFETERA DE GOTEO OSTER (5 TAZAS)",
+      "categoria": "Cocina",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "descripcion": "Cafetera de Goteo Oster (5 Tazas) – Negra¡ Disfruta de un café delicioso y caliente cada mañana con la practicidad que te ofrece la cafetera Oster de 5 tazas! Su diseño compacto y elegante en color negro la convierte en el accesorio ideal para cualquier cocina u oficina pequeña, ocupando el mínimo espacio.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783376933/atarashi_contado/aukeincnnulc1aikdqll.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783376948/atarashi_contado/dkjfputto90rr3cidicp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783376954/atarashi_contado/zrbidpsnritnnw2cgyjo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783377001/atarashi_contado/ysfehha3lzxxllaok8xh.jpg"
+      ],
+      "video": "",
+      "id": 1783377157199
     }
   ],
   "categorias": [
@@ -748,6 +764,10 @@
     {
       "emoji": "⭐",
       "nombre": "LOCION HOMBRE"
+    },
+    {
+      "emoji": "🍳",
+      "nombre": "Cocina"
     }
   ]
 }
