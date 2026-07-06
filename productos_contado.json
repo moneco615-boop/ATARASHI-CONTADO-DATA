@@ -650,6 +650,19 @@
       ],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1783362593/atarashi_contado/videos/ugejubv1uo1fzfpaqhfh.mp4",
       "id": 1783362787531
+    },
+    {
+      "nombre": "CHANCLAS HELLSTAR",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "descripcion": "Las chanclas  de la marca Hellstar se han convertido en una pieza clave del streetwear gracias a sus diseños audaces, logos gráficos icónicos y una estética alternativa inspirada en el concepto punk y cósmico de la marca.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362855/atarashi_contado/c2vykdbc3hf7p4nyddp0.jpg"
+      ],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1783362841/atarashi_contado/videos/swsbfs2tmtshoczyvabe.mp4",
+      "id": 1783363043786
     }
   ],
   "categorias": [
