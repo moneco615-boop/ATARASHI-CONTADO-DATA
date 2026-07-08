@@ -776,6 +776,19 @@
       ],
       "video": "",
       "id": 1783525068540
+    },
+    {
+      "nombre": "212 NYC FEM",
+      "categoria": "Locion dama",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "descripcion": "Inspirado en la energía, el dinamismo y el estilo de vida de Nueva York, 212 NYC Femme es mucho más que un perfume: es una declaración de frescura, elegancia y seguridad. Creado por el maestro perfumista Alberto Morillas, este clásico atemporal es el accesorio invisible perfecto para tu día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783529305/atarashi_contado/w1yytew8fmncqzfrzdai.jpg"
+      ],
+      "video": "",
+      "id": 1783529482496
     }
   ],
   "categorias": [
@@ -820,12 +833,16 @@
       "nombre": "Belleza"
     },
     {
-      "emoji": "⭐",
-      "nombre": "LOCION HOMBRE"
-    },
-    {
       "emoji": "🍳",
       "nombre": "Cocina"
+    },
+    {
+      "emoji": "👩",
+      "nombre": "Locion dama"
+    },
+    {
+      "emoji": "👨",
+      "nombre": "Locion caballero"
     }
   ]
 }
