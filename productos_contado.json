@@ -749,6 +749,19 @@
       ],
       "video": "",
       "id": 1783379012248
+    },
+    {
+      "nombre": "TIMBERLAND",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "descripcion": "Las botas café de Timberland son un clásico absoluto que combina resistencia extrema, protección contra el clima y un estilo sumamente versátil para el día a día",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783522509/atarashi_contado/wpe8hsqddpsoh5ya4z5y.jpg"
+      ],
+      "video": "",
+      "id": 1783522580609
     }
   ],
   "categorias": [
