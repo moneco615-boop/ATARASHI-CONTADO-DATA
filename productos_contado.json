@@ -762,6 +762,20 @@
       ],
       "video": "",
       "id": 1783522580609
+    },
+    {
+      "nombre": "NIKE JORDAN",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "descripcion": "Air Jordan 5 Retro \"White Cement\"! Destacan por su diseño clásico con detalles moteados característicos de ese modelo",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783524890/atarashi_contado/l5ez9axruztfbs3p1mdx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783524891/atarashi_contado/voswgrgurvbvpagcc3ho.jpg"
+      ],
+      "video": "",
+      "id": 1783525068540
     }
   ],
   "categorias": [
