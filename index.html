@@ -3,52 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>Atarashi Store</title>
+<title>Atarashi Store — Pago Contraentrega Cali</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--fo:#0a0a0a;--ca:#121212;--pa:#181818;--go:#C9A02A;--br:#F0C040;--wh:#F5F2EA;--gr:#888880;--T:'Bebas Neue',sans-serif;--B:'Outfit',sans-serif;}
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;}
-/* PORTADA */
-.portada{position:fixed;inset:0;background:var(--fo);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;text-align:center;padding:30px 20px;overflow:hidden;}
-.portada::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,160,42,.13) 0%,transparent 65%);pointer-events:none;}
+
+/* ── PORTADA ── */
+.portada{position:fixed;inset:0;background:var(--fo);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;text-align:center;padding:24px 20px;overflow:hidden;}
+.portada::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,160,42,.14) 0%,transparent 65%);pointer-events:none;}
 .p-lt{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-lb{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
-.p-logo{font-family:var(--T);font-size:clamp(48px,11vw,88px);letter-spacing:8px;line-height:1;animation:fD .8s ease forwards;opacity:0;}
+.p-logo-img{width:min(180px,55vw);height:auto;object-fit:contain;display:block;margin:0 auto 12px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.55));animation:fD .8s ease forwards;opacity:0;}
+.p-logo{font-family:var(--T);font-size:clamp(44px,11vw,84px);letter-spacing:8px;line-height:1;animation:fD .8s ease forwards;opacity:0;}
 .p-logo span{color:var(--br);}
-.p-logo-img{width:min(260px,72vw);max-height:150px;object-fit:contain;display:block;margin:0 auto 10px;filter:drop-shadow(0 10px 30px rgba(0,0,0,.55));animation:fD .8s ease forwards;opacity:0;}
-.p-sub{font-size:11px;text-transform:uppercase;letter-spacing:6px;color:var(--gr);margin:6px 0 28px;animation:fD .8s .2s ease forwards;opacity:0;}
-.p-div{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--go),transparent);margin:0 auto 26px;animation:eW .6s .4s ease forwards;transform:scaleX(0);}
-.p-tit{font-size:clamp(22px,5.5vw,40px);font-weight:900;line-height:1.25;max-width:560px;margin:0 auto 14px;animation:fU .8s .5s ease forwards;opacity:0;}
+.p-sub{font-size:11px;text-transform:uppercase;letter-spacing:6px;color:var(--gr);margin:5px 0 26px;animation:fD .8s .18s ease forwards;opacity:0;}
+.p-div{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--go),transparent);margin:0 auto 22px;animation:eW .6s .38s ease forwards;transform:scaleX(0);}
+.p-tit{font-size:clamp(20px,5vw,38px);font-weight:900;line-height:1.25;max-width:540px;margin:0 auto 12px;animation:fU .8s .48s ease forwards;opacity:0;}
 .p-tit .oro{color:var(--br);}
-.p-desc{font-size:clamp(14px,3.5vw,16px);color:#c8c4b4;max-width:480px;line-height:1.65;margin:0 auto 26px;animation:fU .8s .7s ease forwards;opacity:0;}
-.p-pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px;animation:fU .8s .85s ease forwards;opacity:0;}
-.p-pill{background:rgba(201,160,42,.08);border:1px solid rgba(201,160,42,.3);color:var(--br);padding:6px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
-.p-btn{background:var(--go);color:#000;font-family:var(--T);font-size:18px;letter-spacing:3px;padding:16px 48px;border:none;border-radius:4px;cursor:pointer;text-transform:uppercase;transition:all .25s;animation:fU .8s 1s ease forwards;opacity:0;box-shadow:0 0 30px rgba(201,160,42,.25);}
+.p-desc{font-size:clamp(13px,3.2vw,15px);color:#c8c4b4;max-width:460px;line-height:1.65;margin:0 auto 22px;animation:fU .8s .66s ease forwards;opacity:0;}
+.p-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:26px;animation:fU .8s .82s ease forwards;opacity:0;}
+.p-pill{background:rgba(201,160,42,.09);border:1px solid rgba(201,160,42,.32);color:var(--br);padding:5px 13px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+.p-btn{background:var(--go);color:#000;font-family:var(--T);font-size:17px;letter-spacing:3px;padding:15px 46px;border:none;border-radius:4px;cursor:pointer;text-transform:uppercase;transition:all .22s;animation:fU .8s .98s ease forwards;opacity:0;box-shadow:0 0 28px rgba(201,160,42,.28);}
 .p-btn:hover{background:var(--br);transform:translateY(-2px);}
-.p-nota{position:absolute;bottom:20px;font-size:10px;color:var(--gr);letter-spacing:2px;text-transform:uppercase;animation:fU .8s 1.2s ease forwards;opacity:0;}
-@keyframes fD{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.p-nota{position:absolute;bottom:18px;font-size:10px;color:var(--gr);letter-spacing:2px;text-transform:uppercase;animation:fU .8s 1.15s ease forwards;opacity:0;}
+@keyframes fD{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fU{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes eW{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-/* HEADER */
-.s-hdr{text-align:center;padding:18px 12px 12px;border-bottom:1px solid rgba(201,160,42,.1);}
-.s-hdr h1{font-family:var(--T);font-size:42px;letter-spacing:5px;}
+
+/* ── HEADER ── */
+.s-hdr{text-align:center;padding:16px 12px 11px;border-bottom:1px solid rgba(201,160,42,.1);}
+.s-hdr h1{font-family:var(--T);font-size:40px;letter-spacing:5px;}
 .s-hdr h1 span{color:var(--go);}
 .s-hdr small{font-size:10px;text-transform:uppercase;letter-spacing:5px;color:var(--gr);font-weight:600;}
-/* TRUST */
-.trust{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:10px 12px;background:rgba(201,160,42,.04);border-bottom:1px solid rgba(201,160,42,.08);}
+
+/* ── TRUST BAR ── */
+.trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:9px 12px;background:rgba(201,160,42,.04);border-bottom:1px solid rgba(201,160,42,.08);}
 .trust span{font-size:12px;color:#c8c4b4;font-weight:600;}
-/* LAYOUT */
-.ctn{max-width:1200px;margin:0 auto;padding:18px 12px 60px;}
-.filtros{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;}
-.fb{background:var(--ca);border:1px solid rgba(201,160,42,.2);color:var(--gr);padding:6px 13px;border-radius:20px;cursor:pointer;font-size:12px;font-family:var(--B);transition:all .2s;}
+
+/* ── LAYOUT ── */
+.ctn{max-width:1200px;margin:0 auto;padding:16px 12px 60px;}
+.filtros{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:15px;}
+.fb{background:var(--ca);border:1px solid rgba(201,160,42,.22);color:var(--gr);padding:6px 13px;border-radius:20px;cursor:pointer;font-size:12px;font-family:var(--B);transition:all .18s;}
 .fb.on,.fb:hover{background:var(--go);color:#000;border-color:var(--go);font-weight:700;}
-/* GRID */
+
+/* ── GRID ── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;}
 @media(max-width:500px){.grid{grid-template-columns:repeat(2,1fr);gap:10px;}}
-/* CARD */
-.card{background:var(--ca);border:1px solid rgba(201,160,42,.1);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;position:relative;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;}
-.card:hover{transform:translateY(-5px);border-color:rgba(201,160,42,.4);box-shadow:0 10px 30px rgba(0,0,0,.5);}
+
+/* ── TARJETA ── */
+.card{background:var(--ca);border:1px solid rgba(201,160,42,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;position:relative;cursor:pointer;transition:transform .28s,border-color .28s,box-shadow .28s;}
+.card:hover{transform:translateY(-5px);border-color:rgba(201,160,42,.42);box-shadow:0 10px 30px rgba(0,0,0,.5);}
 .card-badge{position:absolute;top:10px;right:10px;background:var(--br);color:#000;font-size:10px;font-weight:900;padding:3px 9px;border-radius:3px;z-index:5;text-transform:uppercase;}
 .card-img{width:100%;height:230px;background:#141414;display:flex;align-items:center;justify-content:center;padding:12px;}
 .card-img img{max-width:100%;max-height:100%;object-fit:contain;}
@@ -62,10 +68,11 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .card:hover .card-precio{animation:ppulse .8s ease-in-out infinite;}
 @media(max-width:500px){.card-precio{font-size:30px;}}
 @keyframes pglow{0%,100%{filter:drop-shadow(0 0 3px rgba(255,215,0,.3))}50%{filter:drop-shadow(0 0 12px rgba(255,215,0,.7))}}
-@keyframes ppulse{0%,100%{filter:drop-shadow(0 0 8px rgba(255,215,0,.5));transform:scale(1)}50%{filter:drop-shadow(0 0 18px rgba(255,215,0,.85));transform:scale(1.03)}}
-.card-cta{width:100%;background:#25D366;color:#fff;border:none;padding:13px;font-family:var(--B);font-weight:900;font-size:12px;cursor:pointer;letter-spacing:.5px;text-transform:uppercase;transition:background .2s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:5px;}
+@keyframes ppulse{0%,100%{filter:drop-shadow(0 0 8px rgba(255,215,0,.5));transform:scale(1)}50%{filter:drop-shadow(0 0 18px rgba(255,215,0,.85));transform:scale(1.04)}}
+.card-cta{width:100%;background:#25D366;color:#fff;border:none;padding:13px;font-family:var(--B);font-weight:900;font-size:12px;cursor:pointer;letter-spacing:.5px;text-transform:uppercase;transition:background .18s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:5px;}
 .card-cta:hover{background:#1eb358;}
-/* MODAL PRODUCTO */
+
+/* ── MODAL PRODUCTO ── */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:10000;display:none;align-items:flex-end;justify-content:center;}
 .modal-bg.show{display:flex;}
 @media(min-width:620px){.modal-bg{align-items:center;padding:20px;}}
@@ -76,41 +83,44 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .m-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 12px;border-bottom:1px solid rgba(255,255,255,.06);}
 .m-hdr-t{font-family:var(--T);font-size:20px;letter-spacing:3px;}
 .m-hdr-t span{color:var(--br);}
-.m-close{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.m-close{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .m-close:hover{background:#fff;color:#000;}
+
 /* CAROUSEL */
-.m-car{position:relative;width:100%;background:#080808;overflow:hidden;user-select:none;}
+.m-car{position:relative;width:100%;background:#080808;overflow:hidden;user-select:none;touch-action:none;}
 .m-track{display:flex;transition:transform .4s cubic-bezier(.25,.8,.25,1);}
-.m-track.notrans{transition:none!important;}
-.m-slide{flex-shrink:0;width:100%;height:310px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in;}
+.m-slide{flex-shrink:0;width:100%;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in;}
 .m-slide.zoomed{cursor:move;}
-.m-slide img{max-width:100%;max-height:100%;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;transform-origin:50% 50%;transition:transform .25s ease;will-change:transform;}
-.m-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.18);color:var(--br);width:36px;height:36px;border-radius:50%;font-size:14px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;}
+.m-slide img{max-width:100%;max-height:100%;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;transform-origin:50% 50%;transition:transform .22s ease;will-change:transform;}
+.m-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.18);color:var(--br);width:36px;height:36px;border-radius:50%;font-size:14px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .18s;}
 .m-arr:hover{background:rgba(0,0,0,.9);}
 .m-arr.l{left:8px;}.m-arr.r{right:8px;}
-.m-cnt{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:16px;pointer-events:none;white-space:nowrap;}
-.m-zoom-x{position:absolute;bottom:8px;right:10px;background:rgba(0,0,0,.75);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:12px;cursor:pointer;display:none;z-index:12;}
+.m-cnt{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.72);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:16px;pointer-events:none;white-space:nowrap;z-index:8;}
+.m-zoom-x{position:absolute;bottom:8px;right:10px;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:12px;cursor:pointer;display:none;z-index:12;transition:background .15s;}
+.m-zoom-x:hover{background:rgba(255,50,50,.75);}
 .car-zoomed .m-zoom-x{display:block;}
-.m-hint{background:#0d0d0d;text-align:center;font-size:11px;color:var(--gr);padding:5px;letter-spacing:.2px;}
+.m-hint{background:#0d0d0d;text-align:center;font-size:11px;color:#666;padding:5px;letter-spacing:.2px;}
 .m-thumbs{display:flex;gap:6px;padding:8px 14px;overflow-x:auto;background:#0d0d0d;scrollbar-width:none;}
 .m-thumbs::-webkit-scrollbar{display:none;}
-.m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:all .2s;}
+.m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:all .18s;}
 .m-thumb.on{border-color:var(--br);opacity:1;}
-/* INFO */
+
+/* INFO MODAL */
 .m-info{padding:16px 18px 20px;}
 .m-nombre{font-family:var(--T);font-size:26px;letter-spacing:.5px;text-transform:uppercase;line-height:1.1;margin-bottom:4px;}
 .m-cat{font-size:12px;color:var(--gr);margin-bottom:10px;}
 .m-precio{font-family:var(--T);font-size:52px;letter-spacing:2px;background:linear-gradient(135deg,#C9A02A,#FFD700,#F0C040,#C9A02A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;margin-bottom:8px;animation:pglow 3s ease-in-out infinite;}
 .m-disp{display:inline-flex;align-items:center;gap:5px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.28);color:#2ecc71;font-size:12px;font-weight:700;padding:4px 12px;border-radius:12px;margin-bottom:14px;}
-.m-desc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
+.m-desc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;margin-bottom:14px;}
 .m-desc-lbl{font-size:10px;color:var(--gr);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-bottom:6px;}
 .m-desc-txt{font-size:13px;color:#d4d0c8;line-height:1.65;white-space:pre-line;}
 .m-video{margin-bottom:14px;}
 .m-video-lbl{font-size:10px;color:var(--gr);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-bottom:6px;}
 .m-video video{width:100%;border-radius:10px;max-height:220px;background:#000;display:block;}
-.m-cta{width:100%;background:#25D366;color:#fff;border:none;padding:16px;border-radius:12px;font-family:var(--B);font-weight:900;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:background .2s,transform .15s;margin-top:2px;}
+.m-cta{width:100%;background:#25D366;color:#fff;border:none;padding:16px;border-radius:12px;font-family:var(--B);font-weight:900;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;transition:background .18s,transform .14s;margin-top:4px;}
 .m-cta:hover{background:#1eb358;}.m-cta:active{transform:scale(.98);}
-/* FORM */
+
+/* ── FORM MODAL ── */
 .fmodal-bg{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:10001;display:none;align-items:flex-end;justify-content:center;}
 .fmodal-bg.show{display:flex;}
 @media(min-width:620px){.fmodal-bg{align-items:center;padding:20px;}}
@@ -119,14 +129,14 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .f-logo{font-family:var(--T);font-size:22px;letter-spacing:4px;text-align:center;margin-bottom:2px;}
 .f-logo span{color:var(--br);}
 .f-sub{font-size:10px;color:var(--gr);text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:18px;}
-.f-resumen{background:rgba(201,160,42,.06);border:1px solid rgba(201,160,42,.2);border-radius:10px;padding:12px 14px;margin-bottom:18px;}
+.f-resumen{background:rgba(201,160,42,.07);border:1px solid rgba(201,160,42,.22);border-radius:10px;padding:12px 14px;margin-bottom:18px;}
 .f-pnom{font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
 .f-pprecio{font-family:var(--T);font-size:30px;color:var(--br);}
 .campo{margin-bottom:13px;}
 .campo label{display:block;font-size:11px;color:var(--gr);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
 .campo input{width:100%;background:#0d0d0d;border:1px solid rgba(201,160,42,.3);color:#fff;padding:11px 12px;border-radius:8px;font-family:var(--B);font-size:14px;outline:none;}
 .campo input:focus{border-color:var(--br);}
-.f-cta{width:100%;background:#25D366;color:#fff;border:none;padding:15px;border-radius:10px;font-weight:900;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;margin-top:8px;transition:background .2s;}
+.f-cta{width:100%;background:#25D366;color:#fff;border:none;padding:15px;border-radius:10px;font-weight:900;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;margin-top:8px;transition:background .18s;}
 .f-cta:hover{background:#1eb358;}
 .f-back{width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--gr);padding:10px;border-radius:8px;font-size:13px;cursor:pointer;margin-top:8px;}
 .f-back:hover{background:rgba(255,255,255,.05);}
@@ -134,254 +144,352 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 </style>
 </head>
 <body>
-<div class="portada" id="portada">
-  <div class="p-lt"></div><div class="p-lb"></div>
-  <div class="p-logo">ATARASHI <span>STORE</span></div>
-  <p class="p-sub">Tu tienda en Cali, Colombia</p>
-  <div class="p-div"></div>
-  <h1 class="p-tit">¿Para qué ir al centro<br>si el centro <span class="oro">puede ir a ti?</span></h1>
-  <p class="p-desc">Compra desde cualquier lugar de Cali y recibe tus productos con <strong>pago contraentrega</strong>. Sin filas, sin tráfico, sin perder tiempo y con la tranquilidad de pagar solo al recibir.</p>
-  <div class="p-pills"><span class="p-pill">🚚 Entrega a domicilio</span><span class="p-pill">✅ Paga al recibir</span><span class="p-pill">📦 Sin riesgos</span></div>
-  <button class="p-btn" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity .35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360)})()">VER CATÁLOGO →</button>
-  <span class="p-nota">Cali · Colombia · Pagos en efectivo al recibir</span>
-</div>
-<header class="s-hdr">
-  <h1>ATARASHI <span>STORE</span></h1>
-  <small>Pago Contraentrega · Cali, Colombia</small>
-</header>
-<div class="trust">
-  <span>🚚 Domicilio Express en Cali</span>
-  <span>✅ Pagas cuando llega</span>
-  <span>📦 Cero riesgos</span>
-  <span>💬 Atención por WhatsApp</span>
-</div>
-<div class="ctn">
-  <div class="filtros" id="filtros"></div>
-  <div class="grid" id="grid"><p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">⏳ Cargando productos...</p></div>
-</div>
-<div class="modal-bg" id="modalProd" onclick="if(event.target.id==='modalProd')cerrarModal()">
-  <div class="modal-box" id="mBox"></div>
-</div>
-<div class="fmodal-bg" id="modalForm" onclick="if(event.target.id==='modalForm')cerrarForm()">
-  <div class="fmodal-box">
-    <button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarForm()">&#x2715;</button>
-    <p class="f-logo">ATARASHI <span>STORE</span></p>
-    <p class="f-sub">Confirmar pedido · Pago al recibir</p>
-    <div class="f-resumen">
-      <p class="f-pnom" id="fPNom">—</p>
-      <p class="f-pprecio" id="fPPrecio">$0</p>
-    </div>
-    <div class="campo"><label>Tu nombre completo *</label><input type="text" id="fNom" placeholder="Ej: Juan Pérez" autocomplete="name"></div>
-    <div class="campo"><label>Tu celular / WhatsApp *</label><input type="tel" id="fCel" placeholder="Ej: 300 123 4567" autocomplete="tel"></div>
-    <div class="campo"><label>Dirección de entrega en Cali *</label><input type="text" id="fDir" placeholder="Ej: Cra 50 #20-15, Aguablanca"></div>
-    <button class="f-cta" onclick="enviarWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> PAGAR AL RECIBIR 💵</button>
-    <button class="f-back" onclick="cerrarForm()">← Volver al producto</button>
-    <p class="f-nota">Se abrirá WhatsApp con tu pedido listo. Solo presiona Enviar.</p>
-  </div>
-</div>
+<div class="portada" id="portada"><div class="p-lt"></div><div class="p-lb"></div><img id="pLogoImg" src="" class="p-logo-img" alt="Atarashi" style="display:none;"><div class="p-logo" id="pLogoTxt">ATARASHI <span>STORE</span></div><p class="p-sub">Tu tienda en Cali, Colombia</p><div class="p-div"></div><h1 class="p-tit">¿Para qué ir al centro<br>si el centro <span class="oro">puede ir a ti?</span></h1><p class="p-desc">Compra desde cualquier lugar de Cali y recibe tus productos con <strong>pago contraentrega</strong>. Sin filas, sin tráfico, sin perder tiempo y con la tranquilidad de pagar solo al recibir.</p><div class="p-pills"><span class="p-pill">🚚 Domicilio a Cali</span><span class="p-pill">✅ Pagas al recibir</span><span class="p-pill">💵 Solo efectivo</span><span class="p-pill">🛡️ 100% Seguro</span></div><button class="p-btn" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity .35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360)})()">VER PRODUCTOS →</button><span class="p-nota">Cali · Colombia · Solo efectivo al recibir</span></div>
+<header class="s-hdr"><h1>ATARASHI <span>STORE</span></h1><small>Pago Contraentrega · Cali, Colombia</small></header><div class="trust"><span>🚚 Domicilio a toda Cali</span><span>✅ Pagas SOLO al recibir</span><span>💵 Efectivo en tu puerta</span><span>💬 Soporte por WhatsApp</span></div><div class="ctn"><div class="filtros" id="filtros"></div><div class="grid" id="grid"><p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">⏳ Cargando productos...</p></div></div><!-- MODAL PRODUCTO --><div class="modal-bg" id="modalProd" onclick="if(event.target.id==='modalProd')cerrarModal()"><div class="modal-box" id="mBox"></div></div><!-- FORM PEDIDO --><div class="fmodal-bg" id="modalForm" onclick="if(event.target.id==='modalForm')cerrarForm()"><div class="fmodal-box"><button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarForm()">&#x2715;</button><p class="f-logo">ATARASHI <span>STORE</span></p><p class="f-sub">Confirmar pedido · Pago en efectivo al recibir</p><div class="f-resumen"><p class="f-pnom" id="fPNom">—</p><p class="f-pprecio" id="fPPrecio">$0</p></div><div class="campo"><label>Tu nombre completo *</label><input type="text" id="fNom" placeholder="Ej: Juan Pérez" autocomplete="name"></div><div class="campo"><label>Tu celular / WhatsApp *</label><input type="tel" id="fCel" placeholder="Ej: 300 123 4567" autocomplete="tel"></div><div class="campo"><label>Dirección de entrega en Cali *</label><input type="text" id="fDir" placeholder="Ej: Cra 50 #20-15, Aguablanca"></div><button class="f-cta" onclick="enviarWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> CONFIRMAR PEDIDO</button><button class="f-back" onclick="cerrarForm()">← Volver al producto</button><p class="f-nota">Se abrirá WhatsApp con tu pedido listo. Solo presiona Enviar. Coordinamos la entrega y el pago en efectivo en tu puerta.</p></div></div>
 <script>
-  var WA='+573197066369';
-  var PRODS=[],CATS=[],filtro='todos',prod=null;
-  var slideIdx=0,slideImgs=[],slideTimer=null;
-  var SCALE=2.6,zOn=false,zOX=50,zOY=50,zOX0=50,zOY0=50;
-  var ptDn=false,ptMv=false,ptX0=0,ptY0=0;
-  var WA_NUM=WA;
 
-  function fmtP(v){return '$'+Math.round(v).toLocaleString('es-CO');}
-  function getEm(n){var x=CATS.find(function(c){return c.nombre===n;});return x?x.emoji:'📦';}
-  function esc(t){return String(t||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  var WA = '+573197066369';
+  var LOGO = '';
+  var PRODS = [], CATS = [], filtro = 'todos', prod = null;
+  var sImgs = [], sIdx = 0, sTimer = null;
+  var SCALE = 2.6, zOn = false, zOX = 50, zOY = 50, zOX0 = 50, zOY0 = 50;
+  var ptDn = false, ptMv = false, ptX0 = 0, ptY0 = 0;
 
-  /* FETCH */
-  function showMsg(h){var e=document.getElementById('grid');if(e)e.innerHTML=h;}
-  async function inicializar(){
-    try{
-      var res=await fetch('./productos_contado.json?t='+Date.now());
-      if(res.status===404){showMsg('<div style="text-align:center;padding:60px;grid-column:1/-1"><p style="font-size:44px;margin-bottom:14px">🛒</p><p style="color:#c8c4b4;font-size:16px;font-weight:700">Catálogo en preparación</p><p style="color:#888;font-size:13px;margin-top:8px">Vuelve pronto</p></div>');return;}
-      if(!res.ok)throw new Error('HTTP '+res.status);
-      var data=await res.json();
-      PRODS=data.productos||[];CATS=data.categorias||[];
-      if(!PRODS.length){showMsg('<div style="text-align:center;padding:60px;grid-column:1/-1"><p style="font-size:44px;margin-bottom:14px">🛒</p><p style="color:#c8c4b4;font-size:16px;font-weight:700">Pronto habrá productos</p></div>');return;}
-      genFiltros();renderGrid();
-    }catch(e){showMsg('<div style="text-align:center;padding:60px;grid-column:1/-1"><p style="font-size:40px;margin-bottom:14px">🔄</p><p style="color:#c8c4b4;font-size:15px">Error al cargar. Recarga la página.</p></div>');}
+  /* LOGO */
+  (function() {
+    if (LOGO) {
+      var li = document.getElementById('pLogoImg');
+      var lt = document.getElementById('pLogoTxt');
+      if (li) { li.src = LOGO; li.style.display = 'block'; }
+      if (lt) lt.style.display = 'none';
+    }
+  })();
+
+  /* FORMAT */
+  function fmtP(v) { return '$' + Math.round(v).toLocaleString('es-CO'); }
+  function getEm(n) { var c = CATS.find(function(x) { return x.nombre === n; }); return c ? c.emoji : '📦'; }
+
+  /* FETCH DINAMICO */
+  function showMsg(h) { var e = document.getElementById('grid'); if (e) e.innerHTML = h; }
+
+  async function inicializar() {
+    try {
+      var res = await fetch('./productos_contado.json?t=' + Date.now());
+      if (res.status === 404) {
+        showMsg('<div style="text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif">'
+          + '<p style="font-size:44px;margin-bottom:14px">🛒</p>'
+          + '<p style="color:#c8c4b4;font-size:16px;font-weight:700">Catálogo en preparación</p>'
+          + '<p style="color:#888;font-size:13px;margin-top:8px">Vuelve pronto, los productos estarán disponibles.</p></div>');
+        return;
+      }
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      var data = await res.json();
+      PRODS = data.productos || [];
+      CATS  = data.categorias || [];
+      if (!PRODS.length) {
+        showMsg('<div style="text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif">'
+          + '<p style="font-size:44px;margin-bottom:14px">🛒</p>'
+          + '<p style="color:#c8c4b4;font-size:16px;font-weight:700">Pronto habrá productos</p></div>');
+        return;
+      }
+      genFiltros();
+      renderGrid();
+    } catch(e) {
+      showMsg('<div style="text-align:center;padding:60px;grid-column:1/-1;font-family:Outfit,sans-serif">'
+        + '<p style="font-size:40px;margin-bottom:14px">🔄</p>'
+        + '<p style="color:#c8c4b4;font-size:15px">Error al cargar. Recarga la página.</p></div>');
+    }
   }
 
   /* FILTROS */
-  function genFiltros(){
-    var c=document.getElementById('filtros');c.innerHTML='';
-    var b=document.createElement('button');b.className='fb on';b.textContent='Todos';b.onclick=function(){filtrar('todos',this);};c.appendChild(b);
-    CATS.forEach(function(cat){var btn=document.createElement('button');btn.className='fb';btn.textContent=cat.emoji+' '+cat.nombre;btn.onclick=function(){filtrar(cat.nombre,this);};c.appendChild(btn);});
+  function genFiltros() {
+    var c = document.getElementById('filtros');
+    c.innerHTML = '';
+    var b = document.createElement('button'); b.className = 'fb on'; b.textContent = 'Todos';
+    b.onclick = function() { filtrar('todos', this); }; c.appendChild(b);
+    CATS.forEach(function(cat) {
+      var btn = document.createElement('button'); btn.className = 'fb';
+      btn.textContent = cat.emoji + ' ' + cat.nombre;
+      btn.onclick = function() { filtrar(cat.nombre, this); };
+      c.appendChild(btn);
+    });
   }
-  function filtrar(val,btn){document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});filtro=val;btn.classList.add('on');renderGrid();}
+  function filtrar(val, btn) {
+    document.querySelectorAll('.fb').forEach(function(b) { b.classList.remove('on'); });
+    filtro = val; btn.classList.add('on'); renderGrid();
+  }
 
   /* GRID */
-  function renderGrid(){
-    var g=document.getElementById('grid');g.innerHTML='';
-    var lista=filtro==='todos'?PRODS:PRODS.filter(function(p){return p.categoria===filtro;});
-    if(!lista.length){g.innerHTML='<p style="color:#888;text-align:center;padding:40px;grid-column:1/-1">No hay productos en esta categoría.</p>';return;}
-    lista.forEach(function(p){
-      var em=getEm(p.categoria);
-      var badge=p.badge?'<span class="card-badge">'+p.badge+'</span>':'';
-      var disp=p.disponibilidad==='transito'?'<span class="card-disp">🚚 En camino</span>':'<span class="card-disp">✅ Entrega inmediata</span>';
-      var div=document.createElement('div');div.className='card';
-      div.innerHTML=badge+'<div class="card-img"><img src="'+(p.imagenes&&p.imagenes[0]?p.imagenes[0]:'')+'" loading="lazy" alt="'+p.nombre+'"></div><div class="card-body"><p class="card-cat">'+em+' '+p.categoria+'</p><h3 class="card-name">'+p.nombre+'</h3><span class="card-precio">'+fmtP(p.precioContado)+'</span>'+disp+'</div><button class="card-cta">💵 Pagar al Recibir</button>';
-      div.onclick=function(){abrirModal(p.id);};
+  function renderGrid() {
+    var g = document.getElementById('grid'); g.innerHTML = '';
+    var lista = filtro === 'todos' ? PRODS : PRODS.filter(function(p) { return p.categoria === filtro; });
+    if (!lista.length) {
+      g.innerHTML = '<p style="color:#888;text-align:center;padding:40px;grid-column:1/-1">No hay productos en esta categoría.</p>';
+      return;
+    }
+    lista.forEach(function(p) {
+      var em    = getEm(p.categoria);
+      var badge = p.badge ? '<span class="card-badge">' + p.badge + '</span>' : '';
+      var disp  = p.disponibilidad === 'transito'
+        ? '<span class="card-disp">🚚 En camino</span>'
+        : '<span class="card-disp">✅ Entrega inmediata</span>';
+      var div = document.createElement('div'); div.className = 'card';
+      div.innerHTML = badge
+        + '<div class="card-img"><img src="' + (p.imagenes && p.imagenes[0] ? p.imagenes[0] : '') + '" loading="lazy"></div>'
+        + '<div class="card-body">'
+          + '<p class="card-cat">' + em + ' ' + p.categoria + '</p>'
+          + '<h3 class="card-name">' + p.nombre + '</h3>'
+          + '<span class="card-precio">' + fmtP(p.precioContado) + '</span>'
+          + disp
+        + '</div>'
+        + '<button class="card-cta">💵 Pedir — Pago al Recibir</button>';
+      div.onclick = function() { abrirModal(p.id); };
       g.appendChild(div);
     });
   }
 
-  /* MODAL */
-  function abrirModal(id){
-    prod=PRODS.find(function(p){return p.id===id;});if(!prod)return;
-    slideImgs=prod.imagenes||[];slideIdx=0;zOn=false;zOX=50;zOY=50;
-    var em=getEm(prod.categoria);
-    var n=slideImgs.length;
-    var disp=prod.disponibilidad==='transito'?'🚚 En camino':'✅ Entrega inmediata';
-    var slidesH='';slideImgs.forEach(function(src){slidesH+='<div class="m-slide"><img src="'+src+'" loading="lazy" draggable="false"></div>';});
-    var arrowH=n>1?'<button class="m-arr l" onclick="nextSlide(-1)">&#10094;</button><button class="m-arr r" onclick="nextSlide(1)">&#10095;</button>':'';
-    var cntH=n>1?'<div class="m-cnt" id="mCnt">1 / '+n+'</div>':'';
-    var zExH='<button class="m-zoom-x" id="mZX" onclick="event.stopPropagation();zoomOut()">✕ Salir zoom</button>';
-    var thumbH='';if(n>1){slideImgs.forEach(function(s,i){thumbH+='<img src="'+s+'" class="m-thumb'+(i===0?' on':'')+'" onclick="irA('+i+')" loading="lazy">';});}
-    var descH='';if(prod.descripcion&&String(prod.descripcion).trim().length>0){descH='<div class="m-desc"><p class="m-desc-lbl">📝 Detalles del producto</p><p class="m-desc-txt">'+esc(String(prod.descripcion).trim())+'</p></div>';}
-    var videoH='';if(prod.video&&String(prod.video).trim().length>0){videoH='<div class="m-video"><p class="m-video-lbl">🎥 Video del producto</p><video src="'+prod.video+'" controls playsinline preload="metadata"></video></div>';}
-    document.getElementById('mBox').innerHTML=
-      '<div class="m-hdr"><div class="m-hdr-t">ATARASHI <span>STORE</span></div><button class="m-close" onclick="cerrarModal()">&#x2715;</button></div>'+
-      '<div class="m-car" id="mCar"><div class="m-track" id="mTrack">'+slidesH+'</div>'+arrowH+cntH+zExH+'</div>'+
-      (n>0?'<p class="m-hint">👆 Toca la foto para ampliar · Arrastra para explorar · Toca de nuevo para cerrar</p>':'')+
-      (thumbH?'<div class="m-thumbs">'+thumbH+'</div>':'')+
-      '<div class="m-info">'+
-        '<h2 class="m-nombre">'+prod.nombre+'</h2>'+
-        '<p class="m-cat">'+em+' '+prod.categoria+'</p>'+
-        '<span class="m-precio">'+fmtP(prod.precioContado)+'</span>'+
-        '<div class="m-disp">'+disp+'</div>'+
-        descH+videoH+
-        '<button class="m-cta" onclick="abrirForm()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> PAGAR AL RECIBIR 💵</button>'+
-      '</div>';
-    var car=document.getElementById('mCar');
-    if(car){
-      car.addEventListener('touchstart',onDown,{passive:true});
-      car.addEventListener('touchmove',onMove,{passive:false});
-      car.addEventListener('touchend',onUp,{passive:true});
-      car.addEventListener('mousedown',onDown);
+  /* MODAL PRODUCTO */
+  function abrirModal(id) {
+    prod = PRODS.find(function(p) { return p.id === id; });
+    if (!prod) return;
+    sImgs = prod.imagenes || []; sIdx = 0; zOn = false; zOX = 50; zOY = 50;
+    var em   = getEm(prod.categoria);
+    var n    = sImgs.length;
+    var disp = prod.disponibilidad === 'transito' ? '🚚 En camino' : '✅ Entrega inmediata';
+
+    /* Slides */
+    var slidesH = '';
+    sImgs.forEach(function(src) {
+      slidesH += '<div class="m-slide"><img src="' + src + '" loading="lazy" draggable="false"></div>';
+    });
+
+    /* Controles carrusel */
+    var arrowH = n > 1
+      ? '<button class="m-arr l" onclick="nextSlide(-1)">&#10094;</button>'
+        + '<button class="m-arr r" onclick="nextSlide(1)">&#10095;</button>'
+      : '';
+    var cntH  = n > 1 ? '<div class="m-cnt" id="mCnt">1 / ' + n + '</div>' : '';
+    var zExH  = '<button class="m-zoom-x" id="mZX" onclick="event.stopPropagation();zoomOut()">✕ Salir zoom</button>';
+
+    /* Thumbnails */
+    var thumbH = '';
+    if (n > 1) {
+      sImgs.forEach(function(s, i) {
+        thumbH += '<img src="' + s + '" class="m-thumb' + (i === 0 ? ' on' : '') + '" onclick="irA(' + i + ')" loading="lazy">';
+      });
     }
-    window.addEventListener('mousemove',onMove);
-    window.addEventListener('mouseup',onUp);
+
+    /* Descripcion — siempre visible */
+    var NL = String.fromCharCode(10);
+    var dTxt = (prod.descripcion && String(prod.descripcion).trim().length > 0)
+      ? String(prod.descripcion).trim()
+      : '📦 Entrega en Cali y área metropolitana' + NL
+        + '💵 Solo pago en efectivo al recibir el pedido' + NL
+        + '📞 Consulta tallas, colores y disponibilidad por WhatsApp';
+    var descH = '<div class="m-desc">'
+      + '<p class="m-desc-lbl">📋 Información del producto</p>'
+      + '<p class="m-desc-txt">' + dTxt + '</p>'
+      + '</div>';
+
+    /* Video */
+    var videoH = '';
+    if (prod.video && String(prod.video).trim().length > 0) {
+      videoH = '<div class="m-video">'
+        + '<p class="m-video-lbl">🎥 Video del producto</p>'
+        + '<video src="' + prod.video + '" controls playsinline preload="metadata"></video>'
+        + '</div>';
+    }
+
+    /* Ensamblar modal */
+    document.getElementById('mBox').innerHTML =
+      '<div class="m-hdr">'
+        + '<div class="m-hdr-t">ATARASHI <span>STORE</span></div>'
+        + '<button class="m-close" onclick="cerrarModal()">✕</button>'
+      + '</div>'
+      + '<div class="m-car" id="mCar">'
+        + '<div class="m-track" id="mTrack">' + slidesH + '</div>'
+        + arrowH + cntH + zExH
+      + '</div>'
+      + (n > 0 ? '<p class="m-hint">👆 Toca la foto para ampliar · Arrastra para explorar · Toca de nuevo para cerrar</p>' : '')
+      + (thumbH ? '<div class="m-thumbs">' + thumbH + '</div>' : '')
+      + '<div class="m-info">'
+        + '<h2 class="m-nombre">' + prod.nombre + '</h2>'
+        + '<p class="m-cat">' + em + ' ' + prod.categoria + '</p>'
+        + '<span class="m-precio">' + fmtP(prod.precioContado) + '</span>'
+        + '<div class="m-disp">' + disp + '</div>'
+        + descH + videoH
+        + '<button class="m-cta" onclick="abrirForm()">'
+          + '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">'
+            + '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>'
+          + '</svg>'
+          + ' 💵 PEDIR — PAGO AL RECIBIR'
+        + '</button>'
+      + '</div>';
+
+    /* Eventos del carrusel */
+    var car = document.getElementById('mCar');
+    if (car) {
+      car.addEventListener('touchstart', onDown, { passive: true });
+      car.addEventListener('touchmove',  onMove, { passive: false });
+      car.addEventListener('touchend',   onUp,   { passive: true });
+      car.addEventListener('mousedown',  onDown);
+    }
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup',   onUp);
     document.getElementById('modalProd').classList.add('show');
     startTimer();
   }
 
-  function cerrarModal(){
-    stopTimer();zoomOut();ptDn=false;
-    window.removeEventListener('mousemove',onMove);
-    window.removeEventListener('mouseup',onUp);
+  function cerrarModal() {
+    stopTimer(); zoomOut(); ptDn = false;
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup',   onUp);
     document.getElementById('modalProd').classList.remove('show');
-    prod=null;
+    prod = null;
   }
 
-  /* CAROUSEL */
-  function syncSlider(){
-    var t=document.getElementById('mTrack');if(t)t.style.transform='translateX(-'+(slideIdx*100)+'%)';
-    var ct=document.getElementById('mCnt');if(ct)ct.textContent=(slideIdx+1)+' / '+slideImgs.length;
-    document.querySelectorAll('.m-thumb').forEach(function(th,i){th.classList.toggle('on',i===slideIdx);});
+  /* CARRUSEL */
+  function syncSlider() {
+    var t = document.getElementById('mTrack');
+    if (t) t.style.transform = 'translateX(-' + (sIdx * 100) + '%)';
+    var c = document.getElementById('mCnt');
+    if (c) c.textContent = (sIdx + 1) + ' / ' + sImgs.length;
+    document.querySelectorAll('.m-thumb').forEach(function(th, i) { th.classList.toggle('on', i === sIdx); });
   }
-  function irA(i){if(zOn){zoomOut();return;}slideIdx=i;syncSlider();resetTimer();}
-  function nextSlide(dir){if(zOn){zoomOut();return;}slideIdx=(slideIdx+dir+slideImgs.length)%slideImgs.length;syncSlider();resetTimer();}
-  function startTimer(){stopTimer();if(slideImgs.length<=1||zOn)return;slideTimer=setInterval(function(){if(zOn)return;slideIdx=(slideIdx+1)%slideImgs.length;syncSlider();},4000);}
-  function stopTimer(){if(slideTimer){clearInterval(slideTimer);slideTimer=null;}}
-  function resetTimer(){stopTimer();startTimer();}
+  function irA(i) {
+    if (zOn) { zoomOut(); return; }
+    sIdx = i; syncSlider(); resetTimer();
+  }
+  function nextSlide(dir) {
+    if (zOn) { zoomOut(); return; }
+    sIdx = (sIdx + dir + sImgs.length) % sImgs.length;
+    syncSlider(); resetTimer();
+  }
+  function startTimer() {
+    stopTimer();
+    if (sImgs.length <= 1 || zOn) return;
+    sTimer = setInterval(function() { if (zOn) return; sIdx = (sIdx + 1) % sImgs.length; syncSlider(); }, 4000);
+  }
+  function stopTimer() { if (sTimer) { clearInterval(sTimer); sTimer = null; } }
+  function resetTimer() { stopTimer(); startTimer(); }
 
-  /* ZOOM INTERACTIVO: toca donde quieras → amplía ahí → arrastra para explorar */
-  function getActImg(){var ss=document.querySelectorAll('#mBox .m-slide');return(ss&&slideIdx<ss.length)?ss[slideIdx].querySelector('img'):null;}
-  function getActSlide(){var ss=document.querySelectorAll('#mBox .m-slide');return(ss&&slideIdx<ss.length)?ss[slideIdx]:null;}
+  /* ZOOM INTERACTIVO: tap = zoom donde tocas, drag = explorar, tap de nuevo = salir */
+  function getActImg() {
+    var ss = document.querySelectorAll('#mBox .m-slide');
+    return (ss && sIdx < ss.length) ? ss[sIdx].querySelector('img') : null;
+  }
+  function getActSlide() {
+    var ss = document.querySelectorAll('#mBox .m-slide');
+    return (ss && sIdx < ss.length) ? ss[sIdx] : null;
+  }
 
-  function zoomAt(cx,cy){
-    var img=getActImg();if(!img)return;
-    var r=img.getBoundingClientRect();
-    if(!r.width||!r.height)return;
-    zOX=Math.max(5,Math.min(95,(cx-r.left)/r.width*100));
-    zOY=Math.max(5,Math.min(95,(cy-r.top)/r.height*100));
-    img.style.transition='transform .22s ease';
-    img.style.transformOrigin=zOX+'% '+zOY+'%';
-    img.style.transform='scale('+SCALE+')';
-    zOn=true;
-    var s=getActSlide();if(s)s.classList.add('zoomed');
-    var car=document.getElementById('mCar');if(car)car.classList.add('car-zoomed');
+  function zoomAt(cx, cy) {
+    var img = getActImg(); if (!img) return;
+    var r = img.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    zOX = Math.max(5, Math.min(95, (cx - r.left) / r.width  * 100));
+    zOY = Math.max(5, Math.min(95, (cy - r.top)  / r.height * 100));
+    img.style.transition    = 'transform .22s ease';
+    img.style.transformOrigin = zOX + '% ' + zOY + '%';
+    img.style.transform     = 'scale(' + SCALE + ')';
+    zOn = true;
+    var s   = getActSlide();   if (s)   s.classList.add('zoomed');
+    var car = document.getElementById('mCar'); if (car) car.classList.add('car-zoomed');
     stopTimer();
   }
 
-  function zoomOut(){
-    if(!zOn)return;
-    var img=getActImg();
-    if(img){img.style.transition='transform .22s ease';img.style.transform='scale(1)';img.style.transformOrigin='50% 50%';}
-    document.querySelectorAll('#mBox .m-slide').forEach(function(s){s.classList.remove('zoomed');});
-    var car=document.getElementById('mCar');if(car)car.classList.remove('car-zoomed');
-    zOn=false;zOX=50;zOY=50;
-    if(document.getElementById('modalProd')&&document.getElementById('modalProd').classList.contains('show'))startTimer();
+  function zoomOut() {
+    if (!zOn) return;
+    var img = getActImg();
+    if (img) {
+      img.style.transition    = 'transform .22s ease';
+      img.style.transform     = 'scale(1)';
+      img.style.transformOrigin = '50% 50%';
+    }
+    document.querySelectorAll('#mBox .m-slide').forEach(function(s) { s.classList.remove('zoomed'); });
+    var car = document.getElementById('mCar'); if (car) car.classList.remove('car-zoomed');
+    zOn = false; zOX = 50; zOY = 50;
+    var mp = document.getElementById('modalProd');
+    if (mp && mp.classList.contains('show')) startTimer();
   }
 
-  function panZoom(dx,dy){
-    var img=getActImg();if(!img||!zOn)return;
-    var fw=img.offsetWidth||300,fh=img.offsetHeight||300;
-    var nx=Math.max(5,Math.min(95,zOX0-(dx/fw*100)));
-    var ny=Math.max(5,Math.min(95,zOY0-(dy/fh*100)));
-    img.style.transition='none';
-    img.style.transformOrigin=nx+'% '+ny+'%';
-    img.style.transform='scale('+SCALE+')';
-    zOX=nx;zOY=ny;
+  function panZoom(dx, dy) {
+    var img = getActImg(); if (!img || !zOn) return;
+    var fw = img.offsetWidth || 300, fh = img.offsetHeight || 300;
+    var nx = Math.max(5, Math.min(95, zOX0 - (dx / fw * 100)));
+    var ny = Math.max(5, Math.min(95, zOY0 - (dy / fh * 100)));
+    img.style.transition    = 'none';
+    img.style.transformOrigin = nx + '% ' + ny + '%';
+    img.style.transform     = 'scale(' + SCALE + ')';
+    zOX = nx; zOY = ny;
   }
 
   /* EVENTOS UNIFICADOS: touch + mouse */
-  function onDown(e){
-    var p=e.touches?e.touches[0]:e;
-    ptDn=true;ptMv=false;ptX0=p.clientX;ptY0=p.clientY;
-    zOX0=zOX;zOY0=zOY;
-    var img=getActImg();if(img&&zOn)img.style.transition='none';
-    if(e.type==='mousedown')e.preventDefault();
+  function onDown(e) {
+    var p = e.touches ? e.touches[0] : e;
+    ptDn = true; ptMv = false; ptX0 = p.clientX; ptY0 = p.clientY;
+    zOX0 = zOX; zOY0 = zOY;
+    var img = getActImg(); if (img && zOn) img.style.transition = 'none';
+    if (e.type === 'mousedown') e.preventDefault();
   }
-  function onMove(e){
-    if(!ptDn)return;
-    var p=e.touches?e.touches[0]:e;
-    var dx=p.clientX-ptX0,dy=p.clientY-ptY0;
-    if(Math.abs(dx)>7||Math.abs(dy)>7)ptMv=true;
-    if(zOn){if(e.cancelable)e.preventDefault();panZoom(dx,dy);}
+  function onMove(e) {
+    if (!ptDn) return;
+    var p  = e.touches ? e.touches[0] : e;
+    var dx = p.clientX - ptX0, dy = p.clientY - ptY0;
+    if (Math.abs(dx) > 7 || Math.abs(dy) > 7) ptMv = true;
+    if (zOn) { if (e.cancelable) e.preventDefault(); panZoom(dx, dy); }
   }
-  function onUp(e){
-    if(!ptDn)return;ptDn=false;
-    var p=e.changedTouches?e.changedTouches[0]:e;
-    var dx=p.clientX-ptX0;
-    if(zOn){if(!ptMv)zoomOut();}
-    else{if(!ptMv){zoomAt(p.clientX,p.clientY);}else if(Math.abs(dx)>45&&slideImgs.length>1){nextSlide(dx<0?1:-1);}}
+  function onUp(e) {
+    if (!ptDn) return; ptDn = false;
+    var p  = e.changedTouches ? e.changedTouches[0] : e;
+    var dx = p.clientX - ptX0;
+    if (zOn) {
+      if (!ptMv) zoomOut();
+    } else {
+      if (!ptMv)             { zoomAt(p.clientX, p.clientY); }
+      else if (Math.abs(dx) > 45 && sImgs.length > 1) { nextSlide(dx < 0 ? 1 : -1); }
+    }
   }
 
-  /* FORMULARIO */
-  function abrirForm(){
-    if(!prod)return;
-    document.getElementById('fPNom').textContent=prod.nombre;
-    document.getElementById('fPPrecio').textContent=fmtP(prod.precioContado);
-    document.getElementById('fNom').value='';document.getElementById('fCel').value='';document.getElementById('fDir').value='';
+  /* FORMULARIO DE PEDIDO */
+  function abrirForm() {
+    if (!prod) return;
+    document.getElementById('fPNom').textContent    = prod.nombre;
+    document.getElementById('fPPrecio').textContent = fmtP(prod.precioContado);
+    document.getElementById('fNom').value = '';
+    document.getElementById('fCel').value = '';
+    document.getElementById('fDir').value = '';
     document.getElementById('modalProd').classList.remove('show');
     document.getElementById('modalForm').classList.add('show');
     stopTimer();
-    setTimeout(function(){var e=document.getElementById('fNom');if(e)e.focus();},300);
+    setTimeout(function() { var e = document.getElementById('fNom'); if (e) e.focus(); }, 300);
   }
-  function cerrarForm(){
+  function cerrarForm() {
     document.getElementById('modalForm').classList.remove('show');
-    if(prod){document.getElementById('modalProd').classList.add('show');startTimer();}
+    if (prod) { document.getElementById('modalProd').classList.add('show'); startTimer(); }
   }
 
-  function enviarWA(){
-    var nom=document.getElementById('fNom').value.trim();
-    var cel=document.getElementById('fCel').value.trim();
-    var dir=document.getElementById('fDir').value.trim();
-    if(!nom||!cel||!dir){alert('Por favor completa tu nombre, celular y dirección.');return;}
-    var em=getEm(prod.categoria);
-    var NL=String.fromCharCode(10);
-    var msg='Hola Atarashi Outlet, estoy interesado en el producto '+prod.nombre+
-      ' ('+em+' '+prod.categoria+') para pago contra entrega. coordinamos para que envies '+prod.nombre+'.'+
-      NL+NL+'Mis datos de entrega:'+NL+'Nombre: '+nom+NL+'Celular: '+cel+NL+'Dirección: '+dir+NL+'Precio: '+fmtP(prod.precioContado);
-    window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
+  /* WHATSAPP COD */
+  function enviarWA() {
+    var nom = document.getElementById('fNom').value.trim();
+    var cel = document.getElementById('fCel').value.trim();
+    var dir = document.getElementById('fDir').value.trim();
+    if (!nom || !cel || !dir) { alert('Por favor completa tu nombre, celular y dirección de entrega.'); return; }
+    var em = getEm(prod.categoria);
+    var NL = String.fromCharCode(10);
+    var msg = 'Hola Atarashi Outlet, estoy interesado en el producto ' + prod.nombre
+      + ' (' + em + ' ' + prod.categoria + ')'
+      + ' para pago contra entrega. coordinamos para que envies ' + prod.nombre + '.'
+      + NL + NL + '📋 *Mis datos de entrega:*'
+      + NL + '👤 Nombre: '    + nom
+      + NL + '📞 Celular: '   + cel
+      + NL + '📍 Dirección: ' + dir
+      + NL + '💰 Precio confirmado: ' + fmtP(prod.precioContado);
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
     cerrarForm();
   }
 
+  /* ARRANQUE */
   inicializar();
 </script>
 </body>
