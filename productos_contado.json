@@ -894,6 +894,22 @@
       ],
       "video": "",
       "id": 1783608626555
+    },
+    {
+      "nombre": "*💯CONJUNTO CABALLERO 🧔🏻‍♂️",
+      "categoria": "Ropa caballero 😎",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 85000,
+      "descripcion": "*💯CONJUNTO CABALLERO 🧔🏻‍♂️ EN TELA REPUJADA   , DISPONIBLE TALLAS: S-M",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608778/atarashi_contado/fmwlonvlemm2hyg93byx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608778/atarashi_contado/akxroxkfy6hhsrgggesw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608778/atarashi_contado/q4972svfmyflb1uy4cgv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608778/atarashi_contado/sboncpl1cuvg1exjafej.jpg"
+      ],
+      "video": "",
+      "id": 1783608860763
     }
   ],
   "categorias": [
@@ -936,6 +952,14 @@
     {
       "emoji": "👨",
       "nombre": "Locion caballero"
+    },
+    {
+      "emoji": "👕",
+      "nombre": "Ropa caballero 😎"
+    },
+    {
+      "emoji": "👕",
+      "nombre": "Ropa dama 😍"
     }
   ]
 }
