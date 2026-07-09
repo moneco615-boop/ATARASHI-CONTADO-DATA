@@ -990,6 +990,19 @@
       ],
       "video": "",
       "id": 1783610555693
+    },
+    {
+      "nombre": "ARIANA GRANDE",
+      "categoria": "Locion dama",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 100000,
+      "descripcion": "¡Lleva contigo la fragancia del éxito! Ariana Grande Cloud es un Eau de Parfum diseñado para la mujer moderna, optimista y segura de sí misma.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783610590/atarashi_contado/ld8ljuxg5coamqaf51xp.jpg"
+      ],
+      "video": "",
+      "id": 1783610664330
     }
   ],
   "categorias": [
