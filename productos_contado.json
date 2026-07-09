@@ -1090,6 +1090,20 @@
       ],
       "video": "",
       "id": 1783612766525
+    },
+    {
+      "nombre": "ASICS GEL DAMA",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "descripcion": "✨ Camina con total comodidad y estilo con los ASICS GEL para dama. Gracias a su tecnología de amortiguación, ofrecen una pisada suave, excelente soporte y gran confort durante todo el día. Ideales para entrenar, caminar o complementar cualquier outfit deportivo",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612823/atarashi_contado/em4vgxulpc4ayaragxut.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612823/atarashi_contado/iwvl3rqztj21lsq4spmh.jpg"
+      ],
+      "video": "",
+      "id": 1783612873450
     }
   ],
   "categorias": [
