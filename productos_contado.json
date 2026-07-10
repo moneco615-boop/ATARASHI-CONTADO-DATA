@@ -1385,20 +1385,18 @@
       "id": 1783640764525
     },
     {
-      "nombre": "GORRAS ADIDAS",
+      "nombre": "GORRA ADIDAS",
       "categoria": "Gorras",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "📉 ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
-      "descripcion": "🧢 Eleva tu estilo con las nuevas gorras Adidas.\nDiseños modernos, excelente acabado y ajuste cómodo para acompañarte todos los días. Disponibles en diferentes modelos y colores para que elijas la que mejor va contigo. ¡Un accesorio que no puede faltar en tu colección!",
+      "descripcion": "🔥 Las gorras que marcan la diferencia.\nDale un toque deportivo y urbano a tu outfit con nuestra colección de gorras adidas, ajuste regulable y gran comodidad.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/pejrqvfzzun5m2ycs6yz.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/spkr3fjpqs5rrprdcwbf.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/mbwbgn87vto5q0relam0.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/ctk2n8xihvnn1lxrketc.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783642136/atarashi_contado/qwohartjuycc6f7lkbkk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783642136/atarashi_contado/pnvor8aotxwswfuzbfyl.jpg"
       ],
       "video": "",
-      "id": 1783642078553
+      "id": 1783642275021
     }
   ],
   "categorias": [
