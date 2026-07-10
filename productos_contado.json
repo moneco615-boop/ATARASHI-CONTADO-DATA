@@ -1779,13 +1779,24 @@
       ],
       "video": "",
       "id": 1783657334486
+    },
+    {
+      "nombre": "NIKE SHOX SUPREME",
+      "categoria": "Calzado dama🥰",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "descripcion": "Luce un estilo único con los icónicos Nike Shox. Su diseño moderno y llamativo, junto con su excelente amortiguación y comodidad, los convierten en la opción ideal para el día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783698473/atarashi_contado/aqf7lyyrzxdrkeuaptq2.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783698474/atarashi_contado/tsql4cofkvt5df5rpxjk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783698473/atarashi_contado/azs6kbwozbeyoaxighiz.jpg"
+      ],
+      "video": "",
+      "id": 1783698597827
     }
   ],
   "categorias": [
-    {
-      "emoji": "👟",
-      "nombre": "Calzado"
-    },
     {
       "emoji": "👕",
       "nombre": "Ropa"
@@ -1833,6 +1844,10 @@
     {
       "emoji": "🧢",
       "nombre": "Gorras"
+    },
+    {
+      "emoji": "👟",
+      "nombre": "Calzado dama🥰"
     }
   ]
 }
