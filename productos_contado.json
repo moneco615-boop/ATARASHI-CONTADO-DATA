@@ -1383,6 +1383,22 @@
       ],
       "video": "",
       "id": 1783640764525
+    },
+    {
+      "nombre": "GORRAS ADIDAS",
+      "categoria": "Gorras",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "descripcion": "🧢 Eleva tu estilo con las nuevas gorras Adidas.\nDiseños modernos, excelente acabado y ajuste cómodo para acompañarte todos los días. Disponibles en diferentes modelos y colores para que elijas la que mejor va contigo. ¡Un accesorio que no puede faltar en tu colección!",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/pejrqvfzzun5m2ycs6yz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/spkr3fjpqs5rrprdcwbf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/mbwbgn87vto5q0relam0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783641900/atarashi_contado/ctk2n8xihvnn1lxrketc.jpg"
+      ],
+      "video": "",
+      "id": 1783642078553
     }
   ],
   "categorias": [
@@ -1433,6 +1449,10 @@
     {
       "emoji": "👕",
       "nombre": "Ropa dama 😍"
+    },
+    {
+      "emoji": "🧢",
+      "nombre": "Gorras"
     }
   ]
 }
