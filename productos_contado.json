@@ -1871,6 +1871,28 @@
       ],
       "video": "",
       "id": 1783699411147
+    },
+    {
+      "nombre": "*💯CAMISETA EN ALGODÓN CON CUELLO RIB",
+      "categoria": "Ropa",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 50000,
+      "descripcion": "Camisetas en algodón de cuello redondo, cómodas, frescas y versátiles, disponibles en varias marcas como MX, Nike y Jordan para un estilo casual y deportivo.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699489/atarashi_contado/clzxsi58ii372yoilaz0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699489/atarashi_contado/vt50qwiiof4jlp3jerfo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699489/atarashi_contado/cspfjtllmugnbfsngvqq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699489/atarashi_contado/zatbuh4jq705utfcvkyo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699489/atarashi_contado/mhwbbcfdraswppibfiuf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699489/atarashi_contado/beieufprsulqwnhsoso7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699490/atarashi_contado/r747ulgqkjpsr4nnyojh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699490/atarashi_contado/rqe3cssaehvxscd413sh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699490/atarashi_contado/baqcgz5achzntkzudi5x.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699490/atarashi_contado/geduzrgribzz04gu6rcq.jpg"
+      ],
+      "video": "",
+      "id": 1783699600516
     }
   ],
   "categorias": [
