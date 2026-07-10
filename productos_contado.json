@@ -1763,6 +1763,22 @@
       ],
       "video": "",
       "id": 1783651173792
+    },
+    {
+      "nombre": "NIKE OZUNA",
+      "categoria": "Calzado",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 70000,
+      "descripcion": "brutales",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657297/atarashi_contado/yi61cc9gxk2nr2mpbjzn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/jkwnx0iu0rapzvntfae4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/gh5kxcq1ycw278i9iu8b.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/k25lii2nq78alm2tbsae.jpg"
+      ],
+      "video": "",
+      "id": 1783657334486
     }
   ],
   "categorias": [
