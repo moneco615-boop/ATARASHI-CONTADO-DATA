@@ -1794,6 +1794,20 @@
       ],
       "video": "",
       "id": 1783698597827
+    },
+    {
+      "nombre": "NIKE SHOX",
+      "categoria": "Calzado dama🥰",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "descripcion": "Luce un estilo único con los icónicos Nike Shox. Su diseño moderno y llamativo, junto con su excelente amortiguación y comodidad, los convierten en la opción ideal para el día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783698666/atarashi_contado/zve8o5oqtimc2sybptaq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783698666/atarashi_contado/k24mtgxiqfzx5zgkkqcs.jpg"
+      ],
+      "video": "",
+      "id": 1783698725652
     }
   ],
   "categorias": [
@@ -1848,6 +1862,10 @@
     {
       "emoji": "👟",
       "nombre": "Calzado dama🥰"
+    },
+    {
+      "emoji": "👟",
+      "nombre": "Calzado caballero😎"
     }
   ]
 }
