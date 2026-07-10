@@ -1299,9 +1299,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .card{background:var(--ca);border:1px solid rgba(201,160,42,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .28s,border-color .28s,box-shadow .28s;}
 .card:hover{transform:translateY(-4px);border-color:rgba(201,160,42,.42);box-shadow:0 10px 30px rgba(0,0,0,.5);}
 .card-badge{position:absolute;top:10px;right:10px;background:var(--br);color:#000;font-size:10px;font-weight:900;padding:3px 9px;border-radius:3px;z-index:5;text-transform:uppercase;}
-.card-img{width:100%;height:220px;background:#141414;display:flex;align-items:center;justify-content:center;padding:12px;cursor:pointer;}
+.card-img{width:100%;height:280px;background:#141414;display:flex;align-items:center;justify-content:center;padding:12px;cursor:pointer;}
 .card-img img{max-width:100%;max-height:100%;object-fit:contain;}
-@media(max-width:500px){.card-img{height:150px;padding:8px;}.card-img img{object-fit:cover;border-radius:4px;}}
+@media(max-width:500px){.card-img{height:190px;padding:8px;}.card-img img{object-fit:cover;border-radius:4px;}}
 .card-body{padding:10px 12px 4px;border-top:1px solid rgba(255,255,255,.03);background:#151515;flex:1;cursor:pointer;}
 .card-cat{font-size:11px;color:var(--gr);margin-bottom:2px;}
 .card-name{font-family:var(--T);font-size:17px;letter-spacing:.5px;text-transform:uppercase;color:var(--wh);margin-bottom:3px;line-height:1.1;}
@@ -1334,7 +1334,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 /* CAROUSEL */
 .m-car{position:relative;width:100%;background:#080808;overflow:hidden;user-select:none;touch-action:none;}
 .m-track{display:flex;transition:transform .4s cubic-bezier(.25,.8,.25,1);}
-.m-slide{flex-shrink:0;width:100%;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in;}
+.m-slide{flex-shrink:0;width:100%;height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in;}
 .m-slide.zoomed{cursor:move;}
 .m-slide img{max-width:100%;max-height:100%;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;transform-origin:50% 50%;transition:transform .22s ease;will-change:transform;}
 .m-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.18);color:var(--br);width:36px;height:36px;border-radius:50%;font-size:14px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;}
@@ -1450,11 +1450,13 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .f-cta:hover{background:#1eb358;}
 .f-back{width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--gr);padding:10px;border-radius:8px;font-size:13px;cursor:pointer;margin-top:8px;}
 .f-nota{font-size:10px;color:var(--gr);text-align:center;margin-top:10px;line-height:1.5;}
+.aviso-disp{font-size:11px;color:#6a6a62;line-height:1.55;padding:8px 11px;background:rgba(255,255,255,.025);border-radius:6px;margin-bottom:12px;border-left:2px solid rgba(201,160,42,.22);font-style:italic;}
 
 </style>
 </head>
 <body>
-<div class="portada" id="portada"><div class="p-lt"></div><div class="p-lb"></div><div class="p-logo">ATARASHI <span>STORE</span></div><p class="p-sub">Tu tienda en Cali, Colombia</p><div class="p-div"></div><h1 class="p-tit">¿Para qué ir al centro<br>si el centro <span class="oro">puede ir a ti?</span></h1><p class="p-desc">Compra desde cualquier lugar de Cali y recibe tus productos con <strong>pago contraentrega</strong>. Sin filas, sin tráfico y con la tranquilidad de pagar solo al recibir.</p><div class="p-pills"><span class="p-pill">🚚 Domicilio a Cali</span><span class="p-pill">✅ Pagas al recibir</span><span class="p-pill">💵 Solo efectivo</span><span class="p-pill">🛡️ 100% Seguro</span></div><button class="p-btn" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity .35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360)})()">VER PRODUCTOS →</button><span class="p-nota">Cali · Colombia · Efectivo al recibir</span></div><header class="s-hdr"><h1>ATARASHI <span>STORE</span></h1><small>Pago Contraentrega · Cali</small></header><div class="trust"><span>🚚 Domicilio Cali</span><span>✅ Pagas al recibir</span><span>💵 Efectivo en tu puerta</span><span>💬 WhatsApp</span></div><div class="ctn"><div class="filtros" id="filtros"></div><div class="grid" id="grid"><p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">⏳ Cargando...</p></div></div><!-- FAB CARRITO --><button class="cart-fab" id="cartFab" onclick="abrirCarrito()">🛒 <span class="cart-fab-badge" id="cartFabBadge">0 — $0</span></button><!-- TOAST --><div class="toast" id="toast"></div><!-- MODAL PRODUCTO --><div class="modal-bg" id="modalProd" onclick="if(event.target.id==='modalProd')cerrarModal()"><div class="modal-box" id="mBox"></div></div><!-- CARRITO DRAWER --><div class="cart-ov" id="cartOv" onclick="if(event.target.id==='cartOv')cerrarCarrito()"><div class="cart-box"><div class="cart-hdr"><h2>🛒 <span>Carrito</span></h2><button class="m-close" onclick="cerrarCarrito()">✕</button></div><div class="cart-min"><div class="cart-min-top"><span>Pedido mínimo</span><strong id="cartMinLbl">$0 / $60.000</strong></div><div class="cart-prog-bar"><div class="cart-prog-fill" id="cartProgFill"></div></div><p class="cart-min-msg" id="cartMinMsg">Agrega productos para llegar al mínimo</p></div><div class="cart-items" id="cartItemsCont"></div><div class="cart-totales"><div class="c-tot-row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div><div class="c-tot-row c-tot-gratis"><span>Envío contraentrega</span><span>$0 GRATIS</span></div><div class="c-tot-final"><span>TOTAL</span><span id="cartTotal">$0</span></div></div><div class="cart-btns"><button class="btn-pedir" id="btnPedir" disabled onclick="hacerPedido()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> HACER PEDIDO — PAGO AL RECIBIR</button><button class="btn-print" onclick="imprimirFactura()">🖨️ Imprimir / Guardar PDF</button><button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar carrito</button></div></div></div><!-- FORM PEDIDO --><div class="fmodal-bg" id="modalForm" onclick="if(event.target.id==='modalForm')cerrarForm()"><div class="fmodal-box"><button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarForm()">✕</button><p class="f-logo">ATARASHI <span>STORE</span></p><p class="f-sub">Confirmar pedido · Pago en efectivo al recibir</p><div class="f-resumen"><p class="f-pnom" id="fPNom">—</p><p class="f-pprecio" id="fPPrecio">$0</p></div><div class="campo"><label>Tu nombre completo *</label><input type="text" id="fNom" placeholder="Ej: Juan Pérez" autocomplete="name"></div><div class="campo"><label>Tu celular / WhatsApp *</label><input type="tel" id="fCel" placeholder="Ej: 300 123 4567" autocomplete="tel"></div><div class="campo"><label>Dirección en Cali *</label><input type="text" id="fDir" placeholder="Ej: Cra 50 #20-15, Aguablanca"></div><button class="f-cta" onclick="enviarWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> ENVIAR PEDIDO POR WHATSAPP</button><button class="f-back" onclick="cerrarForm()">← Volver al carrito</button><p class="f-nota">Se abrirá WhatsApp con tu pedido completo. Solo presiona Enviar.<br>Pagas en efectivo cuando llegue a tu puerta.</p></div></div>
+<div class="portada" id="portada"><div class="p-lt"></div><div class="p-lb"></div><div class="p-logo">ATARASHI <span>STORE</span></div><p class="p-sub">Tu tienda en Cali, Colombia</p><div class="p-div"></div><h1 class="p-tit">¿Para qué ir al centro<br>si el centro <span class="oro">puede ir a ti?</span></h1><p class="p-desc">Compra desde cualquier lugar de Cali y recibe tus productos con <strong>pago contraentrega</strong>. Sin filas, sin tráfico y con la tranquilidad de pagar solo al recibir.</p><div class="p-pills"><span class="p-pill">🚚 Domicilio a Cali</span><span class="p-pill">✅ Pagas al recibir</span><span class="p-pill">💵 Solo efectivo</span><span class="p-pill">🛡️ 100% Seguro</span></div><button class="p-btn" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity .35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360)})()">VER PRODUCTOS →</button><span class="p-nota">Cali · Colombia · Efectivo al recibir</span></div><header class="s-hdr"><h1>ATARASHI <span>STORE</span></h1><small>Pago Contraentrega · Cali</small></header><div class="trust"><span>🚚 Domicilio Cali</span><span>✅ Pagas al recibir</span><span>💵 Efectivo en tu puerta</span><span>💬 WhatsApp</span></div><div class="ctn"><div class="filtros" id="filtros"></div><div class="grid" id="grid"><p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">⏳ Cargando...</p></div></div><!-- FAB CARRITO --><button class="cart-fab" id="cartFab" onclick="abrirCarrito()">🛒 <span class="cart-fab-badge" id="cartFabBadge">0 — $0</span></button><!-- TOAST --><div class="toast" id="toast"></div><!-- MODAL PRODUCTO --><div class="modal-bg" id="modalProd" onclick="if(event.target.id==='modalProd')cerrarModal()"><div class="modal-box" id="mBox"></div></div><!-- CARRITO DRAWER --><div class="cart-ov" id="cartOv" onclick="if(event.target.id==='cartOv')cerrarCarrito()"><div class="cart-box"><div class="cart-hdr"><h2>🛒 <span>Carrito</span></h2><button class="m-close" onclick="cerrarCarrito()">✕</button></div><div class="cart-min"><div class="cart-min-top"><span>Pedido mínimo</span><strong id="cartMinLbl">$0 / $60.000</strong></div><div class="cart-prog-bar"><div class="cart-prog-fill" id="cartProgFill"></div></div><p class="cart-min-msg" id="cartMinMsg">Agrega productos para llegar al mínimo</p></div><div class="cart-items" id="cartItemsCont"></div><div class="cart-totales"><div class="c-tot-row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div><div class="c-tot-row c-tot-gratis"><span>Envío contraentrega</span><span>$0 GRATIS</span></div><div class="c-tot-final"><span>TOTAL</span><span id="cartTotal">$0</span></div></div><div class="cart-btns"><button class="btn-pedir" id="btnPedir" disabled onclick="hacerPedido()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> HACER PEDIDO — PAGO AL RECIBIR</button><button class="btn-print" onclick="imprimirFactura()">🖨️ Imprimir / Guardar PDF</button><button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar carrito</button></div></div></div><!-- FORM PEDIDO --><div class="fmodal-bg" id="modalForm" onclick="if(event.target.id==='modalForm')cerrarForm()"><div class="fmodal-box"><button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarForm()">✕</button><p class="f-logo">ATARASHI <span>STORE</span></p><p class="f-sub">Confirmar pedido · Pago en efectivo al recibir</p><div class="f-resumen"><p class="f-pnom" id="fPNom">—</p><p class="f-pprecio" id="fPPrecio">$0</p></div><div class="campo"><label>Tu nombre completo *</label><input type="text" id="fNom" placeholder="Ej: Juan Pérez" autocomplete="name"></div><div class="campo"><label>Tu celular / WhatsApp *</label><input type="tel" id="fCel" placeholder="Ej: 300 123 4567" autocomplete="tel"></div><div class="campo" id="campoTalla" style="display:none;"><label>📏 ¿Qué talla necesitas? *</label><input type="text" id="fTalla" placeholder="Ej: 38 / M / L"></div>
+    <div class="campo"><label>Dirección en Cali *</label><input type="text" id="fDir" placeholder="Ej: Cra 50 #20-15, Aguablanca"></div><button class="f-cta" onclick="enviarWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> ENVIAR PEDIDO POR WHATSAPP</button><button class="f-back" onclick="cerrarForm()">← Volver al carrito</button><p class="f-nota">Se abrirá WhatsApp con tu pedido completo. Solo presiona Enviar.<br>Pagas en efectivo cuando llegue a tu puerta.</p></div></div>
 <script>
 
   var WA = '${wa}';
@@ -1645,6 +1647,19 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     document.getElementById('fNom').value = '';
     document.getElementById('fCel').value = '';
     document.getElementById('fDir').value = '';
+    /* Talla: mostrar si hay calzado o ropa en el carrito */
+    var _tallaBox=document.getElementById('campoTalla');
+    var _tallaInp=document.getElementById('fTalla');
+    if(_tallaBox&&_tallaInp){
+      var _necTalla=Object.values(carrito).some(function(i){return necesitaTalla(i.prod);});
+      _tallaBox.style.display=_necTalla?'block':'none';
+      _tallaInp.value='';
+      if(_necTalla){
+        var _tieneCalz=Object.values(carrito).some(function(i){return esCalzado(i.prod);});
+        var _tieneRopa=Object.values(carrito).some(function(i){return esRopa(i.prod);});
+        _tallaInp.placeholder=(_tieneCalz&&_tieneRopa)?'Ej: Calzado 40, Camiseta M':_tieneCalz?'Ej: 36, 38, 40...':'Ej: S, M, L, XL...';
+      }
+    }
     document.getElementById('modalForm').classList.add('show');
     setTimeout(function(){ var e=document.getElementById('fNom');if(e)e.focus(); },300);
   }
@@ -1654,6 +1669,10 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     var nom = document.getElementById('fNom').value.trim();
     var cel = document.getElementById('fCel').value.trim();
     var dir = document.getElementById('fDir').value.trim();
+    var _tB=document.getElementById('campoTalla');
+    var _tI=document.getElementById('fTalla');
+    var talla=(_tB&&_tI&&_tB.style.display!=='none')?_tI.value.trim():'';
+    if(_tB&&_tB.style.display!=='none'&&!talla){alert('Por favor indica tu talla.');return;}
     if (!nom||!cel||!dir) { alert('Por favor completa todos los campos.'); return; }
     var NL = String.fromCharCode(10);
     var total = getTotal();
@@ -1668,7 +1687,8 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       +NL+NL+'\u{1F4CB} *Mis datos de entrega:*'
       +NL+'\u{1F464} Nombre: '+nom
       +NL+'\u{1F4DE} Celular: '+cel
-      +NL+'\u{1F4CD} Direcci\u00f3n: '+dir;
+      +NL+'\u{1F4CD} Direcci\u00f3n: '+dir
+      +(talla?NL+'\u{1F4CF} Talla: '+talla:'');
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     cerrarForm();
     carrito = {};
@@ -1773,7 +1793,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
         +'<h2 class="m-nombre">'+prod.nombre+'</h2>'
         +'<p class="m-cat">'+em+' '+prod.categoria+'</p>'
         +'<span class="m-precio">'+fmtP(prod.precioContado)+'</span>'
-        +'<div class="m-disp">'+disp+'</div>'
+        +'<div class="m-disp">'+disp+'</div>'+'<p class="aviso-disp">⚠️ Nuestro inventario está en constante movimiento. Este producto está sujeto a disponibilidad al momento de confirmar tu pedido.</p>'
         +descH+videoH
         +'<div class="m-cart-row">'
           +'<div class="m-qty">'
@@ -1840,6 +1860,27 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   function onDown(e){var p=e.touches?e.touches[0]:e;ptDn=true;ptMv=false;ptX0=p.clientX;ptY0=p.clientY;zOX0=zOX;zOY0=zOY;var img=getActImg();if(img&&zOn)img.style.transition='none';if(e.type==='mousedown')e.preventDefault();}
   function onMove(e){if(!ptDn)return;var p=e.touches?e.touches[0]:e;var dx=p.clientX-ptX0,dy=p.clientY-ptY0;if(Math.abs(dx)>7||Math.abs(dy)>7)ptMv=true;if(zOn){if(e.cancelable)e.preventDefault();panZoom(dx,dy);}}
   function onUp(e){if(!ptDn)return;ptDn=false;var p=e.changedTouches?e.changedTouches[0]:e;var dx=p.clientX-ptX0;if(zOn){if(!ptMv)zoomOut();}else{if(!ptMv){zoomAt(p.clientX,p.clientY);}else if(Math.abs(dx)>45&&sImgs.length>1){nextSlide(dx<0?1:-1);}}}
+
+  /* ── DETECCIÓN TALLA: calzado y ropa ── */
+  function esCalzado(p){
+    var cat=(p.categoria||"").toLowerCase();
+    var kw=["calzado","zapato","tenis","bota","sandalia","chancla","zapatilla","tacon","tacón"];
+    for(var k=0;k<kw.length;k++){if(cat.indexOf(kw[k])!==-1)return true;}
+    var em=getEm(p.categoria);
+    var ems=["👟","👠","👡","👢","👞","🥾"];
+    for(var e=0;e<ems.length;e++){if(em===ems[e])return true;}
+    return false;
+  }
+  function esRopa(p){
+    var cat=(p.categoria||"").toLowerCase();
+    var kw=["ropa","camisa","camiseta","pantalon","pantalón","vestido","blusa","chaqueta","abrigo","dama","caballero","unisex","moda","conjunto","falda","sudadera","polo","tela"];
+    for(var k=0;k<kw.length;k++){if(cat.indexOf(kw[k])!==-1)return true;}
+    var em=getEm(p.categoria);
+    var ems=["👕","👖","👗","👘","👙","👚","🧥","🎿"];
+    for(var e=0;e<ems.length;e++){if(em===ems[e])return true;}
+    return false;
+  }
+  function necesitaTalla(p){ return esCalzado(p)||esRopa(p); }
 
   inicializar();
 
