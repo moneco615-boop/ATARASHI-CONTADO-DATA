@@ -1792,6 +1792,19 @@
       ],
       "video": "",
       "id": 1783657609729
+    },
+    {
+      "nombre": "MALETIN DIENTES",
+      "categoria": "Accesorios moto",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 5000,
+      "descripcion": "dienton",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783690510/atarashi_contado/pi75ehzmpjcb35tz2qak.jpg"
+      ],
+      "video": "",
+      "id": 1783690550481
     }
   ],
   "categorias": [
