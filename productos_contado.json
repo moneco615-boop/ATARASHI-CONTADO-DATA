@@ -1779,6 +1779,19 @@
       ],
       "video": "",
       "id": 1783657334486
+    },
+    {
+      "nombre": "MALETIN",
+      "categoria": "Tecnología",
+      "badge": "📦 LIQUIDACIÓN",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "descripcion": "maleta",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657569/atarashi_contado/m0djrz9kpnbzkczki0j9.jpg"
+      ],
+      "video": "",
+      "id": 1783657609729
     }
   ],
   "categorias": [
