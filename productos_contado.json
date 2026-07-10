@@ -1769,8 +1769,8 @@
       "categoria": "Calzado",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
-      "precioContado": 70000,
-      "descripcion": "brutales",
+      "precioContado": 80000,
+      "descripcion": "Comodidad y estilo en cada paso. Con un diseño moderno y ligero, estas chanclas son ideales para el uso diario, la playa, la piscina o para disfrutar de la máxima comodidad en cualquier momento",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657297/atarashi_contado/yi61cc9gxk2nr2mpbjzn.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/jkwnx0iu0rapzvntfae4.jpg",
@@ -1779,32 +1779,6 @@
       ],
       "video": "",
       "id": 1783657334486
-    },
-    {
-      "nombre": "MALETIN",
-      "categoria": "Tecnología",
-      "badge": "📦 LIQUIDACIÓN",
-      "disponibilidad": "inmediata",
-      "precioContado": 80000,
-      "descripcion": "maleta",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657569/atarashi_contado/m0djrz9kpnbzkczki0j9.jpg"
-      ],
-      "video": "",
-      "id": 1783657609729
-    },
-    {
-      "nombre": "MALETIN DIENTES..",
-      "categoria": "Accesorios moto",
-      "badge": "🆕 NUEVO INGRESO",
-      "disponibilidad": "inmediata",
-      "precioContado": 5000,
-      "descripcion": "dienton",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783690510/atarashi_contado/pi75ehzmpjcb35tz2qak.jpg"
-      ],
-      "video": "",
-      "id": 1783690550481
     }
   ],
   "categorias": [
