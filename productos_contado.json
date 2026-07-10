@@ -1934,6 +1934,32 @@
       ],
       "video": "",
       "id": 1783705533470
+    },
+    {
+      "nombre": "✨ 360° MEN",
+      "categoria": "Locion caballero",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 70000,
+      "descripcion": "Una fragancia fresca, limpia y masculina, perfecta para el hombre que busca proyectar elegancia y seguridad todos los días. Su combinación de notas cítricas, especiadas y amaderadas ofrece un aroma versátil, ideal para cualquier ocasión.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783707106/atarashi_contado/dgigrigjm7vkq1bmxckv.jpg"
+      ],
+      "video": "",
+      "id": 1783707179023
+    },
+    {
+      "nombre": "✨ 360° RED",
+      "categoria": "Locion caballero",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 70000,
+      "descripcion": "Una fragancia vibrante, fresca y seductora que combina notas cítricas, especiadas y amaderadas para crear un aroma moderno y lleno de personalidad. Ideal para el hombre que quiere destacar con un estilo elegante y seguro.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783707266/atarashi_contado/vgjaiqfeuddscx74tlok.jpg"
+      ],
+      "video": "",
+      "id": 1783707302504
     }
   ],
   "categorias": [
