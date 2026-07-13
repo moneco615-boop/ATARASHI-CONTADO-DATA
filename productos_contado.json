@@ -2116,6 +2116,19 @@
       ],
       "video": "",
       "id": 1783970433679
+    },
+    {
+      "nombre": "RE BALANCE BEAT",
+      "categoria": "Ropa",
+      "badge": "📦 LIQUIDACIÓN",
+      "disponibilidad": "inmediata",
+      "precioContado": 40000,
+      "descripcion": "Liquidación total",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783985289/atarashi_contado/nobw0h8trqgld5olc2vu.jpg"
+      ],
+      "video": "",
+      "id": 1783985324462
     }
   ],
   "categorias": [
