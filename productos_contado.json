@@ -2089,6 +2089,20 @@
       ],
       "video": "",
       "id": 1783963756274
+    },
+    {
+      "nombre": "MALETIN",
+      "categoria": "Tecnología",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 200000,
+      "descripcion": "maletin gris. lindo lindo",
+      "variantes": "blanco, rojo, negro, azul",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783964785/atarashi_contado/jnrhja99a4siahrknr47.jpg"
+      ],
+      "video": "",
+      "id": 1783964843344
     }
   ],
   "categorias": [
