@@ -2075,6 +2075,20 @@
       ],
       "video": "",
       "id": 1783709931618
+    },
+    {
+      "nombre": "MALETIN",
+      "categoria": "Accesorios moto",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 90000,
+      "descripcion": "dientes ojo te muerde",
+      "variantes": "blanco, rojo, verde, mueco.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783963658/atarashi_contado/i5lfqq1esewza1ptmiwb.jpg"
+      ],
+      "video": "",
+      "id": 1783963756274
     }
   ],
   "categorias": [
