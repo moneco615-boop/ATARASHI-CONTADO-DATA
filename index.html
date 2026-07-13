@@ -520,18 +520,30 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   function toggleMenu(){
     var o=document.getElementById('sidebarOv');
     o.classList.toggle('show');
-    if(o.classList.contains('show')){
-      var h='<button class="side-cat" onclick="filtrarMenu('todos')">&#128722; Todos los productos</button>';
-      CATS.forEach(function(cat){
-        h+='<button class="side-cat" onclick="filtrarMenu(''+cat.nombre+'')">'+ cat.emoji+' '+cat.nombre+'</button>';
-      });
-      document.getElementById('sidebarCats').innerHTML=h;
-    }
+    if(o.classList.contains('show')) renderSidebarCats();
   }
   function cerrarMenu(){document.getElementById('sidebarOv').classList.remove('show');}
   function filtrarMenu(val){
     filtro=val;renderGrid();cerrarMenu();
     document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});
+    renderSidebarCats();
+  }
+  function renderSidebarCats(){
+    var cont=document.getElementById('sidebarCats');
+    if(!cont) return;
+    cont.innerHTML='';
+    var all=document.createElement('button');
+    all.className='side-cat'+(filtro==='todos'?' on':'');
+    all.innerHTML='&#128722; Todos los productos';
+    all.addEventListener('click',function(){filtrarMenu('todos');});
+    cont.appendChild(all);
+    CATS.forEach(function(cat){
+      var btn=document.createElement('button');
+      btn.className='side-cat'+(filtro===cat.nombre?' on':'');
+      btn.innerHTML=cat.emoji+' '+cat.nombre;
+      btn.addEventListener('click',function(){filtrarMenu(cat.nombre);});
+      cont.appendChild(btn);
+    });
   }
 
   function genFiltros(){
@@ -590,9 +602,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     if(prod.variantes&&String(prod.variantes).trim().length>0){
       var _vl=String(prod.variantes).split(',').map(function(v){return v.trim();}).filter(Boolean);
       if(_vl.length>0){
-        variantesH='<div class="m-variantes"><p class="m-var-lbl">🎨 Elige una variante:</p><div class="m-var-btns">';
+        variantesH='<div class="m-variantes"><p class="m-var-lbl">🎨 Elige una variante:</p><div class="m-var-btns" id="varBtnsBox">';
         _vl.forEach(function(v,i){
-          variantesH+='<button class="m-var-btn'+(i===0?' sel':'')+'" onclick="selectVar(this,''+v+'')">'+ v+'</button>';
+          variantesH+='<button class="m-var-btn'+(i===0?' sel':'')+' data-var="'+v+'">'+v+'</button>';
         });
         variantesH+='</div></div>';
         varSeleccionada=_vl[0];
@@ -618,6 +630,14 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
           +'<button class="'+addCls+'" id="mAddBtn" onclick="addToCartModal()">'+addTxt+'</button>'
         +'</div>'
       +'</div>';
+    /* Variantes: bind click events via data-var */
+    document.querySelectorAll('#varBtnsBox .m-var-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        document.querySelectorAll('#varBtnsBox .m-var-btn').forEach(function(b){b.classList.remove('sel');});
+        btn.classList.add('sel');
+        varSeleccionada=btn.getAttribute('data-var');
+      });
+    });
     var car=document.getElementById('mCar');
     if(car){car.addEventListener('touchstart',onDown,{passive:true});car.addEventListener('touchmove',onMove,{passive:false});car.addEventListener('touchend',onUp,{passive:true});car.addEventListener('mousedown',onDown);}
     window.addEventListener('mousemove',onMove);window.addEventListener('mouseup',onUp);
