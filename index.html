@@ -604,6 +604,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       CATS=data.categorias||[];
       if(!PRODS.length){showMsg('<p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">Pronto habrá productos.</p>');return;}
       genFiltros();renderGrid();
+      _scheduleInstall(_isIOS?20000:25000); /* iOS: 20s, otros: 25s */
     }catch(e){showMsg('<p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">Error al cargar. Recarga la página.</p>');}
   }
 
@@ -874,7 +875,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   });
 
   function _showInstall(){
-    if(_instShown||_isStand||window.innerWidth>820)return;
+    if(_instShown||_isStand)return;
     _instShown=true;
     var b=document.getElementById('instBnr');
     if(b)b.classList.add('show');
@@ -903,9 +904,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   /* Mostrar 60s después de ver productos en mobile */
   var _instTimer=null;
   function _scheduleInstall(delay){
-    if(_instShown||_isStand||window.innerWidth>820)return;
+    if(_instShown||_isStand)return;
     clearTimeout(_instTimer);
-    _instTimer=setTimeout(_showInstall,delay||60000);
+    _instTimer=setTimeout(_showInstall,delay||25000);
   }
 
   inicializar();
