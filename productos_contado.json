@@ -2131,22 +2131,6 @@
       "id": 1784008793115
     },
     {
-      "nombre": "ON CLOUD",
-      "categoria": "Calzado dama🥰",
-      "badge": "🔥 TOP VENTAS",
-      "disponibilidad": "inmediata",
-      "precioContado": 135000,
-      "tipoTalla": "calzado",
-      "descripcion": "Comodidad, ligereza y un diseño moderno en un solo calzado. Perfectos para acompañarte en tu rutina diaria o tus entrenamientos con el máximo confort en cada paso.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784035927/atarashi_contado/v9rolj1g0sysuk6juit6.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784035927/atarashi_contado/z5lf4yohssuikgpq8gmv.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784035927/atarashi_contado/odxs1fz9piutlc3gf3vc.jpg"
-      ],
-      "video": "",
-      "id": 1784036090982
-    },
-    {
       "nombre": "NEW BALANCE RABEL",
       "categoria": "Calzado dama🥰",
       "badge": "⭐ RECOMENDADO",
@@ -2155,7 +2139,6 @@
       "tipoTalla": "calzado",
       "descripcion": "Ligereza, comodidad y un diseño deportivo que se adapta a tu ritmo. Ideales para entrenar, caminar o complementar un look moderno con total confort.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/augnlcdw1d7jolvovce1.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/hpri3lqhqougmp4p8q5u.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/lah9zkitknzrtkoiykpk.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/fwsmwdvmxsoevixhkvp9.jpg",
@@ -2163,6 +2146,20 @@
       ],
       "video": "",
       "id": 1784036391189
+    },
+    {
+      "nombre": "NEW BALANCE REBEL",
+      "categoria": "Calzado caballero😎",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "tipoTalla": "calzado",
+      "descripcion": "Ligereza, comodidad y un diseño deportivo que se adapta a tu ritmo. Ideales para entrenar, caminar o complementar un look moderno con total confort.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036824/atarashi_contado/innlhykgvf665wjv0net.jpg"
+      ],
+      "video": "",
+      "id": 1784036952491
     }
   ],
   "categorias": [
