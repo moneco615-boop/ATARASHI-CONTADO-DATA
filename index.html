@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atarashi Store">
+<meta name="theme-color" content="#C9A02A">
+<link rel="manifest" href="./manifest.json">
 <title>Atarashi Store — Pago Contraentrega Cali</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
@@ -128,6 +134,14 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .m-video video{width:100%;border-radius:10px;max-height:200px;background:#000;display:block;}
 /* CONTROL CANTIDAD + AGREGAR */
 
+
+/* ── TALLA EN MODAL ── */
+.m-talla-box{margin-bottom:14px;background:rgba(201,160,42,.06);border:1.5px solid rgba(201,160,42,.4);border-radius:10px;padding:12px 14px;}
+.m-talla-lbl{font-size:13px;font-weight:800;color:var(--wh);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.m-talla-inp{width:100%;background:#0a0a0a;border:2px solid rgba(201,160,42,.45);color:#fff;padding:11px 14px;border-radius:8px;font-family:var(--B);font-size:16px;outline:none;letter-spacing:.5px;}
+.m-talla-inp:focus{border-color:var(--br);box-shadow:0 0 0 3px rgba(240,192,64,.15);}
+.m-talla-inp::placeholder{color:#444;}
+.c-item-talla{font-size:10px;color:#7ec8ff;margin-top:2px;font-weight:700;}
 .m-variantes{margin-bottom:12px;}
 .m-var-lbl{font-size:11px;color:var(--gr);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-bottom:7px;}
 .m-var-btns{display:flex;flex-wrap:wrap;gap:7px;}
@@ -242,6 +256,37 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .f-cta{width:100%;background:#25D366;color:#fff;border:none;padding:15px;border-radius:10px;font-weight:900;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;margin-top:8px;transition:background .18s;}
 .f-cta:hover{background:#1eb358;}
 .f-back{width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--gr);padding:10px;border-radius:8px;font-size:13px;cursor:pointer;margin-top:8px;}
+
+/* ── INSTALL BANNER ── */
+.inst-bnr{position:fixed;bottom:0;left:0;right:0;background:#131313;border-top:1px solid rgba(201,160,42,.3);padding:14px 16px 20px;z-index:9996;transform:translateY(100%);transition:transform .42s cubic-bezier(.32,1,.45,1);box-shadow:0 -8px 30px rgba(0,0,0,.65);}
+.inst-bnr.show{transform:translateY(0);}
+.inst-bnr-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.inst-ico{font-size:34px;flex-shrink:0;margin-top:1px;}
+.inst-txt{flex:1;}
+.inst-txt strong{display:block;font-size:14px;font-weight:800;color:var(--wh);margin-bottom:3px;}
+.inst-txt span{font-size:12px;color:#a0a096;line-height:1.45;display:block;}
+.inst-x{background:none;border:none;color:#555;font-size:22px;cursor:pointer;padding:0 3px;line-height:1;flex-shrink:0;}
+.inst-x:hover{color:#fff;}
+.inst-btn{width:100%;background:var(--go);color:#000;border:none;padding:13px;border-radius:8px;font-family:var(--B);font-weight:900;font-size:14px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:7px;transition:background .18s;}
+.inst-btn:hover{background:var(--br);}
+.inst-nota{font-size:11px;color:#555;text-align:center;margin-top:8px;line-height:1.4;}
+/* ── GUÍA MANUAL ── */
+.guide-ov{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:10010;display:none;align-items:flex-end;justify-content:center;}
+.guide-ov.show{display:flex;}
+@media(min-width:520px){.guide-ov{align-items:center;padding:20px;}}
+.guide-box{background:var(--pa);border:1px solid rgba(201,160,42,.25);width:100%;max-width:440px;border-radius:20px 20px 0 0;padding:22px 20px 28px;max-height:90vh;overflow-y:auto;position:relative;animation:slideUp .3s cubic-bezier(.32,1,.45,1);}
+@media(min-width:520px){.guide-box{border-radius:16px;}}
+.guide-tit{font-family:var(--T);font-size:22px;letter-spacing:2px;color:var(--br);text-align:center;margin-bottom:4px;}
+.guide-sub{font-size:11px;color:var(--gr);text-align:center;margin-bottom:18px;text-transform:uppercase;letter-spacing:1px;}
+.guide-sec{margin-bottom:16px;}
+.guide-sec h4{font-size:13px;font-weight:800;color:var(--wh);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.07);}
+.guide-step{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:13px;color:#c8c4b4;line-height:1.45;}
+.guide-num{flex-shrink:0;width:22px;height:22px;background:rgba(201,160,42,.18);border:1px solid rgba(201,160,42,.38);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--br);margin-top:1px;}
+.guide-nota{background:rgba(46,204,113,.06);border:1px solid rgba(46,204,113,.18);border-radius:8px;padding:10px 12px;margin-top:14px;}
+.guide-nota p{font-size:12px;color:#c8c4b4;line-height:1.5;margin-bottom:3px;}
+.guide-nota p:last-child{margin-bottom:0;}
+.guide-ok{width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--gr);padding:11px;border-radius:8px;font-size:13px;cursor:pointer;margin-top:14px;}
+.guide-ok:hover{background:rgba(255,255,255,.05);}
 .f-nota{font-size:10px;color:var(--gr);text-align:center;margin-top:10px;line-height:1.5;}
 
 .s-hdr{position:relative;}
@@ -373,7 +418,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
         var d = document.createElement('div'); d.className = 'c-item';
         d.innerHTML = '<img src="'+(item.foto||(p.imagenes&&p.imagenes[0]?p.imagenes[0]:''))+'" class="c-item-img">'
           +'<div class="c-item-info">'
-            +'<p class="c-item-nom">'+p.nombre+(item.variante?' <small style="color:var(--br)">('+item.variante+')</small>':'')+'</p>'+(item.fotoIdx?'<p class="c-item-foto">📸 Foto #'+item.fotoIdx+'</p>':'')
+            +'<p class="c-item-nom">'+p.nombre+(item.variante?' <small style="color:var(--br)">('+item.variante+')</small>':'')+'</p>'+(item.talla?'<p class="c-item-talla">📏 Talla: '+item.talla+'</p>':'')+(item.fotoIdx?'<p class="c-item-foto">📸 Foto #'+item.fotoIdx+'</p>':'')
             +'<p class="c-item-sub">'+fmtP(p.precioContado*q)+'</p>'
             +'<div class="c-item-ctrl">'
               +'<button class="c-qty-btn" onclick="cambiarQty('+p.id+',-1)">−</button>'
@@ -416,7 +461,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       var p=item.prod;
       var imgSrc=item.foto||(p.imagenes&&p.imagenes[0]?p.imagenes[0]:'');
       var imgH=imgSrc?'<img src="'+imgSrc+'" style="width:48px;height:48px;object-fit:cover;border-radius:4px;">':'<div style="width:48px;height:48px;background:#eee;border-radius:4px;"></div>';
-      var detalle=p.nombre+(item.variante?'<br><small>'+item.variante+'</small>':'')+(item.fotoIdx?'<br><small>📸 Foto #'+item.fotoIdx+'</small>':'');
+      var detalle=p.nombre+(item.talla?'<br><small style="color:#3a8fcf">📏 Talla: '+item.talla+'</small>':'')+(item.variante?'<br><small>'+item.variante+'</small>':'')+(item.fotoIdx?'<br><small>📸 Foto #'+item.fotoIdx+'</small>':'');
       return '<tr>'
         +'<td style="padding:7px 4px;">'+imgH+'</td>'
         +'<td style="padding:7px 4px;"><strong>'+detalle+'</strong></td>'
@@ -649,6 +694,18 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     var qty=getQty(prod.id);
     var addTxt=qty>0?'✅ '+qty+' en carrito — Agregar +1':'🛒 AGREGAR AL CARRITO';
     var addCls='m-add'+(qty>0?' tiene':'');
+    /* talla — aparece en el modal si es calzado o ropa */
+    var tallaH='';
+    if(necesitaTalla(prod)){
+      var _esZap=esCalzado(prod);
+      var _tallaLbl=_esZap?'👟 ¿Qué talla de calzado necesitas?':'👕 ¿Qué talla necesitas?';
+      var _tallaPlh=_esZap?'Ej: 35, 36, 38, 40, 42...':'Ej: XS, S, M, L, XL, XXL...';
+      tallaH='<div class="m-talla-box">'
+        +'<p class="m-talla-lbl">'+_tallaLbl+'</p>'
+        +'<input type="text" class="m-talla-inp" id="mTallaInp" placeholder="'+_tallaPlh+'" autocomplete="off" inputmode="text">'
+        +'</div>';
+    }
+
     /* variantes */
     var variantesH='';
     if(prod.variantes&&String(prod.variantes).trim().length>0){
@@ -672,7 +729,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
         +'<p class="m-cat">'+em+' '+prod.categoria+'</p>'
         +'<span class="m-precio">'+fmtP(prod.precioContado)+'</span>'
         +'<div class="m-disp">'+disp+'</div>'+'<p class="aviso-disp">⚠️ Nuestro inventario está en constante movimiento. Este producto está sujeto a disponibilidad al momento de confirmar tu pedido.</p>'
-        +descH+videoH+variantesH
+        +descH+videoH+tallaH+variantesH
         +'<div class="m-cart-row">'
           +'<div class="m-qty">'
             +'<button onclick="cambiarQtyModal(-1)">−</button>'
@@ -718,7 +775,8 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       else carrito[key]={
         prod:prod,qty:1,variante:varSeleccionada,
         foto:sImgs.length>0?(sImgs[fotoSeleccionada]||sImgs[0]):'',
-        fotoIdx:sImgs.length>1?fotoSeleccionada+1:null
+        fotoIdx:sImgs.length>1?fotoSeleccionada+1:null,
+        talla:_tallaVal
       };
     }
     actualizarFAB();actualizarBtnModal(prod.id);renderGrid();
@@ -805,8 +863,58 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   }
   generarParticulas();
 
+  /* ── ADD TO HOME SCREEN ── */
+  var _instP=null,_instShown=false;
+  var _isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
+  var _isAnd=/Android/.test(navigator.userAgent);
+  var _isStand=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();_instP=e;
+  });
+
+  function _showInstall(){
+    if(_instShown||_isStand||window.innerWidth>820)return;
+    _instShown=true;
+    var b=document.getElementById('instBnr');
+    if(b)b.classList.add('show');
+  }
+  function cerrarInstall(){
+    var b=document.getElementById('instBnr');if(b)b.classList.remove('show');
+    _instShown=true;
+  }
+  function instalarApp(){
+    cerrarInstall();
+    if(_instP){
+      _instP.prompt();
+      _instP.userChoice.then(function(){_instP=null;});
+    } else {
+      mostrarGuia();
+    }
+  }
+  function mostrarGuia(){
+    document.getElementById('iosGuide').style.display=_isIOS?'block':'none';
+    document.getElementById('andGuide').style.display=(!_isIOS&&_isAnd)?'block':'none';
+    document.getElementById('otherGuide').style.display=(!_isIOS&&!_isAnd)?'block':'none';
+    document.getElementById('guideOv').classList.add('show');
+  }
+  function cerrarGuia(){document.getElementById('guideOv').classList.remove('show');}
+
+  /* Mostrar 60s después de ver productos en mobile */
+  var _instTimer=null;
+  function _scheduleInstall(delay){
+    if(_instShown||_isStand||window.innerWidth>820)return;
+    clearTimeout(_instTimer);
+    _instTimer=setTimeout(_showInstall,delay||60000);
+  }
+
   inicializar();
 
 </script>
+
+<!-- INSTALL BANNER -->
+<div class="inst-bnr" id="instBnr"><div class="inst-bnr-top"><span class="inst-ico">📲</span><div class="inst-txt"><strong>Guarda Atarashi Store en tu celular</strong><span>Para entrar más rápido cuando quieras. Solo es un acceso directo.</span></div><button class="inst-x" onclick="cerrarInstall()">×</button></div><button class="inst-btn" onclick="instalarApp()">📲 Agregar a pantalla de inicio</button><p class="inst-nota">✅ No ocupa espacio como una app · 🔒 Sin registro ni datos · ⚡ Acceso instantáneo</p></div>
+<!-- GUÍA MANUAL -->
+<div class="guide-ov" id="guideOv" onclick="if(event.target===this)cerrarGuia()"><div class="guide-box"><button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarGuia()">×</button><p class="guide-tit">📲 Agregar a inicio</p><p class="guide-sub">Acceso directo · Sin registro · Sin espacio</p><div class="guide-sec" id="iosGuide" style="display:none;"><h4>📱 iPhone / iPad (Safari)</h4><div class="guide-step"><span class="guide-num">1</span><span>Toca el botón <strong>Compartir</strong> (□↑) en la barra inferior de Safari</span></div><div class="guide-step"><span class="guide-num">2</span><span>Desliza y toca <strong>"Agregar a pantalla de inicio"</strong></span></div><div class="guide-step"><span class="guide-num">3</span><span>Toca <strong>Agregar</strong> — ¡listo!</span></div></div><div class="guide-sec" id="andGuide" style="display:none;"><h4>🤖 Android (Chrome)</h4><div class="guide-step"><span class="guide-num">1</span><span>Toca el menú <strong>⋮</strong> (tres puntos arriba a la derecha)</span></div><div class="guide-step"><span class="guide-num">2</span><span>Toca <strong>"Agregar a pantalla de inicio"</strong> o <strong>"Instalar app"</strong></span></div><div class="guide-step"><span class="guide-num">3</span><span>Confirma tocando <strong>Agregar</strong></span></div></div><div class="guide-sec" id="otherGuide" style="display:none;"><h4>🌐 Otro navegador</h4><div class="guide-step"><span class="guide-num">1</span><span>Busca el menú ⋮ o ☰ de tu navegador</span></div><div class="guide-step"><span class="guide-num">2</span><span>Busca <strong>"Agregar a pantalla de inicio"</strong> o <strong>"Instalar"</strong></span></div><div class="guide-step"><span class="guide-num">3</span><span>También puedes guardar el enlace en <strong>Marcadores / Favoritos</strong></span></div></div><div class="guide-nota"><p>✅ Solo es un acceso directo — no descarga ninguna app ni ocupa espacio en tu cel.</p><p>🔒 No pedimos ningún dato personal ni registro.</p><p>⚡ Abre Atarashi Store al instante desde tu pantalla de inicio.</p></div><button class="guide-ok" onclick="cerrarGuia()">Entendido ✓</button></div></div>
 </body>
 </html>
