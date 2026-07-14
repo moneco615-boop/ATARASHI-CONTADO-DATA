@@ -2174,6 +2174,20 @@
       ],
       "video": "",
       "id": 1784038388047
+    },
+    {
+      "nombre": "DIENTES MUECOS",
+      "categoria": "Hogar",
+      "badge": "📉 ÚLTIMAS UNIDADES",
+      "disponibilidad": "camino",
+      "precioContado": 15000,
+      "tipoTalla": "",
+      "descripcion": "muelas chuecas",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784039839/atarashi_contado/cpgrqrwgxbk7odbbbfon.jpg"
+      ],
+      "video": "",
+      "id": 1784039891667
     }
   ],
   "categorias": [
