@@ -2202,6 +2202,20 @@
       ],
       "video": "",
       "id": 1784040942272
+    },
+    {
+      "nombre": "MUELAS",
+      "categoria": "Tecnología",
+      "badge": "📦 LIQUIDACIÓN",
+      "disponibilidad": "preventa",
+      "precioContado": 47000,
+      "tipoTalla": "",
+      "descripcion": "separa el tuyo",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784042803/atarashi_contado/b1ekmkjt4cfmsplylmyq.jpg"
+      ],
+      "video": "",
+      "id": 1784042847600
     }
   ],
   "categorias": [
