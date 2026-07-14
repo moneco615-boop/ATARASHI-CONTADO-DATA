@@ -601,10 +601,11 @@
     },
     {
       "nombre": "CHANCLA PLAYERA TOMMY",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
+      "tipoTalla": "calzado",
       "descripcion": "Las chanclas playeras de Tommy Hilfiger son la opción ideal para combinar comodidad y el clásico estilo estadounidense junto a la piscina o en el mar. Destacan por sus plantillas anatómicas de EVA flexible que amortiguan los pasos y sus icónicas tiras con el logo de la bandera global",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361704/atarashi_contado/tprjd7mgsacq1rwmy9lv.jpg",
