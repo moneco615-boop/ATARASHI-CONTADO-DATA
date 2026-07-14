@@ -1,0 +1,15 @@
+{
+  "name": "Atarashi Store",
+  "short_name": "Atarashi",
+  "description": "Moda y tecnología a tu puerta · Pago contraentrega · Cali",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#C9A02A",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "categories": [
+    "shopping"
+  ]
+}
