@@ -448,10 +448,11 @@
     },
     {
       "nombre": "ADIDAS NASTASE (BLANCA, GRIS Y NEGRA). MIRA LAS FOTOS",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "tipoTalla": "calzado",
       "descripcion": "Adidas Nastase es una zapatilla de tenis con estilo retro y clásico, inspirada en el legado de Ilie Năstase. Destaca por su diseño vintage, su silueta limpia y su aire deportivo atemporal, ideal para quienes buscan un modelo con historia y mucho estilo",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783348751/atarashi_contado/ys0bhyzvjttegy6ixh5i.jpg",
