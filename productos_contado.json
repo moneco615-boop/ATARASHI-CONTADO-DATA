@@ -897,11 +897,12 @@
       "id": 1783608272544
     },
     {
-      "nombre": "NIKE TRÁIL DAMA Y CABALLERO. (COLORES VARIOS)",
-      "categoria": "Calzado",
+      "nombre": "NIKE TRÁIL",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "tipoTalla": "calzado",
       "descripcion": "🥾 Domina cualquier terreno con los Nike Trail. Diseñados para ofrecer excelente agarre, comodidad y resistencia en cada aventura, sin renunciar al estilo. Ideales para senderismo, caminatas o el uso diario.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608546/atarashi_contado/eyudv7n78x58qarcbaz1.jpg"
