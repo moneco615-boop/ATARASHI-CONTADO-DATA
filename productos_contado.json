@@ -93,10 +93,11 @@
     },
     {
       "nombre": "ADIDAS SUPERSTAR..",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "tipoTalla": "calzado",
       "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/fc9cjeimlovtbbtulkvc.jpg",
@@ -2190,10 +2191,6 @@
     }
   ],
   "categorias": [
-    {
-      "emoji": "👕",
-      "nombre": "Ropa"
-    },
     {
       "emoji": "💻",
       "nombre": "Tecnología"
