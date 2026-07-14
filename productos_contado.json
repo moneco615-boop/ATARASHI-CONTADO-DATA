@@ -2155,6 +2155,19 @@
       ],
       "video": "",
       "id": 1784000277288
+    },
+    {
+      "nombre": "MUELON MORDELON",
+      "categoria": "Tecnología",
+      "badge": "📉 ÚLTIMAS UNIDADES",
+      "disponibilidad": "transito",
+      "precioContado": 8000,
+      "descripcion": "regalao es caro",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784001062/atarashi_contado/p0nmezgfstvvftny7ysl.jpg"
+      ],
+      "video": "",
+      "id": 1784001098599
     }
   ],
   "categorias": [
