@@ -1086,10 +1086,11 @@
     },
     {
       "nombre": "NEW BALANCE 9060 DAMA",
-      "categoria": "Calzado",
+      "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
+      "tipoTalla": "calzado",
       "descripcion": "✨ Dale un toque único a tu estilo con los New Balance 9060 para dama. Su diseño moderno, inspirado en la moda urbana, combina comodidad, amortiguación y un acabado de excelente calidad. Ideales para usar todos los días y crear outfits con personalidad.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612478/atarashi_contado/lkqz5smtbjrqkaeic3jh.jpg",
