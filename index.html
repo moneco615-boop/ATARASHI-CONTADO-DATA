@@ -136,6 +136,10 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
 
 /* ── TALLA EN MODAL ── */
+.m-talla-row{display:flex;gap:8px;align-items:stretch;}
+.m-sist-sel{flex:0 0 auto;width:130px;background:#0a0a0a;border:2px solid rgba(201,160,42,.45);color:#fff;padding:11px 8px;border-radius:8px;font-family:var(--B);font-size:13px;outline:none;cursor:pointer;}
+.m-sist-sel:focus{border-color:var(--br);}
+.m-talla-row .m-talla-inp{flex:1;}
 .m-talla-box{margin-bottom:14px;background:rgba(201,160,42,.06);border:1.5px solid rgba(201,160,42,.4);border-radius:10px;padding:12px 14px;}
 .m-talla-lbl{font-size:13px;font-weight:800;color:var(--wh);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
 .m-talla-inp{width:100%;background:#0a0a0a;border:2px solid rgba(201,160,42,.45);color:#fff;padding:11px 14px;border-radius:8px;font-family:var(--B);font-size:16px;outline:none;letter-spacing:.5px;}
@@ -695,15 +699,25 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     var qty=getQty(prod.id);
     var addTxt=qty>0?'✅ '+qty+' en carrito — Agregar +1':'🛒 AGREGAR AL CARRITO';
     var addCls='m-add'+(qty>0?' tiene':'');
-    /* talla — aparece en el modal si es calzado o ropa */
+    /* talla — campo definido explícitamente en el panel admin */
     var tallaH='';
-    if(necesitaTalla(prod)){
-      var _esZap=esCalzado(prod);
-      var _tallaLbl=_esZap?'👟 ¿Qué talla de calzado necesitas?':'👕 ¿Qué talla necesitas?';
-      var _tallaPlh=_esZap?'Ej: 35, 36, 38, 40, 42...':'Ej: XS, S, M, L, XL, XXL...';
+    if(prod.tipoTalla==='calzado'){
       tallaH='<div class="m-talla-box">'
-        +'<p class="m-talla-lbl">'+_tallaLbl+'</p>'
-        +'<input type="text" class="m-talla-inp" id="mTallaInp" placeholder="'+_tallaPlh+'" autocomplete="off" inputmode="text">'
+        +'<p class="m-talla-lbl">📏 ¿Qué talla de calzado necesitas?</p>'
+        +'<div class="m-talla-row">'
+        +'<select id="mSistTalla" class="m-sist-sel">'
+        +'<option value="Nacional">Nacional 🇨🇴</option>'
+        +'<option value="EU">EU (Europea)</option>'
+        +'<option value="USA">USA</option>'
+        +'</select>'
+        +'<input type="text" class="m-talla-inp" id="mTallaInp" '
+        +'placeholder="Ej: 38, 40, 42..." autocomplete="off" inputmode="decimal">'
+        +'</div></div>';
+    }else if(prod.tipoTalla==='ropa'){
+      tallaH='<div class="m-talla-box">'
+        +'<p class="m-talla-lbl">📏 ¿Qué talla necesitas?</p>'
+        +'<input type="text" class="m-talla-inp" id="mTallaInp" '
+        +'placeholder="Ej: S, M, L, XL, XXL..." autocomplete="off">'
         +'</div>';
     }
 
@@ -764,11 +778,26 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   function addToCartModal(){
     if(!prod)return;
     if(prod.variantes&&String(prod.variantes).trim().length>0&&!varSeleccionada){
-      alert('🎨 Por favor elige una variante antes de agregar al carrito.');
+      alert('🎨 Por favor elige una variante.');
       return;
     }
+    /* Validar talla con feedback visual inline */
+    var _tInp=document.getElementById('mTallaInp');
+    var _sistEl=document.getElementById('mSistTalla');
+    var _tallaVal='';
+    if(_tInp){
+      var _tNum=_tInp.value.trim();
+      if(!_tNum){
+        _tInp.style.border='2px solid #ff4444';
+        _tInp.style.boxShadow='0 0 0 3px rgba(255,68,68,.2)';
+        _tInp.setAttribute('placeholder','⚠️ Escribe tu talla aquí');
+        _tInp.scrollIntoView({behavior:'smooth',block:'center'});
+        setTimeout(function(){_tInp.focus();},300);
+        return;
+      }
+      _tallaVal=_sistEl?(_tNum+' '+_sistEl.value):_tNum;
+    }
     var el=document.getElementById('mQtyNum');
-    if(prod.variantes&&String(prod.variantes).trim().length>0&&!varSeleccionada){alert('🎨 Por favor elige una variante.');return;}
     var qty=el?parseInt(el.textContent):1;
     var key=String(prod.id)+(varSeleccionada?'|'+varSeleccionada:'');
     for(var i=0;i<qty;i++){
@@ -865,10 +894,12 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   generarParticulas();
 
   /* ── ADD TO HOME SCREEN ── */
-  var _instP=null,_instShown=false;
+  var _instP=null;
   var _isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
   var _isAnd=/Android/.test(navigator.userAgent);
-  var _isStand=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+  var _isStand=(window.matchMedia('(display-mode: standalone)').matches||navigator.standalone===true);
+  /* No mostrar si ya instaló o ya lo cerró antes */
+  var _instShown=_isStand||localStorage.getItem('atarashi_install_ok')==='1';
 
   window.addEventListener('beforeinstallprompt',function(e){
     e.preventDefault();_instP=e;
@@ -876,6 +907,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
   function _showInstall(){
     if(_instShown||_isStand)return;
+    if(window.innerWidth>900)return; /* Solo celular/tablet */
     _instShown=true;
     var b=document.getElementById('instBnr');
     if(b)b.classList.add('show');
@@ -883,8 +915,10 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   function cerrarInstall(){
     var b=document.getElementById('instBnr');if(b)b.classList.remove('show');
     _instShown=true;
+    localStorage.setItem('atarashi_install_ok','1');
   }
   function instalarApp(){
+    localStorage.setItem('atarashi_install_ok','1');
     cerrarInstall();
     if(_instP){
       _instP.prompt();
