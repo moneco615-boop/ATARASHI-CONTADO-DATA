@@ -676,10 +676,11 @@
     },
     {
       "nombre": "CHANCLAS MONASTERY",
-      "categoria": "Calzado",
-      "badge": "🔥 TOP VENTAS",
+      "categoria": "Calzado caballero😎",
+      "badge": "📉 ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
+      "tipoTalla": "calzado",
       "descripcion": "Las chanclas Monastery son un calzado de descanso y moda urbana de alta demanda, perteneciente a la reconocida marca colombiana de ropa de lujo urbano Monastery Couture.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783363096/atarashi_contado/hpxyih8rdggf7lbkx3eg.jpg"
