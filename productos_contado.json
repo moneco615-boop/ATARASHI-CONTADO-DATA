@@ -1054,10 +1054,11 @@
     },
     {
       "nombre": "NEW BALANCE REBEL DAMA",
-      "categoria": "Calzado",
+      "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "tipoTalla": "calzado",
       "descripcion": "👟 Descubre el equilibrio perfecto entre estilo, ligereza y comodidad con los New Balance Rebel. Su diseño moderno y deportivo los convierte en la opción ideal para entrenar, caminar o lucir un outfit casual con personalidad.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612045/atarashi_contado/ugdfztscuregvp0kv5xj.jpg",
