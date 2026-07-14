@@ -380,10 +380,11 @@
     },
     {
       "nombre": "NIKE V2K",
-      "categoria": "Calzado",
+      "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "tipoTalla": "calzado",
       "descripcion": "Nike V2K Run es una zapatilla de estilo retro-futurista, inspirada en los modelos de running de principios de los 2000. Destaca por su diseño llamativo, su suela gruesa y una comodidad pensada para uso diario con mucho estilo",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224869/atarashi_contado/l126vxjhfbtfl8dbip6j.jpg",
