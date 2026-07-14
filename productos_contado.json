@@ -250,11 +250,12 @@
       "id": 1783219447745
     },
     {
-      "nombre": "NIKE TN DAMA Y CABALLERO VARIOS COLORES",
-      "categoria": "Calzado",
+      "nombre": "NIKE TN VARIOS COLORES",
+      "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "tipoTalla": "calzado",
       "descripcion": "Nike TN es el nombre corto más usado para las Air Max Plus , unas zapatillas icónicas con estilo urbano, gran comodidad y una silueta inconfundible. Nacidas en 1998, destacan por su diseño agresivo y su amortiguación visible que las hace tan llamativas como cómodas",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220120/atarashi_contado/qonx5ulax3kundluwmpp.jpg",
