@@ -268,10 +268,11 @@
     },
     {
       "nombre": "ADIDAS ADIZERO",
-      "categoria": "Calzado",
-      "badge": "📉 ÚLTIMAS UNIDADES",
+      "categoria": "Calzado caballero😎",
+      "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
+      "tipoTalla": "calzado",
       "descripcion": "adidas Adizero es la línea de la marca enfocada en velocidad, ligereza y alto rendimiento. Está pensada para corredores y deportistas que buscan una sensación ágil, cómoda y reactiva en cada paso.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220402/atarashi_contado/iu3etimnkayhpdhq49yx.jpg",
