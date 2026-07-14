@@ -1798,16 +1798,15 @@
     },
     {
       "nombre": "NIKE OZUNA",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
+      "tipoTalla": "calzado",
       "descripcion": "Comodidad y estilo en cada paso. Con un diseño moderno y ligero, estas chanclas son ideales para el uso diario, la playa, la piscina o para disfrutar de la máxima comodidad en cualquier momento",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657297/atarashi_contado/yi61cc9gxk2nr2mpbjzn.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/jkwnx0iu0rapzvntfae4.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/gh5kxcq1ycw278i9iu8b.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/k25lii2nq78alm2tbsae.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783657298/atarashi_contado/jkwnx0iu0rapzvntfae4.jpg"
       ],
       "video": "",
       "id": 1783657334486
