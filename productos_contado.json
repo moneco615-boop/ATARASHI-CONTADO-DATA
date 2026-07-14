@@ -2188,6 +2188,20 @@
       ],
       "video": "",
       "id": 1784039891667
+    },
+    {
+      "nombre": "MUELAS",
+      "categoria": "Tecnología",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 30000,
+      "tipoTalla": "",
+      "descripcion": "muelas  muecas",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784040872/atarashi_contado/mwnrch9civorixcf8yai.jpg"
+      ],
+      "video": "",
+      "id": 1784040942272
     }
   ],
   "categorias": [
