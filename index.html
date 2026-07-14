@@ -78,15 +78,15 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .card-badge{position:absolute;top:10px;right:10px;background:var(--br);color:#000;font-size:10px;font-weight:900;padding:3px 9px;border-radius:3px;z-index:5;text-transform:uppercase;}
 .card-img{width:100%;height:340px;background:#141414;display:flex;align-items:center;justify-content:center;padding:12px;cursor:pointer;}
 .card-img img{max-width:100%;max-height:100%;object-fit:contain;}
-@media(max-width:500px){.card-img{height:230px;padding:8px;}.card-img img{object-fit:cover;border-radius:4px;}}
+@media(max-width:500px){.card-body{padding:6px 8px 2px;}.card-img{height:270px;padding:6px;}.card-img img{object-fit:cover;border-radius:4px;}}
 .card-body{padding:8px 10px 2px;border-top:1px solid rgba(255,255,255,.03);background:#151515;flex:1;cursor:pointer;}
 .card-cat{font-size:11px;color:var(--gr);margin-bottom:2px;}
 .card-name{font-family:var(--T);font-size:17px;letter-spacing:.5px;text-transform:uppercase;color:var(--wh);margin-bottom:3px;line-height:1.1;}
 @media(max-width:500px){.card-name{font-size:13px;}}
 .card-disp{display:inline-flex;align-items:center;gap:4px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.25);color:#2ecc71;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-bottom:8px;}
-.card-precio{font-family:var(--T);font-size:36px;letter-spacing:1px;background:linear-gradient(135deg,#C9A02A 0%,#FFD700 45%,#F0C040 70%,#C9A02A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;margin-bottom:6px;animation:pglow 3s ease-in-out infinite;}
+.card-precio{font-family:var(--T);font-size:34px;letter-spacing:1px;background:linear-gradient(135deg,#C9A02A 0%,#FFD700 45%,#F0C040 70%,#C9A02A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;margin-bottom:6px;animation:pglow 3s ease-in-out infinite;}
 .card:hover .card-precio{animation:ppulse .8s ease-in-out infinite;}
-@media(max-width:500px){.card-precio{font-size:28px;}}
+@media(max-width:500px){.card-precio{font-size:30px;}}
 @keyframes pglow{0%,100%{filter:drop-shadow(0 0 3px rgba(255,215,0,.3))}50%{filter:drop-shadow(0 0 12px rgba(255,215,0,.7))}}
 @keyframes ppulse{0%,100%{filter:drop-shadow(0 0 8px rgba(255,215,0,.5));transform:scale(1)}50%{filter:drop-shadow(0 0 18px rgba(255,215,0,.85));transform:scale(1.04)}}
 /* BOTÓN AÑADIR AL CARRITO (en tarjeta) */
@@ -699,7 +699,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     lista.forEach(function(p){
       var em=getEm(p.categoria);
       var badge=p.badge?'<span class="card-badge">'+p.badge+'</span>':'';
-      var disp=p.disponibilidad==='transito'?'<span class="card-disp">🚚 En camino</span>':'<span class="card-disp">✅ Inmediata</span>';
+      var _dm={'inmediata':['#2ecc71','rgba(46,204,113,.1)','rgba(46,204,113,.25)','✅ Entrega inmediata'],'pocas':['#ffa500','rgba(255,165,0,.12)','rgba(255,165,0,.28)','⚠️ ¡Quedan pocas!'],'camino':['#3498db','rgba(52,152,219,.1)','rgba(52,152,219,.25)','🚚 En camino'],'aparta':['#9b59b6','rgba(155,89,182,.1)','rgba(155,89,182,.25)','📦 Apártalo ya'],'preventa':['#3498db','rgba(52,152,219,.1)','rgba(52,152,219,.25)','🔜 Próximamente'],'exclusivo':['#C9A02A','rgba(201,160,42,.12)','rgba(201,160,42,.28)','🌟 Edición limitada'],'agotado':['#e74c3c','rgba(231,76,60,.1)','rgba(231,76,60,.25)','❌ Agotado'],'transito':['#3498db','rgba(52,152,219,.1)','rgba(52,152,219,.25)','🚚 En camino'],'disponible':['#2ecc71','rgba(46,204,113,.1)','rgba(46,204,113,.25)','✅ Inmediata']};var _dv=_dm[p.disponibilidad]||_dm['inmediata'];var disp='<span style="display:inline-flex;align-items:center;gap:4px;background:'+_dv[1]+';border:1px solid '+_dv[2]+';color:'+_dv[0]+';font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;">'+_dv[3]+'</span>'
       var qty=getQty(p.id);
       var btnTxt=qty>0?'✅ En carrito (x'+qty+')':'🛒 Agregar';
       var btnCls='card-add '+(qty>0?'tiene':'vacio');
@@ -718,9 +718,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   /* ── MODAL PRODUCTO (con carrusel + zoom + agregar al carrito) ── */
   function abrirModal(id){
     prod=PRODS.find(function(p){return p.id===id;});if(!prod)return;
-    sImgs=(prod.imagenes||[]).filter(function(s){return s&&s.trim().length>0;});sIdx=0;fotoSeleccionada=0;zOn=false;zOX=50;zOY=50;varSeleccionada='';
+    sImgs=(prod.imagenes||[]).filter(function(s){return s&&s.trim().length>0;});sIdx=0;fotoSeleccionada=0;zOn=false;zOX=50;zOY=50;varSeleccionada='';/* elegida se setea después de insertar innerHTML */
     var em=getEm(prod.categoria);var n=sImgs.length;
-    var disp=prod.disponibilidad==='transito'?'🚚 En camino':'✅ Entrega inmediata';
+    var _dmM={'inmediata':'✅ Entrega inmediata','pocas':'⚠️ ¡Quedan pocas unidades!','camino':'🚚 Vienen más en camino','aparta':'📦 Apártalo ya','preventa':'🔜 Próximamente','exclusivo':'🌟 Edición limitada','agotado':'❌ Agotado temporalmente','transito':'🚚 En camino','disponible':'✅ Entrega inmediata'};var disp=_dmM[prod.disponibilidad]||'✅ Entrega inmediata';
     var slidesH='';sImgs.forEach(function(src){slidesH+='<div class="m-slide"><img src="'+src+'" loading="lazy" draggable="false"></div>';});
     var arrowH=n>1?'<button class="m-arr l" onclick="nextSlide(-1)">&#10094;</button><button class="m-arr r" onclick="nextSlide(1)">&#10095;</button>':'';
     var cntH=n>1?'<div class="m-cnt" id="mCnt">1 / '+n+'</div>':'';
@@ -796,6 +796,8 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
         varSeleccionada=btn.getAttribute('data-var');
       });
     });
+    /* Marcar foto 0 con borde verde al abrir */
+    setTimeout(function(){var _tt=document.querySelector('.m-thumb');if(_tt){_tt.classList.add('elegida');_tt.style.borderColor='#2ecc71';_tt.style.boxShadow='0 0 0 2px rgba(46,204,113,.4)';}},80);
     var car=document.getElementById('mCar');
     if(car){car.addEventListener('touchstart',onDown,{passive:true});car.addEventListener('touchmove',onMove,{passive:false});car.addEventListener('touchend',onUp,{passive:true});car.addEventListener('mousedown',onDown);}
     window.addEventListener('mousemove',onMove);window.addEventListener('mouseup',onUp);
@@ -856,7 +858,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
   /* CARRUSEL */
   function syncSlider(){var t=document.getElementById('mTrack');if(t)t.style.transform='translateX(-'+(sIdx*100)+'%)';var c=document.getElementById('mCnt');if(c)c.textContent=(sIdx+1)+' / '+sImgs.length;document.querySelectorAll('.m-thumb').forEach(function(th,i){th.classList.toggle('on',i===sIdx);});}
-  function irA(i){if(zOn){zoomOut();return;}sIdx=i;fotoSeleccionada=i;syncSlider();resetTimer();/* Quitar elegida de TODAS y poner solo en la seleccionada */document.querySelectorAll('.m-thumb').forEach(function(th){th.classList.remove('elegida');});var _sel=document.querySelectorAll('.m-thumb')[i];if(_sel)_sel.classList.add('elegida');var _b=document.getElementById('fotoSelBar');var _n=document.getElementById('fotoSelNum');if(_b&&sImgs.length>1)_b.classList.add('show');if(_n)_n.textContent=fotoSeleccionada+1;}
+  function irA(i){if(zOn){zoomOut();return;}sIdx=i;fotoSeleccionada=i;syncSlider();resetTimer();/* Fix borde verde: quitar elegida de TODOS sin excepción, luego añadir solo al seleccionado */var _thumbs=Array.from(document.querySelectorAll('.m-thumb'));_thumbs.forEach(function(th){th.classList.remove('elegida');th.style.borderColor='';th.style.boxShadow='';});if(_thumbs[i]){_thumbs[i].classList.add('elegida');_thumbs[i].style.borderColor='#2ecc71';_thumbs[i].style.boxShadow='0 0 0 2px rgba(46,204,113,.4)';}var _b=document.getElementById('fotoSelBar');var _n=document.getElementById('fotoSelNum');if(_b&&sImgs.length>1)_b.classList.add('show');if(_n)_n.textContent=fotoSeleccionada+1;}
   function nextSlide(dir){if(zOn){zoomOut();return;}sIdx=(sIdx+dir+sImgs.length)%sImgs.length;syncSlider();resetTimer();}
   function startTimer(){stopTimer();if(sImgs.length<=1||zOn)return;sTimer=setInterval(function(){if(zOn)return;sIdx=(sIdx+1)%sImgs.length;syncSlider();},4000);}
   function stopTimer(){if(sTimer){clearInterval(sTimer);sTimer=null;}}
