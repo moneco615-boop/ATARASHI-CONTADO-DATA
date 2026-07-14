@@ -1145,11 +1145,12 @@
       "id": 1783621916952
     },
     {
-      "nombre": "PUMA SAUDE XL  H. BLANCO CABALLERO",
-      "categoria": "Calzado",
+      "nombre": "PUMA SAUDE XL  H.",
+      "categoria": "Calzado caballero😎",
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
+      "tipoTalla": "calzado",
       "descripcion": "👟 Puma Suede XL\n\nUn clásico reinventado con un estilo más urbano y moderno. Los Puma Suede XL destacan por su silueta robusta, materiales de excelente calidad y la comodidad que necesitas para usar todos los días.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783622178/atarashi_contado/qblavbfjgygulprijuhl.jpg"
