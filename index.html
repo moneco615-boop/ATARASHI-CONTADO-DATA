@@ -124,7 +124,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .m-thumbs::-webkit-scrollbar{display:none;}
 .m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:all .18s;}
 .m-thumb.on{border-color:var(--br);opacity:1;}
-.m-thumb.elegida{border-color:#2ecc71;box-shadow:0 0 0 2px rgba(46,204,113,.35);}
+.m-thumb.elegida{border-color:#2ecc71!important;box-shadow:0 0 0 2px rgba(46,204,113,.4)!important;opacity:1!important;}
 .m-foto-sel-bar{background:#0d0d0d;text-align:center;font-size:11px;color:#2ecc71;padding:5px 14px;font-weight:700;display:none;}
 .m-foto-sel-bar.show{display:block;}
 .c-item-foto{font-size:10px;color:var(--go);margin-top:2px;}
@@ -797,7 +797,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       });
     });
     /* Marcar foto 0 con borde verde al abrir */
-    setTimeout(function(){var _tt=document.querySelector('.m-thumb');if(_tt){_tt.classList.add('elegida');_tt.style.borderColor='#2ecc71';_tt.style.boxShadow='0 0 0 2px rgba(46,204,113,.4)';}},80);
+    setTimeout(function(){document.querySelectorAll('.m-thumb').forEach(function(t,j){t.classList.toggle('elegida',j===0);});},80);
     var car=document.getElementById('mCar');
     if(car){car.addEventListener('touchstart',onDown,{passive:true});car.addEventListener('touchmove',onMove,{passive:false});car.addEventListener('touchend',onUp,{passive:true});car.addEventListener('mousedown',onDown);}
     window.addEventListener('mousemove',onMove);window.addEventListener('mouseup',onUp);
@@ -858,7 +858,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
   /* CARRUSEL */
   function syncSlider(){var t=document.getElementById('mTrack');if(t)t.style.transform='translateX(-'+(sIdx*100)+'%)';var c=document.getElementById('mCnt');if(c)c.textContent=(sIdx+1)+' / '+sImgs.length;document.querySelectorAll('.m-thumb').forEach(function(th,i){th.classList.toggle('on',i===sIdx);});}
-  function irA(i){if(zOn){zoomOut();return;}sIdx=i;fotoSeleccionada=i;syncSlider();resetTimer();/* Fix borde verde: quitar elegida de TODOS sin excepción, luego añadir solo al seleccionado */var _thumbs=Array.from(document.querySelectorAll('.m-thumb'));_thumbs.forEach(function(th){th.classList.remove('elegida');th.style.borderColor='';th.style.boxShadow='';});if(_thumbs[i]){_thumbs[i].classList.add('elegida');_thumbs[i].style.borderColor='#2ecc71';_thumbs[i].style.boxShadow='0 0 0 2px rgba(46,204,113,.4)';}var _b=document.getElementById('fotoSelBar');var _n=document.getElementById('fotoSelNum');if(_b&&sImgs.length>1)_b.classList.add('show');if(_n)_n.textContent=fotoSeleccionada+1;}
+  function irA(i){if(zOn){zoomOut();return;}sIdx=i;fotoSeleccionada=i;syncSlider();resetTimer();/* Solo classList, sin inline styles — funciona en iOS Safari */document.querySelectorAll('.m-thumb').forEach(function(t,j){t.classList.toggle('elegida',j===i);});var _b=document.getElementById('fotoSelBar');var _n=document.getElementById('fotoSelNum');if(_b&&sImgs.length>1)_b.classList.add('show');if(_n)_n.textContent=i+1;}
   function nextSlide(dir){if(zOn){zoomOut();return;}sIdx=(sIdx+dir+sImgs.length)%sImgs.length;syncSlider();resetTimer();}
   function startTimer(){stopTimer();if(sImgs.length<=1||zOn)return;sTimer=setInterval(function(){if(zOn)return;sIdx=(sIdx+1)%sImgs.length;syncSlider();},4000);}
   function stopTimer(){if(sTimer){clearInterval(sTimer);sTimer=null;}}
