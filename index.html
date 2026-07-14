@@ -122,7 +122,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .m-hint{background:#0d0d0d;text-align:center;font-size:11px;color:#555;padding:5px;}
 .m-thumbs{display:flex;gap:6px;padding:8px 14px;overflow-x:auto;background:#0d0d0d;scrollbar-width:none;}
 .m-thumbs::-webkit-scrollbar{display:none;}
-.m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:all .18s;}
+.m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:opacity .18s;}
 .m-thumb.on{border-color:var(--br);opacity:1;}
 .m-thumb.elegida{border-color:#2ecc71!important;box-shadow:0 0 0 2px rgba(46,204,113,.4)!important;opacity:1!important;}
 .m-foto-sel-bar{background:#0d0d0d;text-align:center;font-size:11px;color:#2ecc71;padding:5px 14px;font-weight:700;display:none;}
@@ -725,7 +725,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
     var arrowH=n>1?'<button class="m-arr l" onclick="nextSlide(-1)">&#10094;</button><button class="m-arr r" onclick="nextSlide(1)">&#10095;</button>':'';
     var cntH=n>1?'<div class="m-cnt" id="mCnt">1 / '+n+'</div>':'';
     var zExH='<button class="m-zoom-x" id="mZX" onclick="event.stopPropagation();zoomOut()">✕ Salir zoom</button>';
-    var thumbH='';if(n>1){sImgs.forEach(function(s,i){thumbH+='<img src="'+s+'" class="m-thumb'+(i===0?' on':'')+'" onclick="irA('+i+')" loading="lazy">';});}
+    var thumbH='';if(n>1){sImgs.forEach(function(s,i){thumbH+='<img src="'+s+'" class="m-thumb'+(i===0?' on elegida':'')+'" data-idx="'+i+'" loading="lazy">';});}
     var NL=String.fromCharCode(10);
     var dTxt=(prod.descripcion&&String(prod.descripcion).trim().length>0)?String(prod.descripcion).trim():'📦 Entrega en Cali y área metropolitana'+NL+'💵 Solo pago en efectivo al recibir'+NL+'📞 Consulta tallas y colores por WhatsApp';
     var descH='<div class="m-desc"><p class="m-desc-lbl">📋 Información</p><p class="m-desc-txt">'+dTxt+'</p></div>';
@@ -788,6 +788,15 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
           +'<button class="'+addCls+'" id="mAddBtn" onclick="addToCartModal()">'+addTxt+'</button>'
         +'</div>'
       +'</div>';
+    /* Thumbs: delegación en contenedor — más fiable en iOS que onclick inline */
+    var _tc=document.querySelector('.m-thumbs');
+    if(_tc)_tc.addEventListener('click',function(e){
+      var _th=e.target;
+      if(_th&&_th.classList&&_th.classList.contains('m-thumb')){
+        var _di=parseInt(_th.getAttribute('data-idx'));
+        if(!isNaN(_di))irA(_di);
+      }
+    });
     /* Variantes: bind click events via data-var */
     document.querySelectorAll('#varBtnsBox .m-var-btn').forEach(function(btn){
       btn.addEventListener('click',function(){
@@ -797,7 +806,6 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       });
     });
     /* Marcar foto 0 con borde verde al abrir */
-    setTimeout(function(){document.querySelectorAll('.m-thumb').forEach(function(t,j){t.classList.toggle('elegida',j===0);});},80);
     var car=document.getElementById('mCar');
     if(car){car.addEventListener('touchstart',onDown,{passive:true});car.addEventListener('touchmove',onMove,{passive:false});car.addEventListener('touchend',onUp,{passive:true});car.addEventListener('mousedown',onDown);}
     window.addEventListener('mousemove',onMove);window.addEventListener('mouseup',onUp);
@@ -858,7 +866,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
   /* CARRUSEL */
   function syncSlider(){var t=document.getElementById('mTrack');if(t)t.style.transform='translateX(-'+(sIdx*100)+'%)';var c=document.getElementById('mCnt');if(c)c.textContent=(sIdx+1)+' / '+sImgs.length;document.querySelectorAll('.m-thumb').forEach(function(th,i){th.classList.toggle('on',i===sIdx);});}
-  function irA(i){if(zOn){zoomOut();return;}sIdx=i;fotoSeleccionada=i;syncSlider();resetTimer();/* Solo classList, sin inline styles — funciona en iOS Safari */document.querySelectorAll('.m-thumb').forEach(function(t,j){t.classList.toggle('elegida',j===i);});var _b=document.getElementById('fotoSelBar');var _n=document.getElementById('fotoSelNum');if(_b&&sImgs.length>1)_b.classList.add('show');if(_n)_n.textContent=i+1;}
+  function irA(i){if(zOn){zoomOut();return;}sIdx=i;fotoSeleccionada=i;syncSlider();resetTimer();var _ts=document.querySelectorAll('.m-thumb');for(var _k=0;_k<_ts.length;_k++){_ts[_k].classList.remove('elegida');}if(_ts[i])_ts[i].classList.add('elegida');var _b=document.getElementById('fotoSelBar');var _n=document.getElementById('fotoSelNum');if(_b&&sImgs.length>1)_b.classList.add('show');if(_n)_n.textContent=i+1;}
   function nextSlide(dir){if(zOn){zoomOut();return;}sIdx=(sIdx+dir+sImgs.length)%sImgs.length;syncSlider();resetTimer();}
   function startTimer(){stopTimer();if(sImgs.length<=1||zOn)return;sTimer=setInterval(function(){if(zOn)return;sIdx=(sIdx+1)%sImgs.length;syncSlider();},4000);}
   function stopTimer(){if(sTimer){clearInterval(sTimer);sTimer=null;}}
