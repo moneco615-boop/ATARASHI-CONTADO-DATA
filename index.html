@@ -28,11 +28,14 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .p-btn:hover{background:var(--br);transform:translateY(-2px);}
 
 /* ── PORTADA PREMIUM ── */
-.p-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(201,160,42,.13) 0%,transparent 65%);animation:glowP 9s ease-in-out infinite alternate;pointer-events:none;}
-@keyframes glowP{from{transform:scale(1);opacity:.65;}to{transform:scale(1.22) translateY(-4%);opacity:1;}}
+.p-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(201,160,42,.22) 0%,rgba(240,192,64,.08) 40%,transparent 65%);animation:glowP 5.5s ease-in-out infinite alternate;pointer-events:none;}
+@keyframes glowP{from{transform:scale(1) translateY(0);opacity:.55;filter:blur(0px);}50%{transform:scale(1.18) translateY(-3%);opacity:.9;}to{transform:scale(1.45) translateY(-7%);opacity:1;filter:blur(2px);}}
+
+.p-beam{position:absolute;width:180%;height:280px;background:linear-gradient(90deg,transparent 0%,rgba(201,160,42,.06) 40%,rgba(240,192,64,.1) 50%,rgba(201,160,42,.06) 60%,transparent 100%);top:22%;left:-40%;transform:rotate(-18deg);animation:beamSweep 13s ease-in-out infinite;pointer-events:none;}
+@keyframes beamSweep{0%,100%{transform:rotate(-18deg) translateX(-120%);opacity:0}15%{opacity:1}50%{transform:rotate(-18deg) translateX(120%);opacity:1}65%{opacity:0}}
 .p-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.p-dot{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(240,192,64,.75) 0%,transparent 70%);opacity:0;animation:floatDot linear infinite;}
-@keyframes floatDot{0%{opacity:0;transform:translateY(0) scale(1)}10%{opacity:.55}85%{opacity:.25}100%{opacity:0;transform:translateY(-85vh) scale(.3)}}
+.p-dot{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,220,80,.95) 0%,rgba(201,160,42,.5) 45%,transparent 70%);opacity:0;animation:floatDot linear infinite;filter:blur(.4px);}
+@keyframes floatDot{0%{opacity:0;transform:translate(0,0) scale(1)}8%{opacity:.85}50%{transform:translate(var(--dx,25px),-45vh) scale(.75)}88%{opacity:.3}100%{opacity:0;transform:translate(var(--dx2,50px),-92vh) scale(.15)}}
 .p-pretit{font-size:clamp(12px,2.8vw,15px);color:var(--br);font-weight:800;letter-spacing:1.5px;margin-bottom:5px;text-transform:uppercase;animation:fU .8s .28s ease forwards;opacity:0;}
 .p-trust{font-size:12px;color:#a0a096;margin-top:14px;font-style:italic;animation:fU .8s 1.15s ease forwards;opacity:0;}
 .p-nota{position:absolute;bottom:18px;font-size:10px;color:var(--gr);letter-spacing:2px;text-transform:uppercase;animation:fU .8s 1.15s ease forwards;opacity:0;}
@@ -143,15 +146,34 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 /* CARRITO FAB */
 .cart-fab{
   position:fixed;bottom:80px;right:14px;
-  background:#25D366;color:#fff;border:none;
+  background:#0d0d0d;color:var(--br);
+  border:2px solid rgba(201,160,42,.65);
   border-radius:40px;padding:10px 16px;
   display:none;align-items:center;gap:8px;
   cursor:pointer;z-index:9995;
-  box-shadow:0 4px 20px rgba(0,0,0,.5);
+  box-shadow:0 4px 22px rgba(0,0,0,.75),0 0 18px rgba(201,160,42,.18);
   font-family:var(--B);font-weight:900;font-size:13px;
-  transition:transform .2s;
+  transition:all .25s;
 }
-.cart-fab:hover{transform:scale(1.05);}
+.cart-fab:hover{
+  transform:scale(1.06);
+  border-color:var(--br);
+  box-shadow:0 6px 28px rgba(0,0,0,.85),0 0 30px rgba(240,192,64,.35);
+}
+.cart-fab-icon{font-size:20px;display:inline-block;animation:cartBounce 2.8s ease-in-out infinite;}
+@keyframes cartBounce{
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  25%{transform:translateY(-5px) rotate(-10deg);}
+  55%{transform:translateY(-2px) rotate(6deg);}
+  75%{transform:translateY(-4px) rotate(-5deg);}
+}
+.cart-fab-badge{
+  background:rgba(240,192,64,.14);
+  border:1px solid rgba(201,160,42,.3);
+  color:var(--br);
+  border-radius:20px;padding:3px 10px;
+  font-size:13px;
+}
 .cart-fab.show{display:flex;}
 .cart-fab-badge{background:rgba(0,0,0,.25);border-radius:20px;padding:2px 8px;font-size:12px;}
 @keyframes fabPop{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
@@ -238,11 +260,11 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 </style>
 </head>
 <body>
-<div class="portada" id="portada"><div class="p-lt"></div><div class="p-lb"></div><div class="p-glow"></div><div class="p-particles" id="pParticles"></div><div class="p-logo">ATARASHI <span>STORE</span></div><p class="p-sub">Tu tienda en Cali, Colombia</p><div class="p-div"></div><p class="p-pretit">Te ahorramos tiempo, transporte y molestias.</p><h1 class="p-tit">¿Para qué ir al centro,<br>si el centro <span class="oro">puede ir a ti?</span></h1><p class="p-desc">Compra desde cualquier lugar de Cali y recibe tus productos con <strong>pago contraentrega</strong>. Sin filas, sin tráfico y con la tranquilidad de pagar solo al recibir.</p><div class="p-pills"><span class="p-pill">🚚 Domicilio a Cali</span><span class="p-pill">✅ Pagas al recibir</span><span class="p-pill">💵 Solo efectivo</span><span class="p-pill">🛡️ 100% Seguro</span></div><button class="p-btn" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity .35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360)})()">EXPLORAR TIENDA →</button><p class="p-trust">Cientos de clientes en Cali están comprando fácil y seguro.</p><span class="p-nota">Cali · Colombia · Efectivo al recibir</span></div><header class="s-hdr"><button class="hamb" onclick="toggleMenu()">&#9776;</button><h1>ATARASHI <span>STORE</span></h1><small>Pago Contraentrega · Cali</small></header><div class="sidebar-ov" id="sidebarOv" onclick="if(event.target===this)cerrarMenu()"><div class="sidebar"><div class="sb-hdr"><span class="sb-tit">Categorías</span><button class="m-close" onclick="cerrarMenu()">×</button></div><div id="sidebarCats"></div></div></div><div class="trust"><span>🚚 Domicilio Cali</span><span>✅ Pagas al recibir</span><span>💵 Efectivo en tu puerta</span><span>💬 WhatsApp</span></div><div class="ctn"><div class="filtros" id="filtros"></div><div class="grid" id="grid"><p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">⏳ Cargando...</p></div></div><!-- FAB CARRITO --><button class="cart-fab" id="cartFab" onclick="abrirCarrito()">🛒 <span class="cart-fab-badge" id="cartFabBadge">0 — $0</span></button><!-- TOAST --><div class="toast" id="toast"></div><!-- MODAL PRODUCTO --><div class="modal-bg" id="modalProd" onclick="if(event.target.id==='modalProd')cerrarModal()"><div class="modal-box" id="mBox"></div></div><!-- CARRITO DRAWER --><div class="cart-ov" id="cartOv" onclick="if(event.target.id==='cartOv')cerrarCarrito()"><div class="cart-box"><div class="cart-hdr"><h2>🛒 <span>Carrito</span></h2><button class="m-close" onclick="cerrarCarrito()">✕</button></div><div class="cart-min"><div class="cart-min-top"><span>Pedido mínimo</span><strong id="cartMinLbl">$0 / $60.000</strong></div><div class="cart-prog-bar"><div class="cart-prog-fill" id="cartProgFill"></div></div><p class="cart-min-msg" id="cartMinMsg">Agrega productos para llegar al mínimo</p></div><div class="cart-items" id="cartItemsCont"></div><div class="cart-totales"><div class="c-tot-row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div><div class="c-tot-row c-tot-gratis"><span>Envío contraentrega</span><span>$0 GRATIS</span></div><div class="c-tot-final"><span>TOTAL</span><span id="cartTotal">$0</span></div></div><div class="cart-btns"><button class="btn-pedir" id="btnPedir" disabled onclick="hacerPedido()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> HACER PEDIDO — PAGO AL RECIBIR</button><button class="btn-print" onclick="imprimirFactura()">🖨️ Imprimir / Guardar PDF</button><button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar carrito</button></div></div></div><!-- FORM PEDIDO --><div class="fmodal-bg" id="modalForm" onclick="if(event.target.id==='modalForm')cerrarForm()"><div class="fmodal-box"><button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarForm()">✕</button><p class="f-logo">ATARASHI <span>STORE</span></p><p class="f-sub">Confirmar pedido · Pago en efectivo al recibir</p><div class="f-resumen"><p class="f-pnom" id="fPNom">—</p><p class="f-pprecio" id="fPPrecio">$0</p></div><div class="campo"><label>Tu nombre completo *</label><input type="text" id="fNom" placeholder="Ej: Juan Pérez" autocomplete="name"></div><div class="campo"><label>Tu celular / WhatsApp *</label><input type="tel" id="fCel" placeholder="Ej: 300 123 4567" autocomplete="tel"></div><div class="campo" id="campoTalla" style="display:none;"><label>📏 ¿Qué talla necesitas? *</label><input type="text" id="fTalla" placeholder="Ej: 38 / M / L"></div>
+<div class="portada" id="portada"><div class="p-lt"></div><div class="p-lb"></div><div class="p-glow"></div><div class="p-beam"></div><div class="p-particles" id="pParticles"></div><div class="p-logo">ATARASHI <span>STORE</span></div><p class="p-sub">Tu tienda en Cali, Colombia</p><div class="p-div"></div><p class="p-pretit">Te ahorramos tiempo, transporte y molestias.</p><h1 class="p-tit">¿Para qué ir al centro,<br>si el centro <span class="oro">puede ir a ti?</span></h1><p class="p-desc">Compra desde cualquier lugar de Cali y recibe tus productos con <strong>pago contraentrega</strong>. Sin filas, sin tráfico y con la tranquilidad de pagar solo al recibir.</p><div class="p-pills"><span class="p-pill">🚚 Domicilio a Cali</span><span class="p-pill">✅ Pagas al recibir</span><span class="p-pill">💵 Solo efectivo</span><span class="p-pill">🛡️ 100% Seguro</span></div><button class="p-btn" onclick="(function(){var p=document.getElementById('portada');p.style.transition='opacity .35s ease';p.style.opacity='0';p.style.pointerEvents='none';setTimeout(function(){p.style.display='none';},360)})()">EXPLORAR TIENDA →</button><p class="p-trust">Cientos de clientes en Cali están comprando fácil y seguro.</p><span class="p-nota">Cali · Colombia · Efectivo al recibir</span></div><header class="s-hdr"><button class="hamb" onclick="toggleMenu()">&#9776;</button><h1>ATARASHI <span>STORE</span></h1><small>Pago Contraentrega · Cali</small></header><div class="sidebar-ov" id="sidebarOv" onclick="if(event.target===this)cerrarMenu()"><div class="sidebar"><div class="sb-hdr"><span class="sb-tit">Categorías</span><button class="m-close" onclick="cerrarMenu()">×</button></div><div id="sidebarCats"></div></div></div><div class="trust"><span>🚚 Domicilio Cali</span><span>✅ Pagas al recibir</span><span>💵 Efectivo en tu puerta</span><span>💬 WhatsApp</span></div><div class="ctn"><div class="filtros" id="filtros"></div><div class="grid" id="grid"><p style="color:#888;text-align:center;padding:60px;grid-column:1/-1;">⏳ Cargando...</p></div></div><!-- FAB CARRITO --><button class="cart-fab" id="cartFab" onclick="abrirCarrito()"><span class="cart-fab-icon">🛒</span><span class="cart-fab-badge" id="cartFabBadge">0 artículos</span></button><!-- TOAST --><div class="toast" id="toast"></div><!-- MODAL PRODUCTO --><div class="modal-bg" id="modalProd" onclick="if(event.target.id==='modalProd')cerrarModal()"><div class="modal-box" id="mBox"></div></div><!-- CARRITO DRAWER --><div class="cart-ov" id="cartOv" onclick="if(event.target.id==='cartOv')cerrarCarrito()"><div class="cart-box"><div class="cart-hdr"><h2>🛒 <span>Carrito</span></h2><button class="m-close" onclick="cerrarCarrito()">✕</button></div><div class="cart-min"><div class="cart-min-top"><span>Pedido mínimo</span><strong id="cartMinLbl">$0 / $60.000</strong></div><div class="cart-prog-bar"><div class="cart-prog-fill" id="cartProgFill"></div></div><p class="cart-min-msg" id="cartMinMsg">Agrega productos para llegar al mínimo</p></div><div class="cart-items" id="cartItemsCont"></div><div class="cart-totales"><div class="c-tot-row"><span>Subtotal</span><span id="cartSubtotal">$0</span></div><div class="c-tot-row c-tot-gratis"><span>Envío contraentrega</span><span>$0 GRATIS</span></div><div class="c-tot-final"><span>TOTAL</span><span id="cartTotal">$0</span></div></div><div class="cart-btns"><button class="btn-pedir" id="btnPedir" disabled onclick="hacerPedido()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> HACER PEDIDO — PAGO AL RECIBIR</button><button class="btn-print" onclick="imprimirFactura()">🖨️ Imprimir / Guardar PDF</button><button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar carrito</button></div></div></div><!-- FORM PEDIDO --><div class="fmodal-bg" id="modalForm" onclick="if(event.target.id==='modalForm')cerrarForm()"><div class="fmodal-box"><button class="m-close" style="position:absolute;top:14px;right:14px;" onclick="cerrarForm()">✕</button><p class="f-logo">ATARASHI <span>STORE</span></p><p class="f-sub">Confirmar pedido · Pago en efectivo al recibir</p><div class="f-resumen"><p class="f-pnom" id="fPNom">—</p><p class="f-pprecio" id="fPPrecio">$0</p></div><div class="campo"><label>Tu nombre completo *</label><input type="text" id="fNom" placeholder="Ej: Juan Pérez" autocomplete="name"></div><div class="campo"><label>Tu celular / WhatsApp *</label><input type="tel" id="fCel" placeholder="Ej: 300 123 4567" autocomplete="tel"></div><div class="campo" id="campoTalla" style="display:none;"><label>📏 ¿Qué talla necesitas? *</label><input type="text" id="fTalla" placeholder="Ej: 38 / M / L"></div>
     <div class="campo"><label>Dirección en Cali *</label><input type="text" id="fDir" placeholder="Ej: Cra 50 #20-15, Aguablanca"></div><button class="f-cta" onclick="enviarWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> ENVIAR PEDIDO POR WHATSAPP</button><button class="f-back" onclick="cerrarForm()">← Volver al carrito</button><p class="f-nota">Se abrirá WhatsApp con tu pedido completo. Solo presiona Enviar.<br>Pagas en efectivo cuando llegue a tu puerta.<br><br><strong style="color:var(--br)">⏱️ ¿Necesitas corregir o cancelar?</strong><br>Responde el mismo WhatsApp en los próximos 60 minutos.</p></div></div>
 <script>
 
-  var WA = '3197066369';
+  var WA = '+573197066369';
   var PRODS = [], CATS = [], filtro = 'todos';
   var prod = null;
   var varSeleccionada = '';
@@ -763,11 +785,21 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
   function generarParticulas(){
     var box=document.getElementById('pParticles');
     if(!box)return;
-    for(var i=0;i<14;i++){
+    for(var i=0;i<24;i++){
       var p=document.createElement('span');
       p.className='p-dot';
-      var sz=Math.random()*5+2;
-      p.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+(Math.random()*100)+'%;top:'+(20+Math.random()*75)+'%;animation-duration:'+(8+Math.random()*10)+'s;animation-delay:'+(Math.random()*10)+'s;';
+      var sz=Math.random()*10+3;
+      var dx=(Math.random()*100-50)+'px';
+      var dx2=(Math.random()*120-60)+'px';
+      p.style.cssText=
+        'width:'+sz+'px;'
+        +'height:'+sz+'px;'
+        +'left:'+(Math.random()*100)+'%;'
+        +'top:'+(30+Math.random()*65)+'%;'
+        +'animation-duration:'+(6+Math.random()*9)+'s;'
+        +'animation-delay:'+(Math.random()*8)+'s;'
+        +'--dx:'+dx+';'
+        +'--dx2:'+dx2+';';
       box.appendChild(p);
     }
   }
