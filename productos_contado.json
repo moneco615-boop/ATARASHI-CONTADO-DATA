@@ -202,10 +202,11 @@
     },
     {
       "nombre": "NIKE NOCTA 2 DISPONIBLE BLANCA Y NEGRA",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "tipoTalla": "calzado",
       "descripcion": "Nike NOCTA es la colección que une estilo urbano, actitud premium y funcionalidad en una sola propuesta. Inspirada en la noche y en un diseño moderno, ofrece prendas y accesorios versátiles pensados para destacar con comodidad y presencia.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783186720/atarashi_contado/xzux3kepxf6wpop0jamf.jpg",
@@ -2080,114 +2081,6 @@
       ],
       "video": "",
       "id": 1783709931618
-    },
-    {
-      "nombre": "MALETIN",
-      "categoria": "Accesorios moto",
-      "badge": "⭐ RECOMENDADO",
-      "disponibilidad": "inmediata",
-      "precioContado": 90000,
-      "descripcion": "dientes ojo te muerde",
-      "variantes": "blanco, rojo, verde, mueco.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783963658/atarashi_contado/i5lfqq1esewza1ptmiwb.jpg"
-      ],
-      "video": "",
-      "id": 1783963756274
-    },
-    {
-      "nombre": "MALETIN",
-      "categoria": "Tecnología",
-      "badge": "🆕 NUEVO INGRESO",
-      "disponibilidad": "inmediata",
-      "precioContado": 200000,
-      "descripcion": "maletin gris. lindo lindo",
-      "variantes": "blanco, rojo, negro, azul",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783964785/atarashi_contado/jnrhja99a4siahrknr47.jpg"
-      ],
-      "video": "",
-      "id": 1783964843344
-    },
-    {
-      "nombre": "MALETIN COCODRILO",
-      "categoria": "Ropa",
-      "badge": "📉 ÚLTIMAS UNIDADES",
-      "disponibilidad": "inmediata",
-      "precioContado": 300000,
-      "descripcion": "maletin hdcdbsbudgadsi  duhfiauf  ewuhfqireyrbf",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783970370/atarashi_contado/xf3qi32n83upqzf0dtvv.jpg"
-      ],
-      "video": "",
-      "id": 1783970433679
-    },
-    {
-      "nombre": "RE BALANCE BEAT",
-      "categoria": "Ropa",
-      "badge": "📦 LIQUIDACIÓN",
-      "disponibilidad": "inmediata",
-      "precioContado": 40000,
-      "tipoTalla": "calzado",
-      "descripcion": "Liquidación total",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783985289/atarashi_contado/nobw0h8trqgld5olc2vu.jpg"
-      ],
-      "video": "",
-      "id": 1783985324462
-    },
-    {
-      "nombre": "DIENTES MUECOS",
-      "categoria": "Tecnología",
-      "badge": "📦 LIQUIDACIÓN",
-      "disponibilidad": "inmediata",
-      "precioContado": 35000,
-      "descripcion": "dientes muecos filudos",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783996534/atarashi_contado/u3idq92euxk2zlk42pqg.jpg"
-      ],
-      "video": "",
-      "id": 1783996570232
-    },
-    {
-      "nombre": "MALETIN MUELITAS",
-      "categoria": "Tecnología",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 75000,
-      "descripcion": "mueliAS",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784000231/atarashi_contado/vruugwz3mqweaztahpmr.jpg"
-      ],
-      "video": "",
-      "id": 1784000277288
-    },
-    {
-      "nombre": "MUELON MORDELON",
-      "categoria": "Tecnología",
-      "badge": "📉 ÚLTIMAS UNIDADES",
-      "disponibilidad": "transito",
-      "precioContado": 8000,
-      "descripcion": "regalao es caro",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784001062/atarashi_contado/p0nmezgfstvvftny7ysl.jpg"
-      ],
-      "video": "",
-      "id": 1784001098599
-    },
-    {
-      "nombre": "MALETA GRIS",
-      "categoria": "Ropa",
-      "badge": "🔥 TOP VENTAS",
-      "disponibilidad": "inmediata",
-      "precioContado": 35000,
-      "tipoTalla": "",
-      "descripcion": "maletin gris",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784002782/atarashi_contado/dgjhabmzvqwgpomhluje.jpg"
-      ],
-      "video": "",
-      "id": 1784002818327
     }
   ],
   "categorias": [
