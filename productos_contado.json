@@ -1101,11 +1101,12 @@
       "id": 1783612541954
     },
     {
-      "nombre": "NIKE AIR MAX P7000 DAMA",
-      "categoria": "Calzado",
+      "nombre": "NIKE AIR MAX P7000",
+      "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "tipoTalla": "calzado",
       "descripcion": "🔥 Destaca con los Nike P-7000, el equilibrio perfecto entre estilo retro y comodidad. Su diseño inspirado en el running ofrece una excelente combinación de ligereza, soporte y confort para acompañarte en cualquier ocasión",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612695/atarashi_contado/vxroznnjryqhqizmoi5s.jpg",
