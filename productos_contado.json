@@ -763,10 +763,11 @@
     },
     {
       "nombre": "TIMBERLAND",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
+      "tipoTalla": "calzado",
       "descripcion": "Las botas café de Timberland son un clásico absoluto que combina resistencia extrema, protección contra el clima y un estilo sumamente versátil para el día a día",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783522509/atarashi_contado/wpe8hsqddpsoh5ya4z5y.jpg"
@@ -776,10 +777,11 @@
     },
     {
       "nombre": "NIKE JORDAN",
-      "categoria": "Calzado",
+      "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "tipoTalla": "calzado",
       "descripcion": "Air Jordan 5 Retro \"White Cement\"! Destacan por su diseño clásico con detalles moteados característicos de ese modelo",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783524890/atarashi_contado/l5ez9axruztfbs3p1mdx.jpg",
