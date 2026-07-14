@@ -284,20 +284,17 @@
       "id": 1783220494327
     },
     {
-      "nombre": "ADIDAS SUPERSTAR DAMA Y CABALLERO",
-      "categoria": "Calzado",
-      "badge": "🔥 TOP VENTAS",
+      "nombre": "ADIDAS SUPERSTAR",
+      "categoria": "Calzado caballero😎",
+      "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "tipoTalla": "calzado",
       "descripcion": "adidas Superstar es el nombre más claro y comercial para ese modelo. Es una zapatilla icónica de caña baja, conocida por su puntera de caucho tipo shell toe y su clásico estilo que nunca pasa de moda",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220586/atarashi_contado/lftsdjqwrvetombtneib.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220586/atarashi_contado/mtitbtjznktagi2efph1.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220587/atarashi_contado/yt95zat6oagtohflyfel.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220587/atarashi_contado/dewxsyt1qw2hgdx2hnlr.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220587/atarashi_contado/nxvewovmcwvkc24n8h0y.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220757/atarashi_contado/gkkbqy10v82dks3nc6h8.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220772/atarashi_contado/a0ykepllngjwxg540d2n.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784004589/atarashi_contado/vg4q0zjwufbtaswxnvxc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784004626/atarashi_contado/vtfjc99zju4cpdd9qcwm.jpg"
       ],
       "video": "",
       "id": 1783220900305
