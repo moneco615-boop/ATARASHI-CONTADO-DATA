@@ -2168,6 +2168,20 @@
       ],
       "video": "",
       "id": 1784001098599
+    },
+    {
+      "nombre": "MALETA GRIS",
+      "categoria": "Ropa",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 35000,
+      "tipoTalla": "",
+      "descripcion": "maletin gris",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784002782/atarashi_contado/dgjhabmzvqwgpomhluje.jpg"
+      ],
+      "video": "",
+      "id": 1784002818327
     }
   ],
   "categorias": [
