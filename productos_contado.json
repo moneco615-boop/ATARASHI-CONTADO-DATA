@@ -2455,6 +2455,21 @@
       ],
       "video": "",
       "id": 1784151534462
+    },
+    {
+      "nombre": "CAJON MONEDERO PARA CAJA REGISTRADORA",
+      "categoria": "Equipamiento y oficina",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 210000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Dale un aspecto más profesional a tu punto de venta con nuestro Cajón Monedero Electrónico de 5 puestos. Su tamaño se adapta a cualquier espacio, manteniendo tus billetes y monedas perfectamente organizados y seguros bajo llave.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784158444/atarashi_contado/e4dboz4mylurj8nwb0nh.jpg"
+      ],
+      "video": "",
+      "id": 1784158753372
     }
   ],
   "categorias": [
@@ -2517,6 +2532,10 @@
     {
       "emoji": "🎮",
       "nombre": "Juguetes🚂🪁🧸"
+    },
+    {
+      "emoji": "⭐",
+      "nombre": "Equipamiento y oficina"
     }
   ]
 }
