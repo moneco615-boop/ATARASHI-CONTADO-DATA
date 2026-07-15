@@ -221,6 +221,7 @@
       "badge": "💰 SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Nike DN8 es la evolución del clásico Air Max, con un diseño de perfil bajo, estilo moderno y una amortiguación que se siente reactiva en cada paso. Su sistema de aire comprimido a lo largo del pie ofrece una pisada más fluida, cómoda y con una presencia visual muy potente.",
       "imagenes": [
@@ -255,6 +256,7 @@
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Nike TN es el nombre corto más usado para las Air Max Plus , unas zapatillas icónicas con estilo urbano, gran comodidad y una silueta inconfundible. Nacidas en 1998, destacan por su diseño agresivo y su amortiguación visible que las hace tan llamativas como cómodas",
       "imagenes": [
@@ -272,6 +274,7 @@
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "adidas Adizero es la línea de la marca enfocada en velocidad, ligereza y alto rendimiento. Está pensada para corredores y deportistas que buscan una sensación ágil, cómoda y reactiva en cada paso.",
       "imagenes": [
