@@ -2176,46 +2176,18 @@
       "id": 1784038388047
     },
     {
-      "nombre": "DIENTES MUECOS",
+      "nombre": "MUELAS  MMUECAS",
       "categoria": "Hogar",
-      "badge": "📉 ÚLTIMAS UNIDADES",
-      "disponibilidad": "camino",
-      "precioContado": 15000,
+      "badge": "💰 SÚPER PRECIO",
+      "disponibilidad": "pocas",
+      "precioContado": 25500,
       "tipoTalla": "",
-      "descripcion": "muelas chuecas",
+      "descripcion": "mordida de chimuelo",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784039839/atarashi_contado/cpgrqrwgxbk7odbbbfon.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784079154/atarashi_contado/ivh9vkwqdfrnx4xx1zzg.jpg"
       ],
       "video": "",
-      "id": 1784039891667
-    },
-    {
-      "nombre": "MUELAS",
-      "categoria": "Tecnología",
-      "badge": "🔥 TOP VENTAS",
-      "disponibilidad": "inmediata",
-      "precioContado": 30000,
-      "tipoTalla": "",
-      "descripcion": "muelas  muecas",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784040872/atarashi_contado/mwnrch9civorixcf8yai.jpg"
-      ],
-      "video": "",
-      "id": 1784040942272
-    },
-    {
-      "nombre": "MUELAS",
-      "categoria": "Tecnología",
-      "badge": "📦 LIQUIDACIÓN",
-      "disponibilidad": "preventa",
-      "precioContado": 47000,
-      "tipoTalla": "",
-      "descripcion": "separa el tuyo",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784042803/atarashi_contado/b1ekmkjt4cfmsplylmyq.jpg"
-      ],
-      "video": "",
-      "id": 1784042847600
+      "id": 1784079209643
     }
   ],
   "categorias": [
