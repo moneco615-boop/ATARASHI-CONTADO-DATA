@@ -794,9 +794,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
         varSeleccionada=_vl[0];
       }
     }
-        /* numH antes del innerHTML */
+        /* numH solo si fotos son modelos distintos */
     var numH='';
-    if(n>1){
+    if(n>1 && prod.fotosModelos){
       numH='<div class="foto-nums">';
       for(var _fi=0;_fi<n;_fi++){
         numH+='<button class="foto-num-btn"'+(_fi===0?' data-active="1"':'')
@@ -873,7 +873,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       else carrito[key]={
         prod:prod,qty:1,variante:varSeleccionada,
         foto:sImgs.length>0?(sImgs[fotoSeleccionada]||sImgs[0]):'',
-        fotoIdx:sImgs.length>1?fotoSeleccionada+1:null,
+        fotoIdx:(sImgs.length>1&&prod.fotosModelos)?fotoSeleccionada+1:null,
         talla:_tallaVal
       };
     }
