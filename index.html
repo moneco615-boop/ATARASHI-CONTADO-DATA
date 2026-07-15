@@ -127,7 +127,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .m-hint{background:#0d0d0d;text-align:center;font-size:11px;color:#555;padding:5px;}
 .m-thumbs{display:flex;gap:6px;padding:8px 14px;overflow-x:auto;background:#0d0d0d;scrollbar-width:none;}
 .m-thumbs::-webkit-scrollbar{display:none;}
-.m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:opacity .18s;}
+.m-thumb{flex-shrink:0;width:50px;height:50px;object-fit:cover;border-radius:5px;cursor:pointer;border:2px solid transparent;opacity:.5;transition:opacity .18s;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
 .m-thumb.on{border-color:var(--br);opacity:1;}
 /* selector foto: ahora via .foto-num-btn[data-active] */
 .m-foto-sel-bar{background:#0d0d0d;text-align:center;font-size:11px;color:#2ecc71;padding:5px 14px;font-weight:700;display:none;}
@@ -809,7 +809,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       '<div class="m-hdr"><div class="m-hdr-t">ATARASHI <span>STORE</span></div>'
         +'<button class="m-close" onclick="cerrarModal()">×</button></div>'
       +'<div class="m-car" id="mCar"><div class="m-track" id="mTrack">'+slidesH+'</div>'+arrowH+cntH+zExH+'</div>'
-      +(n>0?'<p class="m-hint">👆 Toca la foto para ampliar · Arrastra para explorar</p>':'')
+      +(n>0?'<p class="m-hint">'+(prod.fotosModelos?'📸 Elige tu opción ↓':'👆 Desliza ←→ · Toca para ampliar')+'</p>':'')
       +(thumbH?'<div class="m-thumbs">'+thumbH+'</div>':'')
       +numH
       +'<div class="m-info">'
@@ -832,6 +832,23 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
       +'</div>'
     var car=document.getElementById('mCar');
     if(car){car.addEventListener('touchstart',onDown,{passive:true});car.addEventListener('touchmove',onMove,{passive:false});car.addEventListener('touchend',onUp,{passive:true});car.addEventListener('mousedown',onDown);}
+    /* Navegación por thumbnails: click Y touchend para iOS */
+    var _tc=document.querySelector('.m-thumbs');
+    if(_tc){
+      function _thNav(e){
+        var _t=(e.changedTouches?document.elementFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY):e.target);
+        if(_t&&_t.classList.contains('m-thumb')){
+          var _i=parseInt(_t.getAttribute('data-idx'));
+          if(!isNaN(_i)){e.preventDefault();selFoto(_i);}
+        }
+      }
+      _tc.addEventListener('click',_thNav);
+      _tc.addEventListener('touchend',_thNav,{passive:false});
+    }
+    /* Flechas: mayor área táctil */
+    document.querySelectorAll('.m-arrow').forEach(function(btn){
+      btn.style.cssText+='width:44px;height:44px;touch-action:manipulation;';
+    });
     window.addEventListener('mousemove',onMove);window.addEventListener('mouseup',onUp);
     document.getElementById('modalProd').classList.add('show');
     startTimer();
