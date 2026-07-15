@@ -80,9 +80,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .card-trust{font-size:11px;color:#888;font-weight:600;letter-spacing:.2px;margin-bottom:6px;}
 @keyframes badgePop{0%,75%,100%{transform:scale(1);}85%{transform:scale(1.1);}95%{transform:scale(1.04);}}
 .card-badge{position:absolute;top:10px;right:10px;background:var(--br);color:#000;font-size:10px;font-weight:900;padding:4px 10px;border-radius:4px;z-index:5;text-transform:uppercase;animation:badgePop 3s ease-in-out infinite;}
-.card-img{width:100%;height:340px;background:#141414;display:flex;align-items:center;justify-content:center;padding:12px;cursor:pointer;}
+.card-img{width:100%;height:220px;background:#141414;display:flex;align-items:center;justify-content:center;padding:12px;cursor:pointer;}
 
-@media(max-width:500px){.card-body{padding:6px 8px 2px;}.card-img{height:270px;padding:6px;}.card-img img{object-fit:cover;border-radius:4px;}}
+@media(max-width:500px){.card-body{padding:6px 8px 2px;}.card-img{height:170px;padding:5px;}.card-img img{object-fit:contain;border-radius:4px;}}
 .card-body{padding:8px 10px 2px;border-top:1px solid rgba(255,255,255,.03);background:#151515;flex:1;cursor:pointer;}
 .card-cat{font-size:11px;color:var(--gr);margin-bottom:2px;}
 .card-name{font-family:var(--T);font-size:17px;letter-spacing:.5px;text-transform:uppercase;color:var(--wh);margin-bottom:3px;line-height:1.1;}
@@ -793,27 +793,42 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
         varSeleccionada=_vl[0];
       }
     }
-    document.getElementById('mBox').innerHTML=
-      '<div class="m-hdr"><div class="m-hdr-t">ATARASHI <span>STORE</span></div><button class="m-close" onclick="cerrarModal()">✕</button></div>'
-      +'<div class="m-car" id="mCar"><div class="m-track" id="mTrack">'+slidesH+'</div>'+arrowH+cntH+zExH+'</div>'
-      +(n>0?'<p class="m-hint">👆 Toca la foto para ampliar · Arrastra para explorar</p>':'')
-      /* Build numH */
+        /* numH antes del innerHTML */
     var numH='';
     if(n>1){
       numH='<div class="foto-nums">';
       for(var _fi=0;_fi<n;_fi++){
         numH+='<button class="foto-num-btn"'+(_fi===0?' data-active="1"':'')
-             +' onclick="selFoto('+_fi+')">'+(_fi+1)+'</button>';
+          +' onclick="selFoto('+_fi+')">'+(_fi+1)+'</button>';
       }
-      numH+='</div>'
-        +'<div class="foto-sel-lbl" id="fotoSelLbl">'
-        +'📸 Foto seleccionada — <strong>1</strong> de '+n
-        +'</div>';
+      numH+='</div><div class="foto-sel-lbl" id="fotoSelLbl">'
+        +'📸 Foto seleccionada — <strong>1</strong> de '+n+'</div>';
     }
-
-    +(thumbH?'<div class="m-thumbs">'+thumbH+'</div>':'')
+    document.getElementById('mBox').innerHTML=
+      '<div class="m-hdr"><div class="m-hdr-t">ATARASHI <span>STORE</span></div>'
+        +'<button class="m-close" onclick="cerrarModal()">×</button></div>'
+      +'<div class="m-car" id="mCar"><div class="m-track" id="mTrack">'+slidesH+'</div>'+arrowH+cntH+zExH+'</div>'
+      +(n>0?'<p class="m-hint">👆 Toca la foto para ampliar · Arrastra para explorar</p>':'')
+      +(thumbH?'<div class="m-thumbs">'+thumbH+'</div>':'')
       +numH
-        /* Marcar foto 0 con borde verde al abrir */
+      +'<div class="m-info">'
+        +'<p class="m-cat">'+em+' '+prod.categoria+'</p>'
+        +'<h2 class="m-nombre">'+(prod.badge?'<span class="badge-tag" style="font-size:10px;">'+prod.badge+'</span> ':'')+prod.nombre+'</h2>'
+        +'<p class="m-precio">'+fmtP(prod.precioContado)+'</p>'
+        +'<div class="aviso-disp">'+disp+'</div>'
+        +'<p style="font-size:11px;color:#555;font-style:italic;margin:6px 0 10px;">'
+          +'⚠️ Nuestro inventario está en constante movimiento. '
+          +'Este producto está sujeto a disponibilidad al momento de confirmar tu pedido.</p>'
+        +descH+videoH+tallaH+variantesH
+        +'<div class="m-cart-row">'
+          +'<div class="m-qty">'
+            +'<button onclick="cambiarQtyModal(-1)">&#8722;</button>'
+            +'<span id="mQtyNum">1</span>'
+            +'<button onclick="cambiarQtyModal(1)">+</button>'
+          +'</div>'
+          +'<button class="'+addCls+'" id="mAddBtn" onclick="addToCartModal()">'+addTxt+'</button>'
+        +'</div>'
+      +'</div>'
     var car=document.getElementById('mCar');
     if(car){car.addEventListener('touchstart',onDown,{passive:true});car.addEventListener('touchmove',onMove,{passive:false});car.addEventListener('touchend',onUp,{passive:true});car.addEventListener('mousedown',onDown);}
     window.addEventListener('mousemove',onMove);window.addEventListener('mouseup',onUp);
