@@ -2283,6 +2283,24 @@
       ],
       "video": "",
       "id": 1784145795103
+    },
+    {
+      "nombre": "ROBOT CONVERTIBLE 5 EN 1 DINOSAURIO CON CONTROL, LUZ Y SONIDO",
+      "categoria": "Juguetes🚂🪁🧸",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Diversión y aventura en un solo juguete\\. Este increíble robot se transforma en diferentes modelos y cuenta con control remoto, luces y sonidos para una experiencia de juego mucho más emocionante\\.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145929/atarashi_contado/lo8hhl7rpfoqfkvvenbs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145929/atarashi_contado/zsrqdgv2wyj5qtsgnjll.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145929/atarashi_contado/sebccwzc3rz4abl442it.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145929/atarashi_contado/lxoojopmutovdxttk0p6.jpg"
+      ],
+      "video": "",
+      "id": 1784146086724
     }
   ],
   "categorias": [
@@ -2341,6 +2359,10 @@
     {
       "emoji": "🔥",
       "nombre": "Escolar📚"
+    },
+    {
+      "emoji": "🎮",
+      "nombre": "Juguetes🚂🪁🧸"
     }
   ]
 }
