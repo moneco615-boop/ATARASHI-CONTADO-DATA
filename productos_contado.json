@@ -2247,6 +2247,25 @@
       ],
       "video": "",
       "id": 1784038388047
+    },
+    {
+      "nombre": "POCILLO LÁMPARA CAPYBARA",
+      "categoria": "Hogar",
+      "badge": "📉 ÚLTIMAS UNIDADES",
+      "disponibilidad": "pocas",
+      "precioContado": 30000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145318/atarashi_contado/fy0nnzftpuzqha38tmsb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145318/atarashi_contado/sxdn14slzquoo88nvukf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145318/atarashi_contado/eqar9oy06ho5cfs3b4uf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145318/atarashi_contado/h48kngx2kkcyxrptcw0h.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145318/atarashi_contado/wixnfuzuw7sh5zmigutq.jpg"
+      ],
+      "video": "",
+      "id": 1784145511857
     }
   ],
   "categorias": [
