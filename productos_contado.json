@@ -2273,7 +2273,7 @@
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 15000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "",
       "descripcion": "Mantén tu escritorio organizado con este adorable portalápiz de capibara\\. Su diseño divertido y práctico es perfecto para guardar lápices, esferos, marcadores y otros accesorios de forma ordenada\\.",
       "imagenes": [
