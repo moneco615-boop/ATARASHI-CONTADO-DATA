@@ -2266,6 +2266,23 @@
       ],
       "video": "",
       "id": 1784145511857
+    },
+    {
+      "nombre": "PORTALÁPIZ CAPIBARA",
+      "categoria": "Escolar📚",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 15000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Mantén tu escritorio organizado con este adorable portalápiz de capibara\\. Su diseño divertido y práctico es perfecto para guardar lápices, esferos, marcadores y otros accesorios de forma ordenada\\.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145573/atarashi_contado/tuaxxpmjnsrtfkdlyjwl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145573/atarashi_contado/piveb1so2qdlh3cflqqe.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784145573/atarashi_contado/ndrienobuvumpjwyizzw.jpg"
+      ],
+      "video": "",
+      "id": 1784145795103
     }
   ],
   "categorias": [
@@ -2320,6 +2337,10 @@
     {
       "emoji": "👟",
       "nombre": "Calzado caballero😎"
+    },
+    {
+      "emoji": "🔥",
+      "nombre": "Escolar📚"
     }
   ]
 }
