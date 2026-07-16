@@ -2627,6 +2627,24 @@
       ],
       "video": "",
       "id": 1784163978802
+    },
+    {
+      "nombre": "MAQUINA PALUQIERA PROFESSIONAL HAIR CLIPPER VGR",
+      "categoria": "Belleza y accesorios",
+      "badge": "📉 ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Lleva la barbería a tu casa con la máxima precisión y potencia! La VGR V-683 es la herramienta definitiva para lograr cortes perfectos, degradados fluidos y un estilizado profesional. Su diseño inalámbrico, ergonómico y de alto rendimiento la convierte en la opción ideal tanto para barberos exigentes como para el cuidado personal diario.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784164796/atarashi_contado/c1fabsryifnp8qbncj7j.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784164803/atarashi_contado/a9g49rrua11royakicqd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784164818/atarashi_contado/z8mlljehmu0ih0hkodfg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784164824/atarashi_contado/savrvxigon7fgdmksw2m.jpg"
+      ],
+      "video": "",
+      "id": 1784164974930
     }
   ],
   "categorias": [
@@ -2645,10 +2663,6 @@
     {
       "emoji": "🏍️",
       "nombre": "Accesorios moto"
-    },
-    {
-      "emoji": "🧴",
-      "nombre": "Belleza"
     },
     {
       "emoji": "🍳",
@@ -2693,6 +2707,10 @@
     {
       "emoji": "⭐",
       "nombre": "Equipamiento y oficina"
+    },
+    {
+      "emoji": "🧴",
+      "nombre": "Belleza y accesorios"
     }
   ]
 }
