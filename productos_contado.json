@@ -2614,6 +2614,22 @@
       ],
       "video": "",
       "id": 1784400800368
+    },
+    {
+      "nombre": "NIKE MIND",
+      "categoria": "Calzado caballero😎",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Luce un estilo moderno con un calzado diseñado para ofrecer comodidad y versatilidad en cada paso. Perfectos para el uso diario, combinan un diseño deportivo con excelente confort para cualquier ocasión.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784400906/atarashi_contado/qsyc5tecl7zxsyzlfc5c.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784400906/atarashi_contado/jnthfnpatejpbtgqo7jv.jpg"
+      ],
+      "video": "",
+      "id": 1784400991652
     }
   ],
   "categorias": [
