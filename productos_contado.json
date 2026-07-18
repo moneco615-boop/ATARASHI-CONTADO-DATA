@@ -2645,6 +2645,21 @@
       ],
       "video": "",
       "id": 1784401172615
+    },
+    {
+      "nombre": "_*SUPERSTAR SARAIVA",
+      "categoria": "Niños😇",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 85000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Los clásicos Adidas Superstar llegan en una versión divertida y cómoda para los más pequeños. Con un diseño moderno y excelente confort, son ideales para acompañarlos en todas sus aventuras.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784401529/atarashi_contado/cmk33qr1ao3avjpxf3ge.jpg"
+      ],
+      "video": "",
+      "id": 1784401605878
     }
   ],
   "categorias": [
@@ -2707,6 +2722,10 @@
     {
       "emoji": "🎮",
       "nombre": "Juguetes🚂🪁🧸"
+    },
+    {
+      "emoji": "🔥",
+      "nombre": "Niños😇"
     }
   ]
 }
