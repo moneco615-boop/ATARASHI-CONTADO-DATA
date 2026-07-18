@@ -296,7 +296,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .fact-doc{max-width:500px;width:100%;margin:0 auto;background:#fff;min-height:100%;padding:24px 20px 50px;font-family:Georgia,serif;font-size:15px;color:#111;}
 @media print{
   body>*:not(.fact-ov){display:none!important;}
-  .fact-ov{display:flex!important;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;}
+  .fact-ov{display:block!important;position:static!important;width:100%!important;height:auto!important;background:#fff!important;overflow:visible!important;}
   .fact-bar{display:none!important;}
   .fact-scroll{overflow:visible;}
   .fact-doc{max-width:100%;padding:10mm 15mm;}
@@ -309,7 +309,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .fact-btn-print{background:var(--go);border:none;color:#000;padding:9px 16px;border-radius:7px;font-size:14px;font-weight:900;cursor:pointer;font-family:var(--B);}
 .fact-scroll{flex:1;overflow-y:auto;}
 .fact-doc{max-width:500px;width:100%;margin:0 auto;background:#fff;min-height:100%;padding:24px 20px 50px;font-family:Georgia,serif;font-size:15px;color:#111;}
-@media print{body>*:not(.fact-ov){display:none!important;}.fact-ov{display:flex!important;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;}.fact-bar{display:none!important;}.fact-scroll{overflow:visible;}.fact-doc{max-width:100%;padding:10mm 15mm;}}
+@media print{body>*:not(.fact-ov){display:none!important;}.fact-ov{position:static!important;height:auto!important;overflow:visible!important;background:#fff!important;display:block!important;}.fact-bar{display:none!important;}.fact-ov *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}.fact-ov{display:block!important;position:static!important;width:100%!important;height:auto!important;background:#fff!important;overflow:visible!important;}.fact-bar{display:none!important;}.fact-scroll{overflow:visible;}.fact-doc{max-width:100%;padding:10mm 15mm;}}
 
 /* ── SELECTOR NUMÉRICO DE FOTOS ── */
 .foto-nums{display:flex;gap:8px;padding:10px 14px;overflow-x:auto;background:#080808;scrollbar-width:none;align-items:center;}
