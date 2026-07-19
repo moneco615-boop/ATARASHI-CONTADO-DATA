@@ -2741,6 +2741,24 @@
       ],
       "video": "",
       "id": 1784419093368
+    },
+    {
+      "nombre": "PALM ANGELS",
+      "categoria": "Gorras",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Completa tu outfit con una gorra de diseño moderno y estilo urbano. Su excelente calidad y acabado la convierten en el accesorio perfecto para darle un toque exclusivo a cualquier look.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784426964/atarashi_contado/pqj2fjlfjvlrglgwcn7y.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784426964/atarashi_contado/k36nq9e3iq7rh2gggdsu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784426964/atarashi_contado/vp0z3kxg9lq0il5nffnp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784426965/atarashi_contado/thono9vqfem24wutsjo0.jpg"
+      ],
+      "video": "",
+      "id": 1784427145665
     }
   ],
   "categorias": [
