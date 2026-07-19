@@ -2930,6 +2930,22 @@
       ],
       "video": "",
       "id": 1784500228170
+    },
+    {
+      "nombre": "NIKE METCON",
+      "categoria": "Calzado caballero😎",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "🔥 La combinación perfecta de estilo, resistencia y confort para superar cualquier reto.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500282/atarashi_contado/h8qbddfqedn1ywkektdm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500283/atarashi_contado/glwer1qtjs4a2qqgeqvm.jpg"
+      ],
+      "video": "",
+      "id": 1784500332274
     }
   ],
   "categorias": [
