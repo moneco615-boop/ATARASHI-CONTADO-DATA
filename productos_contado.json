@@ -2840,6 +2840,26 @@
       ],
       "video": "",
       "id": 1784427736065
+    },
+    {
+      "nombre": "*CAMISETA GODSPEED",
+      "categoria": "Ropa caballero 😎",
+      "badge": "⭐ RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 75000,
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
+      "descripcion": "Disfruta de un look urbano con una camiseta de excelente calidad. Confeccionada en tela fría de gramaje 260, ofrece un ajuste cómodo, mayor resistencia y un acabado premium para el uso diario.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784428005/atarashi_contado/dpvv1oaevovlmyndexb0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784428006/atarashi_contado/getnd4ekeluccxpf9pw5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784428006/atarashi_contado/oihshws6qwynctso0v6l.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784428006/atarashi_contado/pzswcmwlbbptsgovmbzw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784428006/atarashi_contado/waaiqtvy7adpiuz9krwi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784428007/atarashi_contado/cuximllccfiaid3zlcni.jpg"
+      ],
+      "video": "",
+      "id": 1784428159522
     }
   ],
   "categorias": [
