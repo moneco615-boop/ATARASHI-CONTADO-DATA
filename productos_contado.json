@@ -2946,6 +2946,25 @@
       ],
       "video": "",
       "id": 1784500332274
+    },
+    {
+      "nombre": "ON CLOUD",
+      "categoria": "Calzado dama🥰",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Descubre la combinación perfecta de ligereza, comodidad y estilo. Diseñados para brindar una pisada suave y un ajuste excepcional, son ideales para caminar, entrenar o disfrutar del día con total confort.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502041/atarashi_contado/uwfsc3mexhow4y9c8is4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502041/atarashi_contado/lnjg1vrf1vfa2vvm1wbp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502042/atarashi_contado/wfsoc6kfn6rpwaad4xt9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502044/atarashi_contado/wgngfoysjvxvlm4q8du0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502045/atarashi_contado/qldadshavlu8rnabzxx9.jpg"
+      ],
+      "video": "",
+      "id": 1784502095125
     }
   ],
   "categorias": [
