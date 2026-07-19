@@ -2813,6 +2813,27 @@
       ],
       "video": "",
       "id": 1784427556179
+    },
+    {
+      "nombre": "GORRAS LA OSTE",
+      "categoria": "Gorras",
+      "badge": "🆕 NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Un clásico que combina elegancia y estilo casual. Con un diseño moderno y excelente calidad, es el complemento perfecto para cualquier outfit y para usar todos los días.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427666/atarashi_contado/mfqybiruoyjz6diwciu7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427666/atarashi_contado/g41zdftvjucf4r11wqws.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427666/atarashi_contado/udawfgwkuzmdxowadgaa.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427667/atarashi_contado/eydwyclhyquive1gitj5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427666/atarashi_contado/neov1g8fd0j6u7b11jtt.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427668/atarashi_contado/i1en8gxxt9wiflv3l6yr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427668/atarashi_contado/a5fh1ae9ovjookqgr0nm.jpg"
+      ],
+      "video": "",
+      "id": 1784427736065
     }
   ],
   "categorias": [
