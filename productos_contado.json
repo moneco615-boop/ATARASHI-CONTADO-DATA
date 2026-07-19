@@ -2911,6 +2911,25 @@
       ],
       "video": "",
       "id": 1784428400913
+    },
+    {
+      "nombre": "NIKE METCON",
+      "categoria": "Calzado dama🥰",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Rendimiento, estabilidad y comodidad en un solo calzado. Ideales para entrenamientos intensos o el uso diario, ofrecen un diseño moderno y un excelente soporte en cada paso.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500138/atarashi_contado/udhyzup7a1w02edvlsmp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500156/atarashi_contado/yn2dmoer3pzow5aueqe5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500156/atarashi_contado/t6ekbdmlfxakrru056ap.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500156/atarashi_contado/vphbu9biff1vjzg6dbuv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500156/atarashi_contado/g0ixumvh10mlxhodh2yl.jpg"
+      ],
+      "video": "",
+      "id": 1784500228170
     }
   ],
   "categorias": [
