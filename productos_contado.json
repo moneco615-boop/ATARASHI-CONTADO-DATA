@@ -290,7 +290,7 @@
       "id": 1783220494327
     },
     {
-      "nombre": "ADIDAS SUPERSTAR",
+      "nombre": "ADIDAS SUPERSTAR. 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -354,7 +354,7 @@
       "id": 1783224119240
     },
     {
-      "nombre": "NEW BALANCE 740",
+      "nombre": "NEW BALANCE 740.  1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -371,7 +371,7 @@
       "id": 1783224408231
     },
     {
-      "nombre": "NEW BALANCE 2000",
+      "nombre": "NEW BALANCE 2000.  1.1",
       "categoria": "Calzado dama🥰",
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -388,7 +388,7 @@
       "id": 1783224670739
     },
     {
-      "nombre": "NIKE V2K",
+      "nombre": "NIKE V2K.  1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -457,7 +457,7 @@
       "id": 1783228388337
     },
     {
-      "nombre": "ADIDAS NASTASE (BLANCA, GRIS Y NEGRA). MIRA LAS FOTOS",
+      "nombre": "ADIDAS NASTASE   1.1 (3COLORES)",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -474,7 +474,7 @@
       "id": 1783348953497
     },
     {
-      "nombre": "NIKE JUNIPER (VARIOS COLORES) MIRA LAS FOTOS",
+      "nombre": "NIKE JUNIPER 1.1  (VARIOS COLORES)",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -617,7 +617,7 @@
       "id": 1783360637063
     },
     {
-      "nombre": "CHANCLA PLAYERA TOMMY",
+      "nombre": "CHANCLA PLAYERA TOMMY.  1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -641,7 +641,7 @@
       "id": 1783361786627
     },
     {
-      "nombre": "CHANCLAS NIKE SB",
+      "nombre": "CHANCLAS NIKE SB.  1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -661,11 +661,12 @@
       "id": 1783362175451
     },
     {
-      "nombre": "CHANCLAS CALVIN KLE",
+      "nombre": "CHANCLAS CALVIN KLEIN 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
+      "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "Las chanclas y sandalias  Calvin Klein se destacan por su estética minimalista, el uso de su icónico logotipo (\"CK\" o el nombre completo) y plantillas moldeadas que ofrecen comodidad para el uso diario casual.",
       "imagenes": [
@@ -675,11 +676,12 @@
       "id": 1783362787531
     },
     {
-      "nombre": "CHANCLAS HELLSTAR",
+      "nombre": "CHANCLAS HELLSTAR. 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
+      "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "Las chanclas  de la marca Hellstar se han convertido en una pieza clave del streetwear gracias a sus diseños audaces, logos gráficos icónicos y una estética alternativa inspirada en el concepto punk y cósmico de la marca.",
       "imagenes": [
@@ -689,11 +691,12 @@
       "id": 1783363043786
     },
     {
-      "nombre": "CHANCLAS MONASTERY",
+      "nombre": "CHANCLAS MONASTERY. 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "📉 ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
+      "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "Las chanclas Monastery son un calzado de descanso y moda urbana de alta demanda, perteneciente a la reconocida marca colombiana de ropa de lujo urbano Monastery Couture.",
       "imagenes": [
