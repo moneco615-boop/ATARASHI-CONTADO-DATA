@@ -93,11 +93,12 @@
       "id": 1782780053491
     },
     {
-      "nombre": "ADIDAS SUPERSTAR..",
+      "nombre": "ADIDAS SUPERSTAR 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "",
       "imagenes": [
