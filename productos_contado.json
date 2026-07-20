@@ -1,11 +1,12 @@
 {
   "productos": [
     {
-      "nombre": "ADIDAS REPETITOR",
+      "nombre": "ADIDAS REPETITOR 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
+      "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "adidas Repetitor es una línea de calzado pensada para ofrecer comodidad, rendimiento y un estilo deportivo versátil. Tiene una estética moderna y está orientada a quienes buscan un modelo funcional para el día a día o para entrenar con buen soporte.",
       "imagenes": [
