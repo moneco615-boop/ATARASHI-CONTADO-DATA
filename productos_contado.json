@@ -1056,11 +1056,13 @@
       "id": 1783610555693
     },
     {
-      "nombre": "ARIANA GRANDE",
+      "nombre": "ARIANA GRANDE. 1.1",
       "categoria": "Locion dama",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "¡Lleva contigo la fragancia del éxito! Ariana Grande Cloud es un Eau de Parfum diseñado para la mujer moderna, optimista y segura de sí misma.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783610590/atarashi_contado/ld8ljuxg5coamqaf51xp.jpg"
@@ -1069,11 +1071,13 @@
       "id": 1783610664330
     },
     {
-      "nombre": "BHARARA ROSE",
+      "nombre": "BHARARA ROSE. 1.1",
       "categoria": "Locion dama",
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "¿Buscas una fragancia inolvidable, sofisticada y con una duración extrema? El Cofre Bharara Rose es la definición absoluta de elegancia femenina. Inspirado en la alta perfumería",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783610829/atarashi_contado/cuqf1mqj9lbakkrpleqn.jpg"
@@ -1082,7 +1086,7 @@
       "id": 1783611008386
     },
     {
-      "nombre": "ON CLOUD  DAMA",
+      "nombre": "ON CLOUD  1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1099,7 +1103,7 @@
       "id": 1783612014119
     },
     {
-      "nombre": "NEW BALANCE REBEL DAMA",
+      "nombre": "NEW BALANCE REBEL 1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1117,7 +1121,7 @@
       "id": 1783612106362
     },
     {
-      "nombre": "ADIDAS DURAMO DAMA",
+      "nombre": "ADIDAS DURAMO  1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1133,7 +1137,7 @@
       "id": 1783612416686
     },
     {
-      "nombre": "NEW BALANCE 9060 DAMA",
+      "nombre": "NEW BALANCE 9060 1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1150,7 +1154,7 @@
       "id": 1783612541954
     },
     {
-      "nombre": "NIKE AIR MAX P7000",
+      "nombre": "NIKE AIR MAX P7000.  1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1166,7 +1170,7 @@
       "id": 1783612766525
     },
     {
-      "nombre": "ASICS GEL DAMA",
+      "nombre": "ASICS GEL DAMA. 1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1182,7 +1186,7 @@
       "id": 1783612873450
     },
     {
-      "nombre": "ALEXANDER MCQUEEN  OVERSIZED",
+      "nombre": "ALEXANDER MCQUEEN  OVERSIZED. 1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1197,7 +1201,7 @@
       "id": 1783621916952
     },
     {
-      "nombre": "PUMA SAUDE XL  H.",
+      "nombre": "PUMA SAUDE XL  H.  1.1",
       "categoria": "Calzado caballero😎",
       "badge": "⭐ RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -1212,7 +1216,7 @@
       "id": 1783622692831
     },
     {
-      "nombre": "NIKE AIR FORCÉ ONE",
+      "nombre": "NIKE AIR FORCÉ ONE. 1.1",
       "categoria": "Calzado dama🥰",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1227,7 +1231,7 @@
       "id": 1783622924654
     },
     {
-      "nombre": "NIKE AIR FORCÉ ONE BLACK",
+      "nombre": "NIKE AIR FORCÉ ONE BLACK. 1.1",
       "categoria": "Calzado caballero😎",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -1242,11 +1246,13 @@
       "id": 1783623162680
     },
     {
-      "nombre": "VERSACE EROS EDT",
+      "nombre": "VERSACE EROS EDT. 1.1",
       "categoria": "Locion caballero",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "Una fragancia intensa, fresca y seductora, creada para el hombre seguro de sí mismo. Su combinación de notas cítricas, menta, vainilla y maderas ofrece un aroma elegante y duradero, ideal para destacar en cualquier ocasión.  🔥 Deja una impresión inolvidable con una de las fragancias masculinas más populares y deseadas.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783623293/atarashi_contado/zxq7ppyhovrlof4n2adn.jpg"
@@ -1255,11 +1261,13 @@
       "id": 1783623479144
     },
     {
-      "nombre": "ONE MILLÓN LUCKY",
+      "nombre": "ONE MILLÓN LUCKY. 1.1",
       "categoria": "Locion caballero",
       "badge": "🔥 TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "✨ One Million Lucky\nUna fragancia moderna, atrevida y llena de personalidad. Su mezcla de notas dulces, amaderadas y avellanadas crea un aroma irresistible, ideal para el hombre que quiere destacar con un estilo elegante y sofisticado.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783623829/atarashi_contado/qbrasgfupxwptnguwnwt.jpg"
