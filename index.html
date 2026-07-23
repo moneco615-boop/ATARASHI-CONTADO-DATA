@@ -375,9 +375,9 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .aviso-disp{font-size:11px;color:#6a6a62;line-height:1.55;padding:8px 11px;background:rgba(255,255,255,.025);border-radius:6px;margin-bottom:12px;border-left:2px solid rgba(201,160,42,.22);font-style:italic;}
 
 
-/* Flip estado <-> pago contraentrega (modal producto) */
-.m-disp{position:relative;justify-content:center;min-width:215px;}
-.m-disp::after{content:"💵 Pagas solo al recibir · Cali";position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:var(--pa);color:var(--br);font-size:12px;font-weight:700;white-space:nowrap;border-radius:12px;opacity:0;animation:mdFlip 6s ease-in-out infinite;}
+/* Flip estado <-> pago contraentrega (SOLO dentro del modal) */
+.modal-box .m-disp,.modal-box .card-disp,#mBox .m-disp,#mBox .card-disp{position:relative!important;justify-content:center;min-width:215px;}
+.modal-box .m-disp::after,.modal-box .card-disp::after,#mBox .m-disp::after,#mBox .card-disp::after{content:"💵 Pagas solo al recibir · Cali";position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:var(--pa);color:var(--br);font-size:11px;font-weight:700;letter-spacing:.2px;white-space:nowrap;border-radius:inherit;opacity:0;animation:mdFlip 6s ease-in-out infinite;}
 @keyframes mdFlip{0%,42%{opacity:0;}50%,92%{opacity:1;}100%{opacity:0;}}
 </style>
 </head>
