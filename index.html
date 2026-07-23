@@ -375,11 +375,15 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .aviso-disp{font-size:11px;color:#6a6a62;line-height:1.55;padding:8px 11px;background:rgba(255,255,255,.025);border-radius:6px;margin-bottom:12px;border-left:2px solid rgba(201,160,42,.22);font-style:italic;}
 
 
-/* Flip estado <-> pago contraentrega — TARJETAS de la grilla */
+/* Rotacion 3 mensajes (estado / pago / domicilio) — TARJETAS */
 .card-body .card-trust{display:none;}
 .card-body > span:not([class]){position:relative;width:100%;justify-content:center;}
-.card-body > span:not([class])::after{content:"💵 Pagas solo al recibir · Cali";position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:var(--ca);color:var(--br);font-size:10px;font-weight:700;letter-spacing:.2px;white-space:nowrap;border-radius:inherit;opacity:0;animation:cardFlip 6s ease-in-out infinite;}
-@keyframes cardFlip{0%,42%{opacity:0;}50%,92%{opacity:1;}100%{opacity:0;}}
+.card-body > span:not([class])::after,
+.card-body > span:not([class])::before{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;background:var(--ca);color:var(--br);font-size:10px;font-weight:700;letter-spacing:.2px;white-space:nowrap;border-radius:inherit;opacity:0;}
+.card-body > span:not([class])::after{content:"💵 Pagas solo al recibir · Cali";animation:cardRot1 9s ease-in-out infinite;}
+.card-body > span:not([class])::before{content:"🚚 Domicilio a tu puerta · Cali";animation:cardRot2 9s ease-in-out infinite;}
+@keyframes cardRot1{0%,30%{opacity:0;}34%,63%{opacity:1;}67%,100%{opacity:0;}}
+@keyframes cardRot2{0%,63%{opacity:0;}67%,96%{opacity:1;}100%{opacity:0;}}
 </style>
 </head>
 <body>
