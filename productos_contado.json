@@ -3072,6 +3072,21 @@
       ],
       "video": "",
       "id": 1784502801299
+    },
+    {
+      "nombre": "VERDES",
+      "categoria": "Calzado dama🥰",
+      "badge": "🔥 TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 10000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784818362/atarashi_contado/n59lwpey39dolbn9yjip.jpg"
+      ],
+      "video": "",
+      "id": 1784818410605
     }
   ],
   "categorias": [
