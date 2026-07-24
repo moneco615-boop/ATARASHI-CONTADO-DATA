@@ -391,7 +391,8 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 @keyframes badgeShine{0%,70%{transform:translateX(-250%);}100%{transform:translateX(300%);}}
 
 /* Nombre del producto en la tarjeta */
-.card-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.2em;}
+.card-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:21px;margin-bottom:1px;}
+@media(max-width:500px){.card-name{font-size:16px;margin-bottom:0;}}
 </style>
 </head>
 <body>
