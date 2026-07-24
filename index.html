@@ -384,6 +384,11 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .card-body > span:not([class])::before{content:"🚚 Domicilio a tu puerta · Cali";animation:cardRot2 9s ease-in-out infinite;}
 @keyframes cardRot1{0%,30%{opacity:0;}34%,63%{opacity:1;}67%,100%{opacity:0;}}
 @keyframes cardRot2{0%,63%{opacity:0;}67%,96%{opacity:1;}100%{opacity:0;}}
+
+/* Destello del badge */
+.card-badge{overflow:hidden;}
+.card-badge::after{content:"";position:absolute;top:0;left:0;width:45%;height:100%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-250%);animation:badgeShine 4s ease-in-out infinite;}
+@keyframes badgeShine{0%,70%{transform:translateX(-250%);}100%{transform:translateX(300%);}}
 </style>
 </head>
 <body>
