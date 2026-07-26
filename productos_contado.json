@@ -3045,7 +3045,7 @@
     {
       "nombre": "ON CLOUNDRUNNER 2. 1.1",
       "categoria": "Calzado dama🥰",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": true,
@@ -3056,8 +3056,10 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502377/atarashi_contado/f9mygdc2tjriquognbme.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502377/atarashi_contado/rpnk6mpb2sqqt6abog6n.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502377/atarashi_contado/ch6wclqjjbiapp0xvbmv.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502378/atarashi_contado/amlzl9burxpaxdha02r9.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502378/atarashi_contado/amlzl9burxpaxdha02r9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785045404/atarashi_contado/pzl3qmmeknsisfm88gnj.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784502550075
     },
