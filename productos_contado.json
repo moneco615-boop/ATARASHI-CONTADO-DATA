@@ -3078,7 +3078,7 @@
       "id": 1784502801299
     },
     {
-      "nombre": "CHANCLAS  VERDES.   JAJAJA",
+      "nombre": "CHANCLAS  VERDES.   55555555",
       "categoria": "Calzado dama🥰",
       "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
@@ -3089,6 +3089,7 @@
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784818362/atarashi_contado/n59lwpey39dolbn9yjip.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784818410605
     }
