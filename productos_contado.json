@@ -2134,16 +2134,18 @@
     {
       "nombre": "👟 ADIDAS GORE-TEX. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Diseñados para ofrecer máxima protección y comodidad en cualquier clima. Gracias a su tecnología GORE-TEX®, estos tenis mantienen tus pies secos mientras brindan excelente transpirabilidad y un estilo deportivo ideal para el día a día o actividades al aire libre.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785159797/atarashi_contado/dqaxae62johk3zviijvj.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783705409/atarashi_contado/xtb0ay6v4le8b3mfwuen.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783705410/atarashi_contado/uldxbnbpnxwmqfzm7uvi.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783705533470
     },
