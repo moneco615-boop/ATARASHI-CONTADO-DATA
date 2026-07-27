@@ -944,16 +944,18 @@
     {
       "nombre": "NIKE SHOX  1.1  (VARIOS COLORES)",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "🔥 Eleva tu estilo con los icónicos Nike Shox. Su diseño deportivo, combinado con una excelente amortiguación y gran comodidad, los convierte en el complemento perfecto para cualquier ocasión. Disponibles en varias tallas y listos para llevar tu outfit al siguiente nivel. ¡Escríbenos y asegura el tuyo antes de que se agoten! 👟",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785159427/atarashi_contado/fs2gvplikhqifykcqhyd.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608060/atarashi_contado/szbz2id7f3i2vawowya8.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608343/atarashi_contado/a1jwkpjrlumcxh0il9gb.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783608272544
     },
