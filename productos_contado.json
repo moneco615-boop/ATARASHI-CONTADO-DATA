@@ -3030,16 +3030,18 @@
     {
       "nombre": "NIKE METCON. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "🔥 La combinación perfecta de estilo, resistencia y confort para superar cualquier reto.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785156133/atarashi_contado/revbqwcr6lpqmqofffbc.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500282/atarashi_contado/h8qbddfqedn1ywkektdm.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784500283/atarashi_contado/glwer1qtjs4a2qqgeqvm.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784500332274
     },
