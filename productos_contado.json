@@ -208,7 +208,7 @@
     {
       "nombre": "NIKE NOCTA 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -218,6 +218,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783186720/atarashi_contado/xzux3kepxf6wpop0jamf.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783186747/atarashi_contado/lizibztiz7vvlyiietbp.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783186884954
     },
