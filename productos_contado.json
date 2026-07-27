@@ -280,18 +280,20 @@
     {
       "nombre": "ADIDAS ADIZERO 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "adidas Adizero es la línea de la marca enfocada en velocidad, ligereza y alto rendimiento. Está pensada para corredores y deportistas que buscan una sensación ágil, cómoda y reactiva en cada paso.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785156003/atarashi_contado/w80xqlnrqcvxvg69dxzl.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220402/atarashi_contado/iu3etimnkayhpdhq49yx.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220402/atarashi_contado/r2pck9kl64iewkfj4exx.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220403/atarashi_contado/owbgpnkendexznoobblh.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220403/atarashi_contado/tr5njhfe0mlmq4hgnfzn.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783220494327
     },
