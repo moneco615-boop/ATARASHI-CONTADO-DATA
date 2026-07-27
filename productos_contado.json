@@ -97,16 +97,17 @@
     {
       "nombre": "ADIDAS SUPERSTAR 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/fc9cjeimlovtbbtulkvc.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780373/atarashi_contado/xozvklwqepkw41ikdulj.jpg"
       ],
+      "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1782780383/atarashi_contado/videos/cbve6lcagdzhny6jw0na.mp4",
       "id": 1782780400826
     },
