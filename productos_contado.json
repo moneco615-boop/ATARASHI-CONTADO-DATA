@@ -1210,15 +1210,17 @@
     {
       "nombre": "ALEXANDER MCQUEEN  OVERSIZED. 1.1",
       "categoria": "Calzado dama🥰",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "👟 Alexander McQueen Oversized\n\nDale un toque de lujo a tu estilo con uno de los tenis más exclusivos y elegantes del mercado. Su diseño minimalista, la icónica suela oversized y sus acabados premium los convierten en el complemento perfecto para cualquier ocasión",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785159348/atarashi_contado/l7tbcpd9ri7t3kv3itid.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783621764/atarashi_contado/cl7ul0wvcp1tzz9peysz.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783621916952
     },
@@ -3112,38 +3114,6 @@
       ],
       "video": "",
       "id": 1784502801299
-    },
-    {
-      "nombre": "CHANCLAS  VERDES. 5555",
-      "categoria": "Calzado dama🥰",
-      "badge": "TOP VENTAS",
-      "disponibilidad": "inmediata",
-      "precioContado": 20000,
-      "fotosModelos": true,
-      "tipoTalla": "calzado",
-      "descripcion": "",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784818362/atarashi_contado/n59lwpey39dolbn9yjip.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1784818410605
-    },
-    {
-      "nombre": "PUMA",
-      "categoria": "Tecnología",
-      "badge": "NUEVO INGRESO",
-      "disponibilidad": "inmediata",
-      "precioContado": 120000,
-      "fotosModelos": true,
-      "tipoTalla": "calzado",
-      "descripcion": "",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785127586/atarashi_contado/wd3supmzgd5eelafxu3t.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1785127609005
     }
   ],
   "categorias": [
