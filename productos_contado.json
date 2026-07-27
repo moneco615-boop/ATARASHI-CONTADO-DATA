@@ -300,17 +300,19 @@
     {
       "nombre": "ADIDAS SUPERSTAR. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "adidas Superstar es el nombre más claro y comercial para ese modelo. Es una zapatilla icónica de caña baja, conocida por su puntera de caucho tipo shell toe y su clásico estilo que nunca pasa de moda",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785156218/atarashi_contado/luhc6q1npwqpaazn8gsl.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783220587/atarashi_contado/nxvewovmcwvkc24n8h0y.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784004589/atarashi_contado/vg4q0zjwufbtaswxnvxc.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784004626/atarashi_contado/vtfjc99zju4cpdd9qcwm.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783220900305
     },
