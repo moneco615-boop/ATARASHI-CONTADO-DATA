@@ -1994,15 +1994,17 @@
     {
       "nombre": "NIKE SHOX.  1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "Luce un estilo único con los icónicos Nike Shox. Su diseño moderno y llamativo, junto con su excelente amortiguación y comodidad, los convierten en la opción ideal para el día a día.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785156308/atarashi_contado/j73vxvvm4f24hkjptggp.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783698758/atarashi_contado/noltdvnt34fwz9lhqnzh.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783698782329
     },
