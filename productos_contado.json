@@ -809,16 +809,18 @@
     {
       "nombre": "NIKE JORDAN. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "Air Jordan 5 Retro \"White Cement\"! Destacan por su diseño clásico con detalles moteados característicos de ese modelo",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785155824/atarashi_contado/boe7ty1qofahefqcqcub.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783524890/atarashi_contado/l5ez9axruztfbs3p1mdx.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783524891/atarashi_contado/voswgrgurvbvpagcc3ho.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783525068540
     },
