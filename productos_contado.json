@@ -3106,16 +3106,18 @@
     {
       "nombre": "*NIKE AIR MAX BW*. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "🔥 Un calzado que combina confort, calidad y un look deportivo que siempre destaca.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785159597/atarashi_contado/cvwpdfixzigjsyefb67k.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502910/atarashi_contado/exlcgy4bmpfvvur5qgdo.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784502910/atarashi_contado/do9spze0uiu46tm3lqun.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784502801299
     }
