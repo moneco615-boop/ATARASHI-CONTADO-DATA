@@ -657,13 +657,14 @@
     {
       "nombre": "CHANCLAS NIKE SB.  1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Las chanclas Nike SB (Skateboarding) más destacadas del mercado pertenecen a la línea Nike SB Victori One Slides. Están diseñadas específicamente para el descanso de los skaters después de una sesión intensa, combinando una estética urbana con tecnologías de espuma suave y reactiva para una máxima relajación",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785156380/atarashi_contado/mr4eqmgu3nwqt7ko0sk2.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362079/atarashi_contado/qvfnjmoehpqgtk0yjcox.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362079/atarashi_contado/wepxlxapxpqh9z3zp66r.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362079/atarashi_contado/dpfq0rst2xdhr7ggmzy9.jpg",
@@ -671,6 +672,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362079/atarashi_contado/pnpzlsmkfg6prriun8gy.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362079/atarashi_contado/fw8ynemsdksrtaf0crm1.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783362175451
     },
