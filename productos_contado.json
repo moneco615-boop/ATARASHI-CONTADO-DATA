@@ -467,17 +467,19 @@
     {
       "nombre": "ADIDAS NASTASE   1.1 (3COLORES)",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Adidas Nastase es una zapatilla de tenis con estilo retro y clásico, inspirada en el legado de Ilie Năstase. Destaca por su diseño vintage, su silueta limpia y su aire deportivo atemporal, ideal para quienes buscan un modelo con historia y mucho estilo",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785156057/atarashi_contado/h6v7jbssztdnvguym3qa.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783348751/atarashi_contado/ys0bhyzvjttegy6ixh5i.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783348763/atarashi_contado/bw3hsqozxnvuzixetkt3.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783348776/atarashi_contado/owahp5txqao2j31wuybe.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783348953497
     },
