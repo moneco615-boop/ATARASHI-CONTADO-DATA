@@ -2331,15 +2331,17 @@
     {
       "nombre": "NEW BALANCE REBEL. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Ligereza, comodidad y un diseño deportivo que se adapta a tu ritmo. Ideales para entrenar, caminar o complementar un look moderno con total confort.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785159506/atarashi_contado/svkm8blfhzok3iirigpc.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036824/atarashi_contado/innlhykgvf665wjv0net.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784036952491
     },
