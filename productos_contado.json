@@ -3094,6 +3094,22 @@
       "agotadas": [],
       "video": "",
       "id": 1784818410605
+    },
+    {
+      "nombre": "PUMA",
+      "categoria": "Tecnología",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785127586/atarashi_contado/wd3supmzgd5eelafxu3t.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785127609005
     }
   ],
   "categorias": [
