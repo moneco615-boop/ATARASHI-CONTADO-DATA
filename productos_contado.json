@@ -982,9 +982,9 @@
       "id": 1783608626555
     },
     {
-      "nombre": "*💯CONJUNTO CABALLERO 🧔🏻‍♂️",
+      "nombre": "*💯CONJUNTO 1.1",
       "categoria": "Ropa caballero 😎",
-      "badge": "🆕 NUEVO INGRESO",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
       "fotosModelos": true,
@@ -996,6 +996,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608778/atarashi_contado/q4972svfmyflb1uy4cgv.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783608778/atarashi_contado/sboncpl1cuvg1exjafej.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783608860763
     },
