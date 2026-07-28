@@ -3225,6 +3225,25 @@
       "agotadas": [],
       "video": "",
       "id": 1785264633597
+    },
+    {
+      "nombre": "CONJUNTO DRI-FIT PUMA",
+      "categoria": "Ropa caballero 😎",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 65000,
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
+      "descripcion": "El conjunto Puma Dri-FIT está diseñado para brindar comodidad, frescura y libertad de movimiento en cada actividad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264670/atarashi_contado/s6nbj7eij7waarjnpdjl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264671/atarashi_contado/qfbeaxlltrseivmmq65i.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264671/atarashi_contado/bvyubrf4fdowff3ynvbp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264671/atarashi_contado/jmnrvlcxsqfrtap5nwdh.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785264730116
     }
   ],
   "categorias": [
