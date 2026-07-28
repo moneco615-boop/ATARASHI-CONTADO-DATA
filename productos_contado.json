@@ -2936,14 +2936,14 @@
     {
       "nombre": "GORRAS Y / OUT",
       "categoria": "Gorras",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "NUEVO INGRESO",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
       "tipoTalla": "",
       "descripcion": "Dale un toque moderno a tu outfit con esta gorra de diseño urbano y excelente calidad. Cómoda, versátil y perfecta para complementar cualquier estilo.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427454/atarashi_contado/tzrygvurrmocl3czezmx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785266751/atarashi_contado/ccydg528p6jrrwl9rjxn.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427454/atarashi_contado/fwasg7rdtei0fkhoh0rw.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427455/atarashi_contado/gyzk8m5m30jzzr0z0jth.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427455/atarashi_contado/yq6ytlgfukc8fumw4sbk.jpg",
@@ -2952,6 +2952,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427456/atarashi_contado/dxcaqdqqg3jtfsudiifv.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784427456/atarashi_contado/se6vi0zt26xjni4nkbpy.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784427556179
     },
