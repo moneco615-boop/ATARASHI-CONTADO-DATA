@@ -3,7 +3,7 @@
     {
       "nombre": "ADIDAS REPETITOR 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "RECOMENDADO",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": true,
@@ -1297,15 +1297,17 @@
     {
       "nombre": "ONE MILLÓN LUCKY. 1.1",
       "categoria": "Locion caballero",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "✨ One Million Lucky\nUna fragancia moderna, atrevida y llena de personalidad. Su mezcla de notas dulces, amaderadas y avellanadas crea un aroma irresistible, ideal para el hombre que quiere destacar con un estilo elegante y sofisticado.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783623829/atarashi_contado/qbrasgfupxwptnguwnwt.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785245279/atarashi_contado/mtoe2mjfoxs85qqpfkhp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785246757/atarashi_contado/eg9zrtrbyyzbp9xbdh8k.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783623920785
     },
