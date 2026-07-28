@@ -3205,6 +3205,26 @@
       "agotadas": [],
       "video": "",
       "id": 1785263992372
+    },
+    {
+      "nombre": "CONJUNTO NIKE DRI-FIT",
+      "categoria": "Ropa caballero 😎",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 65000,
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
+      "descripcion": "Diseñado para ofrecer el máximo rendimiento, el conjunto Nike Dri-FIT combina comodidad, frescura y un estilo deportivo moderno.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264524/atarashi_contado/kjbfl63gmaddqbmqd69u.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264524/atarashi_contado/rrrm1rhi476o3tr4w6a6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264524/atarashi_contado/zz6c7sdblo1bj8mn1mtd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264524/atarashi_contado/y96cxol8nr5bcv4et8wv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785264524/atarashi_contado/mpsba3yk0mtxwfxuwxwv.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785264633597
     }
   ],
   "categorias": [
