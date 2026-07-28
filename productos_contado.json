@@ -699,15 +699,17 @@
     {
       "nombre": "CHANCLAS HELLSTAR. 1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
       "tipoTalla": "calzado",
       "descripcion": "Las chanclas  de la marca Hellstar se han convertido en una pieza clave del streetwear gracias a sus diseños audaces, logos gráficos icónicos y una estética alternativa inspirada en el concepto punk y cósmico de la marca.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785253492/atarashi_contado/dz6evnal6cpku16lnuhi.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783362855/atarashi_contado/c2vykdbc3hf7p4nyddp0.jpg"
       ],
+      "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1783362841/atarashi_contado/videos/swsbfs2tmtshoczyvabe.mp4",
       "id": 1783363043786
     },
