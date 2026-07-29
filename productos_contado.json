@@ -3359,6 +3359,23 @@
       "agotadas": [],
       "video": "",
       "id": 1785292230304
+    },
+    {
+      "nombre": "ZAPATO PLAYERO",
+      "categoria": "Calzado dama🥰",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 55000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Fabricado con materiales ligeros y excelentes acabados, ofrece un ajuste cómodo y un estilo versátil, ideal para disfrutar de la playa y  paseos de rio",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785292262/atarashi_contado/jhivwf9n0mb9djojonmr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785292262/atarashi_contado/bb4nmch06qjvl1ikc26o.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785292350606
     }
   ],
   "categorias": [
