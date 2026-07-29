@@ -3637,6 +3637,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785296347227
+    },
+    {
+      "nombre": "LÁMPARA DE MESA HELLO KITTY",
+      "categoria": "Hogar",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "La Lámpara de Mesa Hello Kitty combina iluminación y un diseño encantador para darle un toque especial a cualquier espacio.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296565/atarashi_contado/jynfclldx5npkcjvhcyg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296565/atarashi_contado/bsymgi9sxjst5xdnz4kz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296565/atarashi_contado/s6nezlx9qlxyly06nvin.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785296663242
     }
   ],
   "categorias": [
