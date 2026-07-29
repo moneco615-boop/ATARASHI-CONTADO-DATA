@@ -2877,7 +2877,7 @@
     {
       "nombre": "PUMA PARK. 1.1",
       "categoria": "Niños😇",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": true,
@@ -2885,8 +2885,10 @@
       "descripcion": "🔥 El calzado perfecto para que los niños jueguen, caminen y luzcan increíbles en cualquier ocasión\\.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784419001/atarashi_contado/oluiaesvqqk5rxbofrfd.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784419002/atarashi_contado/uv33pnqedgltr96m8ciy.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784419002/atarashi_contado/uv33pnqedgltr96m8ciy.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785303412/atarashi_contado/zz1mzpncn8cmyoqjaho5.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784419093368
     },
