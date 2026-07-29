@@ -24,11 +24,13 @@
       "id": 1782663136991
     },
     {
-      "nombre": "INFLADOR AUTOMATICO",
+      "nombre": "INFLADOR AUTOMATICO.",
       "categoria": "Tecnología",
-      "badge": "🔥 TOP VENTAS",
-      "disponibilidad": "inmediata",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "aparta",
       "precioContado": 120000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "Inflador de neumáticos inalámbrico recargable, compacto y fácil de llevar, ideal para carro, moto y bicicleta. Su compresor portátil con pantalla digital y apagado automático ofrece inflado rápido y seguro, perfecto para neumáticos, balones y usos de emergencia al aire libre.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782678869/atarashi_contado/r6y1r9p3pxxj3zaklry0.jpg",
@@ -37,6 +39,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218149/atarashi_contado/oou2aczkprtztnzwyxja.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783218149/atarashi_contado/hs8o3rnpjvoh4mncg0e9.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1782678900752
     },
