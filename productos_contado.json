@@ -3394,6 +3394,23 @@
       "agotadas": [],
       "video": "",
       "id": 1785292626804
+    },
+    {
+      "nombre": "CHANCLETA NIKE CLASSIC",
+      "categoria": "Calzado caballero😎",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 55000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "La Chancleta Nike Classic ofrece la combinación perfecta de comodidad, estilo y practicidad. Su diseño ligero y ergonómico brinda una pisada confortable, mientras que su acabado moderno la convierte en la opción ideal para el uso diario.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785292678/atarashi_contado/izgs2wfyjbjovhjtjtq4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785292678/atarashi_contado/pqq8btis2jibost0nhmw.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785292808027
     }
   ],
   "categorias": [
