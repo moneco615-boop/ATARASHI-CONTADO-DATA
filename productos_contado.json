@@ -2858,15 +2858,17 @@
     {
       "nombre": "ADIDAS SUPERSTAR  🐣. 1.1",
       "categoria": "Niños😇",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "El clásico que nunca pasa de moda, ahora para los más pequeños. Cómodos, resistentes y con un diseño icónico que combina con cualquier outfit.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785302783/atarashi_contado/jpl7cm2bszzaghinw1jk.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784418663/atarashi_contado/kiye3p9lj0nytri5s4dr.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784418680817
     },
