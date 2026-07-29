@@ -3341,6 +3341,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785265516411
+    },
+    {
+      "nombre": "ZAPATO PAYERO",
+      "categoria": "Calzado caballero😎",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 55000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Fabricado con materiales ligeros y excelentes acabados, ofrece un ajuste cómodo y un estilo versátil, ideal para disfrutar de la playa y  paseos de río.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785291791/atarashi_contado/urhdajsxlsbhmurnher9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785291792/atarashi_contado/czcqc7tsl02gnofk3jtx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785291791/atarashi_contado/dlkbuxeay6uvm9pqest9.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785292230304
     }
   ],
   "categorias": [
