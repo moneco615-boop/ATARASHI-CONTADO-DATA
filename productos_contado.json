@@ -3655,6 +3655,22 @@
       "agotadas": [],
       "video": "",
       "id": 1785296663242
+    },
+    {
+      "nombre": "LÁMPARA DE MESA PANDA",
+      "categoria": "Hogar",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 40000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "La Lámpara de Mesa Panda combina funcionalidad y un diseño adorable para iluminar cualquier espacio con un toque de ternura.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296808/atarashi_contado/hdex7jgguzntzgrwp1xe.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785296879538
     }
   ],
   "categorias": [
