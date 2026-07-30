@@ -3876,6 +3876,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785422877527
+    },
+    {
+      "nombre": "MÁQUINA DE AFEITAR ELÉCTRICA SHAVER",
+      "categoria": "Belleza",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 90000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "La Máquina de Afeitar Eléctrica Shaver ofrece un afeitado práctico, cómodo y preciso. Su diseño ergonómico y recargable permite un uso fácil en cualquier momento",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785423954/atarashi_contado/ilknrh6wge8t1vw7bla3.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785423954/atarashi_contado/muuho51d4sjmorqszqfd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785423954/atarashi_contado/dwexhoqjunfjay9idinz.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785424085310
     }
   ],
   "categorias": [
