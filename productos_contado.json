@@ -3819,6 +3819,22 @@
       "agotadas": [],
       "video": "",
       "id": 1785420096511
+    },
+    {
+      "nombre": "AL HARAMAIN AMBER OUD GOLD EDITION. 1.1",
+      "categoria": "Unisex",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 110000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Su exquisita combinación de notas frutales, ámbar y almizcle crea una esencia sofisticada y de excelente duración, ideal para quienes buscan dejar una impresión inolvidable con un perfume versátil y lleno de personalidad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785420339/atarashi_contado/tvlj48pg17dgoygrqlp2.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785420584864
     }
   ],
   "categorias": [
@@ -3885,6 +3901,10 @@
     {
       "emoji": "🔥",
       "nombre": "Niños😇"
+    },
+    {
+      "emoji": "⭐",
+      "nombre": "Unisex"
     }
   ]
 }
