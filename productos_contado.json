@@ -1048,15 +1048,17 @@
     {
       "nombre": "PANTALONETA ADIDAS ALGODÓN",
       "categoria": "Ropa caballero 😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
-      "tipoTalla": "calzado",
+      "fotosModelos": false,
+      "tipoTalla": "ropa",
       "descripcion": "🩳 Disfruta de la comodidad que necesitas con nuestras pantalonetas Adidas en algodón. Su tela suave, fresca y resistente las hace ideales para entrenar, salir o relajarte con el mejor estilo.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783609073/atarashi_contado/oxp1fsdetsl1ivk46sx8.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783609073/atarashi_contado/hendvwtqiczkgqoqaszk.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783609161407
     },
