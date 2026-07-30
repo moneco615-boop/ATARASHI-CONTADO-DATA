@@ -3912,6 +3912,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785424933070
+    },
+    {
+      "nombre": "MÁQUINA FOIL SHAVER",
+      "categoria": "Belleza",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 100000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "La Máquina Foil Shaver está diseñada para ofrecer un afeitado suave, preciso y al ras. Su sistema de láminas proporciona un acabado uniforme con mayor comodidad",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785425461/atarashi_contado/khbhchsxdde8qzoozodh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785425461/atarashi_contado/kcjpyzudesu9zybkjyv6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785425461/atarashi_contado/veqhgvrtlcldlbrzwdxi.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785425592251
     }
   ],
   "categorias": [
