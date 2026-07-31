@@ -1981,15 +1981,18 @@
     {
       "nombre": "ODYSSEY CANDEE.  1.1",
       "categoria": "Locion dama",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 105000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "Una fragancia cautivadora y llena de personalidad que combina notas dulces, frutales y cremosas para ofrecer un aroma moderno, envolvente e irresistible.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783651046/atarashi_contado/qswxjaqngxoptsnpzgwh.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785505895/atarashi_contado/ppmmciokbqyrneifcefk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783651046/atarashi_contado/qswxjaqngxoptsnpzgwh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785505896/atarashi_contado/ynkygqcng7mp9qljfr0t.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783651173792
     },
