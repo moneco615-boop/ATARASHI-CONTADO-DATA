@@ -4134,6 +4134,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785525179230
+    },
+    {
+      "nombre": "CONJUNTO NIKE",
+      "categoria": "Ropa caballero 😎",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 60000,
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
+      "descripcion": "El Conjunto Nike ofrece la combinación perfecta de comodidad, estilo y rendimiento. Confeccionado con materiales de excelente calidad, brinda un ajuste cómodo y libertad de movimiento, ideal para entrenar, practicar deporte o lucir un look casual con el inconfundible estilo de Nike.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785525218/atarashi_contado/dgfuwzheyeaiysrhcuyq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785525218/atarashi_contado/dkpthvzbr22cltepvmj1.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785525218/atarashi_contado/flg963wogycd8suhf0xj.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785525289883
     }
   ],
   "categorias": [
