@@ -2362,18 +2362,19 @@
     {
       "nombre": "NEW BALANCE RABEL. 1.1",
       "categoria": "Calzado dama🥰",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Ligereza, comodidad y un diseño deportivo que se adapta a tu ritmo. Ideales para entrenar, caminar o complementar un look moderno con total confort.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/hpri3lqhqougmp4p8q5u.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785507395/atarashi_contado/o5mklmdlgzriabjpfi1j.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/lah9zkitknzrtkoiykpk.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/fwsmwdvmxsoevixhkvp9.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784036205/atarashi_contado/ihn0nps7bzak6kk81t1h.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784036391189
     },
