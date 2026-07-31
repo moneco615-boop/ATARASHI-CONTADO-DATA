@@ -768,15 +768,16 @@
     {
       "nombre": "NITRO RED.  1.1",
       "categoria": "Locion caballero",
-      "badge": "⭐ RECOMENDADO",
+      "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "Nitro Red es una línea de fragancias masculinas muy popular creada por la casa de diseño de Medio Oriente Dumont Paris. Es ampliamente reconocida en la comunidad de perfumes por su excelente duración, su aroma dulce y comercial, y su gran relación calidad-precio.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783375626/atarashi_contado/z4rf1nqpzkl325kkdxtj.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785507054/atarashi_contado/s4fmnlkkzq5txvswo1ad.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783375664996
     },
