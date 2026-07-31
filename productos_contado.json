@@ -4097,6 +4097,25 @@
       "agotadas": [],
       "video": "",
       "id": 1785524718314
+    },
+    {
+      "nombre": "CONJUNTO ADIDAS",
+      "categoria": "Ropa caballero 😎",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 60000,
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
+      "descripcion": "El Conjunto Adidas combina comodidad, estilo y un diseño deportivo pensado para el día a día. Confeccionado con materiales de excelente calidad, ofrece un ajuste cómodo y un look moderno, ideal para entrenar, salir o disfrutar de cualquier ocasión con el auténtico estilo de Adidas.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785524943/atarashi_contado/i0hmlucvd1suwcnlwoy7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785524944/atarashi_contado/e4vxz9zyn8mimkindpdf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785524944/atarashi_contado/j6jra2zmgrxt4yh3jtee.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785524944/atarashi_contado/ruzpt68myeio1juazxvc.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785525030727
     }
   ],
   "categorias": [
