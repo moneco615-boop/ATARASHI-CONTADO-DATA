@@ -4116,6 +4116,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785525030727
+    },
+    {
+      "nombre": "CONJUNTO PUMA",
+      "categoria": "Ropa caballero 😎",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 60000,
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
+      "descripcion": "El Conjunto Puma combina comodidad, rendimiento y un estilo deportivo moderno. Elaborado con materiales de excelente calidad, ofrece un ajuste cómodo y libertad de movimiento",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785525099/atarashi_contado/xqlwzcmxsbfxsx4vvxdh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785525099/atarashi_contado/tspjwxmshumhsdlkdm64.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785525099/atarashi_contado/vnnembx34oiqa6jympvk.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785525179230
     }
   ],
   "categorias": [
