@@ -1161,18 +1161,20 @@
     {
       "nombre": "NEW BALANCE REBEL 1.1",
       "categoria": "Calzado dama🥰",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "👟 Descubre el equilibrio perfecto entre estilo, ligereza y comodidad con los New Balance Rebel. Su diseño moderno y deportivo los convierte en la opción ideal para entrenar, caminar o lucir un outfit casual con personalidad.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785507515/atarashi_contado/n7ywpxxzwfoi0x3iki55.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612045/atarashi_contado/ugdfztscuregvp0kv5xj.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612045/atarashi_contado/eyeers7htowrd5lll33s.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612045/atarashi_contado/kp0kprz55fztjuynbflh.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612045/atarashi_contado/agzpxznlc9g1agxsxcmq.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783612106362
     },
