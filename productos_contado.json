@@ -658,14 +658,14 @@
     {
       "nombre": "CHANCLA PLAYERA TOMMY.  1.1",
       "categoria": "Calzado caballero😎",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Las chanclas playeras de Tommy Hilfiger son la opción ideal para combinar comodidad y el clásico estilo estadounidense junto a la piscina o en el mar. Destacan por sus plantillas anatómicas de EVA flexible que amortiguan los pasos y sus icónicas tiras con el logo de la bandera global",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361704/atarashi_contado/tprjd7mgsacq1rwmy9lv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785507996/atarashi_contado/tckgjtxil1mtctglu0vr.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361704/atarashi_contado/siqy4ikyudr7ebgscrom.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361704/atarashi_contado/fu053bmremjned3ouu8g.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361704/atarashi_contado/kkne18s6thoa9nhovuzl.jpg",
@@ -676,6 +676,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361705/atarashi_contado/ie4cw8ggkh32cegubwcd.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783361705/atarashi_contado/jluuaqlkkgw42xl9lleu.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783361786627
     },
