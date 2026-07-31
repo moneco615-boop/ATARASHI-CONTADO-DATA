@@ -1962,15 +1962,19 @@
     {
       "nombre": "ARIANA GRANDE MOD BLUSH. 1.1",
       "categoria": "Locion dama",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "Una fragancia femenina, fresca y luminosa que combina delicadas notas frutales, florales y un suave fondo cremoso para crear un aroma elegante y sofisticado.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783650823/atarashi_contado/nkl9jp731toewlsmzdii.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785505408/atarashi_contado/uybd1vzgqejak3uuixrg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783650823/atarashi_contado/nkl9jp731toewlsmzdii.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785505408/atarashi_contado/zvynidgm7fjkx8gisdtv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785505408/atarashi_contado/buiirfvndu65t5fdjwhc.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783650924151
     },
