@@ -1145,17 +1145,19 @@
     {
       "nombre": "ON CLOUD  1.1",
       "categoria": "Calzado dama🥰",
-      "badge": "🔥 TOP VENTAS",
+      "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "☁️ Lleva tu comodidad al siguiente nivel con los On Cloud para dama. Su diseño moderno, ligero y cómodo los hace ideales para caminar, entrenar o complementar cualquier outfit.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783611888/atarashi_contado/oqnq9q7yrfuwthhlml5p.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785508358/atarashi_contado/jutbrc1bdblnwczmghbn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783611888/atarashi_contado/ljf8ieqq7peyqx2pyhtf.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783611888/atarashi_contado/u8yl0jdeabpjhwwpdtob.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783611888/atarashi_contado/ljf8ieqq7peyqx2pyhtf.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783611888/atarashi_contado/oqnq9q7yrfuwthhlml5p.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783612014119
     },
