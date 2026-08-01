@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -597,6 +597,10 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .sin-res button:hover{background:rgba(201,160,42,.22);}
 .sin-res button.wa{background:#25D366;border-color:#25D366;color:#fff;}
 .sin-res button.wa:hover{background:#1eb358;}
+
+/* El visor controla su propio pellizco */
+.zm-ov{touch-action:none;-ms-touch-action:none;}
+.m-car{touch-action:pan-y;}
 </style>
 </head>
 <body>
