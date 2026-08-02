@@ -660,6 +660,16 @@ body{padding-top:env(safe-area-inset-top);}
 /* la portada tambien, para que su contenido no quede alto */
 .portada{padding-top:calc(24px + env(safe-area-inset-top));}
 @media(display-mode:standalone){.portada{padding-top:calc(24px + max(env(safe-area-inset-top),44px));}}
+
+/* Menu de categorias: encabezado fijo y accesible */
+.sidebar-ov{display:none;}
+.sidebar-ov.show{display:block;}
+.sidebar{height:100%!important;max-height:100%!important;display:flex;flex-direction:column;padding-top:0!important;}
+.sb-hdr{position:sticky;top:0;z-index:5;background:var(--pa);flex-shrink:0;padding-top:calc(16px + env(safe-area-inset-top))!important;}
+@media(display-mode:standalone){.sb-hdr{padding-top:calc(16px + max(env(safe-area-inset-top),44px))!important;}}
+#sidebarCats{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.sb-faq{flex-shrink:0;margin-bottom:calc(14px + env(safe-area-inset-bottom));}
+.sb-hdr .m-close{width:46px;height:46px;font-size:23px;}
 </style>
 </head>
 <body>
