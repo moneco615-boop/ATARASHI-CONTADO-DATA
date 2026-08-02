@@ -101,7 +101,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .fb{background:var(--ca);border:1px solid rgba(201,160,42,.22);color:var(--gr);padding:6px 13px;border-radius:20px;cursor:pointer;font-size:12px;font-family:var(--B);transition:all .18s;}
 .fb.on,.fb:hover{background:var(--go);color:#000;border-color:var(--go);font-weight:700;}
 .cat-search{margin-bottom:14px;position:relative;}
-.cat-search input{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(201,160,42,.22);color:var(--wh);padding:11px 16px 11px 40px;border-radius:8px;font-family:var(--B);font-size:14px;outline:none;transition:border-color .2s;}
+.cat-search input{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(201,160,42,.22);color:var(--wh);padding:11px 16px 11px 40px;border-radius:8px;font-family:var(--B);font-size:16px;outline:none;transition:border-color .2s;}
 .cat-search input::placeholder{color:#555;}
 .cat-search input:focus{border-color:rgba(201,160,42,.5);}
 .cat-search-ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#555;font-size:16px;pointer-events:none;}
@@ -583,7 +583,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 
 /* Observacion del cliente */
 .m-obs{margin:-4px 0 14px;}
-.m-obs input{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.13);color:#ddd;padding:10px 13px;border-radius:8px;font-family:var(--B);font-size:13px;outline:none;}
+.m-obs input{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.13);color:#ddd;padding:10px 13px;border-radius:8px;font-family:var(--B);font-size:16px;outline:none;}
 .m-obs input:focus{border-color:rgba(201,160,42,.5);background:rgba(201,160,42,.05);}
 .m-obs input::placeholder{color:#66645e;}
 
@@ -635,6 +635,9 @@ body.portada-abierta{overflow:hidden!important;position:fixed;width:100%;height:
 .lote-info.show{display:block;}
 .lote-info b{color:var(--br);font-weight:800;}
 .lote-info .cargando{color:var(--go);}
+
+/* iOS no debe agrandar la pantalla al escribir */
+input[type=text],input[type=tel],input[type=email],input[type=search],input[type=number],textarea,select{font-size:16px!important;}
 </style>
 </head>
 <body>
