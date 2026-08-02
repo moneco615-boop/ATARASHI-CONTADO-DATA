@@ -80,7 +80,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 /* HEADER */
 /* header flex 3 col: nunca se solapa */
 
-@media(min-width:700px){.portada{padding:12px 40px 48px;justify-content:flex-start;overflow:hidden;}.p-logo-img{width:130px;height:130px;margin-bottom:-20px;}.p-logo{font-size:clamp(36px,4.5vw,56px);letter-spacing:6px;margin-bottom:0;}.p-sub{margin:0 0 6px;}.p-div{margin:0 auto 8px;}.p-pretit{margin-bottom:2px;}.p-tit{margin-bottom:6px;font-size:clamp(16px,2.3vw,25px);}.p-desc{margin-bottom:10px;font-size:13px;}.p-pills{margin-bottom:12px;gap:6px;}.p-btn{margin:14px 0 6px;max-width:none;white-space:nowrap;}.p-trust{margin-top:8px;margin-bottom:4px;font-size:12px;line-height:1.4;}.p-nota{position:absolute;bottom:16px;left:0;right:0;width:auto;text-align:center;white-space:nowrap;max-width:none;margin:0;padding:0;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#555;}}
+@media(min-width:700px){.portada{padding:12px 40px 54px;justify-content:flex-start;overflow-y:auto;}.p-logo-img{width:130px;height:130px;margin-bottom:-20px;}.p-logo{font-size:clamp(36px,4.5vw,56px);letter-spacing:6px;margin-bottom:0;}.p-sub{margin:0 0 6px;}.p-div{margin:0 auto 8px;}.p-pretit{margin-bottom:2px;}.p-tit{margin-bottom:6px;font-size:clamp(16px,2.3vw,25px);}.p-desc{margin-bottom:10px;font-size:13px;}.p-pills{margin-bottom:12px;gap:6px;}.p-btn{margin:14px 0 6px;max-width:none;white-space:nowrap;}.p-trust{margin-top:8px;margin-bottom:4px;font-size:12px;line-height:1.4;}.p-nota{position:absolute;bottom:16px;left:0;right:0;width:auto;text-align:center;white-space:nowrap;max-width:none;margin:0;padding:0;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#555;}}
 .s-hdr{display:flex;align-items:center;padding:12px calc(8px + env(safe-area-inset-right)) 10px calc(8px + env(safe-area-inset-left));border-bottom:1px solid rgba(201,160,42,.1);}
 .s-hdr-mid{flex:1;text-align:center;}
 .s-hdr-mid h1{font-family:var(--T);font-size:clamp(24px,7vw,38px);letter-spacing:4px;line-height:1;}
@@ -685,6 +685,16 @@ body.menu-abierto{overflow:hidden!important;position:fixed;width:100%;}
 .p-txt{font-size:12.5px;color:#a8a49a;line-height:1.35;}
 .p-txt b{display:block;color:var(--wh);font-size:14px;font-weight:800;letter-spacing:.4px;margin-bottom:1px;}
 @media(max-height:730px){.p-pasos{gap:7px;margin-bottom:11px;}.p-num{width:24px;height:24px;font-size:14px;line-height:23px;}.p-txt{font-size:11.5px;}.p-txt b{font-size:13px;}}
+
+/* Datos clave en 2 columnas */
+.p-pills{display:grid!important;grid-template-columns:1fr 1fr;gap:7px;max-width:360px;margin-left:auto;margin-right:auto;justify-items:stretch;}
+.p-pills .p-pill{width:100%;text-align:center;justify-content:center;font-size:10.5px;padding:8px 6px;letter-spacing:.2px;white-space:nowrap;}
+@media(max-width:380px){.p-pills{max-width:320px;gap:6px;}.p-pills .p-pill{font-size:9.5px;padding:7px 4px;}}
+@media(min-width:700px){.p-pills{max-width:420px;}.p-pills .p-pill{font-size:11px;padding:8px 8px;}}
+@media(max-height:730px){.p-pills{gap:5px;margin-bottom:10px;}.p-pills .p-pill{padding:6px 5px;font-size:10px;}}
+
+/* El boton nunca se recorta */
+.p-btn{flex-shrink:0!important;line-height:1.15!important;height:auto!important;min-height:0;}
 </style>
 </head>
 <body>
