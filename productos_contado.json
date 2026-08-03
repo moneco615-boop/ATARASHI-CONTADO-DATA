@@ -4490,6 +4490,26 @@
       "agotadas": [],
       "video": "",
       "id": 1785768912623
+    },
+    {
+      "nombre": "NIKE SB",
+      "categoria": "Calzado caballero😎",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Los Nike SB destacan por su comodidad, resistencia y diseño urbano.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785769026/atarashi_contado/yzxdliaehubjfwzn9ric.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785769026/atarashi_contado/zyjge8a5rrx8xtfnnvmo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785769026/atarashi_contado/swcn4ggbvc5pu5cm0pzo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785769026/atarashi_contado/ju22bsl6s72ywjyqgtkf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785769026/atarashi_contado/usolmuyrwis0185afhia.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785769115126
     }
   ],
   "categorias": [
