@@ -4383,12 +4383,13 @@
       "badge": "ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "",
       "descripcion": "La Sombrilla Larga Manual combina resistencia, cobertura y un diseño elegante para protegerte de la lluvia y el sol. Su estructura reforzada de 24 varillas brinda mayor estabilidad, mientras que su amplio tamaño ofrece una excelente cobertura. Ideal para el uso diario con comodidad y estilo.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785736271/atarashi_contado/nkfkilek9u7wutnqpdhg.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785736293/atarashi_contado/ytrbailzhtbkrun47hqq.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785736293/atarashi_contado/ytrbailzhtbkrun47hqq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785736499/atarashi_contado/s9jh3bnfwzfpvz3xskoh.jpg"
       ],
       "agotadas": [],
       "video": "",
