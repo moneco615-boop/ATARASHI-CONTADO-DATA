@@ -772,11 +772,13 @@ body.menu-abierto{overflow:hidden!important;position:fixed;width:100%;}
 @media(max-width:360px){.po-t{font-size:8.5px!important;}.po-ic{width:32px!important;height:32px!important;}}
 
 /* Iconos de categoria */
-.cat-ico{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;flex-shrink:0;line-height:0;vertical-align:-4px;}
-.cat-ico svg{width:100%;height:100%;color:var(--go);stroke-width:1.7;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}
-.sb-item .cat-ico svg,.sidebar .cat-ico svg{color:var(--br);}
-.card-cat-label .cat-ico{width:13px;height:13px;vertical-align:-2px;}
-.m-cat .cat-ico{width:15px;height:15px;}
+.cat-ico{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;min-width:19px;flex-shrink:0;line-height:0;vertical-align:-4px;margin-right:6px;}
+.cat-ico svg{width:19px;height:19px;color:var(--go);stroke-width:1.7;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}
+.sidebar .cat-ico svg{color:var(--br);}
+.sidebar>div>div,#sidebarCats>*{white-space:normal;overflow:visible;}
+#sidebarCats>*>span,#filtros>*>span{white-space:normal;}
+.card-cat-label .cat-ico,.card-cat-label .cat-ico svg{width:13px;height:13px;min-width:13px;vertical-align:-2px;margin-right:4px;}
+.m-cat .cat-ico,.m-cat .cat-ico svg{width:15px;height:15px;min-width:15px;}
 .m-cat .cat-ico svg{color:var(--br);}
 </style>
 </head>
