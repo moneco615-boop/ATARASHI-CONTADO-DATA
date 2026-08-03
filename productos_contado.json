@@ -542,10 +542,12 @@
     },
     {
       "nombre": "CARPA CAMPING PARA 3  PERSONAS",
-      "categoria": "Hogar",
-      "badge": "⭐ RECOMENDADO",
+      "categoria": "Aire libre-deportes",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 70000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "Carpa de camping para 3 personas, ideal para disfrutar de tus salidas al aire libre con comodidad y protección. Su diseño práctico y resistente ofrece un espacio cómodo para descansar en camping, playa o montaña, convirtiéndola en una excelente opción para tus aventuras.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783349866/atarashi_contado/v8jni3aycnqpb8xaakzz.jpg",
@@ -553,6 +555,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783349892/atarashi_contado/kmtfybvzavfpqefcnlbq.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783349893/atarashi_contado/oh9k7tpbsn8djiglwjfx.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783350271240
     },
