@@ -4277,6 +4277,24 @@
       "agotadas": [],
       "video": "",
       "id": 1785728550664
+    },
+    {
+      "nombre": "SILLA CAMPING GRANDE PLEGABLE",
+      "categoria": "Aire libre-deportes",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 65000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "La Silla Camping Grande Plegable ofrece máxima comodidad y resistencia para disfrutar al aire libre. Su estructura robusta, asiento amplio y diseño plegable permiten transportarla y guardarla fácilmente",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785733845/atarashi_contado/bwg4kyy6hu3umjwqpos3.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785733854/atarashi_contado/pcdica7i175grxpo91zk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785733854/atarashi_contado/vevzvblvhbmvs4pgnwjd.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785734076625
     }
   ],
   "categorias": [
@@ -4347,6 +4365,10 @@
     {
       "emoji": "⭐",
       "nombre": "Unisex"
+    },
+    {
+      "emoji": "🏋️",
+      "nombre": "Aire libre-deportes"
     }
   ]
 }
