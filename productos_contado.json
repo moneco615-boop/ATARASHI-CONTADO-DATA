@@ -335,10 +335,12 @@
     },
     {
       "nombre": "FREIDORA DE AIRE SCHAFFHAUSEN SCH12",
-      "categoria": "Hogar",
+      "categoria": "Cocina",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
       "precioContado": 225000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "Freidora de aire Schaffhausen SCH12 con tecnología de aire caliente para cocinar de forma más saludable, logrando resultados crujientes con poco o nada de aceite. Cuenta con temperatura ajustable, panel digital y revestimiento cerámico 100% natural, libre de PTFE y PFOA, ideal para preparar tus recetas favoritas con practicidad y estilo.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221209/atarashi_contado/y73fy0vfrcknl0mgkazi.jpg",
@@ -346,20 +348,24 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221249/atarashi_contado/jjmvmlfaisoimjnfgakd.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221301/atarashi_contado/rchnjyo55d6u3xna36q8.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783221466538
     },
     {
       "nombre": "ESCURRIDOR DE PLATOS",
-      "categoria": "Hogar",
+      "categoria": "Cocina",
       "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "Soporte para platos de cocina 4 en 1, práctico y resistente, ideal para mantener tu vajilla, vasos, tablas y utensilios organizados y secos en un solo lugar. Su diseño multifuncional en color negro aprovecha mejor el espacio y aporta orden y estilo a tu cocina.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221760/atarashi_contado/t5l3mb73uqwiluhpmyrv.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783221783/atarashi_contado/otluvjz48ri5q1i9xl6j.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783222079645
     },
@@ -2334,10 +2340,12 @@
     },
     {
       "nombre": "CÁMARA IP WIFI CON PANEL SOLA",
-      "categoria": "Hogar",
+      "categoria": "Tecnología",
       "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "Protege tu hogar o negocio con una cámara de vigilancia inteligente que funciona con energía solar, brindando mayor autonomía y seguridad sin depender de una conexión eléctrica constante.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783709337/atarashi_contado/byibkimhrvuvusd5edyz.jpg",
@@ -2345,6 +2353,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783709428/atarashi_contado/g6mcvft1frn4sc0yl9mi.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783709429/atarashi_contado/z1w9leu030ahlxrqe9nu.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783709525803
     },
@@ -4233,7 +4242,7 @@
     },
     {
       "nombre": "TALADRO ATORNILLADOR RECARGABLE 20V CON KIT",
-      "categoria": "Hogar",
+      "categoria": "Herramientas",
       "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 185000,
@@ -4584,6 +4593,10 @@
     {
       "emoji": "",
       "nombre": "Unisex"
+    },
+    {
+      "emoji": "⭐",
+      "nombre": "Herramientas"
     }
   ]
 }
