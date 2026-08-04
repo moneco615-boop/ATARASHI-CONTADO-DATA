@@ -4592,6 +4592,23 @@
       "agotadas": [],
       "video": "",
       "id": 1785852063573
+    },
+    {
+      "nombre": "LE COQ SPORTIF ASTRA",
+      "categoria": "Calzado caballero",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Los Le Coq Sportif Astra combinan elegancia, comodidad y un diseño deportivo con un toque clásico. Elaborados con materiales de excelente calidad, ofrecen un ajuste cómodo y una pisada confortable",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785852193/atarashi_contado/y3br9cvweavi80p8jueh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785852194/atarashi_contado/a5uifgntueqabpercdon.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1785852292855
     }
   ],
   "categorias": [
