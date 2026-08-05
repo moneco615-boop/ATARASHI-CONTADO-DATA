@@ -652,8 +652,8 @@ body{padding-top:env(safe-area-inset-top);}
 /* la portada cubre todo, sin ese margen */
 
 /* Capas fijas: cubren la pantalla real, sin el margen del cuerpo */
-.portada,.modal-bg,.cart-ov,.zm-ov,.faq-ov,.exp-ov,.fact-ov{top:calc(-1 * env(safe-area-inset-top))!important;height:auto!important;bottom:0!important;}
-@media(display-mode:standalone){.portada,.modal-bg,.cart-ov,.zm-ov,.faq-ov,.exp-ov,.fact-ov{top:calc(-1 * max(env(safe-area-inset-top),44px))!important;}}
+.portada,.modal-bg,.cart-ov,.zm-ov,.faq-ov,.exp-ov{top:calc(-1 * env(safe-area-inset-top))!important;height:auto!important;bottom:0!important;}
+@media(display-mode:standalone){.portada,.modal-bg,.cart-ov,.zm-ov,.faq-ov,.exp-ov{top:calc(-1 * max(env(safe-area-inset-top),44px))!important;}}
 /* el menu lateral respeta la muesca por dentro */
 .sidebar{padding-top:env(safe-area-inset-top);}
 @media(display-mode:standalone){.sidebar{padding-top:max(env(safe-area-inset-top),44px);}}
@@ -822,6 +822,18 @@ body.menu-abierto{overflow:hidden!important;position:fixed;width:100%;}
 .modal-box{overflow-y:auto!important;-webkit-overflow-scrolling:touch;}
 .modal-bg{overflow:hidden;}
 .eo.sel,.po.sel{border-color:var(--go)!important;background:rgba(201,160,42,.09)!important;}
+
+/* ===== COMPROBANTE: botones siempre visibles ===== */
+.fact-ov{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;height:100vh!important;overflow:hidden!important;}
+@supports(height:100dvh){.fact-ov{height:100dvh!important;}}
+.fact-bar{position:sticky!important;top:0;z-index:10;flex-shrink:0!important;padding-top:calc(12px + env(safe-area-inset-top))!important;}
+@media(display-mode:standalone){.fact-bar{padding-top:calc(12px + max(env(safe-area-inset-top),44px))!important;}}
+.fact-scroll{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;}
+.fact-tip{flex-shrink:0!important;}
+@media print{.fact-ov{position:static!important;height:auto!important;overflow:visible!important;}.fact-bar{display:none!important;}}
+/* Portada — paso 3 */
+@media(max-width:700px){.p-logo-img{width:98px!important;height:98px!important;}.p-logo{font-size:clamp(40px,11.4vw,58px)!important;letter-spacing:6px!important;}.p-sub{font-size:12.5px!important;}.p-pretit{font-size:14px!important;}.p-tit{font-size:clamp(19px,6vw,26px)!important;}.p-num{width:35px!important;height:35px!important;}.p-num svg{width:19px!important;height:19px!important;}.p-txt{font-size:13.5px!important;}.p-txt b{font-size:15px!important;}.p-txt .p-l2{font-size:12.5px!important;}.p-pills .pp-ic{width:25px!important;height:25px!important;}.p-pills .pp-ic svg{width:23px!important;height:23px!important;}.p-pills .p-pill b{font-size:12.5px!important;}.p-pills .p-pill i{font-size:10.5px!important;}.p-btn{font-size:17px!important;padding:15px 42px!important;}.p-trust{font-size:12.5px!important;}.p-nota{font-size:10.5px!important;}}
+@media(max-width:700px) and (max-height:700px){.p-logo-img{width:72px!important;height:72px!important;}.p-logo{font-size:clamp(31px,9vw,43px)!important;}}
 </style>
 </head>
 <body>
