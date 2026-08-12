@@ -867,58 +867,6 @@ body.menu-abierto{overflow:hidden!important;position:fixed;width:100%;}
 /* Visor: sin flechas, solo deslizar */
 .zm-nav{display:none!important;}
 .zm-tip{bottom:26px;}
-
-/* ================================================================
-   PORTADA - ARREGLO FINAL
-   1) Altura estable: ya no se reacomoda al deslizar el dedo
-   2) Aire entre el logo (imagen) y el nombre ATARASHI STORE
-   3) Centrado seguro: si el contenido no cabe, se puede desplazar
-   ================================================================ */
-
-/* Fondo del documento igual al de la portada (evita franjas) */
-html{background:#0a0a0a;}
-
-/* --- 1) ALTURA ESTABLE --- */
-/* Respaldo para navegadores viejos */
-.portada{height:calc(100vh + env(safe-area-inset-top))!important;}
-@media(display-mode:standalone){
-  .portada{height:calc(100vh + max(env(safe-area-inset-top),44px))!important;}
-}
-/* 100svh = alto "pequeno": NO cambia cuando el navegador esconde
-   o muestra su barra de direcciones mientras el usuario desliza */
-@supports(height:100svh){
-  .portada{height:calc(100svh + env(safe-area-inset-top))!important;}
-  @media(display-mode:standalone){
-    .portada{height:calc(100svh + max(env(safe-area-inset-top),44px))!important;}
-  }
-}
-
-/* --- 2) CENTRADO SEGURO (solo celular) --- */
-@media(max-width:700px){
-  .portada{justify-content:flex-start!important;}
-  .portada>.p-logo-img{margin-top:auto!important;}
-  .portada>.p-nota{margin-bottom:auto!important;}
-}
-
-/* --- 3) LOGO Y NOMBRE CON AIRE (celular) --- */
-@media(max-width:700px){
-  .p-logo-img{width:92px!important;height:92px!important;margin-bottom:16px!important;}
-  .p-logo{font-size:clamp(38px,10.6vw,54px)!important;letter-spacing:5px!important;margin-bottom:0!important;}
-  .p-sub{margin:5px 0 10px!important;}
-  .portada{
-    padding-top:calc(16px + env(safe-area-inset-top))!important;
-    padding-bottom:calc(22px + env(safe-area-inset-bottom))!important;
-  }
-}
-@media(max-width:700px) and (display-mode:standalone){
-  .portada{padding-top:calc(16px + max(env(safe-area-inset-top),44px))!important;}
-}
-/* Celulares de pantalla corta */
-@media(max-width:700px) and (max-height:700px){
-  .p-logo-img{width:70px!important;height:70px!important;margin-bottom:10px!important;}
-  .p-logo{font-size:clamp(29px,8.4vw,40px)!important;}
-  .p-sub{margin:4px 0 8px!important;}
-}
 </style>
 </head>
 <body>
