@@ -4820,6 +4820,25 @@
       "agotadas": [],
       "video": "",
       "id": 1786902527201
+    },
+    {
+      "nombre": "PUMA MILLAR",
+      "categoria": "Calzado caballero",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Las Puma Miller combinan comodidad, estilo y un diseño deportivo moderno. Su silueta versátil las hace ideales para el uso diario, ofreciendo una pisada cómoda y un look urbano fácil de combinar con diferentes outfits.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902826/atarashi_contado/z3isovg10c9otfwjz2f8.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902826/atarashi_contado/eby2efcazhpbhiflg7ht.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902826/atarashi_contado/owho1tesflyymkj8vyte.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902826/atarashi_contado/mhj18halshnilwlmwvkf.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1786902903676
     }
   ],
   "categorias": [
