@@ -4769,6 +4769,22 @@
       "agotadas": [],
       "video": "",
       "id": 1786899681522
+    },
+    {
+      "nombre": "ADIDAS SAMBA PLATAFORMA",
+      "categoria": "Calzado dama",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Las Adidas Samba Plataforma combinan el icónico diseño clásico de Samba con una suela elevada que aporta un toque moderno y femenino. Cómodas, versátiles y fáciles de combinar, son ideales para looks casuales y urbanos del día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899880/atarashi_contado/nx3a85qttwa4qrtmi5zx.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1786900040522
     }
   ],
   "categorias": [
