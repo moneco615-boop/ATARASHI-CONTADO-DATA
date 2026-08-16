@@ -4785,6 +4785,25 @@
       "agotadas": [],
       "video": "",
       "id": 1786900040522
+    },
+    {
+      "nombre": "PUMA MAJESTY",
+      "categoria": "Unisex",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Las Puma Majestica combinan un diseño moderno, femenino y urbano con gran comodidad. Su silueta versátil y detalles deportivos las hacen ideales para el uso diario, ofreciendo un look llamativo y fácil de combinar.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902289/atarashi_contado/xwayq0oovohc5sqsmr9y.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902289/atarashi_contado/ychrlgg4i9twcumpbvxc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902289/atarashi_contado/pgvmcijwbgvcttm5qkzm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786902290/atarashi_contado/ceolyozfvnkefxpfj3p8.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1786902421695
     }
   ],
   "categorias": [
