@@ -4747,6 +4747,23 @@
       "agotadas": [],
       "video": "",
       "id": 1786899597130
+    },
+    {
+      "nombre": "NIKE JORDAN 3",
+      "categoria": "Calzado dama",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Los Nike Jordan 3 combinan el icónico estilo Jordan con comodidad y un diseño deportivo lleno de personalidad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899635/atarashi_contado/hyajxxbyrqgxa0fkkdem.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899635/atarashi_contado/ui13v5dg4ckrpnnyw9ve.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1786899681522
     }
   ],
   "categorias": [
