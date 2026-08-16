@@ -4879,6 +4879,23 @@
       "agotadas": [],
       "video": "",
       "id": 1786903368442
+    },
+    {
+      "nombre": "NIKE JORDAN RETRO 4",
+      "categoria": "Calzado dama",
+      "badge": "SÚPER PRECIO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Los Nike Jordan Retro 4 destacan por su diseño icónico, robusto y lleno de personalidad. Ofrecen comodidad, excelente soporte y un estilo urbano que nunca pasa de moda.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786903418/atarashi_contado/vnczwhyv1rxdazptsjsw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786903418/atarashi_contado/siigcaytdcgol49qoyim.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1786903478076
     }
   ],
   "categorias": [
