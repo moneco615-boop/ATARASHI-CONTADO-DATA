@@ -4728,6 +4728,25 @@
       "agotadas": [],
       "video": "",
       "id": 1785951390913
+    },
+    {
+      "nombre": "NIKE JORDAN 3",
+      "categoria": "Calzado caballero",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Los Nike Jordan 3 combinan el icónico estilo Jordan con comodidad y un diseño deportivo lleno de personalidad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/cywkkarxfzh7fcmulfsf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/roxwrd5wkwwhlowzycaw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/kekdzlvamftqg77mts8r.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/hvoxmosppdghwonlcy8m.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1786899597130
     }
   ],
   "categorias": [
