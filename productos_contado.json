@@ -5338,6 +5338,25 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1787321744/atarashi_contado/videos/xe4yuxaeigrramq968aq.mov",
       "id": 1787322089755
+    },
+    {
+      "nombre": "GORRA MERCEDES BENZ. 1.1",
+      "categoria": "Unisex",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "La Gorra Mercedes-Benz combina estilo deportivo, elegancia y un diseño moderno. Su ajuste cómodo y detalles inspirados en la icónica marca la convierten en el complemento ideal para completar cualquier look casual con personalidad y sofisticación.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1787322219/atarashi_contado/odzjudgus7psn2y3maxb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1787322219/atarashi_contado/m1qzytodgxy0jkudbbca.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1787322219/atarashi_contado/yxcjsay7nprcgasl5sja.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1787322219/atarashi_contado/hmev7apa4ekbihqqulvj.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1787322334510
     }
   ],
   "categorias": [
