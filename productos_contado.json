@@ -5600,6 +5600,22 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1787666569/atarashi_contado/videos/gj1vfx2ppf9eljpc7cqs.mov",
       "id": 1787666737584
+    },
+    {
+      "nombre": "HUMIFICADOR",
+      "categoria": "Hogar",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "inmediata",
+      "precioContado": 35000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "El Humidificador ayuda a mantener un ambiente más agradable al aportar humedad al aire. Su diseño práctico y compacto lo hace ideal para habitaciones, oficinas o espacios de descanso, aportando frescura y un toque decorativo al ambiente.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1787666814/atarashi_contado/ukgduanxpjqhtczp6dkw.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1787666833/atarashi_contado/videos/tbtevp8vro0uizelshhu.mov",
+      "id": 1787666886492
     }
   ],
   "categorias": [
