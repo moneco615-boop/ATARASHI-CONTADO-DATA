@@ -90,9 +90,11 @@
     {
       "nombre": "TACOMETRO DIGITAL YAMAHA CRYPTON FI",
       "categoria": "Accesorios moto",
-      "badge": "TOP VENTAS",
-      "disponibilidad": "inmediata",
+      "badge": "SÚPER PRECIO",
+      "disponibilidad": "camino",
       "precioContado": 260000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782779993/atarashi_contado/ktw7cz4neoc0akl5zray.jpg",
@@ -101,6 +103,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780009/atarashi_contado/vdhiywmp9rrmv2pw1qnq.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1782780009/atarashi_contado/nqye56cktksb2qo9gqzu.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1782780053491
     },
