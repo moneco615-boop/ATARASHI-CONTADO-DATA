@@ -147,9 +147,11 @@
     {
       "nombre": "SPEAKER ORTIZAN",
       "categoria": "Audio",
-      "badge": "RECOMENDADO",
-      "disponibilidad": "transito",
+      "badge": "TOP VENTAS",
+      "disponibilidad": "aparta",
       "precioContado": 180000,
+      "fotosModelos": false,
+      "tipoTalla": "",
       "descripcion": "parlante full, luces batería larga duración",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783094774/atarashi_contado/benb4s07xgarjwyrn5fl.jpg",
@@ -162,6 +164,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783094776/atarashi_contado/ktkjpbonclqfdrf5pqwg.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783094776/atarashi_contado/pmu6khjiiq7ixaqz5zhf.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783094820943
     },
