@@ -6202,6 +6202,23 @@
       "agotadas": [],
       "video": "",
       "id": 1788200552533
+    },
+    {
+      "nombre": "NIKE JORDAN RETRO 1",
+      "categoria": "Niños",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Diseño icónico, estilo urbano y gran comodidad. Un clásico que combina fácilmente con cualquier outfit y aporta un look moderno, deportivo y lleno de personalidad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788200688/atarashi_contado/uh1fhgtgt0tdufyfvumr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788200688/atarashi_contado/tzhbsfqeb5bd0xme2ibc.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788200767840
     }
   ],
   "categorias": [
