@@ -1011,6 +1011,26 @@ var _0x44e8c8=_0xdd40;(function(_0xfe9816,_0x2dcd23){var _0xd1e2c3=_0xdd40,_0x5d
       });
       thumbs.appendChild(th);
     }
+
+    // El video no debe dejar pasar el toque hacia el arrastre de fotos
+    ['pointerdown','pointermove','pointerup','touchstart','touchmove','touchend'].forEach(function(ev){
+      video.addEventListener(ev, function(e){ e.stopPropagation(); }, false);
+    });
+
+    // Reproducir el video solo cuando el cliente llega a el deslizando
+    var car = document.getElementById('mCar');
+    if (car && 'IntersectionObserver' in window) {
+      var obsVideo = new IntersectionObserver(function(entradas){
+        entradas.forEach(function(entrada){
+          if (entrada.isIntersecting && entrada.intersectionRatio > 0.6) {
+            video.play().catch(function(){});
+          } else {
+            video.pause();
+          }
+        });
+      }, { root: car, threshold: [0, 0.6, 1] });
+      obsVideo.observe(slide);
+    }
   }
 
   function iniciarVideo(){
