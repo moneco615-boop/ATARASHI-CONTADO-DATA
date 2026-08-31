@@ -987,6 +987,29 @@ var _0x44e8c8=_0xdd40;(function(_0xfe9816,_0x2dcd23){var _0xd1e2c3=_0xdd40,_0x5d
     // Paso 2: agregar la miniatura del video (independiente de lo demas)
     try {
       var thumbs = box.querySelector('.m-thumbs');
+      if (!thumbs) {
+        // Con 1 sola foto el catalogo no arma esta fila; la creamos nosotros
+        thumbs = document.createElement('div');
+        thumbs.className = 'm-thumbs';
+        var hint = box.querySelector('.m-hint');
+        if (hint && hint.parentNode) {
+          hint.parentNode.insertBefore(thumbs, hint.nextSibling);
+        } else {
+          track.parentNode.insertBefore(thumbs, track.nextSibling);
+        }
+        var fotos = track.querySelectorAll('.m-slide:not(.m-slide-video) img');
+        fotos.forEach(function(imgFoto, i){
+          var thf = document.createElement('img');
+          thf.src = imgFoto.src;
+          thf.className = 'm-thumb' + (i === 0 ? ' on' : '');
+          thf.setAttribute('data-idx', i);
+          thf.loading = 'lazy';
+          thf.addEventListener('click', function(){
+            if (typeof window.selFoto === 'function') window.selFoto(i);
+          });
+          thumbs.appendChild(thf);
+        });
+      }
       if (thumbs && !thumbs.querySelector('.m-thumb-video')) {
         var th = document.createElement('div');
         th.className = 'm-thumb m-thumb-video';
@@ -1009,7 +1032,20 @@ var _0x44e8c8=_0xdd40;(function(_0xfe9816,_0x2dcd23){var _0xd1e2c3=_0xdd40,_0x5d
     // Paso 4: actualizar el texto del contador "1 / N"
     try {
       var cnt = document.getElementById('mCnt');
-      if (cnt) {
+      var cntRecienCreado = false;
+      if (!cnt) {
+        // Con 1 sola foto el catalogo no arma el contador; lo creamos nosotros
+        var car2 = document.getElementById('mCar');
+        if (car2) {
+          cnt = document.createElement('div');
+          cnt.className = 'm-cnt';
+          cnt.id = 'mCnt';
+          cnt.textContent = '1 / ' + (idx + 1);
+          car2.appendChild(cnt);
+          cntRecienCreado = true;
+        }
+      }
+      if (cnt && !cntRecienCreado) {
         var partes = cnt.textContent.split('/');
         if (partes.length === 2) {
           var actualTxt = partes[0].replace(/[^0-9]/g,'');
