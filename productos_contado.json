@@ -6192,11 +6192,12 @@
       "badge": "ÚLTIMAS UNIDADES",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Diseño moderno y deportivo con gran comodidad. Su estilo urbano y llamativo es perfecto para acompañar a los pequeños en el día a día, combinando fácilmente con diferentes outfits.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788200436/atarashi_contado/blhjzv2otrdiicrdtcpx.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788200436/atarashi_contado/blhjzv2otrdiicrdtcpx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788200635/atarashi_contado/lw4v2g1pkuu2lxp8ikwn.jpg"
       ],
       "agotadas": [],
       "video": "",
