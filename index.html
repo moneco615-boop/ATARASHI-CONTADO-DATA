@@ -978,59 +978,73 @@ var _0x44e8c8=_0xdd40;(function(_0xfe9816,_0x2dcd23){var _0xd1e2c3=_0xdd40,_0x5d
 
     var idx = track.querySelectorAll('.m-slide').length;
 
+    // Paso 1: mover el video a un nuevo slide del carrusel
     var slide = document.createElement('div');
     slide.className = 'm-slide m-slide-video';
-    slide.appendChild(video);
-    track.appendChild(slide);
+    try { slide.appendChild(video); track.appendChild(slide); } catch(e) {}
+    try { bloqueViejo.parentNode.removeChild(bloqueViejo); } catch(e) {}
 
-    bloqueViejo.parentNode.removeChild(bloqueViejo);
-
-    if (typeof window.sImgs !== 'undefined' && window.sImgs && window.sImgs.push) {
-      window.sImgs.push('__VIDEO__');
-    }
-
-    var cnt = document.getElementById('mCnt');
-    if (cnt) {
-      var partes = cnt.textContent.split('/');
-      if (partes.length === 2) {
-        var actualTxt = partes[0].replace(/[^0-9]/g,'');
-        var totalTxt = partes[1].replace(/[^0-9]/g,'');
-        var totalNum = parseInt(totalTxt, 10);
-        if (!isNaN(totalNum)) cnt.textContent = actualTxt + ' / ' + (totalNum + 1);
-      }
-    }
-
-    var thumbs = box.querySelector('.m-thumbs');
-    if (thumbs) {
-      var th = document.createElement('div');
-      th.className = 'm-thumb m-thumb-video';
-      th.setAttribute('data-idx', idx);
-      th.innerHTML = '<span class="m-thumb-play">▶</span>';
-      th.addEventListener('click', function(){
-        if (typeof window.selFoto === 'function') window.selFoto(idx);
-      });
-      thumbs.appendChild(th);
-    }
-
-    // El video no debe dejar pasar el toque hacia el arrastre de fotos
-    ['pointerdown','pointermove','pointerup','touchstart','touchmove','touchend'].forEach(function(ev){
-      video.addEventListener(ev, function(e){ e.stopPropagation(); }, false);
-    });
-
-    // Reproducir el video solo cuando el cliente llega a el deslizando
-    var car = document.getElementById('mCar');
-    if (car && 'IntersectionObserver' in window) {
-      var obsVideo = new IntersectionObserver(function(entradas){
-        entradas.forEach(function(entrada){
-          if (entrada.isIntersecting && entrada.intersectionRatio > 0.6) {
-            video.play().catch(function(){});
-          } else {
-            video.pause();
-          }
+    // Paso 2: agregar la miniatura del video (independiente de lo demas)
+    try {
+      var thumbs = box.querySelector('.m-thumbs');
+      if (thumbs && !thumbs.querySelector('.m-thumb-video')) {
+        var th = document.createElement('div');
+        th.className = 'm-thumb m-thumb-video';
+        th.setAttribute('data-idx', idx);
+        th.innerHTML = '<span class="m-thumb-play">▶</span>';
+        th.addEventListener('click', function(){
+          if (typeof window.selFoto === 'function') window.selFoto(idx);
         });
-      }, { root: car, threshold: [0, 0.6, 1] });
-      obsVideo.observe(slide);
-    }
+        thumbs.appendChild(th);
+      }
+    } catch(e) {}
+
+    // Paso 3: extender el conteo global usado por el contador y el temporizador
+    try {
+      if (typeof window.sImgs !== 'undefined' && window.sImgs && window.sImgs.push) {
+        window.sImgs.push('__VIDEO__');
+      }
+    } catch(e) {}
+
+    // Paso 4: actualizar el texto del contador "1 / N"
+    try {
+      var cnt = document.getElementById('mCnt');
+      if (cnt) {
+        var partes = cnt.textContent.split('/');
+        if (partes.length === 2) {
+          var actualTxt = partes[0].replace(/[^0-9]/g,'');
+          var totalTxt = partes[1].replace(/[^0-9]/g,'');
+          var totalNum = parseInt(totalTxt, 10);
+          if (!isNaN(totalNum)) cnt.textContent = actualTxt + ' / ' + (totalNum + 1);
+        }
+      }
+    } catch(e) {}
+
+    // Paso 5: que el video no dispare el arrastre de fotos
+    try {
+      ['pointerdown','pointermove','pointerup','touchstart','touchmove','touchend'].forEach(function(ev){
+        video.addEventListener(ev, function(e){ e.stopPropagation(); }, false);
+      });
+    } catch(e) {}
+
+    // Paso 6: reproducir/pausar segun visibilidad, y pausar la rotacion automatica
+    try {
+      var car = document.getElementById('mCar');
+      if (car && 'IntersectionObserver' in window) {
+        var obsVideo = new IntersectionObserver(function(entradas){
+          entradas.forEach(function(entrada){
+            if (entrada.isIntersecting && entrada.intersectionRatio > 0.6) {
+              if (typeof window.stopTimer === 'function') window.stopTimer();
+              video.play().catch(function(){});
+            } else {
+              video.pause();
+              if (typeof window.startTimer === 'function') window.startTimer();
+            }
+          });
+        }, { root: car, threshold: [0, 0.6, 1] });
+        obsVideo.observe(slide);
+      }
+    } catch(e) {}
   }
 
   function iniciarVideo(){
