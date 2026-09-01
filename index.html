@@ -923,15 +923,6 @@ html{background:#0a0a0a;}
 .m-slide-video video{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;background:#000;}
 .m-thumb-video{background:#000;display:flex;align-items:center;justify-content:center;}
 .m-thumb-play{font-size:16px;color:#fff;}
-
-/* ================================================================
-   ENCABEZADO, CATEGORIAS Y BUSCADOR FIJOS AL HACER SCROLL
-   (la cinta de info sigue corriendo normal, no queda fija)
-   ================================================================ */
-.s-hdr{position:sticky!important;top:0!important;z-index:33!important;background:var(--pa)!important;}
-.filtros{position:sticky!important;z-index:32!important;background:var(--pa)!important;padding:10px 12px 8px!important;margin-bottom:0!important;}
-.cat-search{position:sticky!important;z-index:31!important;background:var(--pa)!important;padding:8px 12px!important;margin-bottom:0!important;}
-.lote-info{z-index:30!important;}
 </style>
 </head>
 <body>
@@ -1102,59 +1093,6 @@ var _0x44e8c8=_0xdd40;(function(_0xfe9816,_0x2dcd23){var _0xd1e2c3=_0xdd40,_0x5d
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', iniciarVideo);
   } else { iniciarVideo(); }
-})();
-
-/* === Encabezado, categorias y buscador fijos al hacer scroll === */
-(function(){
-  function ajustar(){
-    var hdr = document.querySelector('.s-hdr');
-    var filtros = document.querySelector('.filtros');
-    var buscador = document.querySelector('.cat-search');
-    var lote = document.getElementById('loteInfo');
-    if (!hdr) return;
-
-    var hHdr = hdr.offsetHeight || 0;
-    var hFiltros = 0, hBuscador = 0;
-
-    if (filtros) {
-      filtros.style.top = hHdr + 'px';
-      hFiltros = filtros.offsetHeight || 0;
-    }
-    if (buscador) {
-      buscador.style.top = (hHdr + hFiltros) + 'px';
-      hBuscador = buscador.offsetHeight || 0;
-    }
-    if (lote) {
-      lote.style.top = (hHdr + hFiltros + hBuscador) + 'px';
-    }
-  }
-
-  var t = null;
-  function ajustarConEspera(){
-    clearTimeout(t);
-    t = setTimeout(ajustar, 80);
-  }
-
-  function iniciarAjuste(){
-    ajustarConEspera();
-    window.addEventListener('resize', ajustarConEspera);
-    window.addEventListener('orientationchange', ajustarConEspera);
-
-    var grid = document.getElementById('grid');
-    if (grid) {
-      new MutationObserver(ajustarConEspera).observe(grid, { childList: true });
-    }
-    var filtros = document.querySelector('.filtros');
-    if (filtros) {
-      new MutationObserver(ajustarConEspera).observe(filtros, { childList: true, attributes: true, attributeFilter: ['style','class'] });
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciarAjuste);
-  } else {
-    iniciarAjuste();
-  }
 })();
 </script>
 </body>
