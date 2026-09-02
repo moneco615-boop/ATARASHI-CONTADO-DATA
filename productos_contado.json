@@ -6385,6 +6385,24 @@
       "agotadas": [],
       "video": "",
       "id": 1788321675234
+    },
+    {
+      "nombre": "NIKE CORTEZ",
+      "categoria": "Calzado dama",
+      "badge": "NUEVO INGRESO",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Las Nike Cortez son un clásico atemporal que combina estilo retro, comodidad y el inconfundible ADN deportivo de Nike. Su diseño versátil las hace perfectas para el día a día, aportando un toque urbano y auténtico a cualquier outfit.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321958/atarashi_contado/m7dcjdrmcr0fwnq7uxyk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321958/atarashi_contado/ab7fzcwuswhaqvvcgcdx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321958/atarashi_contado/ar8yhsyvi3xdu1ddcoxg.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788322039370
     }
   ],
   "categorias": [
