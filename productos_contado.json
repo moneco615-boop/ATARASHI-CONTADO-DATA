@@ -6330,6 +6330,25 @@
       "agotadas": [],
       "video": "",
       "id": 1788320766168
+    },
+    {
+      "nombre": "VANS HYLANE",
+      "categoria": "Calzado dama",
+      "badge": "RECOMENDADO",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Las Vans Hylane combinan un diseño retro y moderno con el estilo urbano característico de Vans. Cómodas, versátiles y fáciles de combinar, son ideales para el día a día y para darle un toque auténtico a cualquier outfit.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321036/atarashi_contado/cvccwbt34homzcbgsafr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321036/atarashi_contado/lzfd2g2wsemgpejkumvu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321036/atarashi_contado/opx3azvbg3ordyqo85ru.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788321036/atarashi_contado/dygbcuemwz6kshngdl2o.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788321118842
     }
   ],
   "categorias": [
