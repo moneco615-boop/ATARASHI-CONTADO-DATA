@@ -6403,6 +6403,24 @@
       "agotadas": [],
       "video": "",
       "id": 1788322039370
+    },
+    {
+      "nombre": "NIKE CORTEZ.",
+      "categoria": "Calzado caballero",
+      "badge": "ÚLTIMAS UNIDADES",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Las Nike Cortez son un clásico atemporal que combina estilo retro, comodidad y el inconfundible ADN deportivo de Nike. Su diseño versátil las hace perfectas para el día a día, aportando un toque urbano y auténtico a cualquier outfit.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322230/atarashi_contado/znjgga5rjerryqconemu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322230/atarashi_contado/m2c0nndboxmazjdwzytq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322230/atarashi_contado/out6gw5lsryhxtpvkkwq.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788322366961
     }
   ],
   "categorias": [
