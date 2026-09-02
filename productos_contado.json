@@ -6312,6 +6312,24 @@
       "agotadas": [],
       "video": "",
       "id": 1788280326852
+    },
+    {
+      "nombre": "NEW BALANCE 574",
+      "categoria": "Calzado dama",
+      "badge": "SÚPER PRECIO",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Un clásico que combina comodidad, estilo y versatilidad. Su diseño atemporal y deportivo es perfecto para el uso diario, ofreciendo una pisada cómoda y un look urbano fácil de combinar.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788320671/atarashi_contado/cwsidqucncquvhicqex4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788320671/atarashi_contado/x3rooe2jkefvyeee3dki.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788320671/atarashi_contado/pjfz1tnwz2ojutqzcrvf.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788320766168
     }
   ],
   "categorias": [
