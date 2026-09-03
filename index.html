@@ -39,7 +39,7 @@
 body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;}
 /* PORTADA */
 .portada{position:fixed;top:0;left:0;right:0;bottom:0;height:100dvh;background:var(--po);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;text-align:center;padding:calc(24px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
-.portada::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,160,42,.05) 0%,transparent 60%);pointer-events:none;}
+.portada::before{content:'';position:absolute;inset:0;background:none;pointer-events:none;}
 .p-lt{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-lb{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-logo{position:relative;z-index:2;font-family:var(--T);font-size:clamp(44px,11vw,84px);letter-spacing:8px;line-height:1;animation:fD .8s ease forwards;opacity:0;}
@@ -66,7 +66,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .p-beam{position:absolute;width:180%;height:280px;background:linear-gradient(90deg,transparent 0%,rgba(201,160,42,.06) 40%,rgba(240,192,64,.1) 50%,rgba(201,160,42,.06) 60%,transparent 100%);top:22%;left:-40%;transform:rotate(-18deg);animation:beamSweep 13s ease-in-out infinite;pointer-events:none;}
 @keyframes beamSweep{0%,100%{transform:rotate(-18deg) translateX(-120%);opacity:0}15%{opacity:1}50%{transform:rotate(-18deg) translateX(120%);opacity:1}65%{opacity:0}}
 .p-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.p-dot{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,220,80,.95) 0%,rgba(201,160,42,.5) 45%,transparent 70%);opacity:0;animation:floatDot linear infinite;filter:blur(.4px);}
+.p-dot{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(154,102,10,.9) 0%,rgba(138,100,16,.55) 45%,transparent 70%);opacity:0;animation:floatDot linear infinite;filter:blur(.4px);box-shadow:0 0 4px rgba(154,102,10,.35);}
 @keyframes floatDot{0%{opacity:0;transform:translate(0,0) scale(1)}8%{opacity:.85}50%{transform:translate(var(--dx,25px),-45vh) scale(.75)}88%{opacity:.3}100%{opacity:0;transform:translate(var(--dx2,50px),-92vh) scale(.15)}}
 
 /* ── LOGO ATARASHI ── */
