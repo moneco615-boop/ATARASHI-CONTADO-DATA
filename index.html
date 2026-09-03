@@ -49,7 +49,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 @keyframes btnShine{0%,100%{transform:translateX(-220%);}60%{transform:translateX(220%);}}
 .p-btn{overflow:hidden;position:relative;}
 .p-btn::after{content:"";position:absolute;top:0;left:0;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);animation:btnShine 3.5s ease-in-out infinite;pointer-events:none;transform:translateX(-220%);}
-.p-sub{font-size:11px;text-transform:uppercase;letter-spacing:6px;color:var(--gr);margin:5px 0 26px;animation:fD .8s .18s ease forwards;opacity:0;}
+.p-sub{font-size:11px;text-transform:uppercase;letter-spacing:6px;color:#B71C1C;margin:5px 0 26px;animation:fD .8s .18s ease forwards;opacity:0;}
 .p-div{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--go),transparent);margin:0 auto 22px;animation:eW .6s .38s ease forwards;transform:scaleX(0);}
 .p-tit{font-size:clamp(20px,5vw,38px);font-weight:900;line-height:1.25;max-width:540px;margin:0 auto 12px;animation:fU .8s .48s ease forwards;opacity:0;}
 .p-tit .oro{color:var(--br);}
@@ -685,8 +685,8 @@ body.menu-abierto{overflow:hidden!important;position:fixed;width:100%;}
 .p-pasos{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px;max-width:330px;margin:0 auto 15px;text-align:left;animation:fU .8s .55s ease forwards;opacity:0;}
 .p-paso{display:flex;align-items:center;gap:11px;}
 .p-num{flex-shrink:0;width:27px;height:27px;border-radius:50%;background:rgba(201,160,42,.16);border:1px solid rgba(201,160,42,.5);color:var(--br);font-family:var(--T);font-size:16px;line-height:26px;text-align:center;}
-.p-txt{font-size:12.5px;color:#4a473d;line-height:1.35;}
-.p-txt b{display:block;color:var(--wh);font-size:14px;font-weight:800;letter-spacing:.4px;margin-bottom:1px;}
+.p-txt{font-size:12.5px;color:#1A1A1A;line-height:1.35;}
+.p-txt b{display:block;color:#B71C1C;font-size:14px;font-weight:800;letter-spacing:.4px;margin-bottom:1px;}
 @media(max-height:730px){.p-pasos{gap:7px;margin-bottom:11px;}.p-num{width:24px;height:24px;font-size:14px;line-height:23px;}.p-txt{font-size:11.5px;}.p-txt b{font-size:13px;}}
 
 /* Datos clave en 2 columnas */
