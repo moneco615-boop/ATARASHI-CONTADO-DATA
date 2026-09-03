@@ -34,12 +34,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 
-:root{--fo:#FAFAFA;--po:#FAF3E4;--ca:#FFFFFF;--pa:#FFFFFF;--go:#A67C1E;--br:#B8860B;--wh:#1A1A1A;--gr:#6E6B62;--T:'Bebas Neue',sans-serif;--B:'Outfit',sans-serif;}
+:root{--fo:#FAFAFA;--po:#FAF3E4;--ca:#FFFFFF;--pa:#FFFFFF;--go:#8A6410;--br:#8A6410;--wh:#1A1A1A;--gr:#6E6B62;--T:'Bebas Neue',sans-serif;--B:'Outfit',sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;}
 /* PORTADA */
 .portada{position:fixed;top:0;left:0;right:0;bottom:0;height:100dvh;background:var(--po);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;text-align:center;padding:calc(24px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
-.portada::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,160,42,.14) 0%,transparent 65%);pointer-events:none;}
+.portada::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,160,42,.05) 0%,transparent 60%);pointer-events:none;}
 .p-lt{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-lb{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-logo{position:relative;z-index:2;font-family:var(--T);font-size:clamp(44px,11vw,84px);letter-spacing:8px;line-height:1;animation:fD .8s ease forwards;opacity:0;}
@@ -763,7 +763,7 @@ body.menu-abierto{overflow:hidden!important;position:fixed;width:100%;}
 .po-t{font-size:10.5px;letter-spacing:.2px;}
 
 /* Paso 3 en dos renglones */
-.p-txt .p-l1{display:block;color:#a8a49a;}
+.p-txt .p-l1{display:block;color:#4a473d;}
 .p-txt .p-l2{display:block;color:var(--br);font-weight:700;font-size:11.5px;letter-spacing:.2px;margin-top:1px;}
 @media(max-height:730px){.p-txt .p-l2{font-size:10.5px;}}
 /* Cuatro formas de pago */
