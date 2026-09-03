@@ -60,7 +60,7 @@ body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;
 .p-btn:hover{background:var(--br);transform:translateY(-2px);}
 
 /* ── PORTADA PREMIUM ── */
-.p-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(201,160,42,.22) 0%,rgba(240,192,64,.08) 40%,transparent 65%);animation:glowP 5.5s ease-in-out infinite alternate;pointer-events:none;}
+.p-glow{display:none!important;}
 @keyframes glowP{from{transform:scale(1) translateY(0);opacity:.55;filter:blur(0px);}50%{transform:scale(1.18) translateY(-3%);opacity:.9;}to{transform:scale(1.45) translateY(-7%);opacity:1;filter:blur(2px);}}
 
 .p-beam{position:absolute;width:180%;height:280px;background:linear-gradient(90deg,transparent 0%,rgba(201,160,42,.06) 40%,rgba(240,192,64,.1) 50%,rgba(201,160,42,.06) 60%,transparent 100%);top:22%;left:-40%;transform:rotate(-18deg);animation:beamSweep 13s ease-in-out infinite;pointer-events:none;}
