@@ -6507,6 +6507,24 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1788745347/atarashi_contado/videos/wjwzjprdygbsuikt0k1a.mov",
       "id": 1788745423797
+    },
+    {
+      "nombre": "LACOSTE L.12.12 POUR LUI",
+      "categoria": "Locion caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "una fragancia masculina fresca, elegante y versátil, ideal para el uso diario. Su aroma transmite limpieza y sofisticación, perfecta para quienes buscan un perfume discreto pero con personalidad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788745973/atarashi_contado/wsrdbp22i4p9pc8t2dpp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788746376/atarashi_contado/sc0iwivxgfhodlptkgy2.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788746377/atarashi_contado/xmcol6pywid0ukwi47g1.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788746243916
     }
   ],
   "categorias": [
