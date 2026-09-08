@@ -6681,6 +6681,27 @@
       "agotadas": [],
       "video": "",
       "id": 1788874224507
+    },
+    {
+      "nombre": "VASO BATIDOR.",
+      "categoria": "Hogar",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 50000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¿Sigue atrapado en el pasado revolviendo tu café con una cuchara? Descubre la revolución de las mañanas con nuestro Vaso Batidor Magnético Automático, el aliado perfecto para quienes buscan practicidad, estilo y bebidas perfectamente integradas en segundos.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788874472/atarashi_contado/cumqutug0pbhabtls1bn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788874472/atarashi_contado/kwci9hfraxra9hfggkhd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788874472/atarashi_contado/qtr4ucmvzq9yw01ioxvd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788874472/atarashi_contado/medusyzzvmjibgd0xhmq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788874472/atarashi_contado/nmk8qxak12rwn72ktoc0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788874472/atarashi_contado/spkocdtc20yflfc13bkn.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788874592815
     }
   ],
   "categorias": [
