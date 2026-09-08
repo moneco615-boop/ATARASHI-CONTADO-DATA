@@ -6642,6 +6642,25 @@
       "agotadas": [],
       "video": "",
       "id": 1788873409849
+    },
+    {
+      "nombre": "ORGANIZADOR HUEVOS",
+      "categoria": "Hogar",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 23000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Este organizador de huevos de tres niveles cuenta con un diseño compacto y funcional, ideal para optimizar el espacio en la nevera o el mesón  de la cocina.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788873671/atarashi_contado/fzr9u6qeiu7vo4fyeqbn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788873672/atarashi_contado/w3ato1hflremqysc9apf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788873672/atarashi_contado/lsrp9d8mcs3jpp20acqz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788873672/atarashi_contado/ijgswcku1z3mva2lnlm9.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788873732758
     }
   ],
   "categorias": [
