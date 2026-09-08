@@ -6567,6 +6567,27 @@
       "agotadas": [],
       "video": "",
       "id": 1788871402751
+    },
+    {
+      "nombre": "DISPENSADOR DE AGUA",
+      "categoria": "Hogar",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 26000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Optimiza tu hidratación con estilo! 💧✨ Este dispensador de agua eléctrico y recargable es la solución perfecta para tu hogar u oficina. Olvídate de los pesados e incómodos dispensadores manuales; con solo presionar un botón, obtendrás agua al instante de forma rápida y limpia.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788871762/atarashi_contado/lnwdefg0en3m0jzcbxz6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788871762/atarashi_contado/klm248j8epg4fgmvtivh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788871762/atarashi_contado/qrhhuhwn7ycaefv11mtw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788871762/atarashi_contado/opn6z6wumb1a8jmu50wi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788871762/atarashi_contado/oqqmgfiqcwuqlrpnxlp0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788871762/atarashi_contado/no0ctgvsbiu1tw67p4l9.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788871875744
     }
   ],
   "categorias": [
