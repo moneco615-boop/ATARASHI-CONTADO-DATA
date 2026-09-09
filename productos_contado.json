@@ -6743,6 +6743,26 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1788966541/atarashi_contado/videos/i8qkw9yrgoiirap0noys.mov",
       "id": 1788966658713
+    },
+    {
+      "nombre": "INFLADOR DE GLOBOS",
+      "categoria": "Hogar",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 65000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Inflador de globos práctico y fácil de usar, ideal para decorar fiestas, cumpleaños y celebraciones de forma rápida y sencilla. Su diseño permite inflar globos con mayor comodidad, ahorrando tiempo y esfuerzo.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966980/atarashi_contado/u0zwxxcwcjib91mjvhqg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966980/atarashi_contado/s3pwwbur7lmshrmoy3bv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966980/atarashi_contado/snael4v0ji3xxbadzg8h.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966980/atarashi_contado/eexsxj1rkw7gu0ksswtz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966980/atarashi_contado/snd4tq3zjixxve9apnxa.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788967059170
     }
   ],
   "categorias": [
