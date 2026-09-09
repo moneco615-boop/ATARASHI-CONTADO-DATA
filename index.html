@@ -38,7 +38,7 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{background:var(--fo);font-family:var(--B);color:var(--wh);min-height:100vh;}
 /* PORTADA */
-.portada{position:fixed;top:0;left:0;right:0;bottom:0;height:100dvh;background:var(--po);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;text-align:center;padding:calc(24px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+.portada{position:fixed;top:0;left:0;right:0;bottom:0;height:100dvh;background:var(--po);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;z-index:99999;text-align:center;padding:calc(24px + env(safe-area-inset-top)) 24px calc(30px + env(safe-area-inset-bottom));overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;}
 .portada::before{content:'';position:absolute;inset:0;background:none;pointer-events:none;}
 .p-lt{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
 .p-lb{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--go),transparent);}
@@ -990,6 +990,21 @@ html{background:#0a0a0a;}
   .ph-item.ph-tall .ph-icon-box{width:52px;height:52px;}
   .ph-showcase{margin-bottom:10px;}
   .p-sub{margin:5px 0 14px;}
+}
+
+/* Pantalla ancha (computadora): la portada aprovecha el espacio, igual que la cuadricula de productos */
+@media(min-width:900px){
+  .portada{padding-top:50px;}
+  .p-logo-img{width:150px;height:150px;}
+  .ph-showcase{margin-bottom:34px;}
+  .ph-banner-wrap{max-width:640px;height:340px;}
+  .ph-icon-box{width:92px;height:92px;border-radius:20px;}
+  .ph-item.ph-tall .ph-icon-box{width:106px;height:106px;}
+  .ph-desc{max-width:480px;font-size:16px;margin-bottom:28px;}
+  .p-tit{max-width:600px;margin-left:auto;margin-right:auto;}
+  .ph-foot{gap:26px;margin-top:26px;}
+  .ph-foot svg{width:17px;height:17px;}
+  .ph-foot span{font-size:12px;}
 }
 </style>
 </head>
