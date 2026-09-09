@@ -6723,6 +6723,26 @@
       "agotadas": [],
       "video": "",
       "id": 1788966265178
+    },
+    {
+      "nombre": "MÁQUINA 3 EN 1 GEEMY",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 55000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Tu estilo bajo control con un solo dispositivo! 😎🔥Olvídate de acumular máquinas y cables en el baño. Con la Máquina Multifuncional Geemy 3 en 1, tienes todo lo que necesitas para un perfilado perfecto en minutos.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966531/atarashi_contado/ebxepn6ctdo5r015hacb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966531/atarashi_contado/kohtbhxkl1gqa5de01ht.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966531/atarashi_contado/yox0vvk5i9haszlajdsn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966531/atarashi_contado/afvjikbndo2ycjiav8ke.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788966531/atarashi_contado/ojmk1tk0uek3twpet7yz.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1788966541/atarashi_contado/videos/i8qkw9yrgoiirap0noys.mov",
+      "id": 1788966658713
     }
   ],
   "categorias": [
