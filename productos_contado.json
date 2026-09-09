@@ -6810,6 +6810,25 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1788968801/atarashi_contado/videos/vshyidzsixrfe02xpcjt.mov",
       "id": 1788968806272
+    },
+    {
+      "nombre": "BEACH PARTY DE ARMAF",
+      "categoria": "Loción unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 85000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Esta vibrante fragancia unisex captura la energía de un atardecer en la playa. Abre con una explosión refrescante de frutas tropicales y toronja, evoluciona hacia un corazón adictivo de guayaba y agua de mar, y cierra con un fondo limpio de almizcle y maderas.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788969204/atarashi_contado/nrr8lgzwk6ao07ftnxqp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788969204/atarashi_contado/dtapdeshxdhvl8szvnte.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788969204/atarashi_contado/bkrftiuezk0yxjrtmtgn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788969204/atarashi_contado/nocatqgxybmbraogtdkj.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1788969437693
     }
   ],
   "categorias": [
@@ -6888,6 +6907,10 @@
     {
       "emoji": "⭐",
       "nombre": "Herramientas"
+    },
+    {
+      "emoji": "⭐",
+      "nombre": "Loción unisex"
     }
   ]
 }
