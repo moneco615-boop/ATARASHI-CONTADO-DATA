@@ -6928,6 +6928,24 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1789131035/atarashi_contado/videos/slpiub4d9lvpz3heuifj.mov",
       "id": 1789131109194
+    },
+    {
+      "nombre": "HUGO BOSS UNLIMITED",
+      "categoria": "Locion caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 110000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Hugo Boss  Unlimited es una fragancia masculina fresca, energética y moderna, ideal para el hombre que busca un aroma agradable y versátil. Perfecta para el día a día, transmite una sensación de frescura y confianza con un estilo juvenil y elegante.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789131420/atarashi_contado/hphvtlqynou0dh4vzxnm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789131525/atarashi_contado/xewxkbvcbh8htbnht8b4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789131526/atarashi_contado/ugrh6zxhxv2orogiitgv.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1789131648113
     }
   ],
   "categorias": [
