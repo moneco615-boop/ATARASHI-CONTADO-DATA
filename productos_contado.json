@@ -6963,6 +6963,23 @@
       "agotadas": [],
       "video": "",
       "id": 1789131880149
+    },
+    {
+      "nombre": "HUGO BOSS RED",
+      "categoria": "Locion caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Hugo Boss Red es una fragancia masculina moderna, fresca y energética, ideal para hombres que buscan un aroma con personalidad y estilo. Perfecta para el día a día o para ocasiones especiales, dejando una sensación atractiva y dinámica.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789132013/atarashi_contado/qdgtiuxx3xgx37hupvuk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789132012/atarashi_contado/pjbiq4aupcd4nzussegv.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1789132081117
     }
   ],
   "categorias": [
