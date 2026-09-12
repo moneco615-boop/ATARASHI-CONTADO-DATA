@@ -7049,6 +7049,24 @@
       "agotadas": [],
       "video": "",
       "id": 1789135092332
+    },
+    {
+      "nombre": "PARLANTE RETRO",
+      "categoria": "Audio",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Dale un toque clásico a tus espacios con este parlante que combina el diseño de una rockola de los 50s con funciones modernas.Conexión Bluetooth para el celular 📲Entradas para USB, memoria MicroSD y cable auxiliar 🔋Radio AM, FM y Onda Corta (SW) con excelente recepción.Batería recargable integrada (incluye cable de carga).Luces LED decorativas que cambian de color.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789222174/atarashi_contado/v7y2grg4ktjb93eji00h.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789222174/atarashi_contado/ddzjteeki8dxlpgk30wr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789222174/atarashi_contado/qnccssqtin2l9tchfnlg.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1789222204/atarashi_contado/videos/liwekapz9eakcvd6bfdc.mov",
+      "id": 1789222251669
     }
   ],
   "categorias": [
