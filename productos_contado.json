@@ -7109,6 +7109,24 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1789326936/atarashi_contado/videos/xwpg935vt9ippk0rk5r4.mov",
       "id": 1789327081191
+    },
+    {
+      "nombre": "NIKE CORTEZ",
+      "categoria": "Niños",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Estilo clásico y divertido para los más chicos! Las icónicas Nike Cortez regresan en su versión negro con blanco, perfectas para el uso diario por su comodidad y resistencia.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789327715/atarashi_contado/xzg5dpahjsdna5bsnr17.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789327715/atarashi_contado/gsw28qei0v9s33vyxfru.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1789327715/atarashi_contado/d4mq7kffd1fehkynqmm0.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1789327904937
     }
   ],
   "categorias": [
