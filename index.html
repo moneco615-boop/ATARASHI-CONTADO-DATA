@@ -1180,6 +1180,28 @@ var _0x44e8c8=_0xdd40;(function(_0xfe9816,_0x2dcd23){var _0xd1e2c3=_0xdd40,_0x5d
   } else { iniciarVideo(); }
 })();
 
+/* === Texto del campo de talla manual, mas discreto === */
+(function(){
+  function suavizarTextoTalla(){
+    var box = document.getElementById('mBox');
+    if (!box) return;
+    var hint = box.querySelector('.tallas-hint');
+    if (hint) hint.textContent = '¿No ves tu talla? Escríbela aquí';
+    var inp = box.querySelector('.m-talla-inp');
+    if (inp) inp.placeholder = 'Ej: 36, 37.5...';
+  }
+  function iniciarTalla(){
+    var bg = document.getElementById('modalProd');
+    if (!bg) return;
+    new MutationObserver(function(){
+      if (bg.classList.contains('show')) setTimeout(suavizarTextoTalla, 60);
+    }).observe(bg, {attributes:true, attributeFilter:['class']});
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciarTalla);
+  } else { iniciarTalla(); }
+})();
+
 /* === Encabezado, categorias y buscador fijos al hacer scroll === */
 (function(){
   function ajustar(){
