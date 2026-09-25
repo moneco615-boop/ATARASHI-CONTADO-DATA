@@ -7444,6 +7444,24 @@
       "agotadas": [],
       "video": "",
       "id": 1790355063265
+    },
+    {
+      "nombre": "HUGO BOSS",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Si buscas un calzado que combine con todo pero que no pase desapercibido, estos BOSS son para ti. Tienen el balance perfecto entre el estilo urbano y el lujo discreto de la marca.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790355170/atarashi_contado/my1qkx1vd9web2kauj4k.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790355170/atarashi_contado/gnms9pdwl5o0vbprlneo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790355171/atarashi_contado/trwkxbkqzfflluir7rhz.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790355250524
     }
   ],
   "categorias": [
