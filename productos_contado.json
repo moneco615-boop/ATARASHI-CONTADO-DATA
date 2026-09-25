@@ -7425,6 +7425,25 @@
       "agotadas": [],
       "video": "",
       "id": 1790354370254
+    },
+    {
+      "nombre": "HUGO BOSS",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Eleva tu estilo diario con el balance perfecto entre elegancia y deportividad! Te presentamos los tenis BOSS (Hugo Boss) de la aclamada línea Parkour, diseñados especialmente para quienes buscan destacar con un calzado de alta gama sin sacrificar la comodidad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354964/atarashi_contado/zzg4owircxrtm9l17hty.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354964/atarashi_contado/gihhn48vpkhi1r1qsf8z.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354964/atarashi_contado/h9ekgu7zkxziww39lrkp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354964/atarashi_contado/a8p1j4y7tqnmi3jjnwug.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790355063265
     }
   ],
   "categorias": [
