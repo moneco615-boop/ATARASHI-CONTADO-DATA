@@ -7400,6 +7400,31 @@
       "agotadas": [],
       "video": "",
       "id": 1790347470161
+    },
+    {
+      "nombre": "ADIDAS SUPERSTAR",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "✨ ¡Un clásico que nunca falla! ✨Lleva tu outfit al siguiente nivel con los icónicos adidas Superstar en su versión Core Black. El equilibrio perfecto entre la elegancia del negro y el contraste limpio de sus clásicas tres rayas blancas.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354256/atarashi_contado/j6gohdklxvg7uo9kkie5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354256/atarashi_contado/bbqog8wzrjgwrqkur2hh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354256/atarashi_contado/qsxbscwbgxf6q2i7bus2.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354257/atarashi_contado/tin0ubda9jbn4430nqvn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354256/atarashi_contado/pavomzwfy2h1x9htwaa4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354257/atarashi_contado/xuhfszinxlbqthqyrmtp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354257/atarashi_contado/vjyijabtpxh7pfto6lmc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354257/atarashi_contado/ynytaulnnbsksvkss2nz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354257/atarashi_contado/p5qxxlaiwihib818bbmu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790354257/atarashi_contado/ylvejbh2nbncuohzkm43.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790354370254
     }
   ],
   "categorias": [
