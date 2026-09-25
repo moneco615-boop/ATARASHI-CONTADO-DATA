@@ -7336,6 +7336,28 @@
       "agotadas": [],
       "video": "",
       "id": 1790346264047
+    },
+    {
+      "nombre": "NIKE P6000",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Lleva tu outfit diario al siguiente nivel con los espectaculares Nike P-6000. Inspirados en el icónico diseño de los años 2000, estos tenis combinan a la perfección la estética deportiva clásica con la comodidad moderna que necesitas para el día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/k7y5prkam6c9l074gecm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/frb5hebq3guhprfpgt0n.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/nmw1s7whxbwjrxmfjcdb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/wo2vkhmomngxoscbquio.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/o5ccrkllvatbqsz3avf0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/rzvmze9mlojaht7smwno.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790346468/atarashi_contado/sxrxtymq4boxx5dupugk.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790346526205
     }
   ],
   "categorias": [
