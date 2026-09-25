@@ -6730,10 +6730,10 @@
     },
     {
       "nombre": "MÁQUINA 3 EN 1 GEEMY",
-      "categoria": "Tecnología",
+      "categoria": "Belleza",
       "badge": "",
       "disponibilidad": "inmediata",
-      "precioContado": 55000,
+      "precioContado": 65000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "¡Tu estilo bajo control con un solo dispositivo! 😎🔥Olvídate de acumular máquinas y cables en el baño. Con la Máquina Multifuncional Geemy 3 en 1, tienes todo lo que necesitas para un perfilado perfecto en minutos.",
@@ -7290,26 +7290,6 @@
       "agotadas": [],
       "video": "",
       "id": 1790301211339
-    },
-    {
-      "nombre": "AFEITADORA RECARGABLE 3 EN 1",
-      "categoria": "Belleza",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 60000,
-      "fotosModelos": false,
-      "tipoTalla": "",
-      "descripcion": "Olvídate de gastar en múltiples dispositivos. Este kit de aseo personal inalámbrico y recargable incluye tres cabezales intercambiables de alta precisión para cubrir todas tus necesidades de cuidado en minutos:",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790301453/atarashi_contado/uqntihb45gdbh5eyqipg.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790301453/atarashi_contado/nva0aqbmy1ipazb2oplc.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790301453/atarashi_contado/ykln3gsyklkczclssiqk.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790301453/atarashi_contado/l5yx0vs1huy7yhguioah.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790301453/atarashi_contado/rtstyhz5uy0g1v1vtt9p.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1790301562653
     }
   ],
   "categorias": [
