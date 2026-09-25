@@ -7290,6 +7290,28 @@
       "agotadas": [],
       "video": "",
       "id": 1790301211339
+    },
+    {
+      "nombre": "PUMA PALERMO",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Los PUMA Palermo son el complemento perfecto para cualquier outfit casual. Diseño clásico, cómodos y con ese toque 'terrace' que todos están buscando.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/vepggotwmn9yvnbf4b9d.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/d1m2g4dgqbiozkisodvc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/lvuzvvv84qensqdp1dhl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/zwitq8xsxvmfiadlqetl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/lusz1emraynndqnlnhbx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/lsr6l9hdpapjldv0tqxe.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790345590/atarashi_contado/oyfvcpylm62eicx2ecjb.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790345676746
     }
   ],
   "categorias": [
