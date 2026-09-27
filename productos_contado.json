@@ -7538,6 +7538,24 @@
       "agotadas": [],
       "video": "",
       "id": 1790532494701
+    },
+    {
+      "nombre": "AIR JORDAN 3 \"BLACK CAT\"",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "El clásico de clásicos está de vuelta. Oscuras, elegantes y con toda la esencia de Jordan. Un diseño monocromático triple black que eleva cualquier outfit al siguiente nivel.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790532605/atarashi_contado/lmgksqg9qn2rfsrnt9ae.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790532606/atarashi_contado/t3t9avcygkyt5dywifsf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790532606/atarashi_contado/sp02b9ptqq4dxl7ggyau.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790532651965
     }
   ],
   "categorias": [
