@@ -7748,6 +7748,26 @@
       "agotadas": [],
       "video": "",
       "id": 1790686604460
+    },
+    {
+      "nombre": "NIKE PULSE ROAM",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Este par toma la inspiración del movimiento de la escena musical londinense y la combina con una estética utilitaria y resistente, perfecta para el día a día. Su diseño en blanco y negro ofrece un contraste limpio y versátil que combina con cualquier outfit.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/a1ins3zjmsvmdkhnl3lq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/f2xr83auxfpuxuscewyq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/t2brbwhidq4t8abxr2bs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/mklc2ecbv4nlzq4bwlq7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/wejzort1cj1inkx9vsoj.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1790687467022
     }
   ],
   "categorias": [
