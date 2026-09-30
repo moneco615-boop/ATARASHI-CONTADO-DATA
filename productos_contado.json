@@ -4754,25 +4754,6 @@
     },
     {
       "nombre": "NIKE JORDAN 3",
-      "categoria": "Calzado caballero",
-      "badge": "RECOMENDADO",
-      "disponibilidad": "inmediata",
-      "precioContado": 130000,
-      "fotosModelos": true,
-      "tipoTalla": "calzado",
-      "descripcion": "Los Nike Jordan 3 combinan el icónico estilo Jordan con comodidad y un diseño deportivo lleno de personalidad.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786947246/atarashi_contado/klmhfme8w2yjupnrzgv0.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/roxwrd5wkwwhlowzycaw.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/kekdzlvamftqg77mts8r.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899495/atarashi_contado/hvoxmosppdghwonlcy8m.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1786899597130
-    },
-    {
-      "nombre": "NIKE JORDAN 3",
       "categoria": "Calzado dama",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -7567,6 +7548,7 @@
       "tipoTalla": "calzado",
       "descripcion": "¡Lleva tu estilo al siguiente nivel con uno de los lanzamientos más premium de la silueta clásica de 1988! Los Air Jordan 3 Retro \"Medium Olive\" (también conocidos como Family Affair) combinan a la perfección la herencia del baloncesto con una estética urbana y sofisticada, ideal para el otoño o cualquier temporada.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790733400/atarashi_contado/rnarhwgl7pv8oarpz9ol.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790733139/atarashi_contado/slpbpa9emxbrpmzmuzai.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790532953/atarashi_contado/mhhycmtqky8t0wrvp1p5.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790532953/atarashi_contado/swijekmxoonu8z7pr9oq.jpg",
