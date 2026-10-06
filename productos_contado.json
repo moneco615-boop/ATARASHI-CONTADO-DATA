@@ -7977,6 +7977,26 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1791257115/atarashi_contado/videos/jkw3lrqij4lle2fqihgd.mp4",
       "id": 1791257337008
+    },
+    {
+      "nombre": "ADIDAS SÚPER NOVA",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "¡Lleva tu estilo y comodidad al siguiente nivel! Los nuevos Adidas súper nova están diseñados para acompañarte en tu día a día, tus entrenamientos o caminatas largas, dándote el soporte y la amortiguación que tus pies necesitan con una silueta moderna y en súper tendencia.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791257736/atarashi_contado/lvrrxnkasu5qqz5n1jbn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791257736/atarashi_contado/dmo0drgiclamgkeiphtu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791257736/atarashi_contado/wyta8ntrywdhaslbrlja.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791257736/atarashi_contado/vpypnni98pwadpvyblfs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791257736/atarashi_contado/vt7ouoprmihggrorhwpf.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1791257874015
     }
   ],
   "categorias": [
