@@ -8429,6 +8429,26 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1791487359/atarashi_contado/videos/y2sb34urtaro45pyx1ep.mp4",
       "id": 1791487299133
+    },
+    {
+      "nombre": "PATINES EN LÍNEA 4 RUEDAS",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 145000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "¿Buscas el regalo perfecto o el producto más vendido para tu negocio? Te presentamos los Patines de Línea de 4 Ruedas, el combo más completo del mercado para que los más jóvenes patinen con total confianza.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/xexjjnqcciitzymqxnfh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/mff22l7oezmumkvavg4q.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/pvw8mvuqsumltcaoclc5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/thzvrg96pmyaaiwdbwqd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/rrqcxbzdojs06abndfpe.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1791488330259
     }
   ],
   "categorias": [
