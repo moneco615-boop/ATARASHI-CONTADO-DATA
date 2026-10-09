@@ -5484,13 +5484,14 @@
     {
       "nombre": "VENTILADOR DE PEDESTAL GHO.",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "🌀 Ventilador de Pedestal G.O.H. — ¡Ideal para Refrescar tus Espacios!\n🌬️ Potente y práctico, perfecto para el hogar, oficina, habitación o negocio.\n✅ Aspas de 3 paletas\n✅ Altura regulable\n✅ Función oscilante\n✅ Varias velocidades\n✅ Rejilla metálica de protección\n✅ Base amplia y estable\n✅ Diseño moderno en color negro\n✅ Fácil de usar y transportar\n🔥 ¡Disfruta de un ambiente más fresco y cómodo!",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791549977/atarashi_contado/owx6xdmip4tqdge6vx0v.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1787551836/atarashi_contado/uahu5tyv5mjllwzzsnni.jpg"
       ],
       "agotadas": [],
