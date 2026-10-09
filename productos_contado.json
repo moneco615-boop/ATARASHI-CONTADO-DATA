@@ -2057,12 +2057,12 @@
       "id": 1783657334486
     },
     {
-      "nombre": "NIKE SHOX SUPREME. 1.1",
+      "nombre": "NIKE SHOX SUPREME.",
       "categoria": "Calzado dama",
       "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Luce un estilo único con los icónicos Nike Shox. Su diseño moderno y llamativo, junto con su excelente amortiguación y comodidad, los convierten en la opción ideal para el día a día.",
       "imagenes": [
