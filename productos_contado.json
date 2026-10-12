@@ -1030,7 +1030,7 @@
       "id": 1783608626555
     },
     {
-      "nombre": "CONJUNTO",
+      "nombre": "CONJUNTO DEPORTIVO",
       "categoria": "Ropa caballero",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -2210,7 +2210,7 @@
       "id": 1783699874658
     },
     {
-      "nombre": "ADIDAS TORREZ",
+      "nombre": "ADIDAS TERREX",
       "categoria": "Calzado dama",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -2904,7 +2904,7 @@
       "id": 1784418292072
     },
     {
-      "nombre": "NEW VANZ",
+      "nombre": "VANS POTATO",
       "categoria": "Niños",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -2917,6 +2917,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784418513/atarashi_contado/atknaexn72wwacorodo7.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784418513/atarashi_contado/sucxa76qc7rqxf8hqfmq.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1784418434445
     },
@@ -3230,7 +3231,7 @@
       "id": 1785263440897
     },
     {
-      "nombre": "CAMISETA ADIDAS FRÍO-FIT",
+      "nombre": "CAMISETA ADIDAS DRI-FIT",
       "categoria": "Ropa caballero",
       "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
