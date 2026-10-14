@@ -2888,6 +2888,8 @@ body:not(.portada-abierta) #portada,body:not(.portada-abierta) #portada *,body:n
 @media(min-width:900px) and (max-height:700px){.ph-banner-wrap{height:180px!important;}}
 @media(min-width:900px) and (max-height:620px){.ph-banner-wrap{height:140px!important;}}
 @media (prefers-reduced-motion:reduce){.atr-slot{animation:none;}}
+/* Celular: la decoracion izquierda del encabezado tapa el boton Categorias; solo se deja la telarana */
+@media(max-width:899px){.atr-hl:not(.atr-ok){display:none!important;}}
 
 
 /* LEGIBILIDAD: tamanos minimos para leer comodo en el celular */
@@ -3373,7 +3375,7 @@ var trust=document.querySelector('.trust');
 if(trust&&trust.parentNode)trust.parentNode.insertBefore(rb,trust);
 else{var h=document.querySelector('header.s-hdr');if(h&&h.parentNode)h.parentNode.insertBefore(rb,h.nextSibling);}
 function contenido(k,lado){var lista=(k==='h'&&vv.h)?vv.h:vv.s;var nom=lista&&lista[lado];if(nom===''&&k==='h')return '';if(nom&&S[nom])return S[nom]();return '<span class="atr-em">'+vv.e[lado]+'</span>';}
-function ranura(id,cls,lado,k){var h=contenido(k,lado);if(h==='')return null;var x=el('div',id,'atr-slot '+cls);x.setAttribute('aria-hidden','true');x.innerHTML=h;return x;}
+function ranura(id,cls,lado,k){var h=contenido(k,lado);if(h==='')return null;var nl=(k==='h'&&vv.h)?vv.h:vv.s;if(k==='h'&&lado===0&&nl&&nl[0]==='telarana')cls+=' atr-ok';var x=el('div',id,'atr-slot '+cls);x.setAttribute('aria-hidden','true');x.innerHTML=h;return x;}
 function poner(c,x){if(x)c.appendChild(x);}
 var hd=document.querySelector('header.s-hdr');
 if(hd){poner(hd,ranura('atrHdrL','atr-hl',0,'h'));poner(hd,ranura('atrHdrR','atr-hr',1,'h'));}
