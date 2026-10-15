@@ -1124,6 +1124,16 @@ body:not(.portada-abierta) #portada,body:not(.portada-abierta) #portada *,body:n
 @media (display-mode:standalone){.tk-app{display:none!important;}}
 @media(min-width:900px){.tk-app{display:none!important;}}
 @media (prefers-reduced-motion:reduce){.inst-bnr{transition:none!important;}}
+
+/* CINTA: avisos destacados sin ovalo, fondo limpio */
+.trust-track .tk-exp,.trust-track .tk-app{background:none!important;border:none!important;box-shadow:none!important;border-radius:0!important;margin:0 !important;padding:0 18px!important;color:#7a5600!important;font-size:15.5px!important;font-weight:900!important;letter-spacing:.2px;animation:tkLate 2.6s ease-in-out infinite;transform-origin:center;}
+.trust-track .tk-app{animation-delay:1.3s;}
+.trust-track .tk-exp u,.trust-track .tk-app u{text-decoration:none;border-bottom:2px solid #C9A227;padding-bottom:1px;}
+.trust-track .tk-exp:hover,.trust-track .tk-app:hover{background:none!important;box-shadow:none!important;}
+@keyframes tkLate{0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
+@media (prefers-reduced-motion:reduce){.trust-track .tk-exp,.trust-track .tk-app{animation:none!important;}}
+/* Sin decoracion de temporada encima del menu (3 rayas) en el celular */
+@media(max-width:899px){#atrHdrL{display:none!important;}}
 /* LEGIBILIDAD: tamanos minimos para leer comodo en el celular */
 .guide-sub{letter-spacing:.3px!important;margin-top:8px;padding:0 44px;}
 
