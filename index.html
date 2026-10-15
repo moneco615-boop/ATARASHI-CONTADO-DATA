@@ -1579,12 +1579,13 @@ try{
 }catch(e){}
 try{debug=!!(Q&&Q.get('debug_analitica')==='1');}catch(e){}
 window.__atr_events=[];
-function cargar(src){try{var s=document.createElement('script');s.async=true;s.src=src;document.head.appendChild(s);}catch(e){}}
+var ST={};
+function cargar(src,k){try{var s=document.createElement('script');s.async=true;s.onload=function(){ST[k]='ok';};s.onerror=function(){ST[k]='bloqueado';};ST[k]='cargando';s.src=src;document.head.appendChild(s);}catch(e){ST[k]='error';}}
 var okPix=/^[0-9]{5,20}$/.test(CFG.pixel),okClr=/^[a-z0-9]{6,16}$/.test(CFG.clarity),okGa=/^G-[A-Z0-9]{4,14}$/.test(CFG.ga4);
 if(!off){
- try{if(okPix){window.fbq=function(){var n=window.fbq;if(n.callMethod)n.callMethod.apply(n,arguments);else n.queue.push(arguments);};window._fbq=window.fbq;window.fbq.push=window.fbq;window.fbq.loaded=true;window.fbq.version='2.0';window.fbq.queue=[];cargar('https://connect.facebook.net/en_US/fbevents.js');window.fbq('init',CFG.pixel);window.fbq('track','PageView');}}catch(e){}
- try{if(okClr){window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments);};cargar('https://www.clarity.ms/tag/'+CFG.clarity);}}catch(e){}
- try{if(okGa){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config',CFG.ga4,{anonymize_ip:true});cargar('https://www.googletagmanager.com/gtag/js?id='+CFG.ga4);}}catch(e){}
+ try{if(okPix){window.fbq=function(){var n=window.fbq;if(n.callMethod)n.callMethod.apply(n,arguments);else n.queue.push(arguments);};window._fbq=window.fbq;window.fbq.push=window.fbq;window.fbq.loaded=true;window.fbq.version='2.0';window.fbq.queue=[];cargar('https://connect.facebook.net/en_US/fbevents.js','pixel');window.fbq('init',CFG.pixel);window.fbq('track','PageView');}}catch(e){}
+ try{if(okClr){window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments);};cargar('https://www.clarity.ms/tag/'+CFG.clarity,'clarity');}}catch(e){}
+ try{if(okGa){window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments);};window.gtag('js',new Date());window.gtag('config',CFG.ga4,{anonymize_ip:true});cargar('https://www.googletagmanager.com/gtag/js?id='+CFG.ga4,'ga4');}}catch(e){}
 }
 var FB={ver:'ViewContent',add:'AddToCart',pedido:'InitiateCheckout',lead:'Lead'};
 var GA={ver:'view_item',add:'add_to_cart',pedido:'begin_checkout',lead:'generate_lead'};
@@ -1606,6 +1607,19 @@ function track(tipo,d){
   }
  }catch(e){}
  try{if(window.clarity&&okClr)window.clarity('event',tipo);}catch(e){}
+}
+
+if(debug){
+ var mk=function(){
+  try{
+   var d=document.getElementById('atrDbg');
+   if(!d){d=document.createElement('div');d.id='atrDbg';d.style.cssText='position:fixed;left:8px;bottom:8px;z-index:2147483000;background:#111;color:#fff;font:13px/1.4 Arial,sans-serif;padding:10px 12px;border-radius:10px;max-width:86vw;box-shadow:0 4px 18px rgba(0,0,0,.5)';document.body.appendChild(d);d.onclick=function(){d.style.display='none';};}
+   var est=function(k,okid){if(!okid)return 'sin codigo';var v=ST[k];return v==='ok'?'cargo bien ✅':(v==='bloqueado'?'BLOQUEADO ❌':(v==='cargando'?'cargando...':'no inicio'));};
+   var ult=window.__atr_events.length?window.__atr_events[window.__atr_events.length-1].tipo:'ninguno';
+   d.innerHTML='<b>Prueba de analítica</b> (toca para ocultar)<br>'+(off?'⚠️ Tus visitas estan EXCLUIDAS (notrack). Abre el enlace con ?track=1<br>':'Visitas tuyas: se cuentan ✅<br>')+'Meta Pixel: '+est('pixel',okPix)+'<br>Clarity: '+est('clarity',okClr)+'<br>Eventos enviados: '+window.__atr_events.length+' (ultimo: '+ult+')';
+  }catch(e){}
+ };
+ setInterval(mk,800);
 }
 window.atrTrack=track;
 function dat(pr,cant){if(!pr)return {};return {id:pr.id,nombre:pr.nombre,categoria:pr.categoria,precio:pr.precioContado||0,valor:(pr.precioContado||0)*(cant||1),cant:cant||1};}
