@@ -32,7 +32,7 @@ return new Response(JSON.stringify(filtrar(j)),{status:200,headers:{'Content-Typ
 };}
 })();</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"><script>try{var _u=navigator.userAgent||"";if(/CriOS|GSA|FxiOS|EdgiOS|OPiOS|Android/i.test(_u))document.documentElement.className+=" no-saf";}catch(e){}</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -1134,6 +1134,10 @@ body:not(.portada-abierta) #portada,body:not(.portada-abierta) #portada *,body:n
 @media (prefers-reduced-motion:reduce){.trust-track .tk-exp,.trust-track .tk-app{animation:none!important;}}
 /* Sin decoracion de temporada encima del menu (3 rayas) en el celular */
 @media(max-width:899px){#atrHdrL{display:none!important;}}
+
+/* GOOGLE/CHROME/ANDROID: la portada mide exactamente la pantalla visible (sin scroll ni linea cortando el texto). Safari no se toca */
+html.no-saf .portada{height:100dvh!important;max-height:100dvh!important;padding-bottom:calc(16px + env(safe-area-inset-bottom))!important;overscroll-behavior:contain;}
+html.no-saf .p-lb{display:none!important;}
 /* LEGIBILIDAD: tamanos minimos para leer comodo en el celular */
 .guide-sub{letter-spacing:.3px!important;margin-top:8px;padding:0 44px;}
 
