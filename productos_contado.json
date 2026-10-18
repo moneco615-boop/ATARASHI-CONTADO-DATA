@@ -6372,11 +6372,11 @@
     {
       "nombre": "ADIDAS SUPERNOVA GLIDE W",
       "categoria": "Calzado caballero",
-      "badge": "RECOMENDADO",
+      "badge": "",
       "disponibilidad": "pocas",
       "precioContado": 135000,
       "fotosModelos": false,
-      "tipoTalla": "",
+      "tipoTalla": "calzado",
       "descripcion": "Las Adidas Supernova Glide W combinan comodidad, ligereza y un diseño deportivo moderno. Ideales para correr, entrenar o disfrutar del día a día, ofreciendo una pisada confortable y un estilo versátil que se adapta fácilmente a cualquier outfit.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792282431/atarashi_contado/fxjwwhmzilsautknoa2x.jpg",
