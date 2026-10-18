@@ -9168,8 +9168,8 @@
       "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
-      "fotosModelos": false,
-      "tipoTalla": "",
+      "fotosModelos": true,
+      "tipoTalla": "ropa",
       "descripcion": "Lleva tus rutinas al siguiente nivel con los nuevos Shorts Deportivos Under Armour Fly By. Diseñados especialmente para mujeres activas que buscan confort, rendimiento y un fit espectacular en cada movimiento 🏃‍♀️💨",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792349085/atarashi_contado/t0cbo5t9uf5afbost1zn.jpg",
