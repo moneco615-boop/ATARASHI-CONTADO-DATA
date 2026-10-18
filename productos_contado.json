@@ -4557,7 +4557,7 @@
       "badge": "NUEVO INGRESO",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
-      "fotosModelos": false,
+      "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Las Chanclas Nike Victori One ofrecen una pisada suave y cómoda gracias a su diseño ligero y plantilla acolchada.",
       "imagenes": [
