@@ -9367,6 +9367,31 @@
       "agotadas": [],
       "video": "",
       "id": 1792382405427
+    },
+    {
+      "nombre": "CÁMARA DE SEGURIDAD SOLAR AOSU",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 320000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Protege lo que más quieres sin preocuparte por cables ni recibos de luz! La cámara de seguridad inalámbrica Aosu SolarCam D1 Classic ofrece una solución de vigilancia exterior premium, 100% libre de cables y totalmente autónoma gracias a su panel solar integrado de alta eficiencia.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/o8qxqcgudlhx44tbk5ug.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/ps9hkg30zpidgll6a15e.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/m00t64c3oxxrlvwblxmj.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/xcysonezyfa2oektkvw6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/vsnbpskkwbzg2yjskhll.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/yt13piqjnpuzhy8zosxc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/cymfijzmskfwg5hywrrl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/td5tatvdr6l1qpqvfj2i.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/kses5ju8fix0fzsjtnbr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792383399/atarashi_contado/xff2yvs8s843w3e0a1wy.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1792383521204
     }
   ],
   "categorias": [
@@ -9454,5 +9479,6 @@
       "emoji": "✨",
       "nombre": "Loción unisex"
     }
-  ]
+  ],
+  "ver": "1792383524180"
 }
