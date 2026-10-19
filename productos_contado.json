@@ -9329,6 +9329,26 @@
       "agotadas": [],
       "video": "",
       "id": 1792380273497
+    },
+    {
+      "nombre": "BÁSCULA  DE PISO DIGITAL 200 KG",
+      "categoria": "Herramientas",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 260000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Potencia tu negocio con precisión y resistencia! Esta báscula de plataforma digital es la herramienta ideal para comercios, bodegas, industrias y negocios de envío que requieren un pesaje rápido, exacto y de uso rudo. Su estructura metálica texturizada garantiza máxima durabilidad bajo condiciones exigentes.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792381626/atarashi_contado/qocuukhaaeknz9ruo95h.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792381645/atarashi_contado/r9sh6a3mlzb19qoongx0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792381645/atarashi_contado/egwigikmv5tvyx8pc2hm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792381645/atarashi_contado/hdba0cwet02bkjfskccl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792381645/atarashi_contado/w89jdb5hz8cdosmi0irs.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1792381777522
     }
   ],
   "categorias": [
@@ -9416,6 +9436,5 @@
       "emoji": "✨",
       "nombre": "Loción unisex"
     }
-  ],
-  "ver": "1792381331046"
+  ]
 }
