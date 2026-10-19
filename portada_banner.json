@@ -1,6 +1,12 @@
 {
-  "modo": "banner",
-  "fotos": [],
+  "modo": "vitrina",
+  "fotos": [
+    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429704/atarashi_contado/xynsgsnbmiehy6tjw4gh.jpg",
+    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429713/atarashi_contado/m4a5ueowczrzsqaeazlg.jpg",
+    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429722/atarashi_contado/n5b9mzr03fa2eq6pst6h.jpg",
+    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429740/atarashi_contado/er6lm62z6niurxqbbofn.jpg",
+    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429764/atarashi_contado/hil1a2sn52biyour7yyw.jpg"
+  ],
   "bannerUrl": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792426062/atarashi_contado/ldjaftsjkhtpxbdnkzy4.jpg",
   "banners": [
     {
