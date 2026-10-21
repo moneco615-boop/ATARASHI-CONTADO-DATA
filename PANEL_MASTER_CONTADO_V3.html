@@ -392,7 +392,7 @@
 <header>
   <h1>ATARASHI <span>MASTER</span></h1>
   <p>Panel de Control — Ventas Contado · Pago Contraentrega · Cali</p>
-  <p style="margin-top:6px;font-size:12px;color:#2ecc71;font-weight:700;">✅ Versión 21-OCT-2026 · etiqueta Niños</p>
+  <p style="margin-top:6px;font-size:12px;color:#2ecc71;font-weight:700;">✅ Versión 21-OCT-2026 · portada PC</p>
 </header>
 
 <!-- ── BARRA DE ESTADO ── -->
@@ -3419,6 +3419,16 @@ body .card-kids .kl1{color:#0B8F86!important;}
 body .card-kids .kl2{color:#E08A00!important;}
 body .card-kids .kl3{color:#2E8B3E!important;}
 body .card-kids .kl4{color:#7E3FD6!important;}
+/* PORTADA EN COMPUTADOR: 5 fotos en 3 arriba + 2 abajo, mas grandes (el tamano se adapta a la altura de la pantalla) */
+@media(min-width:900px){
+body .portada .ph-showcase:not(.ph-modo-banner){--phs:clamp(120px,19vh,190px);max-width:calc(var(--phs)*3 + 36px)!important;gap:14px 18px!important;justify-content:center!important;}
+body .portada .ph-showcase:not(.ph-modo-banner) .ph-item{width:var(--phs)!important;}
+body .portada .ph-showcase:not(.ph-modo-banner) .ph-icon-box,body .portada .ph-showcase:not(.ph-modo-banner) .ph-item.ph-tall .ph-icon-box{max-width:var(--phs)!important;border-radius:20px!important;padding:10px!important;}
+}
+@media(min-width:900px) and (max-height:780px){
+body .portada .ph-showcase:not(.ph-modo-banner){--phs:clamp(92px,15vh,140px);gap:10px 14px!important;}
+body .portada .ph-showcase:not(.ph-modo-banner) .ph-icon-box,body .portada .ph-showcase:not(.ph-modo-banner) .ph-item.ph-tall .ph-icon-box{max-width:var(--phs)!important;border-radius:20px!important;padding:10px!important;}
+}
 /* LEGIBILIDAD: tamanos minimos para leer comodo en el celular */
 .guide-sub{letter-spacing:.3px!important;margin-top:8px;padding:0 44px;}
 
