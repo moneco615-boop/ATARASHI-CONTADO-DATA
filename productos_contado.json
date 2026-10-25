@@ -420,10 +420,12 @@
       "tipoTalla": "calzado",
       "descripcion": "New Balance 2000 es una zapatilla de estilo futurista con inspiración retro, pensada para destacar por su comodidad y diseño moderno. Incorpora amortiguación ABZORB en toda la suela para ofrecer una pisada más suave y con buen soporte",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792953545/atarashi_contado/e214xunrpwr5cz5cwjco.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224582/atarashi_contado/ngcp3fvjfvsug33yjclu.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224602/atarashi_contado/tis4jdiiu3prqduw4jyl.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224602/atarashi_contado/pijjjxbnjlrazh19kqgh.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783224670739
     },
@@ -437,9 +439,11 @@
       "tipoTalla": "calzado",
       "descripcion": "Nike V2K Run es una zapatilla de estilo retro-futurista, inspirada en los modelos de running de principios de los 2000. Destaca por su diseño llamativo, su suela gruesa y una comodidad pensada para uso diario con mucho estilo",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792953588/atarashi_contado/hitwfh8c7x97xpwpjik7.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783224869/atarashi_contado/l126vxjhfbtfl8dbip6j.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783225009/atarashi_contado/dmii1xpjgn7qctop3ptz.jpg"
       ],
+      "agotadas": [],
       "video": "",
       "id": 1783225101871
     },
@@ -1219,9 +1223,9 @@
       "tipoTalla": "calzado",
       "descripcion": "👟 Muévete con total comodidad con los Adidas Duramo. Diseñados para brindar una pisada suave, gran ligereza y excelente confort durante todo el día. Perfectos para entrenar, caminar o complementar un look deportivo.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785508594/atarashi_contado/ibrm0pwurbh0eza98xod.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792953674/atarashi_contado/fvd9qhwkg7ffc4q4s3r1.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612360/atarashi_contado/sryysz3sjwrwifpmsxrw.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783612360/atarashi_contado/flbqxwqbjasunpxxfshr.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785508594/atarashi_contado/ibrm0pwurbh0eza98xod.jpg"
       ],
       "agotadas": [],
       "video": "",
@@ -4771,13 +4775,14 @@
     {
       "nombre": "NIKE JORDAN 3",
       "categoria": "Calzado dama",
-      "badge": "RECOMENDADO",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Los Nike Jordan 3 combinan el icónico estilo Jordan con comodidad y un diseño deportivo lleno de personalidad.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792953827/atarashi_contado/eqhpf73nuyc2vwaj4ucb.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899635/atarashi_contado/hyajxxbyrqgxa0fkkdem.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786899635/atarashi_contado/ui13v5dg4ckrpnnyw9ve.jpg"
       ],
@@ -7476,6 +7481,7 @@
       "tipoTalla": "calzado",
       "descripcion": "El clásico del skate que nunca pasa de moda! Te presentamos uno de los colorways más limpios, versátiles y cotizados de la línea Nike SB. Con su diseño minimalista y materiales premium, son el par perfecto tanto para el skate como para elevar tu estilo urbano diario.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792953777/atarashi_contado/lpuunqjs942ryad7eriu.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790355380/atarashi_contado/ywvjmlbuapossk3aeoul.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790355380/atarashi_contado/hjm4zwgcutspxc83frsz.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790355380/atarashi_contado/hk7qqcqptjox9cdwhxdl.jpg"
@@ -9479,5 +9485,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1792625707787"
+  "ver": "1792953851692"
 }
