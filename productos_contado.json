@@ -9397,6 +9397,43 @@
       "agotadas": [],
       "video": "",
       "id": 1792383521204
+    },
+    {
+      "nombre": "ADIDAS TERREX SOULSTRIDE FLOW",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 145000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "¡Lleva tus carreras al siguiente nivel con el máximo confort y agarre! Estas zapatillas Adidas Terrex están diseñadas para ofrecer una amortiguación excepcional en senderos y terrenos mixtos, combinando estilo deportivo moderno con un rendimiento técnico de alta gama.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792961872/atarashi_contado/moaaa01hvowznipo1grh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792961872/atarashi_contado/esqqk0qp1wtcxudpctql.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792961872/atarashi_contado/sgk2vhjirzntpvb2at6z.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792961872/atarashi_contado/jvmmmmitsovk1gwpnqz7.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1792962279931
+    },
+    {
+      "nombre": "ADIDAS ALPHA",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "Estás Adidas tienen un diseño moderno y minimalista que combina con todo. Su parte superior de malla transpirable mantiene tus pies frescos, mientras que su suela amortiguada garantiza pisadas suaves durante todo el día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792963216/atarashi_contado/xvchopfjvrlvwyeeqjll.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792962782/atarashi_contado/sxnfbmny9ha73kq7aekp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792962782/atarashi_contado/jy1pr3hfsc7opezjxzkz.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1792963230520
     }
   ],
   "categorias": [
@@ -9485,5 +9522,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1792953851692"
+  "ver": "1792963299343"
 }
