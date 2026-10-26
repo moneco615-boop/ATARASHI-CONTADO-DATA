@@ -1612,7 +1612,7 @@ async function crLlamarGemini(clave, partes) {
   var listaCargada = false;
   var ultimo;
 
-  for (var intento = 0; intento < 6 && cola.length; intento++) {
+  for (var intento = 0; intento < 8 && cola.length; intento++) {
     var m = cola.shift();
     probados[m] = true;
     try {
@@ -1622,7 +1622,10 @@ async function crLlamarGemini(clave, partes) {
     } catch (e) {
       ultimo = e;
       var noExiste = e.status === 404 || (e.status === 400 && /model/i.test(e.message));
-      if (!noExiste && !crErrorPasajero(e)) throw e;   // clave mala, límite, etc.
+      // Cada modelo tiene su propio límite gratis: si uno se agotó, se prueba otro
+      var sinCupo = e.status === 429 || /quota|exhausted|rate limit/i.test(e.message || '');
+      if (sinCupo) e.lento = true;   // no reintentar el mismo
+      if (!noExiste && !sinCupo && !crErrorPasajero(e)) throw e;   // clave mala, etc.
 
       if (crErrorPasajero(e) && intento === 0 && !e.lento) {
         // primer tropiezo: reintentar el mismo modelo después de un momento
@@ -1639,7 +1642,7 @@ async function crLlamarGemini(clave, partes) {
           });
         } catch (eL) {}
       }
-      if (cola.length) crEstadoIA('⏳ ' + (e.lento ? 'Tardó mucho; ' : '') + 'probando con otro modelo de IA…');
+      if (cola.length) crEstadoIA('⏳ ' + (sinCupo ? 'Ese modelo llegó a su límite; ' : e.lento ? 'Tardó mucho; ' : '') + 'probando con otro modelo de IA…');
     }
   }
   throw ultimo || new Error('No se pudo usar la IA.');
@@ -1720,7 +1723,7 @@ async function llenarConIA() {
       localStorage.removeItem('atarashi_gemini_key');
       msg = 'La clave de IA no funciona. Toca el botón otra vez y pega una clave nueva.';
     } else if (/quota|429|exhausted/i.test(msg)) {
-      msg = 'Llegaste al límite gratis de la IA por ahora. Espera un minuto y vuelve a intentar.';
+      msg = 'Todos los modelos gratis de la IA llegaron a su límite por ahora. Espera unos minutos y vuelve a intentar.';
     } else if (/load failed|failed to fetch|networkerror|sin conexión/i.test(msg)) {
       msg = 'Se cortó la conexión con la IA (puede ser la señal o Google saturado). Revisa el internet y toca el botón otra vez.';
     } else if (crErrorPasajero(e)) {
