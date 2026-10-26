@@ -1555,20 +1555,28 @@ async function crUrlABase64(url) {
   return crReducir(img, 1024, 0.8);
 }
 
-async function crElegirModeloGemini(clave) {
+async function crListarModelosGemini(clave) {
   var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=' + encodeURIComponent(clave));
   var d = await r.json();
   var lista = (d.models || []).filter(function(m) {
     return (m.supportedGenerationMethods || []).indexOf('generateContent') !== -1 &&
            /flash/.test(m.name) && !/image|tts|audio|live|thinking|exp|preview/.test(m.name);
   }).map(function(m) { return m.name.replace('models/', ''); });
-  if (!lista.length) throw new Error('Tu clave no tiene modelos disponibles.');
-  var sinLite = lista.filter(function(n) { return !/lite/.test(n); });
-  return (sinLite.length ? sinLite : lista).sort().reverse()[0];
+  // primero los "flash" normales (más nuevos primero), luego los "lite"
+  var normales = lista.filter(function(n) { return !/lite/.test(n); }).sort().reverse();
+  var lite = lista.filter(function(n) { return /lite/.test(n); }).sort().reverse();
+  return normales.concat(lite);
+}
+
+function crEsperar(ms) { return new Promise(function(r) { setTimeout(r, ms); }); }
+
+// Errores pasajeros de Google (mucha demanda, servidor ocupado)
+function crErrorPasajero(e) {
+  return e.status === 503 || e.status === 500 || e.status === 504 ||
+         /high demand|overloaded|unavailable|try again later/i.test(e.message || '');
 }
 
 async function crLlamarGemini(clave, partes) {
-  var modelo = localStorage.getItem('atarashi_gemini_modelo') || 'gemini-flash-latest';
   async function intentar(m) {
     var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + m + ':generateContent?key=' + encodeURIComponent(clave), {
       method: 'POST',
@@ -1585,19 +1593,47 @@ async function crLlamarGemini(clave, partes) {
     }
     var txt = (((d.candidates || [])[0] || {}).content || {}).parts;
     txt = (txt || []).map(function(p) { return p.text || ''; }).join('');
-    if (!txt) throw new Error('La IA no respondió nada. Intenta de nuevo.');
+    if (!txt) { var e2 = new Error('La IA no respondió nada.'); e2.status = 503; throw e2; }
     return txt;
   }
-  try {
-    return await intentar(modelo);
-  } catch (e) {
-    if (e.status === 404 || (e.status === 400 && /model/i.test(e.message))) {
-      modelo = await crElegirModeloGemini(clave);
-      localStorage.setItem('atarashi_gemini_modelo', modelo);
-      return await intentar(modelo);
+
+  var preferido = localStorage.getItem('atarashi_gemini_modelo') || 'gemini-flash-latest';
+  var probados = {};
+  var cola = [preferido];
+  var listaCargada = false;
+  var ultimo;
+
+  for (var intento = 0; intento < 6 && cola.length; intento++) {
+    var m = cola.shift();
+    probados[m] = true;
+    try {
+      var t = await intentar(m);
+      if (m !== preferido) localStorage.setItem('atarashi_gemini_modelo', m);
+      return t;
+    } catch (e) {
+      ultimo = e;
+      var noExiste = e.status === 404 || (e.status === 400 && /model/i.test(e.message));
+      if (!noExiste && !crErrorPasajero(e)) throw e;   // clave mala, límite, etc.
+
+      if (crErrorPasajero(e) && intento === 0) {
+        // primer tropiezo: reintentar el mismo modelo después de un momento
+        crEstadoIA('⏳ La IA de Google está muy ocupada, reintentando…');
+        await crEsperar(2500);
+        cola.unshift(m); delete probados[m];
+        continue;
+      }
+      if (!listaCargada) {
+        listaCargada = true;
+        try {
+          (await crListarModelosGemini(clave)).forEach(function(n) {
+            if (!probados[n] && cola.indexOf(n) === -1) cola.push(n);
+          });
+        } catch (eL) {}
+      }
+      if (cola.length) crEstadoIA('⏳ Probando con otro modelo de IA…');
     }
-    throw e;
   }
+  throw ultimo || new Error('No se pudo usar la IA.');
 }
 
 async function llenarConIA() {
@@ -1669,6 +1705,8 @@ async function llenarConIA() {
       msg = 'La clave de IA no funciona. Toca el botón otra vez y pega una clave nueva.';
     } else if (/quota|429|exhausted/i.test(msg)) {
       msg = 'Llegaste al límite gratis de la IA por ahora. Espera un minuto y vuelve a intentar.';
+    } else if (crErrorPasajero(e)) {
+      msg = 'Google tiene la IA muy ocupada en este momento. Espera un minuto y toca el botón otra vez.';
     } else if (e instanceof SyntaxError) {
       msg = 'La IA respondió algo raro. Toca el botón otra vez.';
     }
