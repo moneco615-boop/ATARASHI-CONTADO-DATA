@@ -126,6 +126,7 @@
   .aviso-portada { font-size: 11px; color: #7a7a72; margin-top: 7px; line-height: 1.5; }
   .preview-foto-x { position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; background: #ff4444; color: #fff; border: none; border-radius: 50%; font-size: 11px; cursor: pointer; font-weight: 900; display: flex; align-items: center; justify-content: center; }
   .preview-foto-x:hover { background: #cc0000; }
+  .preview-foto-f { position: absolute; top: 50%; right: -8px; transform: translateY(-60%); width: 22px; height: 22px; background: #5a46d6; color: #fff; border: 1px solid #c9bfff; border-radius: 50%; font-size: 11px; cursor: pointer; padding: 0; line-height: 20px; text-align: center; }
 
 /* ══════════════════════════════════════════════
    MOBILE RESPONSIVE — Panel Master Contado V3
@@ -496,7 +497,7 @@
           <label style="color:var(--dorado-brillante);font-weight:800;">1. Seleccionar Fotos (PC o Celular)</label>
           <label class="cr-switch">
             <input type="checkbox" id="pFondoBlanco" onchange="crGuardarPrefFondo(this)">
-            <span>✨ <strong>Fondo blanco automático</strong><br><small>Quita el fondo de la foto de la bodega y la deja tipo catálogo</small></span>
+            <span>✨ <strong>Fondo blanco en la portada</strong><br><small>Solo a la primera foto. Las demás se suben tal cual. Para cambiar otra, toca ✨ sobre ella.</small></span>
           </label>
           <input type="file" id="pArchivosFotos" multiple accept="image/*" onchange="procesarFotos(this)">
           <div id="estadoFondo" class="cr-estado"></div>
@@ -1351,6 +1352,7 @@ async function crQuitarFondo(dataUrlJPG) {
 
 function crTrasLimpiarFormulario() {
   fotosOriginalesIA = [];
+  crPortadaBlancaPedida = false;
   var chk = document.getElementById('pFondoBlanco');
   if (chk) { var v = null; try { v = localStorage.getItem('atarashi_fondo_blanco'); } catch(e) {} chk.checked = (v === null) ? true : (v === '1'); }
   crEstadoFondo('');
@@ -1368,6 +1370,107 @@ function crAvisoGuardado(nombre) {
   if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+var crPortadaBlancaPedida = false;  // ya se pidió fondo blanco para la portada de este producto
+
+function crCrearPreview(contenedor, alInicio) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'preview-foto-wrapper';
+  const imgPrev = document.createElement('img');
+  imgPrev.className = 'preview-mini-foto';
+  imgPrev.style.opacity = '0.45';
+  const badge = document.createElement('div');
+  badge.style.cssText = 'position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.8);color:#F0C040;font-size:9px;text-align:center;padding:2px;border-radius:0 0 4px 4px;';
+  badge.textContent = '⏳ En cola';
+  wrapper.appendChild(imgPrev);
+  wrapper.appendChild(badge);
+  if (alInicio) contenedor.insertBefore(wrapper, contenedor.firstChild);
+  else contenedor.appendChild(wrapper);
+  return { wrapper, imgPrev, badge };
+}
+
+// Sube la foto ya lista y le pone sus botones (✕, ★, MARCAR y ✨ si aplica)
+async function crSubirYMontar(v, base64, alInicio, originalParaFondo) {
+  const { wrapper, imgPrev, badge } = v;
+  badge.textContent = '⏳ Subiendo...';
+  try {
+    const urlPublica = await subirACloudinary(base64);
+    if (alInicio) imagenesCargadasActuales.unshift(urlPublica);
+    else imagenesCargadasActuales.push(urlPublica);
+
+    imgPrev.style.opacity = '1';
+    badge.style.background = 'rgba(0,110,0,0.85)';
+    badge.style.color = '#7fff7f';
+    badge.textContent = '✅ OK';
+    setTimeout(() => badge.remove(), 2200);
+
+    const btnX = document.createElement('button');
+    btnX.className = 'preview-foto-x';
+    btnX.textContent = '×';
+    btnX.type = 'button';
+    btnX.onclick = () => {
+      const idx = imagenesCargadasActuales.indexOf(urlPublica);
+      if (idx !== -1) imagenesCargadasActuales.splice(idx, 1);
+      wrapper.remove();
+      marcarPortada();
+    };
+    wrapper.appendChild(btnX);
+    crearBtnAgotado(wrapper, urlPublica);
+    crearBtnPortada(wrapper, urlPublica);
+
+    // ✨ en las fotos normales: convertir ESA foto a fondo blanco y dejarla de portada
+    if (originalParaFondo) {
+      const bF = document.createElement('button');
+      bF.type = 'button';
+      bF.className = 'preview-foto-f';
+      bF.textContent = '✨';
+      bF.title = 'Ponerle fondo blanco a esta foto y usarla de portada';
+      bF.onclick = () => crConvertirAFondoBlanco(wrapper, urlPublica, originalParaFondo);
+      wrapper.appendChild(bF);
+    }
+    marcarPortada();
+  } catch(err) {
+    badge.style.background = 'rgba(160,0,0,0.85)';
+    badge.style.color = '#ffaaaa';
+    badge.textContent = '❌ Error';
+    badge.title = err.message;
+    alert('❌ No se pudo subir la imagen:\n' + err.message);
+  }
+}
+
+function crLimpiarEstadoAlTerminar() {
+  const est = document.getElementById('estadoFondo');
+  if (est && /Quitando|Preparando/.test(est.textContent)) crEstadoFondo('');
+}
+
+// Toma una foto ya subida, le quita el fondo y la pone de portada (reemplaza a la original)
+function crConvertirAFondoBlanco(wrapperViejo, urlVieja, original) {
+  const contenedor = document.getElementById('previewFotosContenedor');
+  const v = crCrearPreview(contenedor, true);
+  v.imgPrev.src = original;
+  // quitar la versión original de la lista
+  const i = imagenesCargadasActuales.indexOf(urlVieja);
+  if (i !== -1) imagenesCargadasActuales.splice(i, 1);
+  const j = agotadasActuales.indexOf(urlVieja);
+  if (j !== -1) agotadasActuales.splice(j, 1);
+  wrapperViejo.remove();
+  marcarPortada();
+
+  colaFotos = colaFotos.then(async () => {
+    v.badge.textContent = '✨ Fondo…';
+    await new Promise(r => setTimeout(r, 30));
+    let base64 = null;
+    try {
+      base64 = await crQuitarFondo(original);
+      v.imgPrev.src = base64;
+    } catch (e) {
+      console.warn('Fondo blanco no aplicado:', e);
+      crEstadoFondo('⚠️ A esta foto no se le pudo quitar el fondo; quedó como estaba.');
+    }
+    if (base64) await crSubirYMontar(v, base64, true, null);
+    else await crSubirYMontar(v, original, true, original);
+  }).then(crLimpiarEstadoAlTerminar);
+}
+
 function procesarFotos(input) {
   const contenedor = document.getElementById('previewFotosContenedor');
   if (!input.files || input.files.length === 0) return;
@@ -1383,90 +1486,42 @@ function procesarFotos(input) {
   input.value = '';   // permite volver a elegir la misma foto si hace falta
 
   archivos.forEach(file => {
-    // Preview inmediato con estado
-    const wrapper = document.createElement('div');
-    wrapper.className = 'preview-foto-wrapper';
-    const imgPrev = document.createElement('img');
-    imgPrev.className = 'preview-mini-foto';
-    imgPrev.style.opacity = '0.45';
-    const badge = document.createElement('div');
-    badge.style.cssText = 'position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.8);color:#F0C040;font-size:9px;text-align:center;padding:2px;border-radius:0 0 4px 4px;';
-    badge.textContent = '⏳ En cola';
-    wrapper.appendChild(imgPrev);
-    wrapper.appendChild(badge);
-    contenedor.appendChild(wrapper);
+    // Solo la primera foto del producto (la portada) lleva fondo blanco
+    const aplicarFondo = fondoBlanco && !crPortadaBlancaPedida && imagenesCargadasActuales.length === 0;
+    if (aplicarFondo) crPortadaBlancaPedida = true;
+    const v = crCrearPreview(contenedor, false);
 
     colaFotos = colaFotos.then(async () => {
-      let base64;
+      let base64 = null, original = null, fondoOK = false;
       try {
         const img = await crLeerImagen(file);
-        const original = crReducir(img, 1200, 0.85);
-        imgPrev.src = original;
+        original = crReducir(img, 1200, 0.85);
+        v.imgPrev.src = original;
         if (fotosOriginalesIA.length < 3) fotosOriginalesIA.push(crReducir(img, 1024, 0.8));
 
-        base64 = null;
-        if (fondoBlanco) {
-          badge.textContent = '✨ Fondo…';
+        if (aplicarFondo) {
+          v.badge.textContent = '✨ Fondo…';
           await new Promise(r => setTimeout(r, 30)); // deja pintar la pantalla
           try {
             base64 = await crQuitarFondo(original);
-            imgPrev.src = base64;
+            fondoOK = true;
+            v.imgPrev.src = base64;
           } catch (errFondo) {
             console.warn('Fondo blanco no aplicado:', errFondo);
-            badge.textContent = '⚠️ Sin fondo';
             crEstadoFondo('⚠️ A esta foto no se le pudo quitar el fondo; se sube tal cual.');
           }
         }
-        if (!base64) {
-          // Igual que antes: comprimir a máx 800px
-          base64 = crReducir(img, 800, 0.72);
-        }
+        if (!base64) base64 = crReducir(img, 800, 0.72);   // igual que antes
       } catch (errLeer) {
-        badge.style.background = 'rgba(160,0,0,0.85)';
-        badge.style.color = '#ffaaaa';
-        badge.textContent = '❌ Error';
+        v.badge.style.background = 'rgba(160,0,0,0.85)';
+        v.badge.style.color = '#ffaaaa';
+        v.badge.textContent = '❌ Error';
         alert('❌ No se pudo leer la foto:\n' + errLeer.message);
         return;
       }
-
-      badge.textContent = '⏳ Subiendo...';
-      try {
-        const urlPublica = await subirACloudinary(base64);
-        imagenesCargadasActuales.push(urlPublica);
-
-        imgPrev.style.opacity = '1';
-        badge.style.background = 'rgba(0,110,0,0.85)';
-        badge.style.color = '#7fff7f';
-        badge.textContent = '✅ OK';
-        setTimeout(() => badge.remove(), 2200);
-
-        // Botón para quitar foto
-        const btnX = document.createElement('button');
-        btnX.className = 'preview-foto-x';
-        btnX.textContent = '×';
-        btnX.type = 'button';
-        btnX.onclick = () => {
-          const idx = imagenesCargadasActuales.indexOf(urlPublica);
-          if (idx !== -1) imagenesCargadasActuales.splice(idx, 1);
-          wrapper.remove();
-          marcarPortada();
-        };
-        wrapper.appendChild(btnX);
-        crearBtnAgotado(wrapper, urlPublica);
-        crearBtnPortada(wrapper, urlPublica);
-        marcarPortada();
-
-      } catch(err) {
-        badge.style.background = 'rgba(160,0,0,0.85)';
-        badge.style.color = '#ffaaaa';
-        badge.textContent = '❌ Error';
-        badge.title = err.message;
-        alert('❌ No se pudo subir la imagen:\n' + err.message);
-      }
-    }).then(() => {
-      const est = document.getElementById('estadoFondo');
-      if (est && /Quitando|Preparando/.test(est.textContent)) crEstadoFondo('');
-    });
+      // La de fondo blanco va de primera (portada); las demás llevan el botón ✨ por si acaso
+      await crSubirYMontar(v, base64, false, fondoOK ? null : original);
+    }).then(crLimpiarEstadoAlTerminar);
   });
 }
 
