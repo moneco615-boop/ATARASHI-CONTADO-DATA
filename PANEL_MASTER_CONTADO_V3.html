@@ -138,7 +138,9 @@
   .aviso-portada { font-size: 11px; color: #7a7a72; margin-top: 7px; line-height: 1.5; }
   .preview-foto-x { position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; background: #ff4444; color: #fff; border: none; border-radius: 50%; font-size: 11px; cursor: pointer; font-weight: 900; display: flex; align-items: center; justify-content: center; }
   .preview-foto-x:hover { background: #cc0000; }
-  .preview-foto-f { position: absolute; top: 50%; right: -8px; transform: translateY(-60%); width: 22px; height: 22px; background: #5a46d6; color: #fff; border: 1px solid #c9bfff; border-radius: 50%; font-size: 11px; cursor: pointer; padding: 0; line-height: 20px; text-align: center; }
+  .preview-foto-f { position: absolute; top: 50%; right: 4px; transform: translateY(-60%); width: 30px; height: 30px; background: #5a46d6; color: #fff; border: 2px solid #c9bfff; border-radius: 50%; font-size: 15px; cursor: pointer; padding: 0; line-height: 26px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.5); }
+  .cr-ayuda { font-size: 12px; color: #bbb; margin: 8px 0 10px; line-height: 1.5; }
+  .cr-chip { display: inline-block; background: #5a46d6; color: #fff; border-radius: 50%; width: 20px; height: 20px; line-height: 20px; text-align: center; font-size: 11px; }
 
 /* ══════════════════════════════════════════════
    MOBILE RESPONSIVE — Panel Master Contado V3
@@ -507,10 +509,7 @@
       <div class="caja-paso-uno">
         <div class="grupo-campo" style="margin-bottom:0;">
           <label style="color:var(--dorado-brillante);font-weight:800;">1. Seleccionar Fotos (PC o Celular)</label>
-          <label class="cr-switch">
-            <input type="checkbox" id="pFondoBlanco" onchange="crGuardarPrefFondo(this)">
-            <span>✨ <strong>Fondo blanco en la portada</strong><br><small>Solo a la primera foto. Las demás se suben tal cual. Para cambiar otra, toca ✨ sobre ella.</small></span>
-          </label>
+          <p class="cr-ayuda">Las fotos se suben <strong>tal cual</strong>. Si quieres pasar una a fondo blanco, toca el botón <span class="cr-chip">✨</span> sobre esa foto.</p>
           <input type="file" id="pArchivosFotos" multiple accept="image/*" onchange="procesarFotos(this)">
           <div id="estadoFondo" class="cr-estado"></div>
           <div class="preview-fotos-caja" id="previewFotosContenedor"></div>
@@ -1449,6 +1448,7 @@ async function crSubirYMontar(v, base64, alInicio, originalParaFondo) {
   try {
     const urlPublica = await subirACloudinary(base64);
     if (alInicio) imagenesCargadasActuales.unshift(urlPublica);
+    else if (typeof v.puesto === 'number') imagenesCargadasActuales.splice(Math.min(v.puesto, imagenesCargadasActuales.length), 0, urlPublica);
     else imagenesCargadasActuales.push(urlPublica);
 
     imgPrev.style.opacity = '1';
@@ -1477,7 +1477,7 @@ async function crSubirYMontar(v, base64, alInicio, originalParaFondo) {
       bF.type = 'button';
       bF.className = 'preview-foto-f';
       bF.textContent = '✨';
-      bF.title = 'Ponerle fondo blanco a esta foto y usarla de portada';
+      bF.title = 'Ponerle fondo blanco a esta foto';
       bF.onclick = () => crConvertirAFondoBlanco(wrapper, urlPublica, originalParaFondo);
       wrapper.appendChild(bF);
     }
@@ -1499,11 +1499,13 @@ function crLimpiarEstadoAlTerminar() {
 // Toma una foto ya subida, le quita el fondo y la pone de portada (reemplaza a la original)
 function crConvertirAFondoBlanco(wrapperViejo, urlVieja, original) {
   const contenedor = document.getElementById('previewFotosContenedor');
-  const v = crCrearPreview(contenedor, true);
+  const v = crCrearPreview(contenedor, false);
+  contenedor.insertBefore(v.wrapper, wrapperViejo);   // queda en el mismo lugar
   v.imgPrev.src = original;
-  // quitar la versión original de la lista
+  // quitar la versión original de la lista, recordando su puesto
   const i = imagenesCargadasActuales.indexOf(urlVieja);
   if (i !== -1) imagenesCargadasActuales.splice(i, 1);
+  v.puesto = i === -1 ? imagenesCargadasActuales.length : i;
   const j = agotadasActuales.indexOf(urlVieja);
   if (j !== -1) agotadasActuales.splice(j, 1);
   wrapperViejo.remove();
@@ -1520,8 +1522,8 @@ function crConvertirAFondoBlanco(wrapperViejo, urlVieja, original) {
       console.warn('Fondo blanco no aplicado:', e);
       crEstadoFondo('⚠️ A esta foto no se le pudo quitar el fondo; quedó como estaba.');
     }
-    if (base64) await crSubirYMontar(v, base64, true, null);
-    else await crSubirYMontar(v, original, true, original);
+    if (base64) await crSubirYMontar(v, base64, false, null);
+    else await crSubirYMontar(v, original, false, original);
   }).then(crLimpiarEstadoAlTerminar);
 }
 
@@ -2001,7 +2003,13 @@ function cargarProductoParaEditar(id) {
       wrapper.remove();
       marcarPortada();
     };
-    wrapper.appendChild(img); wrapper.appendChild(btnX); crearBtnAgotado(wrapper, src); crearBtnPortada(wrapper, src); cont.appendChild(wrapper);
+    wrapper.appendChild(img); wrapper.appendChild(btnX); crearBtnAgotado(wrapper, src); crearBtnPortada(wrapper, src);
+    const bF = document.createElement('button');
+    bF.type = 'button'; bF.className = 'preview-foto-f'; bF.textContent = '✨';
+    bF.title = 'Ponerle fondo blanco a esta foto';
+    bF.onclick = () => crConvertirAFondoBlanco(wrapper, src, src);
+    wrapper.appendChild(bF);
+    cont.appendChild(wrapper);
   });
   marcarPortada();
 
