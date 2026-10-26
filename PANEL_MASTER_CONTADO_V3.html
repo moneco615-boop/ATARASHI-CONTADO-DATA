@@ -1721,6 +1721,8 @@ async function llenarConIA() {
       msg = 'La clave de IA no funciona. Toca el botón otra vez y pega una clave nueva.';
     } else if (/quota|429|exhausted/i.test(msg)) {
       msg = 'Llegaste al límite gratis de la IA por ahora. Espera un minuto y vuelve a intentar.';
+    } else if (/load failed|failed to fetch|networkerror|sin conexión/i.test(msg)) {
+      msg = 'Se cortó la conexión con la IA (puede ser la señal o Google saturado). Revisa el internet y toca el botón otra vez.';
     } else if (crErrorPasajero(e)) {
       msg = 'Google tiene la IA muy ocupada en este momento. Espera un minuto y toca el botón otra vez.';
     } else if (e instanceof SyntaxError) {
