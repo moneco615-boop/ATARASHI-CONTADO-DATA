@@ -78,6 +78,16 @@
   .cr-toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #0f3d1a; color: #9dffb0; border: 1px solid #2ecc71; padding: 11px 16px; border-radius: 10px; font-size: 13px; font-weight: 700; z-index: 99999; box-shadow: 0 6px 24px rgba(0,0,0,0.5); max-width: calc(100vw - 32px); text-align: center; transition: opacity .4s; }
   .cr-toast.fuera { opacity: 0; }
 
+  /* ── VISTA PREVIA ── */
+  .vp-btn { width: 100%; margin: 0 0 10px; background: #0d0d0d; color: var(--dorado-brillante); border: 1px solid var(--dorado); padding: 12px; border-radius: 8px; font-weight: 800; font-size: 14px; cursor: pointer; font-family: var(--fuente-cuerpo); }
+  .vp-btn-todos { margin-top: 12px; }
+  .vp-capa { display: none; position: fixed; inset: 0; z-index: 100000; background: #000; flex-direction: column; }
+  .vp-capa.abierta { display: flex; }
+  .vp-barra { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(env(safe-area-inset-top) + 8px) 12px 8px; background: #1a1400; border-bottom: 2px solid var(--dorado); color: var(--dorado-brillante); font-size: 13px; font-weight: 800; }
+  .vp-barra button { background: var(--dorado); color: #000; border: none; padding: 9px 14px; border-radius: 7px; font-weight: 900; font-size: 13px; cursor: pointer; flex-shrink: 0; }
+  .vp-marco { flex: 1; display: flex; justify-content: center; background: #222; min-height: 0; }
+  .vp-marco iframe { width: 100%; max-width: 430px; height: 100%; border: 0; background: #fff; }
+
   /* ── CAMPO PRECIO DESTACADO ── */
   .campo-precio-box { background: rgba(201,160,42,0.07); border: 1px solid rgba(201,160,42,0.5); border-radius: 8px; padding: 12px; margin-bottom: 14px; }
   .campo-precio-box label { display: block; font-size: 12px; color: var(--dorado-brillante); font-weight: 800; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -586,9 +596,12 @@
         <textarea id="pDescripcion" placeholder="Ej: Tallas disponibles: 36-42 · Colores: negro, blanco · Material: cuero sintético · Ideal para uso diario..."></textarea>
       </div>
 
+      <button type="button" class="vp-btn" onclick="abrirVistaPrevia('uno')">👁️ Ver cómo queda en la tienda</button>
       <button type="submit" class="btn-primario" id="btnGuardarForm">💾 Guardar Producto</button>
       <button type="button" class="btn-cancelar" id="btnCancelarEdit" style="display:none;" onclick="cancelarEdicion()">✕ Cancelar Edición</button>
     </form>
+
+    <button type="button" class="vp-btn vp-btn-todos" onclick="abrirVistaPrevia('todos')">👁️ Revisar la tienda antes de publicar</button>
 
     <button class="btn-verde" id="btnCloudSync" onclick="publicarEnGitHub()">
       ⚡ PUBLICAR CAMBIOS EN LA NUBE
@@ -628,6 +641,15 @@
   </div><!-- panel-lista -->
 
 </div><!-- /.contenedor-master -->
+
+<!-- ── VISTA PREVIA DE LA TIENDA ── -->
+<div id="vpCapa" class="vp-capa" aria-hidden="true">
+  <div class="vp-barra">
+    <span id="vpTitulo">👁️ Vista previa — aún no publicado</span>
+    <button type="button" onclick="cerrarVistaPrevia()">✕ Cerrar</button>
+  </div>
+  <div class="vp-marco"><iframe id="vpIframe" title="Vista previa de la tienda"></iframe></div>
+</div>
 
 <!-- ── MODAL DE CONFIGURACIÓN (PC + Celular) ── -->
 <div class="cfg-ov" id="cfgModal" onclick="if(event.target.id==='cfgModal')cerrarConfig()">
@@ -1736,6 +1758,85 @@ async function llenarConIA() {
     if (typeof relojIA !== 'undefined') clearInterval(relojIA);
     btn.disabled = false;
   }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SECCIÓN 5C — 👁️ VISTA PREVIA (ver la tienda antes de publicar)
+// ═══════════════════════════════════════════════════════════
+
+function crProductoDelFormulario() {
+  var urls = imagenesCargadasActuales.filter(function(u) { return u && typeof u === 'string' && u.indexOf('http') === 0; });
+  var idModo = document.getElementById('pIdModo').value;
+  return {
+    id: idModo ? parseInt(idModo) : Date.now(),
+    nombre: (document.getElementById('pNombre').value || 'NOMBRE DEL PRODUCTO').toUpperCase().trim(),
+    categoria: document.getElementById('pCategoria').value,
+    badge: document.getElementById('pBadgeSelect').value,
+    disponibilidad: document.getElementById('pDisponibilidad').value,
+    precioContado: parseFloat(document.getElementById('pPrecioContado').value) || 0,
+    fotosModelos: !!(document.getElementById('pFotosModelos') && document.getElementById('pFotosModelos').checked),
+    tipoTalla: (document.getElementById('pTipoTalla') || { value: '' }).value,
+    descripcion: document.getElementById('pDescripcion').value.trim(),
+    imagenes: urls,
+    agotadas: agotadasActuales.filter(function(u) { return urls.indexOf(u) !== -1; }),
+    video: videoActualUrl || ''
+  };
+}
+
+function abrirVistaPrevia(modo) {
+  var lista, titulo;
+  if (modo === 'uno') {
+    var prod = crProductoDelFormulario();
+    if (!prod.imagenes.length) { alert('⚠️ Primero sube al menos una foto y espera el ✅ OK.'); return; }
+    lista = [prod];
+    titulo = '👁️ Así se verá este producto';
+  } else {
+    lista = productos.slice();
+    if (!lista.length) { alert('No hay productos para mostrar.'); return; }
+    titulo = '👁️ Tienda con tus cambios (sin publicar)';
+  }
+  window.__ATR_VISTA_PREVIA = { productos: lista, categorias: categoriasValidas, ver: 'vista-' + Date.now() };
+  document.getElementById('vpTitulo').textContent = titulo;
+  var capa = document.getElementById('vpCapa');
+  capa.classList.add('abierta');
+  capa.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  var ifr = document.getElementById('vpIframe');
+  ifr.src = 'index.html?vistaprevia=1&v=' + Date.now();
+  if (modo === 'uno') {
+    // abrir directo la ficha del producto cuando cargue la tienda
+    ifr.onload = function() {
+      var intentos = 0;
+      var t = setInterval(function() {
+        intentos++;
+        try {
+          var doc = ifr.contentDocument;
+          // saltar la portada: ir directo al producto
+          var port = doc && doc.getElementById('portada');
+          if (port && !port.dataset.vpCerrada) {
+            var bExp = port.querySelector('.ph-btn, .p-btn');
+            if (bExp) { bExp.click(); port.dataset.vpCerrada = '1'; }
+          }
+          var card = doc && doc.querySelector('#grid .card');
+          if (card) {
+            clearInterval(t);
+            card.scrollIntoView({ block: 'center' });
+          }
+        } catch (e) { clearInterval(t); }
+        if (intentos > 40) clearInterval(t);
+      }, 250);
+    };
+  } else {
+    ifr.onload = null;
+  }
+}
+
+function cerrarVistaPrevia() {
+  var capa = document.getElementById('vpCapa');
+  capa.classList.remove('abierta');
+  capa.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  document.getElementById('vpIframe').src = 'about:blank';
 }
 
 // ═══════════════════════════════════════════════════════════

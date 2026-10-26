@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script>/* Vista previa desde el panel: solo actúa si el panel la abre (no afecta a los clientes) */(function(){try{if(!/[?&]vistaprevia=1/.test(location.search))return;var d=window.parent&&window.parent!==window&&window.parent.__ATR_VISTA_PREVIA;if(!d)return;var of=window.fetch;window.fetch=function(u){if(String(u).indexOf('productos_contado.json')>-1){return Promise.resolve(new Response(JSON.stringify(d),{status:200,headers:{'Content-Type':'application/json'}}));}return of.apply(this,arguments);};window.__ATR_ES_VISTA_PREVIA=true;}catch(e){}})();</script>
 <script>(function(){
 var CFG='auto',NOM='navidad';
 function norm(x){return String(x==null?'':x).trim().toLowerCase();}
