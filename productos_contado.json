@@ -9434,6 +9434,42 @@
       "agotadas": [],
       "video": "",
       "id": 1792963230520
+    },
+    {
+      "nombre": "NEW BALANCE 1000",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Lleva tu estilo urbano al siguiente nivel con un diseño moderno y lleno de personalidad. Estos tenis destacan por su silueta robusta y sus atractivas combinaciones de color que le darán un toque dinámico a cualquiera de tus outfits. Son perfectos para usar en tu día a día o salidas casuales, combinando increíble con jeans o prendas deportivas. Su estructura cómoda te brindará el confort ideal para moverte con total libertad a donde vayas.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018283/atarashi_contado/wc8ie3rcu0vmlog0hvwp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018284/atarashi_contado/hy8tu39zstzxtl1frxmu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018285/atarashi_contado/lw46wpnvycy0gjme4sbs.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793018345322
+    },
+    {
+      "nombre": "FILA ZAGATO DAMA",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": true,
+      "tipoTalla": "calzado",
+      "descripcion": "¡Lleva tu estilo al siguiente nivel con estos tenis Fila de diseño urbano y moderno! Su combinación de texturas y detalles de color los hace perfectos para destacar con tus jeans o ropa deportiva en cualquier ocasión informal. Su suela gruesa ranurada te brinda la estabilidad y comodidad que necesitas para caminar durante todo el día. Es la opción ideal para lucir a la moda sin sacrificar confort.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018371/atarashi_contado/r1ukdff5kmcw4dsn5alb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018371/atarashi_contado/sqmlnr81tkeiva71degh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018372/atarashi_contado/j74qwlgmmodjvwk4sk01.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793018493227
     }
   ],
   "categorias": [
@@ -9522,5 +9558,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1792982429379"
+  "ver": "1793035998684"
 }
