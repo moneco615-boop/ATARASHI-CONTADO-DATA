@@ -81,6 +81,8 @@
   /* ── VISTA PREVIA ── */
   .vp-btn { width: 100%; margin: 0 0 10px; background: #0d0d0d; color: var(--dorado-brillante); border: 1px solid var(--dorado); padding: 12px; border-radius: 8px; font-weight: 800; font-size: 14px; cursor: pointer; font-family: var(--fuente-cuerpo); }
   .vp-btn-todos { margin-top: 12px; }
+  .aviso-pend { display: none; margin-top: 14px; background: rgba(240,192,64,0.10); border: 1px solid var(--dorado); color: #F0C040; border-radius: 8px; padding: 10px 12px; font-size: 13px; line-height: 1.4; }
+  .aviso-pend small { color: #bba; font-size: 11px; }
   .vp-capa { display: none; position: fixed; inset: 0; z-index: 100000; background: #000; flex-direction: column; }
   .vp-capa.abierta { display: flex; }
   .vp-barra { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(env(safe-area-inset-top) + 8px) 12px 8px; background: #1a1400; border-bottom: 2px solid var(--dorado); color: var(--dorado-brillante); font-size: 13px; font-weight: 800; }
@@ -601,6 +603,7 @@
       <button type="button" class="btn-cancelar" id="btnCancelarEdit" style="display:none;" onclick="cancelarEdicion()">✕ Cancelar Edición</button>
     </form>
 
+    <div id="avisoPendientes" class="aviso-pend"></div>
     <button type="button" class="vp-btn vp-btn-todos" onclick="abrirVistaPrevia('todos')">👁️ Revisar la tienda antes de publicar</button>
 
     <button class="btn-verde" id="btnCloudSync" onclick="publicarEnGitHub()">
@@ -1109,9 +1112,38 @@ function cambiarEmojiCategoria(i) {
 }
 asegurarCategoriaNavidad();
 
+var crCargandoNube = false;
 function sincStorage() {
   localStorage.setItem('atarashi_prod_contado', JSON.stringify(productos));
   localStorage.setItem('atarashi_cat_contado', JSON.stringify(categoriasValidas));
+  if (!crCargandoNube) crMarcarPendiente();
+}
+
+// ── Cambios guardados en este dispositivo que aún no se publican ──
+function crHayPendientes() { try { return localStorage.getItem('atarashi_pendientes') === '1'; } catch(e) { return false; } }
+function crIdsPendientes() { try { return JSON.parse(localStorage.getItem('atarashi_pend_ids') || '[]'); } catch(e) { return []; } }
+function crMarcarPendiente(idProducto) {
+  try {
+    localStorage.setItem('atarashi_pendientes', '1');
+    if (idProducto) {
+      var ids = crIdsPendientes();
+      if (ids.indexOf(idProducto) === -1) ids.push(idProducto);
+      localStorage.setItem('atarashi_pend_ids', JSON.stringify(ids));
+    }
+  } catch(e) {}
+  crPintarAvisoPendientes();
+}
+function crLimpiarPendientes() {
+  try { localStorage.removeItem('atarashi_pendientes'); localStorage.removeItem('atarashi_pend_ids'); } catch(e) {}
+  crPintarAvisoPendientes();
+}
+function crPintarAvisoPendientes() {
+  var el = document.getElementById('avisoPendientes');
+  if (!el) return;
+  if (!crHayPendientes()) { el.style.display = 'none'; return; }
+  var n = crIdsPendientes().filter(function(id) { return productos.some(function(p) { return p.id === id; }); }).length;
+  el.innerHTML = '📌 <strong>' + (n ? n + ' producto(s) guardado(s)' : 'Cambios guardados') + ' sin publicar</strong><br><small>Están seguros en este celular. Se quedan aunque cierres el panel; salen a la tienda cuando toques Publicar.</small>';
+  el.style.display = 'block';
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1929,6 +1961,7 @@ function guardarFormulario(e) {
   }
 
   sincStorage();
+  crMarcarPendiente(datosProd.id);
   renderTabla();
 }
 
@@ -2056,16 +2089,27 @@ async function cargarDesdeGitHub() {
         return;
       }
 
-      if (datosParsed.productos)   productos         = datosParsed.productos;
-      if (datosParsed.categorias)  categoriasValidas = datosParsed.categorias;
+      const _conservar = crHayPendientes();
+      if (!_conservar) {
+        // Sin cambios pendientes: se toma lo que está publicado en la nube
+        if (datosParsed.productos)   productos         = datosParsed.productos;
+        if (datosParsed.categorias)  categoriasValidas = datosParsed.categorias;
+      }
       asegurarCategoriaNavidad();
 
-      sincStorage();
+      crCargandoNube = true;
+      try { sincStorage(); } finally { crCargandoNube = false; }
       renderCategoriasUI();
       renderTabla();
+      crPintarAvisoPendientes();
 
-      statusTexto.innerHTML = '● CONECTADO — ' + productos.length + ' producto(s) sincronizados';
-      statusTexto.style.color = '#2ecc71';
+      if (_conservar) {
+        statusTexto.innerHTML = '● CONECTADO — 📌 tienes cambios guardados sin publicar (se conservaron)';
+        statusTexto.style.color = '#F0C040';
+      } else {
+        statusTexto.innerHTML = '● CONECTADO — ' + productos.length + ' producto(s) sincronizados';
+        statusTexto.style.color = '#2ecc71';
+      }
       document.getElementById('btnRepararNube').style.display = 'none';
 
       // Cargar tambien la configuracion del banner de portada (si existe)
@@ -2184,6 +2228,7 @@ async function publicarEnGitHub() {
     }, null, 2);
     await guardarArchivoEnGitHub('manifest.json', manifestData, '📱 Manifest PWA Atarashi Store');
 
+    crLimpiarPendientes();
     alert(msg);
 
     document.getElementById('statusTexto').innerHTML =
@@ -2806,6 +2851,7 @@ function generarCatalogoDinamico(waNum, logoUrl) {
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
+<script>/* Vista previa desde el panel: solo actúa si el panel la abre (no afecta a los clientes) */(function(){try{if(!/[?&]vistaprevia=1/.test(location.search))return;var d=window.parent&&window.parent!==window&&window.parent.__ATR_VISTA_PREVIA;if(!d)return;var of=window.fetch;window.fetch=function(u){if(String(u).indexOf('productos_contado.json')>-1){return Promise.resolve(new Response(JSON.stringify(d),{status:200,headers:{'Content-Type':'application/json'}}));}return of.apply(this,arguments);};window.__ATR_ES_VISTA_PREVIA=true;}catch(e){}})();<\/script>
 <script>(function(){
 var CFG='${_tempCfg}',NOM='navidad';
 function norm(x){return String(x==null?'':x).trim().toLowerCase();}
@@ -5055,6 +5101,7 @@ function filtrarTablaAdmin(term){
   });
 }
 
+crPintarAvisoPendientes();
 // Carga automática si hay token guardado
 if (localStorage.getItem('atarashi_cloud_token')) {
   cargarDesdeGitHub();
