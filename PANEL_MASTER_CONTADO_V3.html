@@ -1578,14 +1578,23 @@ function crErrorPasajero(e) {
 
 async function crLlamarGemini(clave, partes) {
   async function intentar(m) {
-    var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + m + ':generateContent?key=' + encodeURIComponent(clave), {
+    var ctrl = new AbortController();
+    var reloj = setTimeout(function() { ctrl.abort(); }, 35000);   // máx. 35 s por intento
+    var r;
+    try {
+      r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + m + ':generateContent?key=' + encodeURIComponent(clave), {
+      signal: ctrl.signal,
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         contents: [{ role: 'user', parts: partes }],
         generationConfig: { responseMimeType: 'application/json', temperature: 0.6 }
       })
-    });
+      });
+    } catch (eRed) {
+      var eT = new Error(eRed.name === 'AbortError' ? 'La IA tardó demasiado en responder.' : 'Sin conexión con la IA.');
+      eT.status = 504; eT.lento = true; throw eT;
+    } finally { clearTimeout(reloj); }
     var d = await r.json().catch(function() { return {}; });
     if (!r.ok) {
       var e = new Error((d.error && d.error.message) || ('Error ' + r.status));
@@ -1615,7 +1624,7 @@ async function crLlamarGemini(clave, partes) {
       var noExiste = e.status === 404 || (e.status === 400 && /model/i.test(e.message));
       if (!noExiste && !crErrorPasajero(e)) throw e;   // clave mala, límite, etc.
 
-      if (crErrorPasajero(e) && intento === 0) {
+      if (crErrorPasajero(e) && intento === 0 && !e.lento) {
         // primer tropiezo: reintentar el mismo modelo después de un momento
         crEstadoIA('⏳ La IA de Google está muy ocupada, reintentando…');
         await crEsperar(2500);
@@ -1630,7 +1639,7 @@ async function crLlamarGemini(clave, partes) {
           });
         } catch (eL) {}
       }
-      if (cola.length) crEstadoIA('⏳ Probando con otro modelo de IA…');
+      if (cola.length) crEstadoIA('⏳ ' + (e.lento ? 'Tardó mucho; ' : '') + 'probando con otro modelo de IA…');
     }
   }
   throw ultimo || new Error('No se pudo usar la IA.');
@@ -1653,6 +1662,13 @@ async function llenarConIA() {
       return;
     }
     crEstadoIA('✨ La IA está mirando la foto…');
+    var inicioIA = Date.now();
+    var relojIA = setInterval(function() {
+      var el = document.getElementById('estadoIA');
+      if (!el || /^(✅|❌)/.test(el.textContent)) return;
+      var base = el.textContent.replace(/ \(\d+ s\)$/, '');
+      el.textContent = base + ' (' + Math.round((Date.now() - inicioIA) / 1000) + ' s)';
+    }, 1000);
 
     var categorias = categoriasValidas.map(function(c) { return c.nombre; });
     var info = (document.getElementById('pDatosIA').value || '').trim();
@@ -1712,6 +1728,7 @@ async function llenarConIA() {
     }
     crEstadoIA('❌ ' + msg, '#ff7777');
   } finally {
+    if (typeof relojIA !== 'undefined') clearInterval(relojIA);
     btn.disabled = false;
   }
 }
