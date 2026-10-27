@@ -90,7 +90,8 @@
   .br-zona.zoom { display: block; overflow: auto; -webkit-overflow-scrolling: touch; }
   .br-zona canvas { display: block; max-width: 100%; max-height: 100%; touch-action: none; box-shadow: 0 0 0 1px #444; }
   .br-zona.zoom canvas { max-width: none; max-height: none; margin: 0 auto; }
-  .br-zona.mover canvas { touch-action: auto; }
+  .br-zona.mover canvas { touch-action: pan-x pan-y; }
+  .br-capa, .br-zona { touch-action: pan-x pan-y; }
   .br-herr { background: #161616; border-top: 1px solid #333; padding: 10px 10px calc(env(safe-area-inset-bottom) + 10px); }
   .br-fila { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
   .br-modo { background: #2a2a2a; color: #eee; }
@@ -1159,6 +1160,12 @@ function cambiarEmojiCategoria(i) {
 asegurarCategoriaNavidad();
 
 var crCargandoNube = false;
+// Miniatura liviana de Cloudinary (el inventario cargaba 500+ fotos en tamaño completo y el iPhone se reiniciaba)
+function crMini(url, px) {
+  if (!url) return 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+  return String(url).replace('/image/upload/', '/image/upload/w_' + px + ',h_' + px + ',c_pad,b_white,q_auto,f_auto/');
+}
+
 function sincStorage() {
   localStorage.setItem('atarashi_prod_contado', JSON.stringify(productos));
   localStorage.setItem('atarashi_cat_contado', JSON.stringify(categoriasValidas));
@@ -1278,7 +1285,7 @@ function renderTabla() {
 
     const tr = document.createElement('tr');
     tr.innerHTML =
-      '<td><img src="' + (p.imagenes[0] || 'https://via.placeholder.com/48') + '" class="mini-img"></td>' +
+      '<td><img src="' + crMini(p.imagenes[0], 96) + '" class="mini-img" loading="lazy" decoding="async"></td>' +
       '<td style="font-weight:700;text-transform:uppercase;max-width:160px;">' + p.nombre + '</td>' +
       '<td>' + (emojiCat ? emojiCat + ' ' : '') + (p.categoria || '—') + '</td>' +
       '<td class="precio-tabla">' + precioFmt + '</td>' +
@@ -1439,15 +1446,60 @@ async function crComponerBlanco(blobPNG) {
   return c.toDataURL('image/jpeg', 0.86);
 }
 
-async function crQuitarFondo(dataUrlJPG) {
-  var quitar = await crCargarQuitaFondo();
-  var blob = await quitar(dataUrlJPG, {
-    model: 'medium',
-    proxyToWorker: false,
-    progress: crProgreso,
-    output: { format: 'image/png' }
+// El quita-fondos ocupa mucha memoria. Para que el iPhone no reinicie el panel,
+// corre dentro de un marco oculto que se elimina cuando no se está usando.
+var _crMarco = null, _crMarcoListo = null, _crMarcoReloj = null;
+function crMarcoQuitaFondo() {
+  if (_crMarcoListo) return _crMarcoListo;
+  var fuentes = [
+    new URL('libs/quita-fondo.mjs', location.href).href,
+    'https://esm.sh/@imgly/background-removal@1.4.5',
+    'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/+esm'
+  ];
+  var f = document.createElement('iframe');
+  f.setAttribute('aria-hidden', 'true');
+  f.style.cssText = 'position:fixed;width:1px;height:1px;left:-10px;top:-10px;border:0;opacity:0;pointer-events:none;';
+  f.srcdoc = '<!doctype html><script type="module">' +
+    'const f=' + JSON.stringify(fuentes) + ';' +
+    'for(const u of f){try{const m=await import(u);const fn=m.removeBackground||(m.default&&m.default.removeBackground)||m.default;if(typeof fn==="function"){window.__quitar=fn;break;}}catch(e){}}' +
+    'window.__estado=window.__quitar?"ok":"error";' +
+    '<' + '/script>';
+  document.body.appendChild(f);
+  _crMarco = f;
+  _crMarcoListo = new Promise(function(res, rej) {
+    var n = 0;
+    var t = setInterval(function() {
+      n++;
+      var w = f.contentWindow;
+      if (w && w.__estado === 'ok') { clearInterval(t); res(w.__quitar); }
+      else if ((w && w.__estado === 'error') || n > 300) { clearInterval(t); rej(new Error('No cargó la herramienta de fondo')); }
+    }, 200);
   });
-  return crComponerBlanco(blob);
+  _crMarcoListo.catch(crSoltarMarco);
+  return _crMarcoListo;
+}
+function crSoltarMarco() {
+  if (_crMarco) { try { _crMarco.remove(); } catch(e) {} }
+  _crMarco = null; _crMarcoListo = null;
+}
+
+async function crQuitarFondo(dataUrlJPG) {
+  clearTimeout(_crMarcoReloj);
+  try {
+    var quitar = await crMarcoQuitaFondo();
+    var blob = await quitar(dataUrlJPG, {
+      model: 'medium',
+      proxyToWorker: false,
+      progress: crProgreso,
+      output: { format: 'image/png' }
+    });
+    var buf = await blob.arrayBuffer();   // copiarlo antes de cerrar el marco
+    return await crComponerBlanco(new Blob([buf], { type: 'image/png' }));
+  } finally {
+    // liberar la memoria si no se usa en 20 segundos
+    clearTimeout(_crMarcoReloj);
+    _crMarcoReloj = setTimeout(crSoltarMarco, 20000);
+  }
 }
 
 function crTrasLimpiarFormulario() {
@@ -1865,7 +1917,7 @@ function brAbrir(wrapper, url) {
     br.wrapper = wrapper; br.url = url; br.historial = []; br.cambios = false; br.zoom = 1;
     const c = document.getElementById('brLienzo');
     // trabajar máximo a 1200px para que vaya fluido en el celular
-    let w = img.naturalWidth, h = img.naturalHeight, m = 1200;
+    let w = img.naturalWidth, h = img.naturalHeight, m = 1000;
     if (w > m || h > m) { if (w > h) { h = Math.round(h * m / w); w = m; } else { w = Math.round(w * m / h); h = m; } }
     c.width = w; c.height = h;
     br.lienzo = c; br.ctx = c.getContext('2d');
@@ -1947,7 +1999,7 @@ function brTrazo(a, b) {
     if (br.modo !== 'borrar') return;
     ev.preventDefault();
     try { c.setPointerCapture(ev.pointerId); } catch(e) {}
-    if (br.historial.length >= 20) br.historial.shift();
+    if (br.historial.length >= 8) br.historial.shift();
     br.historial.push(br.ctx.getImageData(0, 0, c.width, c.height));
     br.pintando = true; br.cambios = true;
     br.ultimo = brPunto(ev);
@@ -2194,7 +2246,7 @@ function cargarProductoParaEditar(id) {
     const wrapper = document.createElement('div');
     wrapper.className = 'preview-foto-wrapper';
     const img = document.createElement('img');
-    img.src = src; img.className = 'preview-mini-foto';
+    img.src = crMini(src, 240); img.className = 'preview-mini-foto';
     const btnX = document.createElement('button');
     btnX.className = 'preview-foto-x'; btnX.textContent = '×'; btnX.type = 'button';
     btnX.onclick = () => {
@@ -2523,7 +2575,7 @@ function renderMobileCards() {
     var div = document.createElement('div');
     div.className = 'pcm';
     div.innerHTML =
-      '<img src="' + (p.imagenes[0] || 'https://via.placeholder.com/58') + '" class="pcm-img">'
+      '<img src="' + crMini(p.imagenes[0], 116) + '" class="pcm-img" loading="lazy" decoding="async">'
       + '<div class="pcm-info">'
         + '<p class="pcm-nom">' + p.nombre + '</p>'
         + '<p class="pcm-cat">' + (em ? em + ' ' : '') + (p.categoria || '') + '</p>'
