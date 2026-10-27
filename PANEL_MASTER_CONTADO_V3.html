@@ -78,6 +78,29 @@
   .cr-toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #0f3d1a; color: #9dffb0; border: 1px solid #2ecc71; padding: 11px 16px; border-radius: 10px; font-size: 13px; font-weight: 700; z-index: 99999; box-shadow: 0 6px 24px rgba(0,0,0,0.5); max-width: calc(100vw - 32px); text-align: center; transition: opacity .4s; }
   .cr-toast.fuera { opacity: 0; }
 
+  /* ── BORRADOR ── */
+  .preview-foto-b { position: absolute; top: 50%; left: 4px; transform: translateY(-60%); width: 30px; height: 30px; background: #fff; color: #000; border: 2px solid var(--dorado); border-radius: 50%; font-size: 15px; cursor: pointer; padding: 0; line-height: 26px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.5); }
+  .br-capa { display: none; position: fixed; inset: 0; z-index: 100001; background: #111; flex-direction: column; }
+  .br-capa.abierta { display: flex; }
+  .br-barra { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: calc(env(safe-area-inset-top) + 8px) 10px 8px; background: #1a1400; border-bottom: 2px solid var(--dorado); color: var(--dorado-brillante); font-weight: 800; font-size: 14px; }
+  .br-barra button, .br-herr button { border: none; border-radius: 8px; padding: 10px 12px; font-weight: 800; font-size: 13px; cursor: pointer; font-family: var(--fuente-cuerpo); }
+  .br-ok { background: #2ecc71; color: #002a10; }
+  .br-sec { background: #2a2a2a; color: #eee; }
+  .br-zona { flex: 1; overflow: hidden; display: flex; align-items: center; justify-content: center; background: repeating-conic-gradient(#2a2a2a 0 25%, #222 0 50%) 0 0/24px 24px; min-height: 0; }
+  .br-zona.zoom { display: block; overflow: auto; -webkit-overflow-scrolling: touch; }
+  .br-zona canvas { display: block; max-width: 100%; max-height: 100%; touch-action: none; box-shadow: 0 0 0 1px #444; }
+  .br-zona.zoom canvas { max-width: none; max-height: none; margin: 0 auto; }
+  .br-zona.mover canvas { touch-action: auto; }
+  .br-herr { background: #161616; border-top: 1px solid #333; padding: 10px 10px calc(env(safe-area-inset-bottom) + 10px); }
+  .br-fila { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .br-modo { background: #2a2a2a; color: #eee; }
+  .br-modo.activo, .br-tam.activo { background: var(--dorado); color: #000; }
+  .br-tam { background: #2a2a2a; color: #eee; width: 44px; font-size: 9px !important; }
+  .br-tam[data-t="0.035"] { font-size: 14px !important; }
+  .br-tam-g { font-size: 22px !important; }
+  .br-lbl { color: #aaa; font-size: 12px; }
+  .br-ayuda { color: #888; font-size: 11px; margin: 0; line-height: 1.4; }
+
   /* ── VISTA PREVIA ── */
   .vp-btn { width: 100%; margin: 0 0 10px; background: #0d0d0d; color: var(--dorado-brillante); border: 1px solid var(--dorado); padding: 12px; border-radius: 8px; font-weight: 800; font-size: 14px; cursor: pointer; font-family: var(--fuente-cuerpo); }
   .vp-btn-todos { margin-top: 12px; }
@@ -645,6 +668,30 @@
 </div><!-- /.contenedor-master -->
 
 <!-- ── VISTA PREVIA DE LA TIENDA ── -->
+<div id="brCapa" class="br-capa" aria-hidden="true">
+  <div class="br-barra">
+    <button type="button" class="br-sec" onclick="brCerrar()">✕ Cancelar</button>
+    <span>🧽 Borrador blanco</span>
+    <button type="button" class="br-ok" id="brGuardarBtn" onclick="brGuardar()">✅ Listo</button>
+  </div>
+  <div class="br-zona" id="brZona"><canvas id="brLienzo"></canvas></div>
+  <div class="br-herr">
+    <div class="br-fila">
+      <button type="button" class="br-modo activo" id="brModoBorrar" onclick="brModo('borrar')">🧽 Borrar</button>
+      <button type="button" class="br-modo" id="brModoMover" onclick="brModo('mover')">🖐️ Mover</button>
+      <button type="button" class="br-sec" onclick="brZoom()" id="brZoomBtn">🔍 Acercar</button>
+      <button type="button" class="br-sec" onclick="brDeshacer()">↩️ Deshacer</button>
+    </div>
+    <div class="br-fila">
+      <span class="br-lbl">Tamaño</span>
+      <button type="button" class="br-tam" data-t="0.015" onclick="brTam(this)">●</button>
+      <button type="button" class="br-tam activo" data-t="0.035" onclick="brTam(this)">⬤</button>
+      <button type="button" class="br-tam br-tam-g" data-t="0.07" onclick="brTam(this)">⬤</button>
+    </div>
+    <p class="br-ayuda">Pasa el dedo por la mancha y se pinta de blanco. Usa <b>Acercar</b> para detalles y <b>Mover</b> para desplazarte.</p>
+  </div>
+</div>
+
 <div id="vpCapa" class="vp-capa" aria-hidden="true">
   <div class="vp-barra">
     <span id="vpTitulo">👁️ Vista previa — aún no publicado</span>
@@ -1481,6 +1528,7 @@ async function crSubirYMontar(v, base64, alInicio, originalParaFondo) {
       bF.onclick = () => crConvertirAFondoBlanco(wrapper, urlPublica, originalParaFondo);
       wrapper.appendChild(bF);
     }
+    crCrearBtnBorrador(wrapper, urlPublica);
     marcarPortada();
   } catch(err) {
     badge.style.background = 'rgba(160,0,0,0.85)';
@@ -1795,6 +1843,158 @@ async function llenarConIA() {
 }
 
 // ═══════════════════════════════════════════════════════════
+// SECCIÓN 5B2 — 🧽 BORRADOR BLANCO (corregir manchas a mano)
+// ═══════════════════════════════════════════════════════════
+
+var br = { wrapper: null, url: '', lienzo: null, ctx: null, historial: [], tam: 0.035, modo: 'borrar', zoom: 1, pintando: false, ultimo: null, cambios: false };
+
+function crCrearBtnBorrador(wrapper, url) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'preview-foto-b';
+  b.textContent = '🧽';
+  b.title = 'Borrar manchas a mano (pinta de blanco)';
+  b.onclick = () => brAbrir(wrapper, url);
+  wrapper.appendChild(b);
+}
+
+function brAbrir(wrapper, url) {
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    br.wrapper = wrapper; br.url = url; br.historial = []; br.cambios = false; br.zoom = 1;
+    const c = document.getElementById('brLienzo');
+    // trabajar máximo a 1200px para que vaya fluido en el celular
+    let w = img.naturalWidth, h = img.naturalHeight, m = 1200;
+    if (w > m || h > m) { if (w > h) { h = Math.round(h * m / w); w = m; } else { w = Math.round(w * m / h); h = m; } }
+    c.width = w; c.height = h;
+    br.lienzo = c; br.ctx = c.getContext('2d');
+    br.ctx.fillStyle = '#ffffff'; br.ctx.fillRect(0, 0, w, h);
+    br.ctx.drawImage(img, 0, 0, w, h);
+    c.style.width = ''; c.style.height = '';
+    document.getElementById('brZona').className = 'br-zona';
+    document.getElementById('brZoomBtn').textContent = '🔍 Acercar';
+    brModo('borrar');
+    const capa = document.getElementById('brCapa');
+    capa.classList.add('abierta'); capa.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  img.onerror = () => alert('❌ No se pudo abrir la foto para editarla. Revisa el internet e intenta otra vez.');
+  img.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'br=' + Date.now();
+}
+
+function brCerrar(forzar) {
+  if (!forzar && br.cambios && !confirm('¿Salir sin guardar los cambios?')) return;
+  const capa = document.getElementById('brCapa');
+  capa.classList.remove('abierta'); capa.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  br.historial = [];
+}
+
+function brModo(m) {
+  br.modo = m;
+  document.getElementById('brModoBorrar').classList.toggle('activo', m === 'borrar');
+  document.getElementById('brModoMover').classList.toggle('activo', m === 'mover');
+  document.getElementById('brZona').classList.toggle('mover', m === 'mover');
+}
+
+function brTam(btn) {
+  br.tam = parseFloat(btn.dataset.t);
+  document.querySelectorAll('.br-tam').forEach(b => b.classList.toggle('activo', b === btn));
+}
+
+function brZoom() {
+  const zona = document.getElementById('brZona'), c = br.lienzo;
+  const niveles = [1, 2, 3.5];
+  br.zoom = niveles[(niveles.indexOf(br.zoom) + 1) % niveles.length];
+  if (br.zoom === 1) {
+    zona.classList.remove('zoom'); c.style.width = ''; c.style.height = '';
+    document.getElementById('brZoomBtn').textContent = '🔍 Acercar';
+  } else {
+    // tamaño base = como se veía ajustado a la pantalla
+    const ancho = Math.min(zona.clientWidth, zona.clientHeight * c.width / c.height);
+    const cx = (zona.scrollLeft + zona.clientWidth / 2) / (zona.scrollWidth || 1);
+    const cy = (zona.scrollTop + zona.clientHeight / 2) / (zona.scrollHeight || 1);
+    zona.classList.add('zoom');
+    c.style.width = Math.round(ancho * br.zoom) + 'px';
+    c.style.height = Math.round(ancho * br.zoom * c.height / c.width) + 'px';
+    zona.scrollLeft = cx * zona.scrollWidth - zona.clientWidth / 2;
+    zona.scrollTop = cy * zona.scrollHeight - zona.clientHeight / 2;
+    document.getElementById('brZoomBtn').textContent = br.zoom === 2 ? '🔍 Más cerca' : '🔍 Alejar';
+    brModo('mover');   // al acercar, primero ubícate; luego toca Borrar
+  }
+}
+
+function brPunto(ev) {
+  const r = br.lienzo.getBoundingClientRect();
+  return { x: (ev.clientX - r.left) * br.lienzo.width / r.width, y: (ev.clientY - r.top) * br.lienzo.height / r.height };
+}
+
+function brTrazo(a, b) {
+  const ctx = br.ctx;
+  ctx.strokeStyle = '#ffffff'; ctx.fillStyle = '#ffffff';
+  ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  const grosor = Math.max(4, br.tam * Math.max(br.lienzo.width, br.lienzo.height) / Math.sqrt(br.zoom));
+  ctx.lineWidth = grosor;
+  ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  ctx.beginPath(); ctx.arc(b.x, b.y, grosor / 2, 0, Math.PI * 2); ctx.fill();
+}
+
+(function brIniciarEventos() {
+  const c = document.getElementById('brLienzo');
+  if (!c) return;
+  c.addEventListener('pointerdown', ev => {
+    if (br.modo !== 'borrar') return;
+    ev.preventDefault();
+    try { c.setPointerCapture(ev.pointerId); } catch(e) {}
+    if (br.historial.length >= 20) br.historial.shift();
+    br.historial.push(br.ctx.getImageData(0, 0, c.width, c.height));
+    br.pintando = true; br.cambios = true;
+    br.ultimo = brPunto(ev);
+    brTrazo(br.ultimo, br.ultimo);
+  });
+  c.addEventListener('pointermove', ev => {
+    if (!br.pintando) return;
+    ev.preventDefault();
+    const p = brPunto(ev);
+    brTrazo(br.ultimo, p);
+    br.ultimo = p;
+  });
+  const fin = () => { br.pintando = false; br.ultimo = null; };
+  c.addEventListener('pointerup', fin);
+  c.addEventListener('pointercancel', fin);
+  c.addEventListener('pointerleave', fin);
+})();
+
+function brDeshacer() {
+  const d = br.historial.pop();
+  if (d) br.ctx.putImageData(d, 0, 0);
+  if (!br.historial.length) br.cambios = false;
+}
+
+function brGuardar() {
+  if (!br.cambios) { brCerrar(true); return; }
+  const base64 = br.lienzo.toDataURL('image/jpeg', 0.88);
+  const wrapperViejo = br.wrapper, urlVieja = br.url;
+  brCerrar(true);
+
+  // Reemplazar la foto en su mismo puesto (igual que con ✨)
+  const contenedor = document.getElementById('previewFotosContenedor');
+  if (!wrapperViejo || !wrapperViejo.parentNode) return;
+  const v = crCrearPreview(contenedor, false);
+  contenedor.insertBefore(v.wrapper, wrapperViejo);
+  v.imgPrev.src = base64;
+  const i = imagenesCargadasActuales.indexOf(urlVieja);
+  if (i !== -1) imagenesCargadasActuales.splice(i, 1);
+  v.puesto = i === -1 ? imagenesCargadasActuales.length : i;
+  const estabaAgotada = agotadasActuales.indexOf(urlVieja);
+  if (estabaAgotada !== -1) agotadasActuales.splice(estabaAgotada, 1);
+  wrapperViejo.remove();
+  marcarPortada();
+  colaFotos = colaFotos.then(() => crSubirYMontar(v, base64, false, base64));
+}
+
+// ═══════════════════════════════════════════════════════════
 // SECCIÓN 5C — 👁️ VISTA PREVIA (ver la tienda antes de publicar)
 // ═══════════════════════════════════════════════════════════
 
@@ -2009,6 +2209,7 @@ function cargarProductoParaEditar(id) {
     bF.title = 'Ponerle fondo blanco a esta foto';
     bF.onclick = () => crConvertirAFondoBlanco(wrapper, src, src);
     wrapper.appendChild(bF);
+    crCrearBtnBorrador(wrapper, src);
     cont.appendChild(wrapper);
   });
   marcarPortada();
