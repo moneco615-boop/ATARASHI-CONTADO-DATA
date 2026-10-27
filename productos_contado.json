@@ -1327,13 +1327,13 @@
       "categoria": "Calzado dama",
       "badge": "SÚPER PRECIO",
       "disponibilidad": "inmediata",
-      "precioContado": 110000,
+      "precioContado": 120000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "👟 Nike Air Force 1\nUn verdadero ícono del estilo urbano. Los Nike Air Force 1 combinan diseño clásico, comodidad y versatilidad, convirtiéndose en el calzado perfecto para cualquier ocasión.  Completa tu estilo con uno de los tenis más legendarios de todos los tiempos.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785255521/atarashi_contado/lfd02pehsmnbiquf6rbk.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785253324/atarashi_contado/vek6crikgckmdxiauss6.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785253324/atarashi_contado/vek6crikgckmdxiauss6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069473/atarashi_contado/hdjldzxmw34n34mbvvl9.jpg"
       ],
       "agotadas": [],
       "video": "",
@@ -2128,6 +2128,7 @@
       "tipoTalla": "calzado",
       "descripcion": "Diseñados para brindar comodidad y rendimiento, los Adidas Supernova ofrecen una pisada suave, ligera y estable. Su diseño moderno los hace perfectos tanto para entrenar como para complementar un look deportivo",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070719/atarashi_contado/brarfdqkgqomf9hjapo2.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785508881/atarashi_contado/ttmympbe4kwuuk4ebtks.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699148/atarashi_contado/yrwxgbpl0jjr1mh5c0me.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1783699148/atarashi_contado/dbanlfxpvttr1glnmgpf.jpg",
@@ -2228,7 +2229,9 @@
       "tipoTalla": "calzado",
       "descripcion": "Diseñados para mujeres que buscan comodidad, resistencia y un estilo moderno. Los Adidas Terrex ofrecen una excelente combinación de soporte, tracción y confort, ideales para caminatas, actividades al aire libre o el uso diario.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1786946849/atarashi_contado/wr4af1xs7t92dkbgmamx.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069579/atarashi_contado/to96plhbrutqq9tugxbi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069743/atarashi_contado/vlmvya29eadwsfr2dwry.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069744/atarashi_contado/xvvircdkylcijv5n885q.jpg"
       ],
       "agotadas": [],
       "video": "",
@@ -2405,13 +2408,14 @@
     {
       "nombre": "NIKE STRUCTURE",
       "categoria": "Calzado dama",
-      "badge": "SÚPER PRECIO",
+      "badge": "",
       "disponibilidad": "inmediata",
-      "precioContado": 120000,
+      "precioContado": 135000,
       "fotosModelos": true,
       "tipoTalla": "calzado",
       "descripcion": "Disfruta de la combinación perfecta entre comodidad, estabilidad y estilo. Un calzado diseñado para brindar excelente soporte y confort en cada paso, ideal para el uso diario o tus entrenamientos.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070810/atarashi_contado/t2huoqpghftm9dafnwke.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785508690/atarashi_contado/nwhuqlq7mi4qhrdzirlz.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784008686/atarashi_contado/qite0mxdswi0o4c23izp.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784008676/atarashi_contado/kqlfhen7rm6ckqatp1q3.jpg"
@@ -6424,6 +6428,7 @@
       "tipoTalla": "calzado",
       "descripcion": "Las Nike Cortez son un clásico atemporal que combina estilo retro, comodidad y el inconfundible ADN deportivo de Nike. Su diseño versátil las hace perfectas para el día a día, aportando un toque urbano y auténtico a cualquier outfit.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070347/atarashi_contado/xi4i8yjytwa5ynrgkyqo.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322230/atarashi_contado/znjgga5rjerryqconemu.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322230/atarashi_contado/m2c0nndboxmazjdwzytq.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322230/atarashi_contado/out6gw5lsryhxtpvkkwq.jpg"
@@ -7772,10 +7777,11 @@
       "tipoTalla": "calzado",
       "descripcion": "Este par toma la inspiración del movimiento de la escena musical londinense y la combina con una estética utilitaria y resistente, perfecta para el día a día. Su diseño en blanco y negro ofrece un contraste limpio y versátil que combina con cualquier outfit.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791947980/atarashi_contado/w5wxutgpxdgzsrnkcuma.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/wejzort1cj1inkx9vsoj.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/f2xr83auxfpuxuscewyq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070434/atarashi_contado/ug0w40jhdfkwttsbl9pm.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/t2brbwhidq4t8abxr2bs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/f2xr83auxfpuxuscewyq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069346/atarashi_contado/mxpgwevfkjbf7iwgtctd.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/wejzort1cj1inkx9vsoj.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1790687380/atarashi_contado/mklc2ecbv4nlzq4bwlq7.jpg"
       ],
       "agotadas": [],
@@ -8038,6 +8044,7 @@
       "tipoTalla": "calzado",
       "descripcion": "¡Lleva tus outfits al siguiente nivel sin perder la comodidad! Los nuevos Adidas súper nova están diseñados para acompañarte en tu día a día, entrenamientos o caminatas con el balance perfecto entre amortiguación premium y un estilo urbano espectacular.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070638/atarashi_contado/othtkum0o5awhpbwplvf.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791258155/atarashi_contado/yxie2jsruprj393ixnv5.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791258156/atarashi_contado/ounwo8vf3jzm1duq6are.jpg"
       ],
@@ -9632,6 +9639,366 @@
       "agotadas": [],
       "video": "",
       "id": 1793068069986
+    },
+    {
+      "nombre": "NIKE  V2K RUN   ROSA",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 140000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Dale un toque fresco y descomplicado a tus pasos con estos tenis en tonos rosados que marcan tendencia. Son el complemento ideal para armar outfits urbanos diarios, perfectos para combinar con tus jeans favoritos o ropa deportiva. Su diseño cómodo te acompaña con estilo en cada recorrido por la ciudad.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070025/atarashi_contado/clyezhzg3jisrypqrqjo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793070182/atarashi_contado/wlyncmqw0vglli96odgr.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793070283217
+    },
+    {
+      "nombre": "ADIDAS SUPERNOVA ROSADO",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Dale un toque moderno a tus pasos con estos tenis en tono rosado que combinan estilo y comodidad. Su diseño deportivo con suela gruesa blanca es ideal para tus rutinas de ejercicio o para armar un look casual y descomplicado en el día a día. Son muy versátiles para usar con tusjoggers o jeans favoritos, asegurando que destaques a donde vayas.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071055/atarashi_contado/ftz8wzphkkkbqctypxfz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071056/atarashi_contado/od9bq6xeh7s5lcb3aml8.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793071158780
+    },
+    {
+      "nombre": "NIKE ZOOM X",
+      "categoria": "Calzado caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 145000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Lleva la comodidad y el estilo al siguiente nivel con estos Nike zoom. Su diseño moderno es ideal para complementar tus atuendos deportivos o urbanos del día a día. Destacan por su suela gruesa y contorneada que aporta una gran presencia y confort en cada pisada. Son una excelente opción si buscas destacar con un calzado llamativo y lleno de energía.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071256/atarashi_contado/hnhrh9e2j7nnefeeyvs9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071257/atarashi_contado/kwxlixnpjevvg8w60rqr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071258/atarashi_contado/f3bddrkmzpaawvuimcsi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071259/atarashi_contado/xpaswkog4ilodirli3xv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071260/atarashi_contado/guz2kjdo2y3u7yoduxzh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071261/atarashi_contado/m1xkcuuj7rzwaltkrscf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071261/atarashi_contado/mqinm8qeey0yd659r02o.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793071468838
+    },
+    {
+      "nombre": "REEBOK GL 6000",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 145000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Lleva tu estilo urbano a otro nivel con este clásico modelo que destaca por su diseño versátil en tonos azules y morados. Son perfectos para armar pintas descomplicadas para salir a cine o caminar por la ciudad con total comodidad. Su combinación de colores le da un toque diferente a cualquier pinta casual que decidas usar.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071499/atarashi_contado/vqrv3t8gvabrovnktmcz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071500/atarashi_contado/yynopgkjy9itrcdlgwwf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071500/atarashi_contado/z1r2qcwrw0tkxcvhdzmh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071501/atarashi_contado/yenm2vb9uj6l3tui80jp.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793071555364
+    },
+    {
+      "nombre": "REEBOK GL 6000",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 145000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Renueva tu estilo urbano con estos tenis que combinan tonos beige, lila, celeste y detalles en rojo. Su diseño clásico es perfecto para complementar tus pinta casuales del día a día con total comodidad. Llévalos puestos para caminar por la ciudad o para tus planes de fin de semana luciendo siempre a la moda. Son el complemento ideal que estabas buscando para destacar con un toque versátil y descomplicado.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071592/atarashi_contado/jqtegusdojnx6qajta8l.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071592/atarashi_contado/bv6gobaovsrihunavfwz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071593/atarashi_contado/elq1imxcofamticwpluz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071593/atarashi_contado/afnpar8rzwjreuqlejni.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071594/atarashi_contado/oz0yjsw9dhzg15axt5sl.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793071642467
+    },
+    {
+      "nombre": "NIKE ZOOM X",
+      "categoria": "Calzado dama",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 145000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Lleva tu estilo deportivo al siguiente nivel con estos tenis en tonos blancos y detalles rosados que resaltan a primera vista. Su diseño moderno y su suela con amortiguación visible son perfectos para tus rutinas de ejercicio o para armar un look urbano muy cómodo. Combínalos fácilmente con tusjoggers o jeans favoritos para destacar todos los días. Te encantarán por la versatilidad y el toque fresco que le aportan a cada uno de tus pasos.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071795/atarashi_contado/kyrsbqh9yrehyxpcdhlg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071796/atarashi_contado/marxtac5kzx7krludkgp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793071797/atarashi_contado/metgtpc1vmi8yrlk0ap9.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793071846913
+    },
+    {
+      "nombre": "MOCHILA ADIDAS CELESTE",
+      "categoria": "Escolar",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva todo lo que necesitas con estilo y comodidad a donde vayas. Esta práctica mochila en tono celeste incluye un compartimento frontal con cierre y un pequeño monedero a juego muy útil. Es perfecta para tus jornadas de estudio, paseos o el día a día en la ciudad. No dejes pasar la oportunidad de tener un accesorio funcional y moderno en tu rutina.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072485/atarashi_contado/mi0umtbd54vwcla7gcay.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072543/atarashi_contado/jzmthonir6ttgwcpqzcd.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793072552698
+    },
+    {
+      "nombre": "MOCHILA NIKE BLANCA",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus pertenencias con estilo y comodidad gracias a esta mochila en tono blanco con el distintivo logo de la marca al frente. Es ideal para acompañarte en tus jornadas de estudio, trabajo o en salidas casuales de fin de semana. Su diseño versátil combina fácilmente con cualquier pinta urbana que elijas. Una opción práctica y moderna para el día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072650/atarashi_contado/wzfhkheml5oywtvc56pf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072638/atarashi_contado/wpmfftvmdapyrjaswtng.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793072704755
+    },
+    {
+      "nombre": "MOCHILA ADIDAS BEIGE",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus cosas con estilo y comodidad a donde vayas gracias a esta práctica mochila en tono beige. Cuenta con compartimentos espaciosos y cierres seguros que facilitan la organización de tus objetos personales para el estudio, el trabajo o los viajes cortos. Su diseño versátil combina fácilmente con cualquier pinta casual y te acompaña en todas tus actividades diarias.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072768/atarashi_contado/ipdgsgjkik8n4g7vytok.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072756/atarashi_contado/mp8z4jcegk2hlxlox8ek.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793072796374
+    },
+    {
+      "nombre": "BOSSA ESSENTIALS NEGRO",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 95000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus cosas siempre contigo con este práctico y moderno bolso de color negro. Su diseño versátil cuenta con una correa ajustable y compartimentos con cierre para mayor seguridad en el día a día. Es ideal para complementar un estilo urbano y descomplicado en cualquier salida casual. Una opción muy cómoda y funcional para mantener todo organizado.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072852/atarashi_contado/xtv93huoxulchhdemmes.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072840/atarashi_contado/hlqt5j2b3nyobq7xun6f.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793072903617
+    },
+    {
+      "nombre": "MONASTERY COUTURE CARRIEL NEGRO",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 95000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus pertenencias con estilo y comodidad gracias a este práctico carrile monastery. Cuenta con un diseño moderno en color negro y correa ajustable que te permite llevarlo fácilmente a donde vayas. Es perfecto para complementar tus outfits diarios y mantener tus objetos esenciales seguros.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072956/atarashi_contado/y2wecpm9nc73mgcnuz8i.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793072944/atarashi_contado/bgviyeniowuiaaenzqlw.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073068265
+    },
+    {
+      "nombre": "MOCHILA MONASTERY COUTURE BEIGE",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus pertenencias con estilo y comodidad gracias a esta práctica mochila en tono beige. Su diseño versátil cuenta con un compartimento principal amplio y un bolsillo frontal con cierre para mantener todo organizado en tu día a día. Es ideal para acompañarte a estudiar, trabajar o en tus salidas de fin de semana combinando fácilmente con cualquier pinta urbana. Una opción moderna y funcional que no te puede faltar.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073121/atarashi_contado/jwj8bwxd6lzgzixbzcau.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073109/atarashi_contado/aehk98q8tzhgtkj2laze.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073168771
+    },
+    {
+      "nombre": "MOCHILA ESSENTIALS NEGRA",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus pertenencias con estilo y comodidad a donde vayas. Esta mochila negra de diseño moderno cuenta con un compartimento principal amplio y un bolsillo frontal con cierre para mantener todo organizado. Es perfecta para tus días de estudio, trabajo o salidas casuales combinando fácilmente con cualquier pinta. No te quede sin la tuya y dale un toque práctico a tu rutina diaria.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073342/atarashi_contado/asw9pjeue9stps8aahb3.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073349/atarashi_contado/lbszrku3gfeponsagmcx.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073370889
+    },
+    {
+      "nombre": "MALETÍN  JORDAN",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus cosas con estilo y comodidad a donde vayas. Este bolso en tono gris con detalles en negro y rojo es perfecto para tus trayectos diarios o salidas casuales. Su diseño amplio y práctico te permite organizar tus pertenencias de manera segura. Es el complemento ideal para destacar tu estilo urbano en cualquier ocasión.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073420/atarashi_contado/g4xfmtc55u1v1hfbafx8.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073409/atarashi_contado/oqwa9mxrzet8zxn8bry7.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073479064
+    },
+    {
+      "nombre": "MOCHILA JORDAN",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva contigo el estilo urbano que necesitas para el día a día. Esta práctica mochila en color negro cuenta con un diseño texturizado y el icónico logo metalizado al frente que destaca con elegancia. Es perfecta para la universidad, la oficina o tus salidas de fin de semana, combinando fácilmente con cualquier pinta. No te quedes sin este accesorio versátil que te acompaña a todas partes.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073583/atarashi_contado/e2877aullggkfhhm4jxl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073570/atarashi_contado/v19v9nh1yknqhgqdhn1w.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073628234
+    },
+    {
+      "nombre": "MOCHILA JORDAN ROJO Y NEGRO",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva contigo todo lo que necesitas con estilo y comodidad gracias a esta práctica mochila en tonos rojo y negro. Cuenta con un diseño amplio ideal para el uso diario, la universidad o tus salidas de fin de semana. Es el complemento perfecto para destacar tu estilo urbano con un accesorio funcional y moderno.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073732/atarashi_contado/myfjyhfavm3yopuezxpe.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073720/atarashi_contado/innqamn9fowjyg6qitdk.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073768176
+    },
+    {
+      "nombre": "MOCHILA JORDAN VERDE",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva contigo todo lo que necesitas con esta práctica y moderna mochila de tono verde. Su diseño cuenta con un compartimento principal amplio y un bolsillo frontal con cierre para mantener tus objetos organizados. Es ideal para acompañarte a estudiar, trabajar o en tus salidas de fin de semana combinando con un estilo urbano. Una opción versátil y funcional que se adapta perfectamente a tu ritmo diario.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073888/atarashi_contado/acqawnbbjszk0yywi0gc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073876/atarashi_contado/fkili13g25uldnly3uuh.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793073921048
+    },
+    {
+      "nombre": "MOCHILA JORDAN",
+      "categoria": "Unisex",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva contigo el mejor estilo urbano a donde vayas con esta increíble mochila de color negro. Cuenta con un diseño llamativo lleno de detalles y parches deportivos que combinan perfectamente con tus pintas casuales del día a día. Es ideal para la universidad, el trabajo o tus salidas de fin de semana gracias a su gran comodidad. No dejes pasar la oportunidad de complementar tu look con este accesorio tan práctico y moderno.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073988/atarashi_contado/qirwkpztvleyydqftubj.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793073975/atarashi_contado/rpuk7qamnnoxl0riqeeu.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793074039681
+    },
+    {
+      "nombre": "SMARTWATCH INFANTIL KR-511 MINI",
+      "categoria": "Niños",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 95000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Haz que los más pequeños disfruten al máximo con este divertido smartwatch infantil con diseños de sus personajes favoritos. Es perfecto para uso diario y viene en presentaciones temáticas muy llamativas que encantarán a los niños. Regala entretenimiento y estilo en un solo accesorio ideal para cualquier ocasión especial.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074320/atarashi_contado/ity9drfuo6psdgw0tjb4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074299/atarashi_contado/o6gv4qm1qgxeru6unao7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074300/atarashi_contado/rbzrkprmbpxozr7lnoeg.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793074306/atarashi_contado/videos/y2arsxubpaywurfa07nq.mov",
+      "id": 1793074365893
+    },
+    {
+      "nombre": "CONSOLA PORTATIL GAME BOX 500 EN 1",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 75000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Disfruta de horas de entretenimiento y revive los mejores momentos con esta práctica consola portátil de videojuegos. Cuenta con una gran variedad de clásicos para llevar a cualquier lugar y divertirte en tus momentos libres. Su diseño compacto y divertido la convierte en el regalo perfecto para grandes y chicos.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074421/atarashi_contado/pcsrj5s8qxvtjwgxju8v.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074422/atarashi_contado/z4okvqqei5w8v4stexlv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074422/atarashi_contado/c89fde3pcw4brmbvxikn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074423/atarashi_contado/wodm2dhyfl6epylaakx4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074424/atarashi_contado/na6my4uc0as8mmjz9fsi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074426/atarashi_contado/wug1pviznvvmwbmpghsi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074426/atarashi_contado/fcxo8ldxk184e5atxtgs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074427/atarashi_contado/qubieviu8nhl8cupz24u.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074428/atarashi_contado/bem6ogvammixo1b0pl6a.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793074429/atarashi_contado/xzdtln25dj4vqbhgfmsj.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793074434/atarashi_contado/videos/eq6dlnrjegezqbyped5e.mov",
+      "id": 1793074498145
     }
   ],
   "categorias": [
@@ -9720,5 +10087,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793068219298"
+  "ver": "1793074563837"
 }
