@@ -24,7 +24,7 @@
       "id": 1782663136991
     },
     {
-      "nombre": "INFLADOR AUTOMÁTICO.",
+      "nombre": "INFLADOR AUTOMÁTICO",
       "categoria": "Tecnología",
       "badge": "TOP VENTAS",
       "disponibilidad": "aparta",
@@ -526,7 +526,7 @@
       "id": 1783348953497
     },
     {
-      "nombre": "NIKE JUNIPER (VARIOS COLORES)",
+      "nombre": "NIKE JUNIPER",
       "categoria": "Calzado caballero",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -6438,7 +6438,7 @@
       "id": 1788322366961
     },
     {
-      "nombre": "POWER BANK BAGULE BK-007",
+      "nombre": "POWER BANK BAGULE BK-007 MANGETICA",
       "categoria": "Tecnología",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
@@ -6447,7 +6447,10 @@
       "tipoTalla": "",
       "descripcion": "*☀️🔋 ENERGÍA QUE VA CONTIGO*\nLlegó la BAGULE BK-007, una power bank diseñada para acompañarte cuando necesitas cargar tus dispositivos y no tienes un tomacorriente cerca. 👀\n☀️ Panel solar integrado\n🔋 Batería portátil\n📱 Carga tus dispositivos\n💪 Diseño práctico y resistente\n🎒 Fácil de llevar\nSu panel solar le da ese plus que la hace diferente y mucho más versátil para tener una fuente de energía a la mano. ⚡ 20.000 mah listos para darte carga!*",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322796/atarashi_contado/rff0oi3gcnffosfxsabt.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1788322796/atarashi_contado/rff0oi3gcnffosfxsabt.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793278019/atarashi_contado/d84xc904pymwlyaon5bn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793278020/atarashi_contado/pfhmf4gyaaq7sttqxngx.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793278020/atarashi_contado/vhnbc9hodkgrki19mrqn.jpg"
       ],
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1788322802/atarashi_contado/videos/gnwkpokblwpxm7qh9fc6.mov",
@@ -12992,6 +12995,284 @@
       "agotadas": [],
       "video": "",
       "id": 1793242809791
+    },
+    {
+      "nombre": "ARO DE LUZ LED PARA CELULAR",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 12000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Mejora la iluminacion de tus fotos y videos al instante con este practico aro de luz para celular. Cuenta con tres intensidades de luz ajustables y un diseño compacto con adorables orejas que se sujeta facilmente a tu dispositivo con un clip seguro. Es ideal para crear contenido, maquillarte o hacer videollamadas con una excelente claridad sin importar el lugar.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793278913/atarashi_contado/qtwbrx7k09aqe14axx4h.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279054/atarashi_contado/iwl4opwakaoe2ryaoqpt.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279054/atarashi_contado/lohucdp5uwyqseifpawo.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279055/atarashi_contado/fglyqu8mwnrhdw8yzmzw.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793279117148
+    },
+    {
+      "nombre": "CARGADOR SAMSUNG 25W PD ADAPTER USB-C",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 30000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Mantén tus dispositivos siempre listos con este adaptador de corriente diseñado para ofrecerte una carga eficiente y confiable en cualquier lugar. Su diseño compacto en color negro y su puerto USB-C lo convierten en el complemento ideal para llevar en la maleta o usar en la oficina y el hogar. Aprovecha su potencia de 25W para optimizar tu tiempo y asegurar que tus equipos nunca se queden sin energía.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279261/atarashi_contado/p36tftlrvt5091pnlff6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279262/atarashi_contado/rori84g9d20budv8uhlr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279263/atarashi_contado/nmayntqlpwpohvarkq0r.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793279301494
+    },
+    {
+      "nombre": "CABLE USB-C APPLE 1M BLANCO",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 25000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Nunca te quedes sin carga en el momento menos oportuno gracias a este práctico accesorio para tus dispositivos. Cuenta con una longitud de un metro en color blanco, ideal para llevar en la maleta o usar cómodamente en el escritorio y la mesa de noche. Su diseño versátil permite conectar y cargar equipos de manera eficiente en cualquier lugar de la casa u oficina.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279762/atarashi_contado/zxxlwy96bforkfvzajd1.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279762/atarashi_contado/nazzmcsqdu3nccfz1h3m.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279763/atarashi_contado/fftokmq42gwdnme8k8zn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279764/atarashi_contado/klzalrrnx1oz6gf3yvvj.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793279766/atarashi_contado/pwqr0lza6eeiiszqna7g.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793279792930
+    },
+    {
+      "nombre": "CONTROL PARA CELULAR  BT 5.0 IPEGA",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 85000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Lleva tus juegos móviles al siguiente nivel con este práctico control inalámbrico. Cuenta con un soporte ajustable en la parte superior para sostener tu teléfono de manera firme mientras disfrutas de tus partidas favoritas con mayor comodidad. Su diseño ergonómico en color negro ofrece un excelente agarre para jugar durante horas sin cansancio. Es el accesorio perfecto para convertir tu smartphone en una consola portátil en cualquier lugar.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282450/atarashi_contado/tb4ugrorpy7nx6c6eg0n.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282451/atarashi_contado/f3sgz2iifiwjjw2cg3yg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282452/atarashi_contado/gmd3abt2fvkwg562jwab.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282452/atarashi_contado/kdeogj4tltfmnzs2fitc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282453/atarashi_contado/pf4mqosafslhccd1aem1.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282454/atarashi_contado/n0wysigqhnv9trwesbox.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282455/atarashi_contado/ycr5jpqzmawxxqiljqkb.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793282654163
+    },
+    {
+      "nombre": "CONTROL GAMEPAD IPEGA PARA CELULAR",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 90000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Lleva tus partidas en el celular a otro nivel de precisión y comodidad! Este control en color negro con detalles azules integra un soporte firme para sostener tu teléfono de forma segura mientras juegas. Es perfecto para disfrutar de tus videojuegos favoritos en cualquier lugar sin entorpecer la visión de la pantalla. Una opción práctica y ergonómica que mejorará al máximo tu experiencia de juego móvil.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282869/atarashi_contado/z7ajnzkoybhwquczjlvz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282869/atarashi_contado/tvwwvjlhptmujkspiupt.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282871/atarashi_contado/vozox9zsp7uyjsmr8rrv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282872/atarashi_contado/ea4lxjszprznk0d7yl4r.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282872/atarashi_contado/hian5hr234qmxddblxd5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282873/atarashi_contado/yd1m4xpkj5mznk3lxjwq.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793282873/atarashi_contado/nzazxg387ceil5zae43c.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793282981932
+    },
+    {
+      "nombre": "CONTROL BLUETOOTH PARA CELULAR GAMER IPEGA",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 110000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Eleva tu nivel de juego en cualquier lugar con este práctico control inalambrico para celular. Cuenta con un soporte ajustable integrado que asegura firmemente tu dispositivo y joysticks ergonómicos para mayor comodidad en partidas largas. Es perfecto para disfrutar de tus videojuegos favoritos con total precisión y convertir tu smartphone en una consola portátil. No te quedes sin el tuyo y mejora tu experiencia de juego desde hoy.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283194/atarashi_contado/r4c9jyo94c8tdjtanbdj.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283195/atarashi_contado/smtv3vbsyfxaksllgusu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283196/atarashi_contado/jufwtmnexcvqx2bqm8ui.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283197/atarashi_contado/wnrpozn14tdggzq47w6z.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283198/atarashi_contado/pkm7s3l64ibd9pmmqads.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283199/atarashi_contado/o2s3gg6m6bxttly9pwb5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793283201/atarashi_contado/otfyvhagy0ymhgnmmnte.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793283438802
+    },
+    {
+      "nombre": "WALKIE TALKIE INFANTIL CON CÁMARA",
+      "categoria": "Juguetes",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 125000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Sorprende a los pequeños de la casa con este divertido set de comunicación ideal para sus aventuras. Cuenta con un diseño colorido con personajes infantiles y una práctica correa para llevar a todas partes. Es perfecto para estimular la imaginación durante las tardes de juego al aire libre o en casa.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287409/atarashi_contado/lol6lta4jqm1lobkpeva.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287409/atarashi_contado/pjxarjxzdw8trauhnjzh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287410/atarashi_contado/ae2xtp2otlsoyai5jaam.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287410/atarashi_contado/qjn5y0szvfgrcj31r1h6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287411/atarashi_contado/nci3wsp5t2zn3h2ehf6m.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287412/atarashi_contado/korudrlyniwc7in8aqku.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287413/atarashi_contado/iic0lmox4yxetox6cgll.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287413/atarashi_contado/teqr4qi6orb7jjymdqcw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287415/atarashi_contado/tdd2f2rzaucdtn5s96b8.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287416/atarashi_contado/ozbpn5vsimykq9pv72ek.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287417/atarashi_contado/df0u400cusj5sqxu2elk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287418/atarashi_contado/ayf9rbxye06khjx5dhid.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287419/atarashi_contado/hlkjnzaykkcozpa2o3rn.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287421/atarashi_contado/fgr9m8bgnb7d4dwbskte.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793287516/atarashi_contado/videos/l8rohvs5zk6nr5jf8jhj.mov",
+      "id": 1793287570975
+    },
+    {
+      "nombre": "GAFAS REALIDAD VIRTUAL VR BOX",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 50000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Vive una experiencia inmersiva única sin salir de casa con estas gafas de realidad virtual VR Box. Su diseño ergonómico en blanco y negro cuenta con correas ajustables que se adaptan cómodamente para disfrutar tus juegos y videos favoritos desde tu celular. Es la opción perfecta para llevar tu entretenimiento en casa a otro nivel de forma práctica y muy divertida.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287884/atarashi_contado/fgfdbuomjtdziw5o0vf8.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287884/atarashi_contado/v45ohm3w0e0criucpn6m.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287885/atarashi_contado/s5gxseeitc3xp4e48uws.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287886/atarashi_contado/gjlagpyc0jamslfklgxg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287886/atarashi_contado/bb1na3syh4t3qcuqoqog.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287887/atarashi_contado/fzprzqzpsaukvupgqqnr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793287888/atarashi_contado/us0j0y1m8yid8mc7jwue.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793288434672
+    },
+    {
+      "nombre": "GRAMERA DIGITAL DE COCINA CON TAZON",
+      "categoria": "Cocina",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 50000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Prepara tus recetas con la precisión exacta que necesitas usando esta práctica gramera digital de cocina. Cuenta con un conveniente tazón en tono rosado y una pantalla digital de fácil lectura con capacidad de hasta 5 kg. Su diseño moderno y compacto en color blanco se verá increíble en tu hogar y te facilitará la medición de todos tus ingredientes.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793289722/atarashi_contado/ulwxqgw8tl0zph012rda.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793289723/atarashi_contado/rxm4hphrbvr6sxcltuaz.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793290603432
+    },
+    {
+      "nombre": "MEMORIA USB NIA 32GB AN-32U",
+      "categoria": "Tecnología",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Lleva toda tu información siempre contigo de forma segura y práctica! Esta memoria USB marca NIA de 32 GB cuenta con un acabado metálico en tono plateado y un práctico orificio para llevarla cómodamente en tu llavero. Es perfecta para guardar documentos, música y fotos, conectándose fácilmente a computadores u otros dispositivos con puerto USB 2.0. Un accesorio duradero e infaltable para acompañarte en el estudio, el trabajo o tu día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290627/atarashi_contado/nvfquzg7fephkwlmuhat.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290628/atarashi_contado/wwl9cbrzvjyq6yzjckpl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290628/atarashi_contado/ki7xlgwvafllnsyfovmp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290629/atarashi_contado/wvjwo4u7omzttxiwxpxz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290629/atarashi_contado/aeyo6fycjryez9cmmdsd.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793290656677
+    },
+    {
+      "nombre": "PURIFICADOR DE AGUA HOFFEN 14L",
+      "categoria": "Cocina",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 130000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Disfruta de agua más pura y fresca en casa con el purificador de agua Hoffen de 14 litros. Cuenta con un completo sistema de filtración que incluye cerámica coreana, cilindro multicapas de 5 niveles, disco de piedras minerales y llave magnética. Su diseño en polipropileno libre de BPA es de grado alimenticio, por lo que resulta ideal para cuidar la salud de toda tu familia en el día a día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290908/atarashi_contado/c57nn7vswlmmuxvoxziz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290829/atarashi_contado/bstno5yoma5uwrxn5ct8.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290829/atarashi_contado/u0lznyfbucaprctkluhp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290830/atarashi_contado/sknmp2bvvsznjlpizysr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290831/atarashi_contado/yisjwoybiwu80efzugme.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793290832/atarashi_contado/tnlrry7ogipztnyn2tsq.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793290995888
+    },
+    {
+      "nombre": "SILLA PLEGABLE CAMPING PORTÁTIL NEGRA",
+      "categoria": "Aire libre-deportes",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 55000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Lleva el confort a todas tus aventuras al aire libre con esta práctica silla plegable en color negro! Su diseño inteligente incluye un útil bolsillo lateral para tener tus objetos a la mano y se pliega de manera compacta en su propia funda de transporte. Es ideal para acompañarte en paseos de camping, días de pesca, picnics o tardes de descanso en el jardín. Un complemento liviano y resistente que no puede faltar en tus salidas con familia y amigos.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291232/atarashi_contado/xgkltkzyvjjiynp48xqs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291233/atarashi_contado/hciyn6ievkw6fcnzw9rh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291234/atarashi_contado/b601v38ixffmtjboy35b.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291234/atarashi_contado/wd8horav63odug6kncmp.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291235/atarashi_contado/sn8rorpbsy3ntkwosnw9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291236/atarashi_contado/nlahymycdxqerwzxrxfs.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291236/atarashi_contado/us4d14ov9dmntgv7swr9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793291237/atarashi_contado/ohgcw7cavsuspubjit7z.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793291322131
+    },
+    {
+      "nombre": "MINI CÁMARA DIGITAL INSTANTÁNEA",
+      "categoria": "Niños",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 120000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "¡Captura y conserva los mejores momentos al instante! Esta divertida cámara digital infantil cuenta con pantalla a color e impresión inmediata para que los más pequeños disfruten de sus fotografías en físico al momento. Es superfácil de usar, ideal para llevar a paseos o eventos familiares, e incluye funciones interactivas como juegos y reproductor de música. Disponible en hermosos tonos pastel como lila, rosa y azul, convirtiéndose en el detalle perfecto para fomentar la creatividad de los niños.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304857/atarashi_contado/rkdxtvwdqsiwt1uvqchi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304857/atarashi_contado/z3wvbbmwkdedbywzn3fu.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304858/atarashi_contado/tnyld9dmi83qgompe5wm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304858/atarashi_contado/t83omu6figfws4virifl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304859/atarashi_contado/gkhrdpazwdydpegwb6yr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304860/atarashi_contado/tldjcrmvdouzzhr6mvf0.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304860/atarashi_contado/o4mzxxzhxc0zrysv0gt2.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793304861/atarashi_contado/napkpwealycfdwzvy23o.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793304907100
     }
   ],
   "categorias": [
@@ -13080,5 +13361,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793277688986"
+  "ver": "1793308624631"
 }
