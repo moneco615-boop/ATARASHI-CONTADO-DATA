@@ -8477,8 +8477,8 @@
       "descripcion": "¿Buscas el regalo perfecto o el producto más vendido para tu negocio? Te presentamos los Patines de Línea de 4 Ruedas, el combo más completo del mercado para que los más jóvenes patinen con total confianza.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/rrqcxbzdojs06abndfpe.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/xexjjnqcciitzymqxnfh.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/mff22l7oezmumkvavg4q.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793276840/atarashi_contado/aneh0zj1g7ui3ssryetf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793276829/atarashi_contado/xpjabysnlwnlqhbrjtoh.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/pvw8mvuqsumltcaoclc5.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488112/atarashi_contado/thzvrg96pmyaaiwdbwqd.jpg"
       ],
@@ -8496,6 +8496,7 @@
       "tipoTalla": "calzado",
       "descripcion": "¿Buscando el regalo perfecto o listos para rodar con comodidad? Te presentamos nuestros nuevos patines en línea con bota ajustable y diseño ergonómico, ideales para disfrutar al máximo.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793276751/atarashi_contado/sk7jbpaymsoiv4yzxpus.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1791488462/atarashi_contado/fwyqsgfcwjxfuz1nem7m.jpg"
       ],
       "agotadas": [],
@@ -10462,7 +10463,7 @@
       "id": 1793121222414
     },
     {
-      "nombre": "TENIS NEW BALANCE 9060 NEGROS",
+      "nombre": "NEW BALANCE 9060",
       "categoria": "Unisex",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -10496,7 +10497,7 @@
       "id": 1793121673043
     },
     {
-      "nombre": "TENIS NEW BALANCE 9060",
+      "nombre": "NEW BALANCE 9060",
       "categoria": "Calzado dama",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -10684,7 +10685,7 @@
       "id": 1793156029970
     },
     {
-      "nombre": "TENIS ASICS METASPEED",
+      "nombre": "ASICS METASPEED",
       "categoria": "Calzado caballero",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -10701,7 +10702,7 @@
       "id": 1793156296521
     },
     {
-      "nombre": "TENIS ASICS METASPEED",
+      "nombre": "ASICS METASPEED",
       "categoria": "Calzado dama",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -10854,7 +10855,7 @@
       "id": 1793157570246
     },
     {
-      "nombre": "TENIS NIKE WINFLO",
+      "nombre": "NIKE WINFLO",
       "categoria": "Calzado dama",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -10871,7 +10872,7 @@
       "id": 1793157733373
     },
     {
-      "nombre": "TENIS ASICS TOKYO",
+      "nombre": "ASICS TOKYO",
       "categoria": "Calzado caballero",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -10956,7 +10957,7 @@
       "id": 1793158775944
     },
     {
-      "nombre": "TENIS ADIDAS NEGROS",
+      "nombre": "ADIDAS  SUPER MAGMA",
       "categoria": "Calzado caballero",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -12708,7 +12709,7 @@
       "tipoTalla": "",
       "descripcion": "Luce increíble y llena de energía en tus entrenamientos con este llamativo conjunto deportivo en tonos rosado y azul. Incluye una blusa crop top manga corta y unos leggings ajustados de tiro alto que realzan tu figura con total comodidad. Es ideal para ir al gimnasio, salir a trotar o armar un look casual muy descomplicado.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793239140/atarashi_contado/sevxvylwtojgyo2mebld.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793277194/atarashi_contado/wzx9ivxfmlewg9mpypgp.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793239128/atarashi_contado/xxs1sz9cpwqzdripa6m0.jpg"
       ],
       "agotadas": [],
@@ -12784,7 +12785,7 @@
       "id": 1793240080825
     },
     {
-      "nombre": "TENIS NIKE AIR MAX TAILWIND",
+      "nombre": "NIKE AIR MAX TAILWIND",
       "categoria": "Calzado caballero",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -12957,7 +12958,7 @@
       "id": 1793242500902
     },
     {
-      "nombre": "TENIS ASICS BLANCOS",
+      "nombre": "ASICS",
       "categoria": "Calzado caballero",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -13079,5 +13080,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793242846574"
+  "ver": "1793277688986"
 }
