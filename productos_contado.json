@@ -2229,9 +2229,9 @@
       "tipoTalla": "calzado",
       "descripcion": "Diseñados para mujeres que buscan comodidad, resistencia y un estilo moderno. Los Adidas Terrex ofrecen una excelente combinación de soporte, tracción y confort, ideales para caminatas, actividades al aire libre o el uso diario.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069744/atarashi_contado/xvvircdkylcijv5n885q.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069579/atarashi_contado/to96plhbrutqq9tugxbi.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069743/atarashi_contado/vlmvya29eadwsfr2dwry.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069744/atarashi_contado/xvvircdkylcijv5n885q.jpg"
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793069743/atarashi_contado/vlmvya29eadwsfr2dwry.jpg"
       ],
       "agotadas": [],
       "video": "",
@@ -4725,7 +4725,7 @@
       "categoria": "Locion caballero",
       "badge": "RECOMENDADO",
       "disponibilidad": "inmediata",
-      "precioContado": 80000,
+      "precioContado": 70000,
       "fotosModelos": false,
       "tipoTalla": "",
       "descripcion": "Giorgio Armani Acqua Di Giò Profumo 1:1 es una fragancia masculina elegante e intensa que combina notas marinas, incienso y acordes amaderados para crear un aroma sofisticado y seductor.",
@@ -13273,6 +13273,112 @@
       "agotadas": [],
       "video": "",
       "id": 1793304907100
+    },
+    {
+      "nombre": "CONJUNTO DEPORTIVO PUMA BLANCO",
+      "categoria": "Ropa caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 75000,
+      "fotosModelos": false,
+      "tipoTalla": "ropa",
+      "descripcion": "El conjunto perfecto para lucir fresco, cómodo y con todo el estilo deportivo durante tus días de entrenamiento o descanso. Este set blanco incluye una camiseta sin mangas con el logo de Puma en el pecho y una pantaloneta a juego con cordón ajustable. Es una opción ideal para ir al gimnasio, hacer deporte al aire libre o disfrutar de un fin de semana relajado. Su diseño moderno en tono blanco con detalles en negro te garantiza un aspecto impecable y sin complicaciones.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324106/atarashi_contado/jg9dmguoos2hc8vfousa.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324091/atarashi_contado/b3otkt9paukctanhx9uw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324092/atarashi_contado/liuyw2rgukoyazrpot68.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793324183065
+    },
+    {
+      "nombre": "VALENTINO UOMO BORN IN ROMA",
+      "categoria": "Locion caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Destaca tu presencia y deja una huella imborrable a donde quiera que vayas. Valentino Uomo Born in Roma combina sofisticación y modernidad en un frasco de diseño icónico en presentación de 100 ml. Es la loción perfecta para eventos especiales, noches inolvidables o para darle un toque distintivo a tu estilo diario. Hazla tuya y proyecta la máxima elegancia masculina en cada momento.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324521/atarashi_contado/xpvp4ifqdzw7ax7sqfug.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324392/atarashi_contado/v2oxvlx4a88xhze5npyg.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793324571779
+    },
+    {
+      "nombre": "VALENTINO UOMO",
+      "categoria": "Locion caballero",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 80000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Descubre una fragancia que deja huella en cada paso que das. Su presentación en un elegante frasco con detalles texturizados refleja distinción y carácter para el hombre moderno. Es perfecto para ocasiones especiales o para destacar en tu día a día con una presencia inolvidable. Atrévete a llevar una esencia que resalta tu masculinidad y sofisticación.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324672/atarashi_contado/uduw9anqdvxylyycavbc.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793324766/atarashi_contado/yxoflbkfew6mhxnapgjx.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793325052000
+    },
+    {
+      "nombre": "CARRO METÁLICO MULTIFUNCIÓN PLEGABLE",
+      "categoria": "Herramientas",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 160000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Facilita el transporte de cargas pesadas en tu negocio o hogar con este práctico carro plegable. Cuenta con una estructura resistente en aluminio y plástico reforzado junto a ruedas robustas para un desplazamiento suave y seguro. Es perfecto para mover cajas, mercado o mercancía sin hacer esfuerzo excesivo. Además, su diseño compacto permite guardarlo fácilmente en cualquier espacio reducido cuando no lo uses.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793325959/atarashi_contado/rldlz0mbmdnk05fyn9x5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793325941/atarashi_contado/ryiqbodurwikr351msjv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793325942/atarashi_contado/evfvr8oijsqfi5uzoyp6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793325943/atarashi_contado/euqbmimcpreqsyqyheq5.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793325943/atarashi_contado/enrm75zhfu97siou3n9c.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793326028548
+    },
+    {
+      "nombre": "IMPERMEABLE INFANTIL ROSA HELLO KITTY",
+      "categoria": "Niños",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 25000,
+      "fotosModelos": false,
+      "tipoTalla": "ropa",
+      "descripcion": "Protege a los más pequeños de los días lluviosos con este divertido impermeable de color rosa. Cuenta con un diseño estampado de Hello Kitty que les encantará usar en el camino al colegio o en sus paseos al aire libre. Viene con capota y broches frontales para mayor comodidad y cobertura contra el agua. Encuéntralo disponible en varias tallas para asegurar el ajuste perfecto según la estatura.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793326405/atarashi_contado/djq7hqtc04koyaxi3fh6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793326392/atarashi_contado/pjtmuuulxi4puj2dz9jn.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793326480279
+    },
+    {
+      "nombre": "TENIS NIKE DUNK LOW NIÑOS",
+      "categoria": "Niños",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 115000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Viste los pies de los más pequeños con un estilo urbano inigualable gracias a estos tenis Nike Dunk Low. Presentan una combinación en tonos blanco y gris que resulta muy fácil de combinar con sus jeans o pantalonetas favoritas para cualquier salida casual. Su diseño clásico garantiza comodidad y soporte en cada uno desus primeros pasos y aventuras diarias. Son la opción perfecta para que los niños luzcan modernos y se sientan a gusto todo el día.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793330734/atarashi_contado/lqiopvhzdvyop2ltmobl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793330756/atarashi_contado/mgupm3aqn2hz4nckcfuw.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1793330796965
     }
   ],
   "categorias": [
@@ -13361,5 +13467,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793308624631"
+  "ver": "1793563475866"
 }
