@@ -1,5 +1,5 @@
 {
-  "modo": "auto",
+  "modo": "banner",
   "fotos": [
     "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429704/atarashi_contado/xynsgsnbmiehy6tjw4gh.jpg",
     "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429713/atarashi_contado/m4a5ueowczrzsqaeazlg.jpg",
@@ -7,11 +7,11 @@
     "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429740/atarashi_contado/er6lm62z6niurxqbbofn.jpg",
     "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429764/atarashi_contado/hil1a2sn52biyour7yyw.jpg"
   ],
-  "bannerUrl": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792426062/atarashi_contado/ldjaftsjkhtpxbdnkzy4.jpg",
+  "bannerUrl": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793563439/atarashi_contado/zewkigrbobu8kh0eveqn.jpg",
   "banners": [
     {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792426062/atarashi_contado/ldjaftsjkhtpxbdnkzy4.jpg",
-      "fondo": "#FDEBDD"
+      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793563439/atarashi_contado/zewkigrbobu8kh0eveqn.jpg",
+      "fondo": "#E3F2E5"
     }
   ],
   "temporada": "auto"
