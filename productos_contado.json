@@ -10234,23 +10234,6 @@
       "id": 1793112223438
     },
     {
-      "nombre": "CASCADA ESTRELLAS Y LUNAS LUZ CÁLIDA",
-      "categoria": "Navidad",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 48000,
-      "fotosModelos": false,
-      "tipoTalla": "",
-      "descripcion": "Dale un toque mágico y acogedor a tus espacios con esta hermosa cascada de luces en diseño de estrellas y lunas. Es ideal para decorar la sala, la habitación o cualquier rincón especial en época navideña o durante todo el año. Su iluminación cálida crea una atmósfera muy agradable que transformará por completo cualquier ambiente de tu hogar.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793112276/atarashi_contado/jrrym6nvjexnt59snrrf.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793112276/atarashi_contado/y1vup7yv1nq8hraoggzn.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1793112295052
-    },
-    {
       "nombre": "LINEAL 100 BOMBILLOS",
       "categoria": "Navidad",
       "badge": "",
@@ -13467,5 +13450,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793643801815"
+  "ver": "1793644162209"
 }
