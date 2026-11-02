@@ -1743,16 +1743,25 @@ try{
     L=L.filter(function(b){return (b.temporada||'siempre')!=='siempre';}).concat(L.filter(function(b){return (b.temporada||'siempre')==='siempre';}));
     var h='<div class="ai-ban"><div class="ai-ban-pista" id="aiPista">';
     L.forEach(function(b,i){h+='<img src="'+esc(img(b.url,1200))+'" alt="Atarashi Store"'+(i?' loading="lazy"':'')+'>';});
+    if(L.length>1)h+='<img src="'+esc(img(L[0].url,1200))+'" alt="" aria-hidden="true">';
     h+='</div>';
     if(L.length>1){h+='<div class="ai-pts">';L.forEach(function(b,i){h+='<i'+(i?'':' class="on"')+'></i>';});h+='</div>';}
     w.innerHTML=h+'</div>';
     if(L.length<2)return;
     var k=0,pista=document.getElementById('aiPista'),pts=w.querySelectorAll('.ai-pts i'),x0=null;
-    function ir(n){k=(n+L.length)%L.length;pista.style.transform='translateX('+(-100*k)+'%)';for(var j=0;j<pts.length;j++)pts[j].className=(j===k?'on':'');}
-    function reloj(){if(tBan)clearInterval(tBan);tBan=setInterval(function(){if(!document.hidden)ir(k+1);},5000);}
+    var N=L.length,pos=0;
+    function mover(p,anim){if(!anim)pista.style.transition='none';pista.style.transform='translateX('+(-100*p)+'%)';pos=p;if(!anim){void pista.offsetWidth;pista.style.transition='';}k=p%N;for(var j=0;j<pts.length;j++)pts[j].className=(j===k?'on':'');}
+    pista.addEventListener('transitionend',function(){if(pos===N)mover(0,false);});
+    function ir(dir){
+      if(pos===N)mover(0,false);
+      if(dir>0){mover(pos+1,true);setTimeout(function(){if(pos===N)mover(0,false);},700);}
+      else if(pos===0){mover(N,false);requestAnimationFrame(function(){requestAnimationFrame(function(){mover(N-1,true);});});}
+      else mover(pos-1,true);
+    }
+    function reloj(){if(tBan)clearInterval(tBan);tBan=setInterval(function(){if(!document.hidden)ir(1);},5000);}
     var ban=w.querySelector('.ai-ban');
     ban.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
-    ban.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>35){ir(k+(dx<0?1:-1));reloj();}},{passive:true});
+    ban.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>35){ir(dx<0?1:-1);reloj();}},{passive:true});
     reloj();
   }
   function cargarBanners(){
