@@ -1758,7 +1758,7 @@ try{
       else if(pos===0){mover(N,false);requestAnimationFrame(function(){requestAnimationFrame(function(){mover(N-1,true);});});}
       else mover(pos-1,true);
     }
-    function reloj(){if(tBan)clearInterval(tBan);tBan=setInterval(function(){if(!document.hidden)ir(1);},5000);}
+    function reloj(){if(tBan)clearInterval(tBan);tBan=setInterval(function(){if(!document.hidden)ir(1);},2500);}
     var ban=w.querySelector('.ai-ban');
     ban.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
     ban.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>35){ir(dx<0?1:-1);reloj();}},{passive:true});
@@ -1924,10 +1924,10 @@ try{
 try{
   if(window.__atrVolver)return;window.__atrVolver=1;
   var css=''
-  +'.ai-filtro{display:none;align-items:center;justify-content:space-between;gap:10px;margin:4px 12px 10px;padding:10px 12px;background:#FFF8E1;border:1.5px solid #E8C25A;border-radius:12px;font-size:13.5px;color:#1A1A1A;}'
-  +'.ai-filtro.on{display:flex;}'
+  +'.ai-filtro{display:none;margin:2px 16px 8px;font-size:14px;color:#1A1A1A;}'
+  +'.ai-filtro.on{display:block;}'
   +'.ai-filtro b{font-weight:900;}'
-  +'.ai-filtro small{display:block;color:#6b665c;font-size:12px;margin-top:1px;}'
+  +'.ai-filtro small{color:#6b665c;font-size:13px;}'
   +'.ai-btn{flex:0 0 auto;border:none;border-radius:999px;padding:9px 14px;font-family:inherit;font-weight:900;font-size:13px;cursor:pointer;background:#1A1A1A;color:#fff;}'
   +'.ai-btn.oro{background:#C9A02A;color:#1A1A1A;}'
   +'.ai-pill{position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;display:none;box-shadow:0 6px 18px rgba(0,0,0,.28);}'
@@ -1969,8 +1969,7 @@ try{
     var g=document.getElementById('grid');if(!g||!g.parentNode)return false;
     if(!barra){
       barra=document.createElement('div');barra.className='ai-filtro';barra.id='aiFiltro';
-      barra.innerHTML='<div><span class="t"></span><small class="n"></small></div><button type="button" class="ai-btn">✕ Ver todos</button>';
-      barra.querySelector('button').onclick=verTodos;
+      barra.innerHTML='<span class="t"></span> <small class="n"></small>';
       var ref=document.getElementById('loteInfo')||g;ref.parentNode.insertBefore(barra,ref);
       if('IntersectionObserver' in window){new IntersectionObserver(function(es){visibleBarra=es[0].isIntersecting;pintarPill();}).observe(barra);}
     }
@@ -1985,7 +1984,7 @@ try{
     return true;
   }
   var ultimo='';
-  function pintarPill(){var e=estado();if(pill)pill.classList.toggle('on',!!e&&!visibleBarra&&window.pageYOffset>300);}
+  function pintarPill(){var e=estado();if(pill)pill.classList.toggle('on',!!e);}
   function revisar(){
     if(!crear())return;
     var e=estado(),clave=e?(e.tipo+':'+e.nombre):'';
@@ -1996,12 +1995,12 @@ try{
       if(e){
         barra.querySelector('.t').innerHTML=e.tipo==='categoria'?'Estás viendo: <b></b>':'Resultados de: <b></b>';
         barra.querySelector('.t b').textContent=e.tipo==='categoria'?e.nombre:'“'+e.nombre+'”';
-        barra.querySelector('.n').textContent=n?(n+(n===1?' producto':' productos')):'';
+        barra.querySelector('.n').textContent=n?('· '+n+(n===1?' producto':' productos')):'';
         barra.classList.add('on');
-        fin.innerHTML='<p>¿Buscas algo más?</p><button type="button" class="ai-btn oro" data-a="todos">Ver todos los productos</button><button type="button" class="ai-btn" data-a="arriba">↑ Volver al inicio</button>';
+        fin.innerHTML='';
       }else{
         barra.classList.remove('on');
-        fin.innerHTML='<button type="button" class="ai-btn" data-a="arriba">↑ Volver al inicio</button>';
+        fin.innerHTML='';
       }
     }
     pintarPill();
