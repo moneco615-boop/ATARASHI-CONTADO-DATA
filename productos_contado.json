@@ -1,7 +1,7 @@
 {
   "productos": [
     {
-      "nombre": "ADIDAS REPETITOR.",
+      "nombre": "ADIDAS REPETITOR",
       "categoria": "Calzado caballero",
       "badge": "",
       "disponibilidad": "inmediata",
@@ -13467,5 +13467,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": 1793641803221
+  "ver": "1793643801815"
 }
