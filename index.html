@@ -1774,7 +1774,23 @@ try{
     var b=p.badge?'<span class="bd">'+esc(p.badge)+'</span>':'';
     return '<div class="ai-p" data-id="'+esc(p.id)+'"><div class="im">'+b+'<img loading="lazy" src="'+esc(img(foto(p),360))+'" alt=""></div><div class="tx"><div class="nm">'+esc(p.nombre)+'</div><div class="pr">'+precio(p.precioContado)+'</div></div></div>';
   }
+  function esNino(p){var c=norm(p.categoria),n=norm(p.nombre);return c==='niños'||c==='juguetes'||c==='escolar'||n.indexOf('niñ')>-1||n.indexOf('kids')>-1||n.indexOf('infantil')>-1||n.indexOf('bebé')>-1;}
+  window.atrRestaurar=function(){if(window.__ATR_ALL){try{PRODS=window.__ATR_ALL;}catch(e){window.PRODS=window.__ATR_ALL;}window.__ATR_ALL=null;}window.__atrVista=null;};
+  function verNinos(){
+    if(!window.__ATR_ALL)window.__ATR_ALL=window.PRODS;
+    var sub=window.__ATR_ALL.filter(esNino);
+    try{PRODS=sub;}catch(e){window.PRODS=sub;}
+    window.__atrVista='Niños y juguetes';
+    window.__atrInterno=1;
+    var btns=document.querySelectorAll('#filtros .fb');
+    for(var i=0;i<btns.length;i++){if(norm(btns[i].textContent)==='todos'){try{btns[i].click();}catch(e){}break;}}
+    window.__atrInterno=0;
+    setTimeout(alCatalogo,60);
+    clr('inicio_ninos');
+  }
+  document.addEventListener('click',function(e){if(window.__atrInterno||!window.__ATR_ALL)return;var t=e.target;if(t&&t.closest&&t.closest('#filtros .fb, #sidebarCats, .sidebar'))window.atrRestaurar();},true);
   function irCategoria(nombre){
+    window.atrRestaurar();
     var btns=document.querySelectorAll('#filtros .fb'),bt=null;
     for(var i=0;i<btns.length;i++){if(norm(btns[i].textContent)===norm(nombre)){bt=btns[i];break;}}
     try{if(bt)bt.click();else if(typeof filtrar==='function')filtrar(nombre,null);}catch(e){}
@@ -1787,7 +1803,7 @@ try{
     var usados={};
     function tomar(f,n){var out=[];mezclar(LISTA.filter(f)).forEach(function(p){if(out.length<n&&!usados[p.id]){out.push(p);usados[p.id]=1;}});return out;}
     var nav=tomar(function(p){return norm(p.categoria)==='navidad';},10);
-    var nin=tomar(function(p){var c=norm(p.categoria),n=norm(p.nombre);return c==='niños'||c==='juguetes'||c==='escolar'||n.indexOf('niñ')>-1||n.indexOf('kids')>-1||n.indexOf('infantil')>-1||n.indexOf('bebé')>-1;},12);
+    var nin=tomar(esNino,12);
     var top=tomar(function(p){return p.badge==='TOP VENTAS';},10);
     var nue=tomar(function(p){return p.badge==='NUEVO INGRESO';},10);
     var bar=tomar(function(p){return p.precioContado>0&&p.precioContado<50000;},10);
@@ -1797,7 +1813,7 @@ try{
       lst.forEach(function(p){h+=tarjeta(p);});
       return h+'</div></section>';
     }
-    var h=sec('🎄 Regalos de Navidad',nav,'Navidad','#C62828')+sec('🧸 Para los niños',nin,'Niños','#7B3FE4')+sec('🔥 Lo más vendido',top,'','#E65100')+sec('🆕 Llegó a la tienda',nue,'','#1565C0')+sec('💸 Menos de $50.000',bar,'','#2E7D32');
+    var h=sec('🎄 Regalos de Navidad',nav,'Navidad','#C62828')+sec('🧸 Para los niños',nin,'@ninos','#7B3FE4')+sec('🔥 Lo más vendido',top,'','#E65100')+sec('🆕 Llegó a la tienda',nue,'','#1565C0')+sec('💸 Menos de $50.000',bar,'','#2E7D32');
     var vistos={},hc='',nc=0;
     var PAL=[['#E53935','#FFEBEE'],['#1E88E5','#E3F2FD'],['#F9A825','#FFF8E1',1],['#43A047','#E8F5E9'],['#8E24AA','#F3E5F5'],['#FB8C00','#FFF3E0']];
     var cats=[];
@@ -1805,19 +1821,31 @@ try{
     if(!cats.length)LISTA.forEach(function(p){if(p.categoria&&!vistos[norm(p.categoria)]){vistos[norm(p.categoria)]=1;cats.push(p.categoria);}});
     cats.forEach(function(c){
       var del=LISTA.filter(function(p){return norm(p.categoria)===norm(c);});if(!del.length)return;
-      var rep=del.filter(function(p){return p.badge==='TOP VENTAS';})[0]||del[0];
+      var rep=del[Math.floor(Math.random()*del.length)];
       var K=PAL[nc++%PAL.length];
       hc+='<div class="ai-cat" data-cat="'+esc(c)+'" style="--k:'+K[0]+';--k2:'+K[1]+'"><div class="im"><img loading="lazy" src="'+esc(img(foto(rep),300))+'" alt=""></div><span'+(K[2]?' class="osc"':'')+'>'+esc(c)+'</span></div>';
     });
     if(hc)h+='<section class="ai-sec" style="--c:#8A6410"><div class="ai-h"><h2>Compra por categoría</h2></div><div class="ai-cats">'+hc+'</div></section>';
     cont.innerHTML=h;
+    var sc=cont.querySelector('.ai-cats');
+    if(sc&&'IntersectionObserver' in window){var visto=false,fuera=false;new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&visto&&fuera){barajarCats(sc);fuera=false;}if(v)visto=true;else if(visto)fuera=true;}).observe(sc);}
+  }
+  function barajarCats(sc){
+    var cs=sc.querySelectorAll('.ai-cat');
+    for(var i=0;i<cs.length;i++){
+      var c=cs[i].getAttribute('data-cat'),del=LISTA.filter(function(p){return norm(p.categoria)===norm(c);});
+      if(del.length<2)continue;
+      var im=cs[i].querySelector('img'),act=im.getAttribute('src'),nu=act,k=0;
+      while(nu===act&&k++<6){nu=img(foto(del[Math.floor(Math.random()*del.length)]),300);}
+      im.setAttribute('src',nu);
+    }
   }
   document.addEventListener('click',function(e){
     var t=e.target;if(!t||!t.closest)return;
     var p=t.closest('#atrInicio .ai-p');
     if(p){var id=p.getAttribute('data-id');var num=Number(id);try{abrirModal(isNaN(num)?id:num);}catch(x){}clr('inicio_producto');return;}
     var c=t.closest('#atrInicio [data-cat]');
-    if(c){irCategoria(c.getAttribute('data-cat'));}
+    if(c){var dc=c.getAttribute('data-cat');if(dc==='@ninos')verNinos();else irCategoria(dc);}
   });
 
   function iniciar(){
@@ -1942,6 +1970,7 @@ try{
   function estado(){
     var inp=document.getElementById('buscarCat'),q=inp?String(inp.value||'').trim():'';
     if(q)return {tipo:'busqueda',nombre:q};
+    if(window.__atrVista)return {tipo:'categoria',nombre:window.__atrVista};
     var on=document.querySelector('#filtros .fb.on'),c=on?on.textContent.trim():'';
     if(c&&norm(c)!=='todos')return {tipo:'categoria',nombre:c};
     return null;
@@ -1954,6 +1983,7 @@ try{
     try{window.scrollTo({top:y,behavior:'smooth'});}catch(e){window.scrollTo(0,y);}
   }
   function verTodos(){
+    try{if(window.atrRestaurar)window.atrRestaurar();}catch(e){}
     var inp=document.getElementById('buscarCat');
     if(inp&&inp.value){inp.value='';try{if(typeof buscarLento==='function')buscarLento('');}catch(e){}try{inp.dispatchEvent(new Event('input',{bubbles:true}));}catch(e){}}
     var fb=document.querySelectorAll('#filtros .fb');
