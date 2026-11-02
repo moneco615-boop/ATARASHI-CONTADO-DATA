@@ -1984,7 +1984,13 @@ try{
     return true;
   }
   var ultimo='';
-  function pintarPill(){var e=estado();if(pill)pill.classList.toggle('on',!!e);}
+  var base=null,tBase=null,claveEst='';
+  function pintarPill(){
+    var e=estado(),k=e?(e.tipo+':'+e.nombre):'';
+    if(k!==claveEst){claveEst=k;base=null;if(tBase)clearTimeout(tBase);if(k)tBase=setTimeout(function(){base=window.pageYOffset||0;},1100);}
+    var mostrar=!!e&&base!==null&&Math.abs((window.pageYOffset||0)-base)>60;
+    if(pill)pill.classList.toggle('on',mostrar);
+  }
   function revisar(){
     if(!crear())return;
     var e=estado(),clave=e?(e.tipo+':'+e.nombre):'';
