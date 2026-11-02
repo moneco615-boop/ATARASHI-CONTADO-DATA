@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Atarashi Store · Vista previa</title>
+<link rel="preconnect" href="https://res.cloudinary.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--go:#8A6410;--oro:#C9A02A;--oro2:#F0C040;--tx:#1A1A1A;--gr:#6b665c;--fo:#FAFAFA;--ca:#fff;--li:#ece6d8;--T:'Bebas Neue',sans-serif;--B:'Outfit',system-ui,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{background:var(--fo);color:var(--tx);font-family:var(--B);}
+body{padding-bottom:calc(30px + env(safe-area-inset-bottom));}
+a{color:inherit;text-decoration:none;}
+.aviso{background:#1A1A1A;color:#F0C040;font-size:11.5px;font-weight:700;text-align:center;padding:7px 12px;letter-spacing:.3px;}
+.hdr{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--li);padding:10px 16px 12px;}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.logo{font-family:var(--T);font-size:27px;letter-spacing:3px;line-height:1;}
+.logo span{color:var(--go);}
+.cart{width:40px;height:40px;border-radius:50%;border:1px solid var(--li);display:grid;place-items:center;font-size:18px;}
+.buscar{margin-top:10px;display:flex;align-items:center;gap:8px;background:#f3f1ec;border-radius:12px;padding:11px 14px;color:var(--gr);font-size:14.5px;}
+.confia{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:12px 16px 4px;}
+.confia::-webkit-scrollbar{display:none;}
+.confia div{flex:0 0 auto;background:#fff;border:1px solid var(--li);border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:600;white-space:nowrap;}
+.confia b{color:var(--go);}
+.hero{margin:12px 16px 4px;border-radius:16px;padding:18px 18px 16px;background:linear-gradient(135deg,#1A1A1A 0%,#2b2414 100%);color:#fff;position:relative;overflow:hidden;}
+.hero:after{content:"🎄";position:absolute;right:-6px;bottom:-14px;font-size:96px;opacity:.9;}
+.hero small{display:block;color:var(--oro2);font-weight:800;font-size:11.5px;letter-spacing:1.5px;}
+.hero h1{font-family:var(--T);font-weight:400;font-size:34px;line-height:1;letter-spacing:1px;margin:6px 0 6px;max-width:75%;}
+.hero p{font-size:13.5px;color:#d9d3c4;max-width:68%;line-height:1.35;}
+.hero button{margin-top:12px;background:var(--oro2);color:#1A1A1A;border:none;border-radius:10px;padding:10px 16px;font-family:var(--B);font-weight:900;font-size:13.5px;}
+.sec{margin-top:22px;}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;padding:0 16px;margin-bottom:10px;}
+.sec-h h2{font-family:var(--T);font-weight:400;font-size:25px;letter-spacing:1px;line-height:1;}
+.sec-h a{font-size:13px;font-weight:800;color:var(--go);white-space:nowrap;}
+.fila{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;padding:0 16px 6px;scrollbar-width:none;}
+.fila::-webkit-scrollbar{display:none;}
+.p{flex:0 0 42%;max-width:180px;scroll-snap-align:start;background:var(--ca);border:1px solid var(--li);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
+.p .im{aspect-ratio:1/1;background:#f4f2ee;display:grid;place-items:center;position:relative;}
+.p img{width:100%;height:100%;object-fit:contain;}
+.p .bd{position:absolute;top:7px;left:7px;background:var(--oro);color:#000;font-size:9.5px;font-weight:900;padding:3px 7px;border-radius:4px;text-transform:uppercase;}
+.p .tx{padding:8px 9px 10px;}
+.p .nm{font-size:12.5px;line-height:1.25;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:31px;}
+.p .pr{font-family:var(--T);font-size:22px;color:var(--go);letter-spacing:.5px;margin-top:4px;line-height:1;}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 16px;}
+.cat{background:#fff;border:1px solid var(--li);border-radius:12px;overflow:hidden;text-align:center;}
+.cat .im{aspect-ratio:1/1;background:#f4f2ee;}
+.cat img{width:100%;height:100%;object-fit:cover;}
+.cat span{display:block;font-size:12px;font-weight:800;padding:7px 4px 8px;line-height:1.15;}
+.todo{display:block;margin:26px 16px 0;text-align:center;background:#1A1A1A;color:#fff;border-radius:14px;padding:16px;font-weight:900;font-size:15px;letter-spacing:.3px;}
+.todo small{display:block;color:#bdb6a6;font-weight:500;font-size:12px;margin-top:3px;}
+.sk{flex:0 0 42%;max-width:180px;height:230px;border-radius:12px;background:linear-gradient(90deg,#eee 0%,#f6f6f6 50%,#eee 100%);background-size:200% 100%;animation:sk 1.2s infinite;}
+@keyframes sk{to{background-position:-200% 0;}}
+.hoja-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:50;}
+.hoja-bg.on{display:flex;}
+.hoja{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:18px 18px calc(22px + env(safe-area-inset-bottom));}
+.hoja img{width:100%;max-height:46vh;object-fit:contain;background:#f4f2ee;border-radius:12px;}
+.hoja h3{font-size:16px;margin-top:12px;line-height:1.25;}
+.hoja .pr{font-family:var(--T);font-size:30px;color:var(--go);margin-top:4px;}
+.hoja p{font-size:13px;color:var(--gr);margin-top:8px;line-height:1.4;}
+.hoja button{width:100%;margin-top:14px;background:#25D366;color:#fff;border:none;border-radius:12px;padding:14px;font-family:var(--B);font-weight:900;font-size:15px;}
+</style>
+</head>
+<body>
+<div class="aviso">VISTA PREVIA · Así podría verse la entrada de la tienda</div>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <div class="logo">ATARASHI <span>STORE</span></div>
+    <div class="cart" aria-label="Carrito">🛒</div>
+  </div>
+  <a class="buscar" href="./">🔍 <span>Buscar tenis, lociones, tecnología…</span></a>
+</header>
+
+<div class="confia">
+  <div>💵 <b>Pagas al recibir</b></div>
+  <div>🚚 Domicilio en Cali</div>
+  <div>👀 Revisas antes de pagar</div>
+  <div>⚡ Express el mismo día</div>
+</div>
+
+<div class="hero" id="hero">
+  <small>TEMPORADA NAVIDEÑA</small>
+  <h1>Regalos que llegan a tu puerta</h1>
+  <p>Escoge hoy, recibe en Cali y paga cuando lo tengas en tus manos.</p>
+  <button type="button" onclick="document.getElementById('s-navidad').scrollIntoView({behavior:'smooth'})">Ver regalos →</button>
+</div>
+
+<main id="main">
+  <section class="sec"><div class="sec-h"><h2>Cargando…</h2></div><div class="fila"><div class="sk"></div><div class="sk"></div><div class="sk"></div></div></section>
+</main>
+
+<div class="hoja-bg" id="hoja" onclick="if(event.target.id==='hoja')cerrar()">
+  <div class="hoja">
+    <img id="hImg" alt="">
+    <h3 id="hNom"></h3>
+    <div class="pr" id="hPr"></div>
+    <p>En la tienda real aquí se abre el producto completo, con fotos, tallas y el botón para agregar al carrito.</p>
+    <button type="button" onclick="cerrar()">Entendido</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  function img(u,w){u=String(u||'');if(u.indexOf('/upload/')<0)return u;return u.replace('/upload/','/upload/f_auto,q_auto:good,c_limit,w_'+(w||400)+'/');}
+  function precio(n){try{return '$'+Math.round(n||0).toLocaleString('es-CO');}catch(e){return '$'+n;}}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function mezclar(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function foto(p){var ago=p.agotadas||[];var L=(p.imagenes||[]).filter(function(u){return ago.indexOf(u)<0;});return L[0]||(p.imagenes||[])[0]||'';}
+  function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();}
+  var TODOS=[];
+  function tarjeta(p,i){
+    var b=p.badge?'<span class="bd">'+esc(p.badge)+'</span>':'';
+    return '<a class="p" href="#" data-i="'+i+'"><div class="im">'+b+'<img loading="lazy" src="'+esc(img(foto(p),360))+'" alt=""></div><div class="tx"><div class="nm">'+esc(p.nombre)+'</div><div class="pr">'+precio(p.precioContado)+'</div></div></a>';
+  }
+  function seccion(id,titulo,lista,mas){
+    if(!lista.length)return '';
+    var h='<section class="sec" id="'+id+'"><div class="sec-h"><h2>'+titulo+'</h2><a href="./">'+(mas||'Ver todo')+' →</a></div><div class="fila">';
+    lista.forEach(function(p){h+=tarjeta(p,TODOS.indexOf(p));});
+    return h+'</div></section>';
+  }
+  window.cerrar=function(){document.getElementById('hoja').classList.remove('on');};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('.p');if(!a)return;e.preventDefault();
+    var p=TODOS[+a.getAttribute('data-i')];if(!p)return;
+    document.getElementById('hImg').src=img(foto(p),800);
+    document.getElementById('hNom').textContent=p.nombre;
+    document.getElementById('hPr').textContent=precio(p.precioContado);
+    document.getElementById('hoja').classList.add('on');
+  });
+  fetch('productos_contado.json?t='+Math.floor(Date.now()/60000)).then(function(r){return r.json();}).then(function(d){
+    TODOS=(d.productos||[]).filter(function(p){return p&&p.disponibilidad!=='agotado'&&foto(p);});
+    var usados={};
+    function tomar(f,n){var out=[];mezclar(TODOS.filter(f)).forEach(function(p){if(out.length<n&&!usados[p.id]){out.push(p);usados[p.id]=1;}});return out;}
+    var nav=tomar(function(p){return norm(p.categoria)==='navidad';},10);
+    var top=tomar(function(p){return p.badge==='TOP VENTAS';},10);
+    var nue=tomar(function(p){return p.badge==='NUEVO INGRESO';},10);
+    var bar=tomar(function(p){return p.precioContado>0&&p.precioContado<50000;},10);
+    var h='';
+    h+=seccion('s-navidad','🎄 Regalos de Navidad',nav);
+    h+=seccion('s-top','🔥 Lo más vendido',top);
+    h+=seccion('s-nuevo','🆕 Llegó a la tienda',nue);
+    h+=seccion('s-barato','💸 Menos de $50.000',bar);
+    var cats=(d.categorias||[]).map(function(c){return c&&c.nombre;}).filter(Boolean);
+    var hc='';
+    cats.forEach(function(c){
+      var del=TODOS.filter(function(p){return norm(p.categoria)===norm(c);});
+      if(!del.length)return;
+      var rep=del.filter(function(p){return p.badge==='TOP VENTAS';})[0]||del[0];
+      hc+='<a class="cat" href="./"><div class="im"><img loading="lazy" src="'+esc(img(foto(rep),300))+'" alt=""></div><span>'+esc(c)+'</span></a>';
+    });
+    if(hc)h+='<section class="sec"><div class="sec-h"><h2>Compra por categoría</h2></div><div class="cats">'+hc+'</div></section>';
+    h+='<a class="todo" href="./">Ver todo el catálogo<small>'+TODOS.length+' productos disponibles</small></a>';
+    document.getElementById('main').innerHTML=h;
+  }).catch(function(){document.getElementById('main').innerHTML='<p style="padding:20px">No se pudo cargar el catálogo.</p>';});
+})();
+</script>
+</body>
+</html>
