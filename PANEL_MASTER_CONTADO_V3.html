@@ -4770,8 +4770,13 @@ try{
   +'.ai-p .bd{position:absolute;top:7px;left:7px;background:#C9A02A;color:#000;font-size:9.5px;font-weight:900;padding:3px 7px;border-radius:4px;text-transform:uppercase;}'
   +'.ai-p .tx{padding:8px 9px 10px;}'
   +'.ai-p .nm{font-size:12.5px;line-height:1.25;font-weight:600;color:#1A1A1A;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:31px;}'
-  +'.ai-p .pr{font-family:var(--T);font-size:22px;color:#8A6410;letter-spacing:.5px;margin-top:4px;line-height:1;}'
+  +'.ai-p .pr{font-family:var(--T);font-size:23px;letter-spacing:.5px;margin-top:4px;line-height:1;background:linear-gradient(135deg,#C9A02A 0%,#E8B923 45%,#F0C040 70%,#C9A02A 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#C9A02A;display:inline-block;}'
+  +'.s-hdr-mid h1 span{background:linear-gradient(135deg,#C9A02A 0%,#E8B923 45%,#F0C040 70%,#C9A02A 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#C9A02A;}'
   +'.ai-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 14px;}'
+  +'.ai-cat{background:var(--k2,#fff)!important;border:2px solid var(--k,#ece6d8)!important;padding:5px 5px 0;display:flex;flex-direction:column;}'
+  +'.ai-cat .im{border-radius:9px;overflow:hidden;background:#fff!important;}'
+  +'.ai-cat span{flex:1;display:flex!important;align-items:center;justify-content:center;color:#fff!important;background:var(--k,#8A6410);margin:5px -5px 0;padding:7px 4px 8px!important;font-size:12.5px!important;letter-spacing:.2px;}'
+  +'.ai-cat span.osc{color:#1A1A1A!important;}'
   +'.ai-cat{background:#fff;border:1px solid #ece6d8;border-radius:12px;overflow:hidden;text-align:center;cursor:pointer;}'
   +'.ai-cat .im{aspect-ratio:1/1;background:#f4f2ee;}'
   +'.ai-cat img{width:100%;height:100%;object-fit:cover;display:block;}'
@@ -4895,14 +4900,16 @@ try{
       return h+'</div></section>';
     }
     var h=sec('🎄 Regalos de Navidad',nav,'Navidad','#C62828')+sec('🧸 Para los niños',nin,'Niños','#7B3FE4')+sec('🔥 Lo más vendido',top,'','#E65100')+sec('🆕 Llegó a la tienda',nue,'','#1565C0')+sec('💸 Menos de $50.000',bar,'','#2E7D32');
-    var vistos={},hc='';
+    var vistos={},hc='',nc=0;
+    var PAL=[['#E53935','#FFEBEE'],['#1E88E5','#E3F2FD'],['#F9A825','#FFF8E1',1],['#43A047','#E8F5E9'],['#8E24AA','#F3E5F5'],['#FB8C00','#FFF3E0']];
     var cats=[];
     try{var fb=document.querySelectorAll('#filtros .fb');for(var i=0;i<fb.length;i++){var n=fb[i].textContent.trim();if(n&&norm(n)!=='todos')cats.push(n);}}catch(e){}
     if(!cats.length)LISTA.forEach(function(p){if(p.categoria&&!vistos[norm(p.categoria)]){vistos[norm(p.categoria)]=1;cats.push(p.categoria);}});
     cats.forEach(function(c){
       var del=LISTA.filter(function(p){return norm(p.categoria)===norm(c);});if(!del.length)return;
       var rep=del.filter(function(p){return p.badge==='TOP VENTAS';})[0]||del[0];
-      hc+='<div class="ai-cat" data-cat="'+esc(c)+'"><div class="im"><img loading="lazy" src="'+esc(img(foto(rep),300))+'" alt=""></div><span>'+esc(c)+'</span></div>';
+      var K=PAL[nc++%PAL.length];
+      hc+='<div class="ai-cat" data-cat="'+esc(c)+'" style="--k:'+K[0]+';--k2:'+K[1]+'"><div class="im"><img loading="lazy" src="'+esc(img(foto(rep),300))+'" alt=""></div><span'+(K[2]?' class="osc"':'')+'>'+esc(c)+'</span></div>';
     });
     if(hc)h+='<section class="ai-sec" style="--c:#8A6410"><div class="ai-h"><h2>Compra por categoría</h2></div><div class="ai-cats">'+hc+'</div></section>';
     cont.innerHTML=h;
