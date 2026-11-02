@@ -3,7 +3,7 @@
     {
       "nombre": "ADIDAS REPETITOR.",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": true,
@@ -26,7 +26,7 @@
     {
       "nombre": "INFLADOR AUTOMÁTICO.",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "aparta",
       "precioContado": 120000,
       "fotosModelos": false,
@@ -128,7 +128,7 @@
     {
       "nombre": "SMART WATCH Z1",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "descripcion": "tu día bajo control desde la muñeca.\nSmartwatch z1  con llamadas y notificaciones inalámbricas, ideal para mantenerse siempre conectado a mensajes, redes y apps sin sacar el teléfono. Incorpora múltiples modos deportivos y rastreador de actividad física para registrar pasos, calorías, distancia y calidad del descanso, ayudándote a cuidar mejor tu salud.\nSu correa de silicona es cómoda para uso diario, la carga USB es práctica y rápida, y el diseño moderno combina perfectamente con cualquier estilo. Compatible con iPhone y Android, ofrece una interconexión inteligente pensada para acompañarte en el trabajo, el deporte y la rutina de todos los días.",
@@ -148,7 +148,7 @@
     {
       "nombre": "SPEAKER ORTIZAN",
       "categoria": "Audio",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "aparta",
       "precioContado": 180000,
       "fotosModelos": false,
@@ -267,7 +267,7 @@
     {
       "nombre": "SMART WATCH LADYFIT",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "descripcion": "Smartwatch LadyFit : estilo moderno y conexión total en tu muñeca.\nReloj inteligente de última generación con llamadas y textos inalámbricos, ideal para mantenerte siempre conectado sin sacar el teléfono. Incorpora múltiples modos deportivos y rastreador de actividad física para registrar tus pasos, calorías, distancia y entrenamientos diarios con precisión.\nIncluye control remoto de cámara para tomar fotos desde la muñeca, carga USB práctica y correa de silicona cómoda para uso prolongado. Es compatible con iPhone y Android y ofrece interconexión inteligente con tus apps, combinando funcionalidad avanzada con un diseño moderno perfecto para uso diario y deportivo.",
@@ -324,7 +324,7 @@
     {
       "nombre": "ADIDAS SUPERSTAR",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
@@ -343,7 +343,7 @@
     {
       "nombre": "FREIDORA DE AIRE SCHAFFHAUSEN SCH12",
       "categoria": "Cocina",
-      "badge": "RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 225000,
       "fotosModelos": false,
@@ -362,7 +362,7 @@
     {
       "nombre": "ESCURRIDOR DE PLATOS",
       "categoria": "Cocina",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -396,7 +396,7 @@
     {
       "nombre": "NEW BALANCE 740",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
@@ -432,7 +432,7 @@
     {
       "nombre": "NIKE V2K",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
@@ -469,7 +469,7 @@
     {
       "nombre": "INTERCOMUNICADOR A1 (X 2)",
       "categoria": "Accesorios moto",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 170000,
       "fotosModelos": false,
@@ -492,7 +492,7 @@
     {
       "nombre": "MARCO DE FOTO DIGITAL CON WIFI",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 240000,
       "descripcion": "Marco de fotos digital Frameo de 10.1 pulgadas, ideal para compartir tus mejores momentos de forma práctica y elegante. Su pantalla táctil IPS HD, la rotación automática y la opción de montaje en pared lo convierten en un accesorio moderno y funcional para cualquier espacio del hogar",
@@ -604,7 +604,7 @@
     {
       "nombre": "212 AQUA DE CAROLINA HERRERA",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "descripcion": "212 Men Aqua de Carolina Herrera (lanzado en 2017) es una fragancia amaderada acuática. Ideal para climas cálidos y uso diurno, destaca por sus notas de salida a agua de mar y jengibre, su corazón de gardenia, y su fondo de sándalo y almizcle",
@@ -617,7 +617,7 @@
     {
       "nombre": "PARFUM DE MARLY LAYTON",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 110000,
       "descripcion": "✨ Parfums de Marly Layton (Eau de Parfum) ✨El rey indiscutible de los perfumes de nicho y el imán de cumplidos definitivo. Combina una salida fresca de manzana verde y lavanda con un fondo ultra seductor de vainilla cremosa, maderas preciosas y cardamomo. Un aroma elegante, lujoso y extremadamente versátil que dura todo el día.",
@@ -661,7 +661,7 @@
     {
       "nombre": "212 SEXY MEN",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "descripcion": "El perfume Carolina Herrera 212 Sexy Men Eau de Toilette es una fragancia masculina de la familia olfativa Oriental Fougère, lanzada en 2006 y creada por los perfumistas Alberto Morillas y Rosendo Mateu. Está inspirada en el estilo de vida urbano, sofisticado y en las noches misteriosas de Nueva York.",
@@ -674,7 +674,7 @@
     {
       "nombre": "212 NYC MEN CAROLINA HERRERA",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "descripcion": "212 NYC Men de Carolina Herrera es una icónica fragancia masculina de la familia Almizcle Amaderado Floral. Creada en 1999, es famosa por su aroma fresco, vibrante y moderno",
@@ -687,7 +687,7 @@
     {
       "nombre": "CHANCLA PLAYERA TOMMY",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
       "fotosModelos": true,
@@ -713,7 +713,7 @@
     {
       "nombre": "CHANCLAS NIKE SB",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": true,
@@ -735,7 +735,7 @@
     {
       "nombre": "CHANCLAS CALVIN KLEIN",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
       "fotosModelos": false,
@@ -784,7 +784,7 @@
     {
       "nombre": "MOSCHINO TOY BOY",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
       "fotosModelos": false,
@@ -848,7 +848,7 @@
     {
       "nombre": "OLLA A PRESIÓN UNIVERSAL DE 4 LITROS",
       "categoria": "Cocina",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 150000,
       "descripcion": "¡Cocina tus recetas favoritas en una fracción de tiempo y con total tranquilidad! La olla a presión Universal de 4 litros combina la tradición culinaria con los más altos estándares de seguridad y eficiencia. Su tamaño es perfecto para el día a día de familias medianas, parejas o personas independientes, garantizando porciones exactas  sin desperdiciar energía.",
@@ -913,7 +913,7 @@
     {
       "nombre": "BOND BLEECKER STREET KAROL G",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": false,
@@ -928,7 +928,7 @@
     {
       "nombre": "212 VIP RED",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -943,7 +943,7 @@
     {
       "nombre": "212 VIP HEROES FEM",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -958,7 +958,7 @@
     {
       "nombre": "212 SEXY DE CAROLINA HERRERA",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -988,7 +988,7 @@
     {
       "nombre": "BOND NEW YORK NIGHT",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": false,
@@ -1021,7 +1021,7 @@
     {
       "nombre": "NIKE TRAIL",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
@@ -1099,7 +1099,7 @@
     {
       "nombre": "CAMISETA IMPORTADA ALGODÓN",
       "categoria": "Ropa caballero",
-      "badge": "RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
       "fotosModelos": true,
@@ -1147,7 +1147,7 @@
     {
       "nombre": "ARIANA GRANDE",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
       "fotosModelos": false,
@@ -1196,7 +1196,7 @@
     {
       "nombre": "NEW BALANCE REBEL",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -1216,7 +1216,7 @@
     {
       "nombre": "ADIDAS DURAMO",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -1273,7 +1273,7 @@
     {
       "nombre": "ASICS GEL DAMA",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 145000,
       "fotosModelos": true,
@@ -1291,7 +1291,7 @@
     {
       "nombre": "ALEXANDER MCQUEEN OVERSIZED",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -1342,7 +1342,7 @@
     {
       "nombre": "NIKE AIR FORCE ONE BLACK",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 110000,
       "fotosModelos": true,
@@ -1375,7 +1375,7 @@
     {
       "nombre": "ONE MILLION LUCKY",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -1392,7 +1392,7 @@
     {
       "nombre": "LOUIS VUITTON",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -1407,7 +1407,7 @@
     {
       "nombre": "AL HARAMAIN DUBAI NIGHT",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": false,
@@ -1422,7 +1422,7 @@
     {
       "nombre": "ONE MILLION ROYAL",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -1475,7 +1475,7 @@
     {
       "nombre": "PANTALONETA IMPORTADA EN ALGODÓN",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1525,7 +1525,7 @@
     {
       "nombre": "CAFETERA 12 TAZAS PROGRAMABLE OSTER",
       "categoria": "Cocina",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 150000,
       "descripcion": "☕ Cafetera Programable Oster 12 Tazas\n\nDisfruta del café perfecto cada mañana con la comodidad de programarlo con anticipación. Su capacidad para 12 tazas y su diseño elegante la convierten en el complemento ideal para tu hogar u oficina.",
@@ -1542,7 +1542,7 @@
     {
       "nombre": "CONTADORA DE BILLETES GRANDE BILL COUNTER",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 280000,
       "descripcion": "💵 Contadora de Billetes Bill Counter 2108UV/MG\nAgiliza el conteo de efectivo con una máquina rápida, precisa y confiable. Ideal para negocios, oficinas y comercios que manejan grandes cantidades de dinero diariamente",
@@ -1557,7 +1557,7 @@
     {
       "nombre": "CAJA FUERTE DIGITAL METÁLICA 6L – T-17",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 110000,
       "fotosModelos": false,
@@ -1629,7 +1629,7 @@
     {
       "nombre": "GORRAS ADIDAS IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1647,7 +1647,7 @@
     {
       "nombre": "GORRAS ADIDAS SAGE IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1664,7 +1664,7 @@
     {
       "nombre": "GORRAS ADIDAS ROYAL IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1702,7 +1702,7 @@
     {
       "nombre": "GORRAS ADIDAS LEGACY IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1756,7 +1756,7 @@
     {
       "nombre": "GORRA AMIRI PREMIUM IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1772,7 +1772,7 @@
     {
       "nombre": "GORRA AP CROWN PREMIUM",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1790,7 +1790,7 @@
     {
       "nombre": "AP CROWN LIFESTYLE IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1807,7 +1807,7 @@
     {
       "nombre": "GORRA BURBERRY PREMIUM IMPORTADA",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1845,7 +1845,7 @@
     {
       "nombre": "GORRA CLEMONT EXPLORER IMPORTADA",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1861,7 +1861,7 @@
     {
       "nombre": "GORRA CLEMONT ELITE",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1894,7 +1894,7 @@
     {
       "nombre": "GORRA PUMA FERRARI SCUDERIA IMPORTADAS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -1910,7 +1910,7 @@
     {
       "nombre": "ONE MILLION EAU DE TOILETTE – PACO RABANNE",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -1925,7 +1925,7 @@
     {
       "nombre": "ONE MILLION PRIVÉ – PACO RABANNE",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -1955,7 +1955,7 @@
     {
       "nombre": "ARIANA GRANDE REM",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -1970,7 +1970,7 @@
     {
       "nombre": "ARIANA GRANDE SWEET LIKE CANDY",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
       "fotosModelos": false,
@@ -1985,7 +1985,7 @@
     {
       "nombre": "ARIANA GRANDE THANK U, NEXT 2.0",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
       "fotosModelos": false,
@@ -2050,7 +2050,7 @@
     {
       "nombre": "NIKE OZUNA",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": true,
@@ -2068,7 +2068,7 @@
     {
       "nombre": "NIKE SHOX SUPREME",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": true,
@@ -2121,7 +2121,7 @@
     {
       "nombre": "ADIDAS SUPERNOVA",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": true,
@@ -2180,7 +2180,7 @@
     {
       "nombre": "CAMISETA EN ALGODÓN CON CUELLO RIB",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 50000,
       "fotosModelos": true,
@@ -2258,7 +2258,7 @@
     {
       "nombre": "360° MEN",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 70000,
       "fotosModelos": false,
@@ -2273,7 +2273,7 @@
     {
       "nombre": "360° RED",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 70000,
       "fotosModelos": false,
@@ -2288,7 +2288,7 @@
     {
       "nombre": "ALLURE HOMME SPORT",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -2303,7 +2303,7 @@
     {
       "nombre": "LUZ LED CON VENTILADOR",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 95000,
       "descripcion": "Este innovador dispositivo  2 en 1 combina iluminación y ventilación en un solo cuerpo, diseñado para enroscarse directamente en cualquier portalámparas o plafón convencional con base estándar",
@@ -2321,7 +2321,7 @@
     {
       "nombre": "HUMIDIFICADOR BOLA CON ACABADO MADERA",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 40000,
       "descripcion": "Disfruta de un ambiente más fresco, agradable y relajante con este elegante humidificador de diseño tipo madera. Ideal para el hogar, la oficina o cualquier espacio donde quieras mejorar la calidad del aire y crear un ambiente acogedor",
@@ -2357,7 +2357,7 @@
     {
       "nombre": "CÁMARA IP WIFI DE 3 ANTENAS",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "descripcion": "Mantén tu hogar o negocio protegido con una cámara inteligente que ofrece vigilancia en tiempo real, imágenes nítidas y una conexión WiFi estable gracias a sus tres antenas.",
@@ -2444,7 +2444,7 @@
     {
       "nombre": "NEW BALANCE 530",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": false,
@@ -2479,7 +2479,7 @@
     {
       "nombre": "PORTALÁPIZ CAPIBARA",
       "categoria": "Escolar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 15000,
       "fotosModelos": true,
@@ -2629,7 +2629,7 @@
     {
       "nombre": "PISTA DE CARROS TRICERATOPS CON LUZ Y SONIDO",
       "categoria": "Juguetes",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
       "fotosModelos": false,
@@ -2648,7 +2648,7 @@
     {
       "nombre": "VELOCIRAPTOR DE 42 CM CON CONTROL, LUZ, SONIDO Y VAPOR",
       "categoria": "Juguetes",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 140000,
       "fotosModelos": false,
@@ -2668,7 +2668,7 @@
     {
       "nombre": "VENTILADOR MINI RECARGABLE CAPYBARA",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 30000,
       "fotosModelos": false,
@@ -2703,7 +2703,7 @@
     {
       "nombre": "VENTILADOR MINI RECARGABLE DE MESA CAPYBARA",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 35000,
       "fotosModelos": false,
@@ -2757,7 +2757,7 @@
     {
       "nombre": "VENTILADOR MINI RECARGABLE LATA CAPIBARA",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 35000,
       "fotosModelos": false,
@@ -2794,7 +2794,7 @@
     {
       "nombre": "DATÁFONO BOLD SONO QR, BLANCO",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 80000,
       "fotosModelos": false,
@@ -2881,7 +2881,7 @@
     {
       "nombre": "NIKE RETRO 1",
       "categoria": "Niños",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": true,
@@ -2972,7 +2972,7 @@
     {
       "nombre": "PALM ANGELS",
       "categoria": "Gorras",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 45000,
       "fotosModelos": true,
@@ -3095,7 +3095,7 @@
     {
       "nombre": "PANTALONETA Y CAMISETA ALGODÓN TELA FRÍA DE 260 GM",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": true,
@@ -3145,7 +3145,7 @@
     {
       "nombre": "NIKE METCON",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
@@ -3205,7 +3205,7 @@
     {
       "nombre": "NIKE AIR MAX BW",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -3246,7 +3246,7 @@
     {
       "nombre": "CAMISETA ADIDAS DRI-FIT",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": true,
@@ -3288,7 +3288,7 @@
     {
       "nombre": "CONJUNTO NIKE DRI-FIT",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
       "fotosModelos": true,
@@ -3347,7 +3347,7 @@
     {
       "nombre": "CONJUNTO DRI-FIT JORDAN",
       "categoria": "Ropa caballero",
-      "badge": "RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
       "fotosModelos": true,
@@ -3467,7 +3467,7 @@
     {
       "nombre": "CHANCLETA NIKE CLASSIC",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": true,
@@ -3484,7 +3484,7 @@
     {
       "nombre": "PANTUFLA MATERNA DESCANSO KUROMI/KITTY",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
       "fotosModelos": true,
@@ -3538,7 +3538,7 @@
     {
       "nombre": "MARCADORES DOBLE PUNTA X 48",
       "categoria": "Escolar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 40000,
       "fotosModelos": false,
@@ -3618,7 +3618,7 @@
     {
       "nombre": "MARCADORES DOS PUNTAS X",
       "categoria": "Escolar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -3668,7 +3668,7 @@
     {
       "nombre": "LINTERNA MINERA LED MANOS LIBRES",
       "categoria": "Aire libre-deportes",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 18000,
       "fotosModelos": false,
@@ -3788,7 +3788,7 @@
     {
       "nombre": "ODYSSEY MEGA ARMAF",
       "categoria": "Locion caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 105000,
       "fotosModelos": false,
@@ -3841,7 +3841,7 @@
     {
       "nombre": "MISS DIOR EAU DE PARFUM",
       "categoria": "Locion dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 70000,
       "fotosModelos": false,
@@ -3908,7 +3908,7 @@
     {
       "nombre": "DESPERTADOR BLUETOOTH CON RADIO FM, OREJAS GATICO",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": false,
@@ -4023,7 +4023,7 @@
     {
       "nombre": "GRAMERA DIGITAL 40 KG RECARGABLE",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": false,
@@ -4057,7 +4057,7 @@
     {
       "nombre": "VENTILADOR COMFORT MAXX 2EN1 SAMURAI NEGRO",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 260000,
       "fotosModelos": false,
@@ -4098,7 +4098,7 @@
     {
       "nombre": "VENTILADOR TURBO SILENCE MAXX 3EN1",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 280000,
       "fotosModelos": false,
@@ -4118,7 +4118,7 @@
     {
       "nombre": "UTENSILIOS DE COCINA SILICONA SET X 12",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 40000,
       "fotosModelos": false,
@@ -4157,7 +4157,7 @@
     {
       "nombre": "CONJUNTO ADIDAS",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
       "fotosModelos": true,
@@ -4230,7 +4230,7 @@
     {
       "nombre": "CONJUNTO DEPORTIVO NEW BALANCE",
       "categoria": "Ropa caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
       "fotosModelos": true,
@@ -4248,7 +4248,7 @@
     {
       "nombre": "TABLA COCINA DOS CARAS METAL - MADERA",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 35000,
       "fotosModelos": false,
@@ -4301,7 +4301,7 @@
     {
       "nombre": "DESTORNILLADOR ELÉCTRICO RECARGABLE 10 PUNTAS",
       "categoria": "Herramientas",
-      "badge": "RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": false,
@@ -4409,7 +4409,7 @@
     {
       "nombre": "TOPE GUARDAPOLVO EN ESPUMA PARA PUERTA",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 12000,
       "fotosModelos": false,
@@ -4448,7 +4448,7 @@
     {
       "nombre": "SOMBRILLA MANUAL LARGA 16 VARILLAS",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 25000,
       "fotosModelos": false,
@@ -4525,7 +4525,7 @@
     {
       "nombre": "NIKE SB",
       "categoria": "Calzado dama",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -4544,7 +4544,7 @@
     {
       "nombre": "NIKE SB",
       "categoria": "Calzado caballero",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -4779,7 +4779,7 @@
     {
       "nombre": "NIKE JORDAN 3",
       "categoria": "Calzado dama",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": true,
@@ -4886,7 +4886,7 @@
     {
       "nombre": "NIKE JORDAN RETRO 4",
       "categoria": "Calzado caballero",
-      "badge": "SÚPER PRECIO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": true,
@@ -4925,7 +4925,7 @@
     {
       "nombre": "LINTERNA EMERGENCIA CON KIT DE HERRAMIENTAS",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 75000,
       "fotosModelos": false,
@@ -4943,7 +4943,7 @@
     {
       "nombre": "LINTERNA MINERA RECARGABLE",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 25000,
       "fotosModelos": false,
@@ -4963,7 +4963,7 @@
     {
       "nombre": "LINTERNA RECARGABLE MULTIFUNCIONAL",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 30000,
       "fotosModelos": false,
@@ -4995,7 +4995,7 @@
     {
       "nombre": "POWER BANK VOLT PRO 20000 MAH",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 95000,
       "fotosModelos": false,
@@ -5015,7 +5015,7 @@
     {
       "nombre": "LINTERNA MULTIFUNCIONAL CON KIT HERRAMIENTAS",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
       "fotosModelos": false,
@@ -5035,7 +5035,7 @@
     {
       "nombre": "POWER BANK KP 05 1000 MAH",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": false,
@@ -5125,7 +5125,7 @@
     {
       "nombre": "AIRPODS MAX",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": false,
@@ -5225,7 +5225,7 @@
     {
       "nombre": "AIRPODS 3 ANC",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -5289,7 +5289,7 @@
     {
       "nombre": "STANLEY 40 ONZAS",
       "categoria": "Hogar",
-      "badge": "RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
       "fotosModelos": false,
@@ -5446,7 +5446,7 @@
     {
       "nombre": "TV BOX WATCH ONN GOOGLE TV",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 170000,
       "fotosModelos": false,
@@ -5462,7 +5462,7 @@
     {
       "nombre": "FIRE TV STICK 4K",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 130000,
       "fotosModelos": false,
@@ -5560,7 +5560,7 @@
     {
       "nombre": "TRÍPODE CON SENSOR DE MOVIMIENTO",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 150000,
       "fotosModelos": false,
@@ -5592,7 +5592,7 @@
     {
       "nombre": "COMBO SMART WATCH - AIRPODS Y CORREAS",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -5626,7 +5626,7 @@
     {
       "nombre": "HUMIDIFICADOR",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 35000,
       "fotosModelos": false,
@@ -5658,7 +5658,7 @@
     {
       "nombre": "CONTROL PLAY 4",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 85000,
       "fotosModelos": false,
@@ -5788,7 +5788,7 @@
     {
       "nombre": "TIRA LED RGB 5050",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 70000,
       "fotosModelos": false,
@@ -5878,7 +5878,7 @@
     {
       "nombre": "BOMBILLO VENTILADOR CON CONTROL",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 75000,
       "fotosModelos": false,
@@ -5956,7 +5956,7 @@
     {
       "nombre": "ORGANIZADOR 8 NIVELES",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 60000,
       "fotosModelos": false,
@@ -5994,7 +5994,7 @@
     {
       "nombre": "ORGANIZADOR DE 5 NIVELES",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 50000,
       "fotosModelos": false,
@@ -6050,7 +6050,7 @@
     {
       "nombre": "NIKE AIR FORCE ONE CLASSIC",
       "categoria": "Niños",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": false,
@@ -6185,7 +6185,7 @@
     {
       "nombre": "CINTA LED RGB",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 35000,
       "fotosModelos": false,
@@ -6202,7 +6202,7 @@
     {
       "nombre": "NEW BALANCE 9060",
       "categoria": "Niños",
-      "badge": "ÚLTIMAS UNIDADES",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": true,
@@ -6219,7 +6219,7 @@
     {
       "nombre": "NIKE JORDAN RETRO 1",
       "categoria": "Niños",
-      "badge": "NUEVO INGRESO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": true,
@@ -6293,7 +6293,7 @@
     {
       "nombre": "GORRA PLANA PREMIUM NY - BULLS",
       "categoria": "Gorras",
-      "badge": "RECOMENDADO",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 40000,
       "fotosModelos": true,
@@ -6459,7 +6459,7 @@
     {
       "nombre": "MINI VENTILADOR USB",
       "categoria": "Hogar",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": false,
@@ -6848,7 +6848,7 @@
     {
       "nombre": "PERFUME CHOCO OVERDOSE LATTAFA",
       "categoria": "Loción unisex",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
       "fotosModelos": false,
@@ -7482,7 +7482,7 @@
     {
       "nombre": "NIKE SB DUNK LOW PRO FOG",
       "categoria": "Calzado caballero",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": false,
@@ -7579,7 +7579,7 @@
     {
       "nombre": "AIR JORDAN RETRO 3",
       "categoria": "Calzado caballero",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": false,
@@ -7794,7 +7794,7 @@
     {
       "nombre": "ADIDAS SAMBA PLATAFORMA XLG",
       "categoria": "Calzado dama",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": false,
@@ -8509,7 +8509,7 @@
     {
       "nombre": "LINEAL 100 LED. 10M",
       "categoria": "Navidad",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 50000,
       "fotosModelos": false,
@@ -8676,7 +8676,7 @@
     {
       "nombre": "ADIDAS SAMBA",
       "categoria": "Unisex",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 135000,
       "fotosModelos": false,
@@ -9006,7 +9006,7 @@
     {
       "nombre": "ÁRBOL DE NAVIDAD LED PLEGABLE CON ESTRELLA",
       "categoria": "Navidad",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 110000,
       "fotosModelos": false,
@@ -9123,7 +9123,7 @@
     {
       "nombre": "JBL T280 TWS",
       "categoria": "Audio",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 90000,
       "fotosModelos": false,
@@ -9386,7 +9386,7 @@
     {
       "nombre": "CÁMARA DE SEGURIDAD SOLAR AOSU",
       "categoria": "Tecnología",
-      "badge": "TOP VENTAS",
+      "badge": "",
       "disponibilidad": "camino",
       "precioContado": 320000,
       "fotosModelos": false,
@@ -9484,7 +9484,7 @@
     {
       "nombre": "CARRO LOCO A CONTROL REMOTO",
       "categoria": "Juguetes",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 75000,
       "fotosModelos": false,
@@ -9895,7 +9895,7 @@
     {
       "nombre": "MOCHILA JORDAN",
       "categoria": "Unisex",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 125000,
       "fotosModelos": false,
@@ -10219,7 +10219,7 @@
     {
       "nombre": "CASCADA LUNA Y ESTRELLA 6X1M CALIDA",
       "categoria": "Navidad",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 70000,
       "fotosModelos": false,
@@ -10434,7 +10434,7 @@
     {
       "nombre": "NEW BALANCE 9060",
       "categoria": "Unisex",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 145000,
       "fotosModelos": false,
@@ -11719,7 +11719,7 @@
     {
       "nombre": "PACO RABANNE INVICTUS EAU DE TOILETTE",
       "categoria": "Locion caballero",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
       "fotosModelos": false,
@@ -11837,7 +11837,7 @@
     {
       "nombre": "PERFUME LATTAFA KHAMRAH",
       "categoria": "Loción unisex",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 110000,
       "fotosModelos": false,
@@ -12142,7 +12142,7 @@
     {
       "nombre": "CONJUNTO  DEPORTIVO LICRA POWER",
       "categoria": "Ropa dama",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": false,
@@ -12450,7 +12450,7 @@
     {
       "nombre": "MONO LICRA  POWER DEPORTIVA",
       "categoria": "Ropa dama",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 55000,
       "fotosModelos": false,
@@ -13254,7 +13254,7 @@
     {
       "nombre": "MINI CÁMARA DIGITAL INSTANTÁNEA",
       "categoria": "Niños",
-      "badge": "",
+      "badge": "TOP VENTAS",
       "disponibilidad": "inmediata",
       "precioContado": 120000,
       "fotosModelos": false,
@@ -13467,5 +13467,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793640177191"
+  "ver": 1793641803221
 }
