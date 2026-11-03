@@ -1421,7 +1421,11 @@ async function procesarLote(input) {
   try { hechos = JSON.parse(localStorage.getItem('atarashi_lote_hechos') || '{}'); } catch (e) {}
   var existentes = {};
   productos.forEach(function(p) { existentes[loteNorm(p.nombre)] = 1; });
-  var pendientes = lista.filter(function(x) { return !hechos[x.clave] && !existentes[loteNorm(x.nombre)]; });
+  var pendientes = lista.filter(function(x) {
+    if (hechos[x.clave]) return false;
+    if (x.agregarA) return productos.some(function(p) { return p.id === x.agregarA; });
+    return !existentes[loteNorm(x.nombre)];
+  });
   var yaEstaban = lista.length - pendientes.length;
   if (!pendientes.length) { alert('✅ Todos los productos de esta carpeta ya están en el panel (' + lista.length + ').'); return; }
   var minutos = Math.max(1, Math.round(pendientes.length * 4 / 60));
@@ -1430,7 +1434,7 @@ async function procesarLote(input) {
 
   // categorías que falten
   pendientes.forEach(function(x) {
-    if (!categoriasValidas.some(function(c) { return (c.nombre || c) === x.categoria; })) categoriasValidas.push({ emoji: emojiPara(x.categoria), nombre: x.categoria });
+    if (x.categoria && !categoriasValidas.some(function(c) { return (c.nombre || c) === x.categoria; })) categoriasValidas.push({ emoji: emojiPara(x.categoria), nombre: x.categoria });
   });
 
   loteCancelar = false;
@@ -1452,15 +1456,29 @@ async function procesarLote(input) {
         }
         if (loteCancelar && urls.length < x.fotos.length) break;
         if (!urls.length) throw new Error('sin fotos');
+        if (x.agregarA) {
+          var dest = productos.find(function(q) { return q.id === x.agregarA; });
+          if (!dest) throw new Error('no existe el producto');
+          dest.imagenes = (dest.imagenes || []).concat(urls);
+          dest.fotosModelos = true;
+          hechos[x.clave] = dest.id;
+          try { localStorage.setItem('atarashi_lote_hechos', JSON.stringify(hechos)); } catch (e) {}
+          try { var ids2 = crIdsPendientes(); ids2.push(dest.id); localStorage.setItem('atarashi_pend_ids', JSON.stringify(ids2)); } catch (e) {}
+          hechosN++;
+          det.textContent = '➕ Colores nuevos en ' + dest.nombre;
+          txt.textContent = (hechosN + errores.length) + ' de ' + pendientes.length + ' productos';
+          barra.style.width = Math.round((hechosN + errores.length) * 100 / pendientes.length) + '%';
+          continue;
+        }
         var prod = {
           nombre: String(x.nombre).toUpperCase().trim(),
           categoria: x.categoria,
           badge: '',
           disponibilidad: 'inmediata',
           precioContado: x.precioContado,
-          fotosModelos: false,
-          tipoTalla: '',
-          descripcion: '',
+          fotosModelos: !!x.fotosModelos,
+          tipoTalla: x.tipoTalla || '',
+          descripcion: x.descripcion || '',
           imagenes: urls,
           agotadas: [],
           video: '',
