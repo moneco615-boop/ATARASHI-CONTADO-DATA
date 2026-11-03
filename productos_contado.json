@@ -14649,7 +14649,7 @@
     },
     {
       "nombre": "TENSIÓMETRO A PILAS CON PANTALLA",
-      "categoria": "Belleza",
+      "categoria": "Hogar",
       "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 37000,
@@ -14835,23 +14835,6 @@
       "id": 1793708681316
     },
     {
-      "nombre": "BÁSCULA PERSONAL VIDRIO TEMPLADO 180KG",
-      "categoria": "Belleza",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 35000,
-      "fotosModelos": false,
-      "tipoTalla": "",
-      "descripcion": "Báscula de vidrio templado hasta 180 kg. Lleva el control de tu peso desde casa.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793708729/atarashi_contado/t6q3e8rskzwlztyjlwmk.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793715627/atarashi_contado/gu44jmrqdvnbrkynw4eh.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1793708681317
-    },
-    {
       "nombre": "KIT LIMPIADOR DE OIDOS",
       "categoria": "Belleza",
       "badge": "",
@@ -14861,7 +14844,6 @@
       "tipoTalla": "",
       "descripcion": "Kit para limpiar tus oídos de forma segura y cómoda.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793708729/atarashi_contado/jmv0uwyb0shvkvyhww6l.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793708730/atarashi_contado/uyki5jbxe0zasdcs5eyw.jpg"
       ],
       "agotadas": [],
@@ -15151,7 +15133,7 @@
     },
     {
       "nombre": "MÁQUINA PELQUERA PARA PERRO WERHL PET CARE SERIES 3005",
-      "categoria": "Belleza",
+      "categoria": "Hogar",
       "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 100000,
@@ -15168,7 +15150,7 @@
     },
     {
       "nombre": "MÁQUINA PELUQUERA PARA PERROS KEMEI",
-      "categoria": "Belleza",
+      "categoria": "Hogar",
       "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 65000,
@@ -15233,23 +15215,6 @@
       "agotadas": [],
       "video": "",
       "id": 1793708681338
-    },
-    {
-      "nombre": "BÁSCULA PERSONAL CON BLUETOOTH Y APP MAX 180KG",
-      "categoria": "Belleza",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 40000,
-      "fotosModelos": false,
-      "tipoTalla": "",
-      "descripcion": "Báscula con Bluetooth y app: mide tu peso y lleva tu progreso en el celular.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793708742/atarashi_contado/pjaqtn1rwbwovkpynzwp.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793715628/atarashi_contado/mvlcfn0pff9dbih0ttry.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1793708681340
     },
     {
       "nombre": "BÁSCULA DIGITAL EN METAL CON BLUETOOCH 0070010000813",
@@ -18551,7 +18516,7 @@
     },
     {
       "nombre": "PINZA NAVIDEÑO PARA CABELLO",
-      "categoria": "Belleza",
+      "categoria": "Navidad",
       "badge": "",
       "disponibilidad": "inmediata",
       "precioContado": 8000,
@@ -25282,23 +25247,6 @@
       "id": 1793708681930
     },
     {
-      "nombre": "VASO CON BATIDO MAGNETICO AUTOMÁTICO",
-      "categoria": "Cocina",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 40000,
-      "fotosModelos": false,
-      "tipoTalla": "",
-      "descripcion": "Vaso que bate solo: tu batido o café sin grumos con un botón.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793709009/atarashi_contado/c93unfd8fyfate2ggz1f.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793715773/atarashi_contado/x0jp3gekmgrr4jgst4gm.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1793708681931
-    },
-    {
       "nombre": "PORTACOMIDA CALENTADOR RECARGABLE 1.5L",
       "categoria": "Cocina",
       "badge": "",
@@ -26582,7 +26530,7 @@
       "tipoTalla": "calzado",
       "descripcion": "Puma Roma: el estilo retro que combina con todo, cómodo para todo el día.\nTallas: 36 al 39.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793718450/atarashi_contado/u3ranxzyp41j5osapzsi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793722221/atarashi_contado/zsejllnbma4so10zuyu7.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793718451/atarashi_contado/ls1gd17nju0pttyn6kwp.jpg"
       ],
       "agotadas": [],
@@ -27188,5 +27136,5 @@
       "nombre": "Loción unisex"
     }
   ],
-  "ver": "1793718664976"
+  "ver": "1793723757080"
 }
