@@ -1356,6 +1356,52 @@ async function loteSubirFoto(file) {
   }
   return null;
 }
+async function procesarReemplazoFotos(datos, mapa) {
+  var pos = datos.posicion || 1;
+  if (crHayPendientes()) {
+    alert('⚠️ Tienes cambios guardados sin publicar en este equipo.\nPublícalos primero (⚡ PUBLICAR) y vuelve a intentar.');
+    return;
+  }
+  // Traer la versión más reciente de la nube antes de tocar nada
+  try { await cargarDesdeGitHub(); } catch (e) {}
+  var hechos = {};
+  try { hechos = JSON.parse(localStorage.getItem('atarashi_lote_reemplazos') || '{}'); } catch (e) {}
+  var lista = (datos.productos || []).filter(function(x) {
+    return !hechos[x.id] && productos.some(function(p) { return p.id === x.id; });
+  });
+  if (!lista.length) { alert('✅ Todas estas fotos ya fueron reemplazadas.'); return; }
+  if (!confirm('🖼️ Se va a cambiar la foto ' + (pos + 1) + ' de ' + lista.length + ' productos.\n\nTarda unos ' + Math.max(1, Math.round(lista.length * 2 / 60)) + ' minutos. ¿Empezar?')) return;
+  loteCancelar = false;
+  var capa = document.getElementById('loteCapa'); capa.style.display = 'flex';
+  document.getElementById('loteBtnParar').textContent = 'Pausar';
+  var txt = document.getElementById('loteTexto'), barra = document.getElementById('loteBarra'), det = document.getElementById('loteDetalle');
+  var ok = 0, err = 0, i = 0;
+  async function trabajador() {
+    while (!loteCancelar && i < lista.length) {
+      var x = lista[i++];
+      try {
+        var f = mapa[x.foto]; if (!f) throw new Error('falta la foto');
+        var url = await loteSubirFoto(f);
+        var p = productos.find(function(q) { return q.id === x.id; });
+        if (p && url) {
+          p.imagenes = p.imagenes || [];
+          if (p.imagenes.length > pos) p.imagenes[pos] = url; else p.imagenes.push(url);
+          hechos[x.id] = 1; ok++;
+          try { localStorage.setItem('atarashi_lote_reemplazos', JSON.stringify(hechos)); } catch (e) {}
+          det.textContent = '✅ ' + p.nombre;
+          if (ok % 10 === 0) sincStorage();
+        }
+      } catch (e) { err++; det.textContent = '⚠️ ' + (x.nombre || x.id) + ': ' + e.message; }
+      txt.textContent = (ok + err) + ' de ' + lista.length + ' fotos';
+      barra.style.width = Math.round((ok + err) * 100 / lista.length) + '%';
+    }
+  }
+  await Promise.all([trabajador(), trabajador(), trabajador()]);
+  sincStorage();
+  try { crMarcarPendiente(); renderTabla(); } catch (e) { console.error(e); }
+  capa.style.display = 'none';
+  alert((loteCancelar ? '⏸️ Pausado.' : '✅ ¡Fotos cambiadas!') + '\n\n' + ok + ' fotos reemplazadas.' + (err ? '\n⚠️ ' + err + ' con error (vuelve a cargar la carpeta para reintentar).' : '') + '\n\nRevisa y toca ⚡ PUBLICAR.');
+}
 async function procesarLote(input) {
   var archivos = Array.prototype.slice.call(input.files || []);
   input.value = '';
@@ -1369,6 +1415,7 @@ async function procesarLote(input) {
   if (!jsonFile) { alert('⚠️ Esa carpeta no tiene el archivo importar.json.\nElige la carpeta "LISTO PARA SUBIR - BODEGA ...".'); return; }
   var datos;
   try { datos = JSON.parse(await jsonFile.text()); } catch (e) { alert('⚠️ No se pudo leer importar.json'); return; }
+  if (datos.modo === 'reemplazar') { await procesarReemplazoFotos(datos, mapa); return; }
   var lista = datos.productos || [];
   var hechos = {};
   try { hechos = JSON.parse(localStorage.getItem('atarashi_lote_hechos') || '{}'); } catch (e) {}
