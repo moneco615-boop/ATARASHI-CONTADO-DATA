@@ -627,6 +627,17 @@
     </form>
 
     <div id="avisoPendientes" class="aviso-pend"></div>
+    <button type="button" class="vp-btn" onclick="abrirCargaLote()" title="Sube de una vez una carpeta preparada con productos de bodega (solo desde el PC)">📦 Carga por lote (bodega)</button>
+    <input type="file" id="inLote" webkitdirectory directory multiple style="display:none" onchange="procesarLote(this)">
+    <div id="loteCapa" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;align-items:center;justify-content:center;padding:16px;">
+      <div style="background:#111;border:1px solid #C9A02A;border-radius:12px;padding:22px;max-width:440px;width:100%;color:#fff;text-align:center;font-family:inherit;">
+        <h3 style="margin:0 0 10px;color:#F0C040;">📦 Subiendo productos</h3>
+        <div id="loteTexto" style="font-size:14px;margin-bottom:12px;">Preparando...</div>
+        <div style="background:#333;border-radius:8px;height:14px;overflow:hidden;"><div id="loteBarra" style="height:100%;width:0;background:#C9A02A;transition:width .3s;"></div></div>
+        <div id="loteDetalle" style="font-size:12px;color:#aaa;margin-top:10px;min-height:16px;"></div>
+        <button type="button" id="loteBtnParar" onclick="loteCancelar=true;this.textContent='Deteniendo...';" style="margin-top:14px;background:#721c24;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;">Pausar</button>
+      </div>
+    </div>
     <button type="button" class="vp-btn vp-btn-todos" onclick="abrirVistaPrevia('todos')">👁️ Revisar la tienda antes de publicar</button>
 
     <button class="btn-verde" id="btnCloudSync" onclick="publicarEnGitHub()">
@@ -1322,6 +1333,115 @@ async function subirACloudinary(base64) {
   }
   const data = await res.json();
   return data.secure_url;
+}
+
+// ── CARGA POR LOTE: sube una carpeta preparada (importar.json + fotos) ──
+var loteCancelar = false;
+function loteNorm(t) {
+  return String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+function abrirCargaLote() {
+  if (!CONFIG_CLOUDINARY.isReady()) { alert('Primero configura Cloudinary (botón ☁️).'); configurarCloudinary(); return; }
+  alert('📦 CARGA POR LOTE\n\nEn la ventana que se abre, elige la carpeta "LISTO PARA SUBIR" (la que tiene el archivo importar.json) y dale "Subir".\n\nSi el navegador pregunta si confías en el sitio, acepta.');
+  document.getElementById('inLote').click();
+}
+function loteDataURL(file) {
+  return new Promise(function(ok, mal) { var r = new FileReader(); r.onload = function() { ok(r.result); }; r.onerror = mal; r.readAsDataURL(file); });
+}
+async function loteSubirFoto(file) {
+  var b64 = await loteDataURL(file);
+  for (var i = 0; i < 3; i++) {
+    try { var u = await subirACloudinary(b64); if (u) return u; } catch (e) { if (i === 2) throw e; }
+    await crEsperar(1500 * (i + 1));
+  }
+  return null;
+}
+async function procesarLote(input) {
+  var archivos = Array.prototype.slice.call(input.files || []);
+  input.value = '';
+  if (!archivos.length) return;
+  var mapa = {}, jsonFile = null;
+  archivos.forEach(function(f) {
+    var ruta = (f.webkitRelativePath || f.name).split('/').slice(1).join('/');
+    mapa[ruta] = f;
+    if (ruta === 'importar.json') jsonFile = f;
+  });
+  if (!jsonFile) { alert('⚠️ Esa carpeta no tiene el archivo importar.json.\nElige la carpeta "LISTO PARA SUBIR - BODEGA ...".'); return; }
+  var datos;
+  try { datos = JSON.parse(await jsonFile.text()); } catch (e) { alert('⚠️ No se pudo leer importar.json'); return; }
+  var lista = datos.productos || [];
+  var hechos = {};
+  try { hechos = JSON.parse(localStorage.getItem('atarashi_lote_hechos') || '{}'); } catch (e) {}
+  var existentes = {};
+  productos.forEach(function(p) { existentes[loteNorm(p.nombre)] = 1; });
+  var pendientes = lista.filter(function(x) { return !hechos[x.clave] && !existentes[loteNorm(x.nombre)]; });
+  var yaEstaban = lista.length - pendientes.length;
+  if (!pendientes.length) { alert('✅ Todos los productos de esta carpeta ya están en el panel (' + lista.length + ').'); return; }
+  var minutos = Math.max(1, Math.round(pendientes.length * 4 / 60));
+  if (!confirm('📦 ' + pendientes.length + ' productos nuevos para subir' + (yaEstaban ? '\n(' + yaEstaban + ' ya estaban y se saltan)' : '') +
+    '\n\nTarda más o menos ' + minutos + ' minutos. No cierres esta pestaña.\nPuedes pausar y seguir después: retoma donde quedó.\n\n¿Empezar?')) return;
+
+  // categorías que falten
+  pendientes.forEach(function(x) {
+    if (!categoriasValidas.some(function(c) { return (c.nombre || c) === x.categoria; })) categoriasValidas.push({ emoji: emojiPara(x.categoria), nombre: x.categoria });
+  });
+
+  loteCancelar = false;
+  var capa = document.getElementById('loteCapa'); capa.style.display = 'flex';
+  document.getElementById('loteBtnParar').textContent = 'Pausar';
+  var txt = document.getElementById('loteTexto'), barra = document.getElementById('loteBarra'), det = document.getElementById('loteDetalle');
+  var hechosN = 0, errores = [], idBase = Date.now(), i = 0;
+  async function trabajador() {
+    while (!loteCancelar && i < pendientes.length) {
+      var x = pendientes[i], n = i++;
+      try {
+        var urls = [];
+        for (var k = 0; k < x.fotos.length; k++) {
+          if (loteCancelar) break;
+          var f = mapa[x.fotos[k]];
+          if (!f) continue;
+          var u = await loteSubirFoto(f);
+          if (u) urls.push(u);
+        }
+        if (loteCancelar && urls.length < x.fotos.length) break;
+        if (!urls.length) throw new Error('sin fotos');
+        var prod = {
+          nombre: String(x.nombre).toUpperCase().trim(),
+          categoria: x.categoria,
+          badge: '',
+          disponibilidad: 'inmediata',
+          precioContado: x.precioContado,
+          fotosModelos: false,
+          tipoTalla: '',
+          descripcion: '',
+          imagenes: urls,
+          agotadas: [],
+          video: '',
+          id: idBase + n
+        };
+        productos.push(prod);
+        hechos[x.clave] = prod.id;
+        try { localStorage.setItem('atarashi_lote_hechos', JSON.stringify(hechos)); } catch (e) {}
+        try { var ids = crIdsPendientes(); ids.push(prod.id); localStorage.setItem('atarashi_pend_ids', JSON.stringify(ids)); } catch (e) {}
+        hechosN++;
+        if (hechosN % 10 === 0) sincStorage();
+        det.textContent = '✅ ' + prod.nombre;
+      } catch (e) {
+        errores.push(x.nombre + ' (' + e.message + ')');
+        det.textContent = '⚠️ ' + x.nombre + ': ' + e.message;
+      }
+      txt.textContent = (hechosN + errores.length) + ' de ' + pendientes.length + ' productos';
+      barra.style.width = Math.round((hechosN + errores.length) * 100 / pendientes.length) + '%';
+    }
+  }
+  await Promise.all([trabajador(), trabajador(), trabajador()]);
+  sincStorage();
+  try { crMarcarPendiente(); renderCategoriasUI(); renderTabla(); } catch (e) { console.error(e); }
+  capa.style.display = 'none';
+  alert((loteCancelar ? '⏸️ Pausado.' : '✅ ¡Carga terminada!') + '\n\n' + hechosN + ' productos agregados al panel.' +
+    (errores.length ? '\n⚠️ ' + errores.length + ' con error (se reintentan si vuelves a cargar la carpeta).' : '') +
+    (loteCancelar ? '\n\nPara seguir, vuelve a tocar "Carga por lote" y elige la misma carpeta.' : '') +
+    '\n\nRevisa y luego toca ⚡ PUBLICAR para que salgan en la tienda.');
 }
 
 // ── CARGA RÁPIDA: fondo blanco automático + cola de fotos ──
