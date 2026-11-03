@@ -2773,4 +2773,60 @@ if(v!==base){base=v;aplicar(v,vForz);}
 }catch(e){}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ir);else ir();
-})();</script></html>
+})();</script><script>(function(){
+/* LINK POR PRODUCTO: ?p=ID abre ese producto directo + boton Compartir en cada producto */
+if(/[?&]vistaprevia=1/.test(location.search))return;
+var actual=null;
+function base(){return location.origin+location.pathname;}
+function linkDe(id){return base()+'?p='+encodeURIComponent(id);}
+function aviso(t){try{var x=document.getElementById('toast');if(x){x.textContent=t;x.classList.add('show');setTimeout(function(){x.classList.remove('show');},2200);return;}}catch(e){}alert(t);}
+function copiar(u){
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){aviso('✅ Link copiado');},function(){prompt('Copia este link:',u);});}
+else{prompt('Copia este link:',u);}
+}
+function compartir(){
+if(actual===null)return;
+var u=linkDe(actual);
+if(navigator.share){navigator.share({title:'Atarashi Store',text:'Mira este producto en Atarashi Store 👇',url:u}).catch(function(){});}
+else copiar(u);
+}
+window.atrCompartirProducto=compartir;
+var st=document.createElement('style');
+st.textContent='.atr-share{display:inline-flex;align-items:center;gap:6px;margin:2px 0 12px;padding:9px 14px;border:1.5px solid #C9A02A;border-radius:999px;background:#fff;color:#111;font:700 13px/1 system-ui,sans-serif;cursor:pointer}.atr-share:active{transform:scale(.96)}';
+document.head.appendChild(st);
+function ponerBoton(){
+var box=document.getElementById('mBox');if(!box)return;
+if(box.querySelector('.atr-share'))return;
+var b=document.createElement('button');b.type='button';b.className='atr-share';b.innerHTML='🔗 Compartir';
+b.onclick=function(e){e.stopPropagation();compartir();};
+var pr=box.querySelector('.m-precio');if(pr&&pr.parentNode)pr.parentNode.insertBefore(b,pr.nextSibling);else box.appendChild(b);
+}
+function envolver(){
+var orig=window.abrirModal;
+if(typeof orig!=='function'||orig.__atrLink)return false;
+var nuevo=function(id){var r=orig.apply(this,arguments);actual=id;setTimeout(ponerBoton,0);setTimeout(ponerBoton,300);return r;};
+nuevo.__atrLink=true;
+window.abrirModal=nuevo;
+return true;
+}
+/* abrir el producto del link */
+var pid=null;
+try{pid=new URLSearchParams(location.search).get('p');}catch(e){}
+function abrirDelLink(){
+if(!pid)return;
+var num=Number(pid),id=isNaN(num)?pid:num,n=0;
+var t=setInterval(function(){
+n++;
+var listo=document.querySelector('#grid .card');
+if(listo&&typeof window.abrirModal==='function'){
+clearInterval(t);
+try{if(typeof window.abrirDesdePortada==='function'&&document.getElementById('portada'))window.abrirDesdePortada(id);else window.abrirModal(id);}catch(e){}
+}
+if(n>80)clearInterval(t);
+},250);
+}
+function iniciar(){envolver();abrirDelLink();}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
+window.addEventListener('load',envolver);
+})();
+</script></html>
