@@ -208,6 +208,18 @@
   .panel-vista.activo { display: block; }
 }
 
+/* COMPUTADOR: pestañas Producto / Inventario a pantalla completa (sin pantalla dividida) */
+.desk-tabs { display: none; }
+@media(min-width: 900px) {
+  .desk-tabs { display: flex; gap: 10px; max-width: 1200px; margin: 0 auto 18px; position: sticky; top: 0; z-index: 50; background: var(--negro-fondo, #0a0a0a); padding: 10px 0; }
+  .desk-tab { flex: 1; background: #151515; color: #aaa; border: 1px solid rgba(201,160,42,.35); border-radius: 10px; padding: 12px; font-size: 15px; font-weight: bold; letter-spacing: .5px; cursor: pointer; }
+  .desk-tab.on { background: var(--dorado); color: #000; border-color: var(--dorado); }
+  .contenedor-master { grid-template-columns: 1fr !important; }
+  .panel-formulario { position: static !important; top: auto !important; max-height: none !important; overflow: visible !important; max-width: 820px; width: 100%; margin: 0 auto; }
+  .panel-vista { display: none; }
+  .panel-vista.activo { display: block; }
+}
+
 /* STATUS BAR mobile */
 @media(max-width: 899px) {
   #statusNube {
@@ -458,6 +470,11 @@
   <button style="margin-left:5px;background:#1a3a1a;color:#7fff7f;border:1px solid #25D366;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarWA()">📱 WhatsApp N°</button>
   <button style="margin-left:5px;background:#333;color:#fff;border:1px solid var(--dorado);padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarLogoPortada()">🖼️ Logo Portada</button>
   <button id="btnRepararNube" style="display:none;margin-left:8px;background:#7d2a00;color:#ffcc99;border:1px solid #e74c3c;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;font-weight:bold;" onclick="repararNube()">🔧 Reparar Nube</button>
+</div>
+
+<div class="desk-tabs">
+  <button type="button" class="desk-tab on" data-tab="form" onclick="switchTab('form')">📝 Producto</button>
+  <button type="button" class="desk-tab" data-tab="inventario" onclick="switchTab('inventario')">📦 <span id="deskCnt">Inventario</span></button>
 </div>
 
 <div class="contenedor-master">
@@ -2461,6 +2478,7 @@ function cargarProductoParaEditar(id) {
       : '';
   }
 
+  switchTab('form');
   document.querySelector('.panel-formulario').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -2720,16 +2738,16 @@ async function repararNube() {
 
 // ── TABS ──
 function switchTab(tab) {
-  if (window.innerWidth >= 900) return;
   var form = document.getElementById('panelForm');
   var inv  = document.getElementById('panelInventario');
   if (!form || !inv) return;
   form.classList.toggle('activo', tab === 'form');
   inv.classList.toggle('activo',  tab === 'inventario');
-  document.querySelectorAll('.mob-tab[data-tab]').forEach(function(btn) {
+  document.querySelectorAll('.mob-tab[data-tab], .desk-tab[data-tab]').forEach(function(btn) {
     btn.classList.toggle('on', btn.dataset.tab === tab);
   });
-  if (tab === 'inventario') renderMobileCards();
+  if (tab === 'inventario' && window.innerWidth < 900) renderMobileCards();
+  if (window.innerWidth >= 900) window.scrollTo({ top: 0 });
 }
 
 function irAFormDesdeInventario(id) {
@@ -2788,7 +2806,9 @@ renderTabla = function() {
   _renderTablaOriginal();
   // Si estamos en tab inventario mobile, actualizar cards
   var inv = document.getElementById('panelInventario');
-  if (inv && inv.classList.contains('activo')) renderMobileCards();
+  if (inv && inv.classList.contains('activo') && window.innerWidth < 900) renderMobileCards();
+  var dk = document.getElementById('deskCnt');
+  if (dk) dk.textContent = productos.length ? 'Inventario (' + productos.length + ')' : 'Inventario';
   // Actualizar badge del tab siempre
   var badge = document.getElementById('mobCnt');
   if (badge) badge.textContent = productos.length ? 'Inventario (' + productos.length + ')' : 'Inventario';
@@ -3081,10 +3101,8 @@ function confirmarPublicar() {
 
 // ── INICIALIZAR MOBILE ──
 (function initMobile() {
-  if (window.innerWidth < 900) {
-    var form = document.getElementById('panelForm');
-    if (form) form.classList.add('activo');
-  }
+  var form = document.getElementById('panelForm');
+  if (form) form.classList.add('activo');
   // Agregar botón ⚙️ Config al status bar (desktop)
   var cfg = document.querySelector('.btn-cfg-desktop');
   if (!cfg) {
