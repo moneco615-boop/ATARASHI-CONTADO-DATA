@@ -6143,6 +6143,62 @@ function iniciar(){envolver();abrirDelLink();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
 window.addEventListener('load',envolver);
 })();
+<\/script><script>
+/* ATR-BUSCADOR-ARRIBA (nov 2026): un solo buscador, arriba y funcional.
+   Se sube el buscador real debajo del logo, se quita la barra falsa,
+   y mientras el cliente escribe se esconden banners y vitrinas para que
+   los resultados aparezcan justo debajo. */
+(function(){
+try{
+  if(window.__atrBusArriba)return;window.__atrBusArriba=1;
+  var css=''
+  +'#aiBus{display:none!important;}'
+  +'.ctn > .cat-search.atr-top{top:var(--atrBusTop,0px)!important;padding:10px 14px 8px!important;}'
+  +'.ctn > .cat-search.atr-top input{background:#f3f1ec!important;border:1px solid #e8e2d4!important;border-radius:12px!important;padding:12px 16px 12px 40px!important;color:#1A1A1A!important;}'
+  +'.ctn > .cat-search.atr-top input::placeholder{color:#6b665c!important;}'
+  +'.ctn > .cat-search.atr-top input:focus{border-color:#C9A02A!important;background:#fff!important;}'
+  +'.ctn > .cat-search.atr-top .cat-search-ico{left:max(28px,calc(env(safe-area-inset-left) + 28px))!important;}'
+  +'body.atr-top-ok .filtros{top:var(--atrFilTop,0px)!important;}'
+  +'body.atr-buscando #atrInicio{display:none!important;}';
+  var st=document.createElement('style');st.textContent=css;(document.head||document.documentElement).appendChild(st);
+
+  function alturas(){
+    var hdr=document.querySelector('.s-hdr'),bus=document.querySelector('.cat-search.atr-top');
+    if(!bus)return;
+    var hH=hdr?hdr.offsetHeight:0,hB=bus.offsetHeight||0,R=document.documentElement.style;
+    R.setProperty('--atrBusTop',hH+'px');R.setProperty('--atrFilTop',(hH+hB)+'px');
+  }
+  var antes=false;
+  function estado(){
+    var inp=document.getElementById('buscarCat');
+    var hay=!!(inp&&String(inp.value||'').trim());
+    if(hay===antes)return;antes=hay;
+    document.body.classList.toggle('atr-buscando',hay);
+    if(hay){try{window.scrollTo({top:0,behavior:'auto'});}catch(e){window.scrollTo(0,0);}}
+  }
+  function subir(){
+    var ctn=document.querySelector('.ctn'),bus=document.querySelector('.cat-search'),raiz=document.getElementById('atrInicio');
+    if(!ctn||!bus||!raiz){return false;}
+    if(!bus.classList.contains('atr-top')){
+      ctn.insertBefore(bus,ctn.firstChild);
+      bus.classList.add('atr-top');
+      var inp=document.getElementById('buscarCat');
+      if(inp)inp.setAttribute('placeholder','Buscar tenis, lociones, tecnología…');
+      document.body.classList.add('atr-top-ok');
+    }
+    alturas();
+    return true;
+  }
+  function iniciar(){
+    var n=0;(function esperar(){if(subir())return;if(n++<120)setTimeout(esperar,250);})();
+    window.addEventListener('resize',function(){setTimeout(alturas,100);});
+    window.addEventListener('orientationchange',function(){setTimeout(alturas,300);});
+    document.addEventListener('input',function(e){if(e.target&&e.target.id==='buscarCat')estado();});
+    setInterval(function(){estado();alturas();},800);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
+}catch(e){}
+})();
 <\/script></html>`;
 }
 
