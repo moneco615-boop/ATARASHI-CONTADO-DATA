@@ -5764,6 +5764,266 @@ function pintar(j){
 try{fetch('portada_banner.json?t='+Math.floor(Date.now()/60000)).then(function(r){return r.ok?r.json():null;}).then(pintar).catch(function(){});}catch(e){}
 })();
 <\/script><script>
+/* ATR-BLOQUES (nov 2026)
+   1) ORDEN: los productos ya no salen 100% al azar. Se intercalan por categoria (nunca dos seguidos de la misma)
+      y cada categoria se reparte pareja por todo el catalogo. Cada visita cambia el orden.
+   2) BLOQUES dentro del catalogo cada 16-20 productos (solo en "Todos", sin busqueda):
+      "Para quien buscas regalo?", carrusel "Menos de $50.000" y bloque de confianza.
+      El bloque de confianza muestra opiniones REALES cargadas en el panel (boton Opiniones). Si no hay, muestra solo las garantias.
+   Todo se escribe como texto (nunca como HTML). */
+(function(){
+try{
+var BARATO=50000;
+function norm(s){return String(s==null?'':s).toLowerCase().trim();}
+function mezclar(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function ce(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+function img(u,w){u=String(u||'');if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/upload/')<0)return u;var r=u.split('/upload/')[1]||'';if(/^(f_|q_|w_|c_)/.test(r))return u;return u.replace('/upload/','/upload/f_auto,q_auto:good,c_limit,w_'+(w||400)+'/');}
+function foto(p){var ago=p.agotadas||[];var L=(p.imagenes||[]).filter(function(u){return ago.indexOf(u)<0;});return L[0]||(p.imagenes||[])[0]||'';}
+function precio(n){try{if(typeof fmtP==='function')return fmtP(n);}catch(e){}return '$'+Math.round(n||0).toLocaleString('es-CO');}
+function clr(ev){try{if(window.clarity)window.clarity('event',ev);}catch(e){}}
+
+/* ---------- 1) ORDEN INTERCALADO POR CATEGORIAS ---------- */
+function intercalar(lista){
+  var g={},orden=[];
+  for(var i=0;i<lista.length;i++){var p=lista[i];var c=norm(p&&p.categoria)||'otros';if(!g[c]){g[c]=[];orden.push(c);}g[c].push(p);}
+  if(orden.length<2)return mezclar(lista);
+  var G=mezclar(orden).map(function(c){return {c:c,l:mezclar(g[c]),i:0,w:g[c].length,cur:Math.random()*lista.length};});
+  var out=[],ult=null;
+  while(out.length<lista.length){
+    var act=G.filter(function(x){return x.i<x.l.length;});
+    var suma=0;act.forEach(function(x){x.cur+=x.w;suma+=x.w;});
+    act.sort(function(a,b){return b.cur-a.cur;});
+    var el=act[0];
+    if(el.c===ult&&act.length>1)el=act[1];
+    el.cur-=suma;out.push(el.l[el.i++]);ult=el.c;
+  }
+  try{Object.defineProperty(out,'__atrInt',{value:1});}catch(e){}
+  return out;
+}
+var shOrig=window.shuffle;
+window.shuffle=function(a){
+  try{if(Array.isArray(a)&&a.length>8&&a[0]&&typeof a[0]==='object'&&('categoria' in a[0]))return intercalar(a);}catch(e){}
+  if(typeof shOrig==='function')return shOrig(a);return a;
+};
+/* Por si el catalogo ya habia cargado antes de este script */
+(function revisar(n){
+  try{
+    var P=window.PRODS;
+    if(P&&P.length&&!P.__atrInt&&!window.__ATR_ALL){var nu=intercalar(P);try{PRODS=nu;}catch(e){window.PRODS=nu;}try{if(typeof renderGrid==='function')renderGrid();}catch(e){}return;}
+    if(P&&P.length)return;
+  }catch(e){}
+  if(n<80)setTimeout(function(){revisar(n+1);},150);
+})(0);
+
+/* ---------- Vistas por grupo (Para ella, Menos de $50.000...) ---------- */
+function todos(){return window.__ATR_ALL||window.PRODS||[];}
+var GRUPOS=[
+  {k:'ella',t:'Para ella',f:function(p){var c=norm(p.categoria);return c.indexOf('dama')>-1||c.indexOf('belleza')>-1;}},
+  {k:'el',t:'Para él',f:function(p){var c=norm(p.categoria);return c.indexOf('caballero')>-1||c.indexOf('gorra')>-1||c.indexOf('moto')>-1;}},
+  {k:'ninos',t:'Para niños',f:function(p){var c=norm(p.categoria);return c.indexOf('niñ')>-1||c.indexOf('juguete')>-1||c.indexOf('escolar')>-1;}},
+  {k:'casa',t:'Para la casa',f:function(p){var c=norm(p.categoria);return c.indexOf('hogar')>-1||c.indexOf('cocina')>-1||c.indexOf('herramienta')>-1;}},
+  {k:'tec',t:'Tecnología',f:function(p){var c=norm(p.categoria);return c.indexOf('tecnolog')>-1||c.indexOf('audio')>-1;}},
+  {k:'nav',t:'Navidad',f:function(p){return norm(p.categoria)==='navidad';}},
+  {k:'dep',t:'Deporte',f:function(p){return norm(p.categoria).indexOf('deporte')>-1;}}
+];
+var BAR={k:'barato',t:'Menos de $50.000',f:function(p){return p.precioContado>0&&p.precioContado<BARATO;}};
+function disponible(p){return p&&p.disponibilidad!=='agotado'&&foto(p);}
+function alCatalogo(){
+  var t=document.getElementById('aiTodo')||document.getElementById('grid');if(!t)return;
+  var h=document.querySelector('.s-hdr'),hh=0;
+  try{if(h&&getComputedStyle(h).position==='sticky')hh=h.getBoundingClientRect().height;}catch(e){}
+  var y=t.getBoundingClientRect().top+(window.pageYOffset||0)-hh-6;
+  try{window.scrollTo({top:y,behavior:'smooth'});}catch(e){window.scrollTo(0,y);}
+}
+function clickTodos(){
+  var btns=document.querySelectorAll('#filtros .fb');
+  for(var i=0;i<btns.length;i++){if(norm(btns[i].textContent)==='todos'){try{btns[i].click();}catch(e){}return;}}
+  try{window.filtro='todos';renderGrid();}catch(e){}
+}
+function verGrupo(gr){
+  if(!window.__ATR_ALL)window.__ATR_ALL=window.PRODS;
+  var sub=window.__ATR_ALL.filter(gr.f);if(!sub.length)return;
+  if(gr.k==='barato')sub=sub.slice().sort(function(a,b){return a.precioContado-b.precioContado;});
+  try{var bus=document.getElementById('buscarCat');if(bus&&bus.value){bus.value='';if(typeof buscarProductos==='function')buscarProductos('');}}catch(e){}
+  try{PRODS=sub;}catch(e){window.PRODS=sub;}
+  window.__atrVista=gr.t;window.__atrVistaMia=1;
+  window.__atrInterno=1;clickTodos();window.__atrInterno=0;
+  pintarBarra();
+  setTimeout(alCatalogo,60);
+  clr('bloque_'+gr.k);
+}
+function salirVista(){
+  try{if(typeof window.atrRestaurar==='function')window.atrRestaurar();else if(window.__ATR_ALL){PRODS=window.__ATR_ALL;window.__ATR_ALL=null;}}catch(e){}
+  window.__atrVistaMia=0;window.__atrVista=null;
+  window.__atrInterno=1;clickTodos();window.__atrInterno=0;
+  pintarBarra();
+}
+/* La barra "Para ella · N productos" y el boton flotante "Ver todos" ya los pone ATR-VOLVER-NOV (lee window.__atrVista) */
+function pintarBarra(){var b=document.getElementById('atrVistaBar');if(b&&b.parentNode)b.parentNode.removeChild(b);}
+/* Si eligen una categoria o buscan algo, se sale de la vista del bloque */
+document.addEventListener('click',function(e){var t=e.target;if(!window.__atrVistaMia||window.__atrInterno||!t||!t.closest)return;if(t.closest('#filtros .fb, #sidebarCats, .sidebar, #atrInicio [data-cat]')){window.__atrVistaMia=0;setTimeout(pintarBarra,0);}},true);
+document.addEventListener('input',function(e){var t=e.target;if(window.__atrVistaMia&&t&&t.id==='buscarCat'&&t.value){try{if(typeof window.atrRestaurar==='function')window.atrRestaurar();}catch(x){}window.__atrVistaMia=0;pintarBarra();}},true);
+
+/* ---------- 2) BLOQUES ---------- */
+var st=ce('style');
+st.textContent=''
+ +'.atr-blk{grid-column:1/-1;margin:8px 0 6px;}'
+ +'.atr-blk .ai-sec{margin-top:4px;}'
+ +'.atr-blk .ai-h{padding:0 2px!important;}'
+ +'.atr-blk .ai-fila{padding:0 2px 6px!important;scroll-padding:0 2px!important;}'
+ +'.card.oculta ~ .atr-blk{display:none!important;}'
+ +'.atr-pq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 8px;padding:2px 0;}'
+ +'.atr-pq button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;-webkit-tap-highlight-color:transparent;}'
+ +'.atr-pq .ci{width:100%;max-width:104px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#fff;border:3px solid #C9A02A;box-shadow:0 4px 12px -6px rgba(0,0,0,.35);}'
+ +'.atr-pq .ci img{width:100%;height:100%;object-fit:contain;display:block;}'
+ +'.atr-pq span{font-size:13.5px;font-weight:800;color:#1A1A1A;line-height:1.15;}'
+ +'.atr-pq button:active .ci{transform:scale(.95);}'
+ +'.atr-conf{background:#FBF7EC;border:1.5px solid #E6D6A8;border-radius:16px;padding:14px 12px;}'
+ +'.atr-conf .gar{display:grid;grid-template-columns:1fr 1fr;gap:8px;}'
+ +'.atr-conf .gar div{background:#fff;border-radius:12px;padding:10px 8px;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:800;color:#1A1A1A;line-height:1.2;}'
+ +'.atr-conf .gar i{font-style:normal;font-size:22px;line-height:1;}'
+ +'.atr-conf .op{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;}'
+ +'.atr-conf .op .es{color:#E8A500;font-size:16px;letter-spacing:2px;}'
+ +'.atr-conf .op .tx{font-size:14.5px;color:#222;line-height:1.35;margin:4px 0 6px;}'
+ +'.atr-conf .op .by{font-size:12.5px;color:#6b6457;}'
+;
+document.head.appendChild(st);
+
+var OPI=null;
+try{fetch('portada_banner.json?t='+Math.floor(Date.now()/60000)).then(function(r){return r.ok?r.json():null;}).then(function(j){
+  OPI=(j&&Array.isArray(j.opiniones))?j.opiniones.filter(function(o){return o&&o.visible!==false&&o.texto&&o.nombre;}):[];
+  var vs=document.querySelectorAll('.atr-blk[data-t="conf"]');for(var i=0;i<vs.length;i++)llenarConf(vs[i],Number(vs[i].getAttribute('data-n'))||0);
+}).catch(function(){OPI=[];});}catch(e){OPI=[];}
+
+function titulo(txt,col,ver){
+  var sec=ce('section','ai-sec');sec.style.setProperty('--c',col);
+  var h=ce('div','ai-h');h.appendChild(ce('h2',null,txt));
+  if(ver){var a=ce('a',null,'Ver todo →');a.onclick=ver;h.appendChild(a);}
+  sec.appendChild(h);return sec;
+}
+function bloqueRegalo(){
+  var P=todos().filter(disponible);
+  var L=GRUPOS.filter(function(gr){return P.some(gr.f);});
+  if(L.some(function(x){return x.k==='nav';}))L=L.filter(function(x){return x.k!=='dep';});
+  L=L.slice(0,6);if(L.length<3)return null;
+  var sec=titulo('🎁 ¿Para quién buscas regalo?','#8A6410');
+  var w=ce('div','atr-pq');
+  L.forEach(function(gr){
+    var del=P.filter(gr.f);var rep=del[Math.floor(Math.random()*del.length)];
+    var b=ce('button');b.type='button';
+    var ci=ce('div','ci');var im=ce('img');im.loading='lazy';im.alt='';im.src=img(foto(rep),260);ci.appendChild(im);
+    b.appendChild(ci);b.appendChild(ce('span',null,gr.t));
+    b.onclick=function(){verGrupo(gr);};
+    w.appendChild(b);
+  });
+  sec.appendChild(w);return sec;
+}
+var colaBarato=[],usadosBar=0;
+function bloqueBarato(){
+  if(colaBarato.length<10){colaBarato=colaBarato.concat(mezclar(todos().filter(function(p){return disponible(p)&&BAR.f(p);})));}
+  var lst=[],ids={};
+  while(lst.length<10&&colaBarato.length){var p=colaBarato.shift();if(!ids[p.id]){ids[p.id]=1;lst.push(p);}}
+  if(lst.length<3)return null;
+  var sec=titulo('💸 Menos de $50.000','#2E7D32',function(){verGrupo(BAR);});
+  var fila=ce('div','ai-fila');
+  lst.forEach(function(p){
+    var c=ce('div','ai-p');
+    var im=ce('div','im');if(p.badge)im.appendChild(ce('span','bd',p.badge));
+    var i2=ce('img');i2.loading='lazy';i2.alt='';i2.src=img(foto(p),360);im.appendChild(i2);c.appendChild(im);
+    var tx=ce('div','tx');tx.appendChild(ce('div','nm',p.nombre));tx.appendChild(ce('div','pr',precio(p.precioContado)));c.appendChild(tx);
+    c.onclick=function(){try{abrirModal(p.id);}catch(x){}clr('bloque_barato_producto');};
+    fila.appendChild(c);
+  });
+  sec.appendChild(fila);return sec;
+}
+function estr(n){n=parseInt(n,10);if(!(n>=1&&n<=5))n=5;return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n);}
+function llenarConf(blk,n){
+  blk.textContent='';
+  var hay=OPI&&OPI.length;
+  var sec=titulo(hay?'💛 Opiniones de clientas':'🤝 Compra tranquila','#8A6410');
+  var box=ce('div','atr-conf');
+  if(hay){
+    for(var k=0;k<Math.min(2,OPI.length);k++){
+      var o=OPI[(n*2+k)%OPI.length];
+      var op=ce('div','op');op.appendChild(ce('div','es',estr(o.estrellas)));
+      op.appendChild(ce('div','tx','“'+String(o.texto).slice(0,220)+'”'));
+      var by=String(o.nombre).slice(0,24);if(o.zona)by+=' · '+String(o.zona).slice(0,30);if(o.producto)by+=' · Compró: '+String(o.producto).slice(0,40);
+      op.appendChild(ce('div','by',by));box.appendChild(op);
+      if(OPI.length===1)break;
+    }
+  }
+  var gar=ce('div','gar');
+  [['💵','Pagas al recibir'],['🚚','Envío gratis en Cali'],['⚡','Te llega hoy o máx. 48 h'],['💬','Te atendemos por WhatsApp']].forEach(function(x){var d=ce('div');d.appendChild(ce('i',null,x[0]));d.appendChild(ce('span',null,x[1]));gar.appendChild(d);});
+  box.appendChild(gar);sec.appendChild(box);blk.appendChild(sec);
+}
+
+var TIPOS=['regalo','barato','conf'];
+var POS=[],colsPos=0,primera=null;
+function columnas(g){try{var t=getComputedStyle(g).gridTemplateColumns;var n=t.split(' ').filter(function(x){return x&&x!=='0px';}).length;return n||2;}catch(e){return 2;}}
+function calcPos(cols,max){
+  var op=[];for(var v=16;v<=20;v++)if(v%cols===0)op.push(v);if(!op.length)op=[cols];
+  var out=[],p=0;while(true){p+=op[Math.floor(Math.random()*op.length)];if(p>=max)break;out.push(p);}
+  return out;
+}
+function enTodos(){
+  try{if(window.filtro!=='todos')return false;}catch(e){return false;}
+  try{if(window.terminoBusqueda)return false;}catch(e){}
+  try{var b=document.getElementById('buscarCat');if(b&&b.value&&b.value.trim())return false;}catch(e){}
+  if(window.__ATR_ALL)return false;
+  return true;
+}
+var ocupado=false;
+function poner(){
+  if(ocupado)return;ocupado=true;
+  try{
+    var g=document.getElementById('grid');if(!g)return;
+    pintarBarra();
+    var viejos=g.querySelectorAll('.atr-blk');
+    var cs=g.querySelectorAll('.card');
+    if(!enTodos()||cs.length<24){for(var i=0;i<viejos.length;i++)viejos[i].parentNode.removeChild(viejos[i]);primera=null;return;}
+    var cols=columnas(g);
+    if(cs[0]!==primera||cols!==colsPos){
+      for(var j=0;j<viejos.length;j++)viejos[j].parentNode.removeChild(viejos[j]);
+      primera=cs[0];
+      if(cols!==colsPos||!POS.length){colsPos=cols;POS=calcPos(cols,cs.length);}
+    }
+    var hay={};var ex=g.querySelectorAll('.atr-blk');for(var k=0;k<ex.length;k++)hay[ex[k].getAttribute('data-pos')]=1;
+    for(var q=0;q<POS.length;q++){
+      var pos=POS[q];if(pos>=cs.length)break;
+      if(hay[pos])continue;
+      if(cs[pos-1].classList.contains('oculta'))break;
+      var tipo=TIPOS[q%TIPOS.length],vuelta=Math.floor(q/TIPOS.length);
+      var blk=ce('div','atr-blk');blk.setAttribute('data-pos',pos);blk.setAttribute('data-t',tipo);blk.setAttribute('data-n',vuelta);
+      var sec=null;
+      if(tipo==='regalo')sec=bloqueRegalo();
+      else if(tipo==='barato')sec=bloqueBarato();
+      else{llenarConf(blk,vuelta);}
+      if(sec)blk.appendChild(sec);
+      if(!blk.firstChild)continue;
+      g.insertBefore(blk,cs[pos]);
+    }
+  }catch(e){}
+  finally{ocupado=false;}
+}
+var tm=null;
+function pronto(){if(tm)return;tm=setTimeout(function(){tm=null;poner();},80);}
+function iniciar(){
+  var g=document.getElementById('grid');if(!g){setTimeout(iniciar,300);return;}
+  new MutationObserver(function(ms){
+    for(var i=0;i<ms.length;i++){
+      var m=ms[i],t=m.target;
+      if(t&&t.closest&&t.closest('.atr-blk'))continue;
+      if(m.type==='childList'){var solo=true;var ns=[].slice.call(m.addedNodes).concat([].slice.call(m.removedNodes));for(var k=0;k<ns.length;k++){if(!(ns[k].classList&&ns[k].classList.contains('atr-blk'))){solo=false;break;}}if(solo&&ns.length)continue;}
+      pronto();return;
+    }
+  }).observe(g,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
+  window.addEventListener('resize',pronto);
+  pronto();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
+}catch(e){}
+})();
+<\/script><script>
 /* MARCAS OCULTAS: al mostrar el nombre y la descripcion (tarjeta, ficha, carrito) se quita la marca y queda la referencia.
    Los datos NO se tocan: la busqueda sigue encontrando por marca y el pedido a WhatsApp lleva el nombre completo.
    Para agregar o quitar una marca, edita esta lista (en mayusculas, sin tildes). */
