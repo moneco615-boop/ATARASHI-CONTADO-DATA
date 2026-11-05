@@ -5940,7 +5940,7 @@ function estr(n){n=parseInt(n,10);if(!(n>=1&&n<=5))n=5;return '★★★★★'.
 function llenarConf(blk,n){
   blk.textContent='';
   var hay=OPI&&OPI.length;
-  var sec=titulo(hay?'💛 Opiniones de clientas':'🤝 Compra tranquila','#8A6410');
+  var sec=titulo(hay?'💛 Opiniones de clientes':'🤝 Compra tranquila','#8A6410');
   var box=ce('div','atr-conf');
   if(hay){
     for(var k=0;k<Math.min(2,OPI.length);k++){
