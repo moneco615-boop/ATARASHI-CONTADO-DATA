@@ -5768,7 +5768,7 @@ try{fetch('portada_banner.json?t='+Math.floor(Date.now()/60000)).then(function(r
    1) ORDEN: los productos ya no salen 100% al azar. Se intercalan por categoria (nunca dos seguidos de la misma)
       y cada categoria se reparte pareja por todo el catalogo. Cada visita cambia el orden.
    2) BLOQUES dentro del catalogo cada 24-30 productos (solo en "Todos", sin busqueda):
-      "Para quien buscas regalo?", carrusel "Menos de $50.000" y bloque de confianza.
+      "Para quien buscas regalo?", carrusel "Menos de $50.000" y bloque de confianza. Tambien bloques ¿Sabias que...? con datos cortos y verificados.
       El bloque de confianza muestra opiniones REALES cargadas en el panel (boton Opiniones). Si no hay, muestra solo las garantias.
    Todo se escribe como texto (nunca como HTML). */
 (function(){
@@ -5898,6 +5898,13 @@ st.textContent=''
  +'.atr-pasos em{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:#C9A02A;color:#000;font-style:normal;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;}'
  +'.atr-pasos i{font-style:normal;font-size:28px;line-height:1;}'
  +'.atr-pasos span{font-size:13px;font-weight:800;color:#1A1A1A;line-height:1.2;}'
+ +'.atr-dato{background:linear-gradient(135deg,#FFF6D6 0%,#FFFBEE 100%);border:2px dashed #E0A800;border-radius:18px;padding:14px 14px 12px;}'
+ +'.atr-dato .dq{display:inline-block;background:#1A1A1A;color:#F0C040;font-weight:900;font-size:14px;padding:5px 11px;border-radius:999px;}'
+ +'.atr-dato .dt{margin:10px 0 12px;font-size:16px;line-height:1.38;color:#1A1A1A;font-weight:600;}'
+ +'.atr-dato .df{display:flex;gap:8px;margin-bottom:12px;}'
+ +'.atr-dato .df button{all:unset;cursor:pointer;flex:1 1 0;aspect-ratio:1/1;max-width:110px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ece6d8;}'
+ +'.atr-dato .df img{width:100%;height:100%;object-fit:contain;display:block;}'
+ +'.atr-dato .dv{all:unset;cursor:pointer;display:block;text-align:center;background:#C9A02A;color:#000;font-weight:900;font-size:14.5px;padding:11px 14px;border-radius:999px;}'
  +'.atr-comp{background:#1A1A1A;border-radius:16px;padding:18px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;}'
  +'.atr-comp b{color:#F0C040;font-size:17px;line-height:1.2;}'
  +'.atr-comp span{color:#e8e2d2;font-size:14px;}'
@@ -6049,19 +6056,97 @@ function bloqueCompartir(){
   var sec=ce('section','ai-sec');sec.appendChild(box);return sec;
 }
 
+/* ---------- SABIAS QUE: datos cortos y verificados, cada uno con sus productos ----------
+   Para agregar uno: copia una linea. o = palabras que debe tener el nombre (cualquiera),
+   y = palabras que TAMBIEN debe tener, c = palabras de la categoria. Una palabra con espacio
+   al final ("termo ") debe ser exacta; sin espacio basta con que empiece asi. Sin tildes. */
+var DATOS=[
+ {k:'d_sneak',v:'Ver tenis',c:['calzado'],t:'En inglés a los tenis les dicen «sneakers» porque su suela de caucho no hacía ruido: con ellos te podías acercar sin que nadie te oyera.'},
+ {k:'d_plim',v:'Ver tenis',c:['calzado'],t:'Hace 150 años, en Inglaterra, a los tenis les decían «plimsolls»: la franja entre la suela y la tela parecía la línea que marca cuánto puede cargar un barco.'},
+ {k:'d_gorra',v:'Ver gorras',o:['gorra'],t:'La gorra con visera nació en el béisbol: en 1860 un equipo de Brooklyn ya jugaba con la abuela de la gorra que hoy usa todo el mundo.'},
+ {k:'d_luces',v:'Ver luces',c:['navidad'],o:['luces','luz ','led','bombillo','cascada','cortina'],t:'El primer árbol de Navidad con luces eléctricas se prendió en 1882 en Nueva York: 80 bombillitos rojos, blancos y azules, cada uno del tamaño de una nuez.'},
+ {k:'d_led',v:'Ver luces',c:['navidad'],o:['luces','luz ','led','bombillo','cascada','cortina'],t:'Las luces navideñas LED gastan cerca de 70% menos energía que los bombillitos de antes y pueden durar hasta 10 veces más.'},
+ {k:'d_noel',v:'Ver Papá Noel',o:['noel'],t:'Mucha gente cree que a Papá Noel lo vistió de rojo una marca de gaseosa en los años 30. Mentira: ya lo dibujaban de rojo desde el siglo XIX.'},
+ {k:'d_presion',v:'Ver ollas a presión',o:['presion'],y:['olla'],t:'La olla a presión tiene más de 340 años: la inventó Denis Papin en 1679. Cocina más rápido porque adentro el agua hierve a unos 120 °C, no a 100.'},
+ {k:'d_arroz',v:'Ver arroceras',o:['arrocera'],t:'La olla arrocera automática nació en Japón en 1955. Cinco años después ya estaba en la mitad de las casas japonesas.'},
+ {k:'d_vent',v:'Ver ventiladores',o:['ventilador'],t:'Un ventilador no enfría el cuarto: te refresca a ti, porque mueve el aire sobre tu piel. Dejarlo prendido en un cuarto vacío no sirve de nada.'},
+ {k:'d_lint',v:'Ver linternas',o:['linterna'],t:'En inglés a la linterna le dicen «flashlight» (luz de flash) porque las primeras, de 1899, solo alumbraban a ratos: la pila tenía que descansar.'},
+ {k:'d_termo',v:'Ver termos',o:['termo ','termos '],t:'El termo lo inventó un científico escocés en 1892 para su laboratorio, no para el café. Entre sus dos paredes hay vacío, y sin aire el calor casi no pasa.'},
+ {k:'d_somb',v:'Ver sombrillas',o:['sombrilla','paraguas'],t:'Las primeras sombrillas, hace más de 4.000 años, no eran para la lluvia sino para el sol. Por algo se llaman sombrillas: dan sombra.'},
+ {k:'d_plancha',v:'Ver planchas',o:['plancha de ropa','plancha vertical','vaporizador'],t:'Antes de la plancha eléctrica (1882), las planchas eran de hierro macizo y se calentaban en el fogón o con carbón encendido adentro.'},
+ {k:'d_secador',v:'Ver secadores',o:['secador'],t:'El primer secador de pelo, de 1888, no cabía en la mano: era un casco gigante conectado al tubo de una estufa de gas, en un salón de belleza de París.'},
+ {k:'d_cafe',v:'Ver cafeteras',o:['cafetera'],t:'El filtro de papel para café lo inventó en 1908 una ama de casa alemana: arrancó una hoja del cuaderno de su hijo y la puso en una olla con huequitos.'},
+ {k:'d_bt',v:'Ver audífonos y parlantes',o:['bluetooth','audifono','airpod','parlante'],t:'El Bluetooth se llama así por un rey vikingo del siglo X, Harald «Diente Azul», que unió a Dinamarca y Noruega. Su logo son las iniciales del rey en runas.'},
+ {k:'d_mouse',v:'Ver mouse',o:['mouse'],t:'El primer mouse de computador, de 1964, era una cajita de madera. Nadie se imaginaba que terminaría en todos los escritorios del mundo.'},
+ {k:'d_camara',v:'Ver cámaras',o:['camara '],t:'La foto más antigua que existe, de hace casi 200 años, necesitó por lo menos 8 horas frente a la cámara. Hoy la tomas en menos de un segundo.'},
+ {k:'d_chancla',v:'Ver chanclas',o:['chancla','sandalia'],t:'Las chanclas son de los zapatos más antiguos del mundo: los egipcios ya usaban sandalias de dedo hace más de 3.500 años.'},
+ {k:'d_edp',v:'Ver lociones',c:['locion'],t:'Un «eau de parfum» trae más esencia que un «eau de toilette». Por eso casi siempre dura más en la piel.'},
+ {k:'d_piel',v:'Ver lociones',c:['locion'],t:'Un mismo perfume no huele igual en dos personas: la piel de cada uno le cambia un poquito el aroma.'},
+ {k:'d_china',v:'Ver vajillas',o:['vajilla','porcelana','plato '],t:'En inglés a la vajilla fina le dicen «china», porque la porcelana se inventó en China y a Europa llegaba de allá.'},
+ {k:'d_reloj',v:'Ver relojes',o:['smart watch','smartwatch'],t:'Antes de 1914 el reloj de pulsera se veía como joya de mujer. Se volvió de hombres en la Primera Guerra Mundial: en la trinchera no había cómo sacar el de bolsillo.'},
+ {k:'d_pbank',v:'Ver power banks',o:['power bank','powerbank'],t:'Ningún power bank entrega toda su capacidad: una parte de la energía se pierde en calor. Por eso uno de 10.000 mAh carga menos de lo que dice la caja.'},
+ {k:'d_vapor',v:'Ver arroceras con vaporera',o:['vaporera'],t:'Cocinar al vapor conserva más vitaminas que hervir: en la olla con agua, parte de las vitaminas se queda en el agua que botas.'}
+];
+var RX_AC=new RegExp('['+String.fromCharCode(768)+'-'+String.fromCharCode(879)+']','g');
+function limpio(s){return ' '+String(s==null?'':s).toLowerCase().normalize('NFD').replace(RX_AC,'').replace(/[^a-z0-9]+/g,' ').trim()+' ';}
+function tiene(txt,L){for(var i=0;i<L.length;i++)if(txt.indexOf(' '+L[i])>-1)return true;return false;}
+function filtroDato(d){return function(p){
+  if(d.c&&!tiene(limpio(p.categoria),d.c))return false;
+  var nm=limpio(p.nombre);
+  if(d.o&&!tiene(nm,d.o))return false;
+  if(d.y){for(var i=0;i<d.y.length;i++)if(!tiene(nm,[d.y[i]]))return false;}
+  return true;
+};}
+var colaDatos=[];
+function bloqueDato(){
+  for(var intento=0;intento<DATOS.length*2;intento++){
+    if(!colaDatos.length){colaDatos=mezclar(DATOS);}
+    var d=colaDatos.shift(),f=filtroDato(d);
+    var del=mezclar(todos().filter(function(p){return disponible(p)&&f(p);}));
+    if(del.length<3)continue;
+    var gr={k:d.k,t:d.v.replace('Ver ',''),f:f};
+    gr.t=gr.t.charAt(0).toUpperCase()+gr.t.slice(1);
+    var sec=ce('section','ai-sec');
+    var box=ce('div','atr-dato');
+    box.appendChild(ce('div','dq','🤔 ¿Sabías que…?'));
+    box.appendChild(ce('p','dt',d.t));
+    var fo=ce('div','df');
+    del.slice(0,3).forEach(function(p){var b=ce('button');b.type='button';var im=ce('img');im.loading='lazy';im.alt='';im.src=img(foto(p),220);b.appendChild(im);b.onclick=function(){try{abrirModal(p.id);}catch(x){}clr('dato_producto');};fo.appendChild(b);});
+    box.appendChild(fo);
+    var bt=ce('button','dv',d.v+' ('+del.length+') →');bt.type='button';bt.onclick=function(){verGrupo(gr);clr('dato_ver');};
+    box.appendChild(bt);
+    sec.appendChild(box);return sec;
+  }
+  return null;
+}
 /* Orden de los bloques: el de regalo primero; luego todos los demas en orden distinto cada visita.
    "Pasos" y "Compartir" salen una sola vez. Cuando se acaban, vuelve a empezar en otro orden. */
 var SEQ=[],UNA={pasos:1,compartir:1};
 function disponibles(){
-  var L=['barato','top','reco','nuevo','ultimas','tenis','nav','cat','cat','presu','conf'];
+  var L=['barato','top','reco','nuevo','ultimas','tenis','nav','cat','cat','presu','conf','dato','dato','dato'];
   return L.filter(function(t){var c=CARR[t];return !c||cuantos(c[2].f)>=4;});
+}
+function sinSeguidos(L,prev){
+  /* reparte los repetidos (ej. 3 "sabias que") para que nunca queden pegados */
+  var cnt={},out=[],ult=prev;
+  L.forEach(function(t){cnt[t]=(cnt[t]||0)+1;});
+  for(var n=0;n<L.length;n++){
+    var r=L.length-n,ks=Object.keys(cnt).filter(function(t){return cnt[t]>0&&t!==ult;}),mejor=null;
+    if(!ks.length){mejor=ult;}
+    else{
+      ks.forEach(function(t){if(cnt[t]*2>=r&&mejor===null)mejor=t;});
+      if(mejor===null){var tot=0;ks.forEach(function(t){tot+=cnt[t];});var x=Math.random()*tot;for(var i=0;i<ks.length;i++){x-=cnt[ks[i]];if(x<0){mejor=ks[i];break;}}if(mejor===null)mejor=ks[ks.length-1];}
+    }
+    out.push(mejor);cnt[mejor]--;ult=mejor;
+  }
+  return out;
 }
 function tipoN(q){
   while(SEQ.length<=q){
     var L=disponibles();
     if(!SEQ.length){L=mezclar(L.concat(['pasos','compartir']));SEQ.push('regalo');}
     else{var ult=SEQ.slice(-4),M=null;for(var t=0;t<30;t++){M=mezclar(L.concat(['regalo']));if(M.slice(0,4).every(function(x){return ult.indexOf(x)<0;}))break;}L=M;}
-    SEQ=SEQ.concat(L);
+    SEQ=SEQ.concat(sinSeguidos(L,SEQ[SEQ.length-1]));
   }
   return SEQ[q];
 }
@@ -6070,6 +6155,7 @@ function construir(tipo,blk,vuelta){
   if(tipo==='conf'){llenarConf(blk,vuelta);return null;}
   if(tipo==='cat')return bloqueCategoria();
   if(tipo==='presu')return bloquePresupuesto();
+  if(tipo==='dato')return bloqueDato();
   if(tipo==='pasos')return bloquePasos();
   if(tipo==='compartir')return bloqueCompartir();
   var c=CARR[tipo];if(c)return carrusel(tipo,c[0],c[1],c[2]);
