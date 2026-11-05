@@ -5023,7 +5023,8 @@ try{
   +'.ai-ban{position:relative;margin:12px 14px 0;border-radius:16px;overflow:hidden;background:#f4efe3;aspect-ratio:2/1;}'
   +'.ai-ban-pista{display:flex;height:100%;transition:transform .5s ease;}'
   +'.ai-ban-pista img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;}'
-  +'.ai-ban-pista video{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;background:#f4efe3;}'
+  +'.ai-ban-pista video{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;background:#f4efe3;pointer-events:none;}'
+  +'.ai-ban-pista video::-webkit-media-controls,.ai-ban-pista video::-webkit-media-controls-start-playback-button,.ai-ban-pista video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0;}'
   +'.ai-pts{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:6px;}'
   +'.ai-pts i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 2px rgba(0,0,0,.4);}'
   +'.ai-pts i.on{background:#fff;width:18px;border-radius:4px;}'
@@ -5136,14 +5137,17 @@ try{
     if(L.length>1){h+='<div class="ai-pts">';L.forEach(function(b,i){h+='<i'+(i?'':' class="on"')+'></i>';});h+='</div>';}
     w.innerHTML=h+'</div>';
     /* VIDEO EN BUCLE: suena en silencio, se repite sin fin; si el celular no lo deja arrancar, queda la imagen */
-    var vids=w.querySelectorAll('video.ai-vid');
-    for(var vi=0;vi<vids.length;vi++){var vv=vids[vi];vv.muted=true;vv.defaultMuted=true;try{vv.setAttribute('muted','');}catch(e){}if(vv.getAttribute('data-i')==='0'){try{var pr0=vv.play();if(pr0&&pr0.catch)pr0.catch(function(){});}catch(e){}}}
+    var vids=w.querySelectorAll('video.ai-vid'),vAct=0;
+    function darPlay(v){try{var pr=v.play();if(pr&&pr.catch)pr.catch(function(){esperarToque();});}catch(e){esperarToque();}}
+    /* Algunos celulares (ahorro de bateria / ahorro de datos) no dejan arrancar videos solos: arranca con el primer toque en la pantalla */
+    function esperarToque(){if(w.__atrToque)return;w.__atrToque=1;var f=function(){w.__atrToque=0;document.removeEventListener('touchstart',f,true);document.removeEventListener('click',f,true);for(var q=0;q<vids.length;q++){if(Number(vids[q].getAttribute('data-i'))===vAct&&vids[q].paused)darPlay(vids[q]);}};document.addEventListener('touchstart',f,{capture:true,passive:true});document.addEventListener('click',f,true);}
+    for(var vi=0;vi<vids.length;vi++){var vv=vids[vi];vv.muted=true;vv.defaultMuted=true;try{vv.setAttribute('muted','');}catch(e){}if(vv.getAttribute('data-i')==='0')darPlay(vv);}
     if(L.length<2)return;
     var k=0,pista=document.getElementById('aiPista'),pts=w.querySelectorAll('.ai-pts i'),x0=null;
     var N=L.length,pos=0;
     function mover(p,anim){if(!anim)pista.style.transition='none';pista.style.transform='translateX('+(-100*p)+'%)';pos=p;if(!anim){void pista.offsetWidth;pista.style.transition='';}k=p%N;for(var j=0;j<pts.length;j++)pts[j].className=(j===k?'on':'');alLlegar();}
     function vidDe(i){return w.querySelector('video.ai-vid[data-i="'+i+'"]');}
-    function alLlegar(){for(var q=0;q<vids.length;q++){var v=vids[q];if(Number(v.getAttribute('data-i'))===k){try{v.preload='auto';if(pos!==N)v.currentTime=0;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}catch(e){}}else{try{v.pause();}catch(e){}}}}
+    function alLlegar(){vAct=k;for(var q=0;q<vids.length;q++){var v=vids[q];if(Number(v.getAttribute('data-i'))===k){try{v.preload='auto';if(pos!==N)v.currentTime=0;}catch(e){}darPlay(v);}else{try{v.pause();}catch(e){}}}}
     pista.addEventListener('transitionend',function(){if(pos===N)mover(0,false);});
     function ir(dir){
       if(pos===N)mover(0,false);
@@ -5960,6 +5964,11 @@ st.textContent=''
  +'.atr-blk .ai-h{padding:0 2px!important;}'
  +'.atr-blk .ai-fila{padding:0 2px 6px!important;scroll-padding:0 2px!important;}'
  +'.card.oculta ~ .atr-blk{display:none!important;}'
+ /* FLUIDEZ: con cientos de productos el celular se llenaba de memoria. Asi solo dibuja lo que esta cerca de la pantalla */
+ +'#grid > .card{content-visibility:auto;contain-intrinsic-size:auto 330px;}'
+ +'#grid > .atr-blk{content-visibility:auto;contain-intrinsic-size:auto 430px;}'
+ +'.atr-quieto,.atr-quieto *{animation-play-state:paused!important;}'
+ +'.atr-quieto .ai-h h2::after{animation-play-state:paused!important;}'
  +'.atr-pq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 8px;padding:2px 0;}'
  +'.atr-pq button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;-webkit-tap-highlight-color:transparent;}'
  +'.atr-pq .ci{width:100%;max-width:104px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#fff;border:3px solid #C9A02A;box-shadow:0 4px 12px -6px rgba(0,0,0,.35);}'
@@ -6289,6 +6298,10 @@ function enTodos(){
   if(window.__ATR_ALL)return false;
   return true;
 }
+/* animaciones (brillos, bombillo) solo corren en los bloques que se ven */
+var ioQ=null;
+try{if('IntersectionObserver' in window)ioQ=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('atr-quieto',!e.isIntersecting);});},{rootMargin:'200px 0px'});}catch(e){}
+function vigilarBloque(b){if(!ioQ)return;b.classList.add('atr-quieto');try{ioQ.observe(b);}catch(e){}}
 var ocupado=false;
 function poner(){
   if(ocupado)return;ocupado=true;
@@ -6315,6 +6328,7 @@ function poner(){
       if(sec)blk.appendChild(sec);
       if(!blk.firstChild)continue;
       g.insertBefore(blk,cs[pos]);
+      vigilarBloque(blk);
     }
   }catch(e){}
   finally{ocupado=false;}
