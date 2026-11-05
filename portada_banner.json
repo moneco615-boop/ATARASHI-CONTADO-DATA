@@ -14,6 +14,11 @@
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/q_auto,w_1200,c_limit/v1793884787/atarashi_contado/zthbkoht1oykn7gqmukr.mp4",
       "fondo": "#FAF3E4",
       "temporada": "siempre"
+    },
+    {
+      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793886997/atarashi_contado/dgzzapowonfbtvqmlvfw.jpg",
+      "fondo": "#FAF3E4",
+      "temporada": "navidad"
     }
   ],
   "temporada": "auto"
