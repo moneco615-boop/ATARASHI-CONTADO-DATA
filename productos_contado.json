@@ -33840,6 +33840,42 @@
       "agotadas": [],
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793842303/atarashi_contado/videos/pztcgd4uapcumbqxokwk.mov",
       "id": 1793842389696
+    },
+    {
+      "nombre": "AUDÍFONOS BEATS STUDIO PRO",
+      "categoria": "Audio",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 160000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Disfruta de tu música favorita con la máxima comodidad y un diseño elegante de diadema en color crema. Estos audífonos son perfectos para acompañarte en tus jornadas de estudio, trabajo o en tus viajes por la ciudad. Su estructura acolchada y moderna te permite usarlos durante horas sin molestias. Llévalos contigo y vive una experiencia sonora superior todos los días.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793849392/atarashi_contado/pk6qfhdll1uzfk58u4ay.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793849415/atarashi_contado/eeiacnve4l6osk5kvemy.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793849400/atarashi_contado/videos/jvdnchpq87pmnk4tz0de.mov",
+      "id": 1793849454747
+    },
+    {
+      "nombre": "SET DE ARTE INFANTIL 208 PIEZAS",
+      "categoria": "Juguetes",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 60000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Despierta la creatividad de los mas pequenos con este completo set de arte que incluye una gran variedad de colores y un tablero desplegable. Es ideal para tardes de manualidades en casa, proyectos escolares o para llevar a cualquier lugar gracias a su estuche organizador. Un regalo perfecto para estimular la imaginacion y mantener a los ninos entretenidos mientras desarrollan sus habilidades artisticas.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793849521/atarashi_contado/dw9np1e9ywxdb6vq35hi.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793849522/atarashi_contado/gzk876h5xekdsdzrz9di.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793849523/atarashi_contado/dpdjgmymt52cl6fnbjbg.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793849524/atarashi_contado/qcrmyacexb7hrf7sbthy.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793849545/atarashi_contado/videos/k7igzeeph4djlkwq10al.mov",
+      "id": 1793849587954
     }
   ],
   "categorias": [
@@ -33932,5 +33968,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1793842413240"
+  "ver": "1793852721736"
 }
