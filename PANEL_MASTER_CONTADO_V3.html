@@ -818,6 +818,12 @@
         📷 Agregar banner
         <input type="file" accept="image/*" style="display:none" onchange="subirBannerPortada(this)">
       </label>
+      <label class="btn-azul" style="display:inline-block;cursor:pointer;text-align:center;margin-top:8px;background:#1A1A1A;color:#F0C040;border-color:#C9A02A;">
+        🎬 Agregar video
+        <input type="file" accept="video/mp4,video/*" style="display:none" onchange="subirVideoBanner(this)">
+      </label>
+      <div id="pbVideoEstado" class="cfg-nota" style="margin-top:8px;"></div>
+      <div class="cfg-nota" style="margin-top:6px;">🎬 <strong>Video:</strong> solo uno a la vez. Horizontal (2 a 1, ej. 1200×600), de 4 a 8 segundos, sin sonido y que el final empate con el principio para que se vea infinito.</div>
     </div>
 
     <button class="cfg-save" onclick="cerrarPortadaModal()">✅ Listo</button>
@@ -2957,6 +2963,70 @@ function subirBannerPortada(input) {
   lector.readAsDataURL(file);
 }
 
+// ── VIDEO EN BUCLE para el carrusel de banners (solo uno a la vez) ──
+function subirVideoBanner(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const est = document.getElementById('pbVideoEstado');
+  const fin = (msg) => { if (est) est.textContent = msg || ''; input.value = ''; };
+  if (!CONFIG_CLOUDINARY.isReady()) { alert('⚠️ Configura Cloudinary antes de subir el video.'); configurarCloudinary(); return fin(); }
+  if (!/^video\//.test(file.type || 'video/')) { alert('⚠️ Ese archivo no es un video.'); return fin(); }
+  const mb = file.size / 1048576;
+  if (mb > 40) { alert('⚠️ El video pesa ' + mb.toFixed(1) + ' MB. Es demasiado para el celular de tus clientes.\n\nHazlo más corto (4 a 8 segundos) e intenta otra vez.'); return fin(); }
+  normalizarBanners();
+  const yaHay = portadaBanner.banners.findIndex(b => b && b.video);
+  if (yaHay > -1 && !confirm('Ya tienes un video en los banners. Solo se puede uno a la vez.\n\n¿Reemplazarlo por este nuevo?')) return fin();
+  // Revisar duracion antes de subir
+  const tmp = document.createElement('video');
+  tmp.preload = 'metadata';
+  tmp.muted = true;
+  const url0 = URL.createObjectURL(file);
+  tmp.onloadedmetadata = () => {
+    const seg = tmp.duration || 0, w = tmp.videoWidth || 0, h = tmp.videoHeight || 0;
+    URL.revokeObjectURL(url0);
+    if (seg > 15 && !confirm('El video dura ' + Math.round(seg) + ' segundos. Lo ideal es de 4 a 8.\n\n¿Subirlo de todas formas?')) return fin();
+    if (w && h && w <= h && !confirm('Este video es vertical o cuadrado. En los banners se va a recortar arriba y abajo (el banner es horizontal, 2 a 1).\n\n¿Subirlo de todas formas?')) return fin();
+    enviarVideo();
+  };
+  tmp.onerror = () => { URL.revokeObjectURL(url0); enviarVideo(); };
+  tmp.src = url0;
+  function enviarVideo() {
+    const cloud = CONFIG_CLOUDINARY.getCloudName(), preset = CONFIG_CLOUDINARY.getPreset();
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('upload_preset', preset);
+    fd.append('folder', 'atarashi_contado');
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://api.cloudinary.com/v1_1/' + cloud + '/video/upload');
+    xhr.upload.onprogress = (e) => { if (est && e.lengthComputable) est.textContent = '⏳ Subiendo video… ' + Math.round(e.loaded * 100 / e.total) + '%'; };
+    xhr.onerror = () => { alert('❌ No se pudo subir el video. Revisa tu conexión e intenta otra vez.'); fin(); };
+    xhr.onload = () => {
+      let r = {};
+      try { r = JSON.parse(xhr.responseText); } catch (e) {}
+      if (xhr.status < 200 || xhr.status >= 300 || !r.public_id) {
+        alert('❌ Cloudinary no aceptó el video:\n' + ((r.error && r.error.message) || xhr.status));
+        return fin();
+      }
+      const base = 'https://res.cloudinary.com/' + cloud + '/video/upload/';
+      const ver = r.version ? 'v' + r.version + '/' : '';
+      const nuevo = {
+        url: base + 'w_1200,c_limit,q_auto,so_0/' + ver + r.public_id + '.jpg',
+        video: base + 'q_auto,w_1200,c_limit/' + ver + r.public_id + '.mp4',
+        fondo: PB_COLORES[0].c,
+        temporada: 'siempre'
+      };
+      normalizarBanners();
+      portadaBanner.banners = portadaBanner.banners.filter(b => !(b && b.video));
+      portadaBanner.banners.unshift(nuevo);
+      sincBannerPrincipal();
+      renderPortadaModal();
+      fin('✅ Video listo. Quedó de primero. Ponle su temporada y dale ⚡ Publicar.');
+    };
+    if (est) est.textContent = '⏳ Subiendo video… 0%';
+    xhr.send(fd);
+  }
+}
+
 // ── Varios banners con su color de fondo ──
 const PB_COLORES = [
   { c: '#FAF3E4', n: 'Crema (actual)' },
@@ -2998,8 +3068,9 @@ function renderListaBanners() {
   L.forEach(function (b, idx) {
     const fila = document.createElement('div');
     fila.style.cssText = 'border:1px solid rgba(201,160,42,.4);border-radius:12px;padding:8px;margin-bottom:10px;background:' + (b.fondo || PB_COLORES[0].c) + ';';
-    const img = document.createElement('img');
-    img.src = b.url;
+    const img = document.createElement(b.video ? 'video' : 'img');
+    if (b.video) { img.src = b.video; img.poster = b.url; img.muted = true; img.loop = true; img.autoplay = true; img.playsInline = true; img.setAttribute('muted', ''); }
+    else img.src = b.url;
     img.style.cssText = 'width:100%;max-height:150px;object-fit:cover;border-radius:10px;display:block;';
     fila.appendChild(img);
 
@@ -4952,6 +5023,7 @@ try{
   +'.ai-ban{position:relative;margin:12px 14px 0;border-radius:16px;overflow:hidden;background:#f4efe3;aspect-ratio:2/1;}'
   +'.ai-ban-pista{display:flex;height:100%;transition:transform .5s ease;}'
   +'.ai-ban-pista img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;}'
+  +'.ai-ban-pista video{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;background:#f4efe3;}'
   +'.ai-pts{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:6px;}'
   +'.ai-pts i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 2px rgba(0,0,0,.4);}'
   +'.ai-pts i.on{background:#fff;width:18px;border-radius:4px;}'
@@ -5043,6 +5115,7 @@ try{
 
   /* ---- Banners ---- */
   var tBan=null;
+  function esVid(b){return b&&typeof b.video==='string'&&b.video.indexOf('https://')===0;}
   function pintarBanners(d){
     var w=document.getElementById('aiBanWrap');if(!w)return;
     var tem=temporadaHoy(),L=[];
@@ -5055,16 +5128,22 @@ try{
       return;
     }
     L=L.filter(function(b){return (b.temporada||'siempre')!=='siempre';}).concat(L.filter(function(b){return (b.temporada||'siempre')==='siempre';}));
+    L=L.filter(esVid).concat(L.filter(function(b){return !esVid(b);}));
     var h='<div class="ai-ban"><div class="ai-ban-pista" id="aiPista">';
-    L.forEach(function(b,i){h+='<img src="'+esc(img(b.url,1200))+'" alt="Atarashi Store"'+(i?' loading="lazy"':'')+'>';});
+    L.forEach(function(b,i){if(esVid(b))h+='<video class="ai-vid" data-i="'+i+'" src="'+esc(b.video)+'" poster="'+esc(img(b.url,1200))+'" muted loop playsinline webkit-playsinline disablepictureinpicture preload="'+(i?'none':'auto')+'"'+(i?'':' autoplay')+'></video>';else h+='<img src="'+esc(img(b.url,1200))+'" alt="Atarashi Store"'+(i?' loading="lazy"':'')+'>';});
     if(L.length>1)h+='<img src="'+esc(img(L[0].url,1200))+'" alt="" aria-hidden="true">';
     h+='</div>';
     if(L.length>1){h+='<div class="ai-pts">';L.forEach(function(b,i){h+='<i'+(i?'':' class="on"')+'></i>';});h+='</div>';}
     w.innerHTML=h+'</div>';
+    /* VIDEO EN BUCLE: suena en silencio, se repite sin fin; si el celular no lo deja arrancar, queda la imagen */
+    var vids=w.querySelectorAll('video.ai-vid');
+    for(var vi=0;vi<vids.length;vi++){var vv=vids[vi];vv.muted=true;vv.defaultMuted=true;try{vv.setAttribute('muted','');}catch(e){}if(vv.getAttribute('data-i')==='0'){try{var pr0=vv.play();if(pr0&&pr0.catch)pr0.catch(function(){});}catch(e){}}}
     if(L.length<2)return;
     var k=0,pista=document.getElementById('aiPista'),pts=w.querySelectorAll('.ai-pts i'),x0=null;
     var N=L.length,pos=0;
-    function mover(p,anim){if(!anim)pista.style.transition='none';pista.style.transform='translateX('+(-100*p)+'%)';pos=p;if(!anim){void pista.offsetWidth;pista.style.transition='';}k=p%N;for(var j=0;j<pts.length;j++)pts[j].className=(j===k?'on':'');}
+    function mover(p,anim){if(!anim)pista.style.transition='none';pista.style.transform='translateX('+(-100*p)+'%)';pos=p;if(!anim){void pista.offsetWidth;pista.style.transition='';}k=p%N;for(var j=0;j<pts.length;j++)pts[j].className=(j===k?'on':'');alLlegar();}
+    function vidDe(i){return w.querySelector('video.ai-vid[data-i="'+i+'"]');}
+    function alLlegar(){for(var q=0;q<vids.length;q++){var v=vids[q];if(Number(v.getAttribute('data-i'))===k){try{v.preload='auto';if(pos!==N)v.currentTime=0;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});}catch(e){}}else{try{v.pause();}catch(e){}}}}
     pista.addEventListener('transitionend',function(){if(pos===N)mover(0,false);});
     function ir(dir){
       if(pos===N)mover(0,false);
@@ -5072,7 +5151,16 @@ try{
       else if(pos===0){mover(N,false);requestAnimationFrame(function(){requestAnimationFrame(function(){mover(N-1,true);});});}
       else mover(pos-1,true);
     }
-    function reloj(){if(tBan)clearInterval(tBan);tBan=setInterval(function(){if(!document.hidden)ir(1);},2500);}
+    /* Las fotos duran 2,5 s; el video se queda hasta completar su vuelta (maximo 12 s) */
+    function reloj(){
+      if(tBan){clearTimeout(tBan);clearInterval(tBan);}
+      var v=vidDe(k),ms=2500;
+      if(v){
+        if(!(v.duration>0)){var hecho=false;var f=function(){if(hecho)return;hecho=true;reloj();};try{v.addEventListener('loadedmetadata',f,{once:true});}catch(e){}tBan=setTimeout(f,4000);return;}
+        ms=Math.max(2500,Math.min(Math.round(v.duration*1000)+250,12000));
+      }
+      tBan=setTimeout(function(){if(!document.hidden)ir(1);reloj();},ms);
+    }
     var ban=w.querySelector('.ai-ban');
     ban.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
     ban.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>35){ir(dx<0?1:-1);reloj();}},{passive:true});
