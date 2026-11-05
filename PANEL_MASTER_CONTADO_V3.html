@@ -3116,6 +3116,23 @@ function renderListaBanners() {
     del.onclick = function () { quitarBannerPortada(idx); };
     acciones.appendChild(del);
     fila.appendChild(acciones);
+    if (b.video) {
+      // 🔁 Interruptor: el video da 1 vuelta (normal) o 2 antes de pasar al siguiente banner
+      const rep = document.createElement('label');
+      rep.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px;border-radius:10px;background:#FFF6D6;border:1px solid #E0A800;font-size:13px;color:#111;font-weight:700;cursor:pointer;';
+      const ck = document.createElement('input');
+      ck.type = 'checkbox';
+      ck.checked = Number(b.vueltas) === 2;
+      ck.style.cssText = 'width:22px;height:22px;flex:0 0 auto;accent-color:#C9A02A;';
+      ck.onchange = function () {
+        if (!portadaBanner.banners[idx]) return;
+        if (this.checked) portadaBanner.banners[idx].vueltas = 2;
+        else delete portadaBanner.banners[idx].vueltas;
+      };
+      rep.appendChild(ck);
+      rep.appendChild(document.createTextNode('🔁 Repetir el video 2 veces antes de pasar al siguiente banner (sin marcar: 1 vez)'));
+      fila.appendChild(rep);
+    }
 
     cont.appendChild(fila);
   });
@@ -5155,13 +5172,14 @@ try{
       else if(pos===0){mover(N,false);requestAnimationFrame(function(){requestAnimationFrame(function(){mover(N-1,true);});});}
       else mover(pos-1,true);
     }
-    /* Las fotos duran 2,5 s; el video se queda 2 vueltas completas (maximo 25 s) */
+    /* Las fotos duran 2,5 s; el video da 1 vuelta completa (o 2 si en el panel se marco Repetir) */
     function reloj(){
       if(tBan){clearTimeout(tBan);clearInterval(tBan);}
       var v=vidDe(k),ms=2500;
       if(v){
         if(!(v.duration>0)){var hecho=false;var f=function(){if(hecho)return;hecho=true;reloj();};try{v.addEventListener('loadedmetadata',f,{once:true});}catch(e){}tBan=setTimeout(function(){if(hecho)return;hecho=true;if(!document.hidden)ir(1);reloj();},4000);return;}
-        ms=Math.max(2500,Math.min(Math.round(v.duration*1000)*2+250,25000));
+        var vu=(L[k]&&Number(L[k].vueltas)===2)?2:1;
+        ms=Math.max(2500,Math.min(Math.round(v.duration*1000)*vu+250,25000));
       }
       tBan=setTimeout(function(){if(!document.hidden)ir(1);reloj();},ms);
     }
