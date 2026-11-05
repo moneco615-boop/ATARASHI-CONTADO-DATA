@@ -5156,8 +5156,8 @@
       "categoria": "Tecnología",
       "badge": "",
       "disponibilidad": "inmediata",
-      "precioContado": 130000,
-      "fotosModelos": false,
+      "precioContado": 120000,
+      "fotosModelos": true,
       "tipoTalla": "",
       "descripcion": "✨🎧 AIRPODS MAX + REPUESTOS 🎧✨\n\n• Conectividad directa 🍎\n• Diseño elegante, cómodo y moderno 😍\n• Incluyen repuestos 🙌🏼\n• Ideales para música, llamadas, estudio o trabajo 📲\n• Batería de larga duración 🔋\n• Disponibles en \n• ⁠NEGRO\n• ⁠PLATEADO\n• ⁠LILA\n• ⁠SALMÓN 🌈\n\n💸 Lo mejor: calidad brutal a un precio increíble.\n¡Llévate las tuyas hoy!",
       "imagenes": [
@@ -33763,6 +33763,83 @@
       "agotadas": [],
       "video": "",
       "id": 1793757747828
+    },
+    {
+      "nombre": "TERMO CHICU TOM ANIMALES",
+      "categoria": "Hogar",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 45000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Lleva la hidratación a otro nivel con este adorable termo de diseño divertido que alegra tus días. Cuenta con una tapa superior en forma de animalito tierno y viene en diferentes estilos con personajes muy simpáticos para elegir. Es perfecto para llevar al colegio, a la oficina o a cualquier salida manteniendo tus bebidas siempre a la mano. Un accesorio práctico y encantador que te acompaña a todas partes con la mejor actitud.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840239/atarashi_contado/up3tamkoq2zvvf6rmi4d.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840239/atarashi_contado/cjxkxuvy5aljbiuany13.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840240/atarashi_contado/lygybspbtrupt5i1uhau.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840240/atarashi_contado/tsgjvm7wfve0jcm5yq0z.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840241/atarashi_contado/hj0z6anuwii1asfnxzsa.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840242/atarashi_contado/m86wknyd9klnvoi58s0i.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793840331/atarashi_contado/videos/rswmeoj5mbs5aoiz9hoo.mov",
+      "id": 1793840287035
+    },
+    {
+      "nombre": "AUDÍFONOS DIADEMA BLUETOOTH P9",
+      "categoria": "Audio",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 50000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Disfruta de tu música favorita con total comodidad gracias a estos audífonos de diadema inalámbricos. Su diseño circumauricular con almohadillas suaves y colores modernos los hace perfectos para usar durante largas jornadas de estudio o trabajo. Son ideales para llevar a todas partes y complementar tu estilo diario con un toque práctico.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840876/atarashi_contado/xlrcjzlx7aeqi333e6ry.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840348/atarashi_contado/s2xzt5h7bv9gb5jgum5r.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840349/atarashi_contado/kxisawhhsyoyynlgkvo6.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840349/atarashi_contado/ynktkeccukhvhsnlqwn7.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840350/atarashi_contado/c5m43xsqwdghqp8jnrrv.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793840351/atarashi_contado/eam3jgndp9mmrjiklh9a.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793840890/atarashi_contado/videos/wqk2bixae0uol4vb19ln.mov",
+      "id": 1793840935115
+    },
+    {
+      "nombre": "AUDÍFONOS DIADEMA AIRPODS X KIM",
+      "categoria": "Audio",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 105000,
+      "fotosModelos": true,
+      "tipoTalla": "",
+      "descripcion": "Disfruta de tu música favorita con estilo y comodidad excepcional gracias a estos audífonos de diadema. Su diseño moderno en tonos tierra combina perfectamente con cualquier atuendo diario mientras te relajas en casa o estudias. Cuentan con almohadillas suaves y una práctica funda protectora para llevarlos contigo a todas partes.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793841894/atarashi_contado/jc8fgcodyrgrsbbsxuqk.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793841895/atarashi_contado/hpnl6k6inxfrboyhuwwl.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793841896/atarashi_contado/fepd4zruw5b25pdmtsbt.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793841896/atarashi_contado/qf8zqxafkzo4hka8ho6w.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793841906/atarashi_contado/videos/sj4tnk1ty0p3iwce6bpe.mov",
+      "id": 1793841998594
+    },
+    {
+      "nombre": "AIRPODS  MAX 1.1 PREMIUM",
+      "categoria": "Audio",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 135000,
+      "fotosModelos": false,
+      "tipoTalla": "",
+      "descripcion": "Disfruta de tu música favorita con total comodidad gracias a estos audífonos de diadema inalámbricos disponibles en varios tonos. Su diseño moderno se adapta perfectamente a tu estilo diario, ya sea para estudiar, trabajar o relajarte en casa. Es un accesorio versátil que combina fácilmente con cualquier pinta y te acompaña a donde vayas. Llévatelos hoy mismo para vivir una experiencia sonora superior y sin enredos.",
+      "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793842262/atarashi_contado/rvmy1pasjpmzfghdhyss.jpg"
+      ],
+      "agotadas": [],
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1793842303/atarashi_contado/videos/pztcgd4uapcumbqxokwk.mov",
+      "id": 1793842389696
     }
   ],
   "categorias": [
@@ -33855,5 +33932,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1793838010470"
+  "ver": "1793842413240"
 }
