@@ -5155,13 +5155,13 @@ try{
       else if(pos===0){mover(N,false);requestAnimationFrame(function(){requestAnimationFrame(function(){mover(N-1,true);});});}
       else mover(pos-1,true);
     }
-    /* Las fotos duran 2,5 s; el video se queda hasta completar su vuelta (maximo 12 s) */
+    /* Las fotos duran 2,5 s; el video se queda 2 vueltas completas (maximo 25 s) */
     function reloj(){
       if(tBan){clearTimeout(tBan);clearInterval(tBan);}
       var v=vidDe(k),ms=2500;
       if(v){
-        if(!(v.duration>0)){var hecho=false;var f=function(){if(hecho)return;hecho=true;reloj();};try{v.addEventListener('loadedmetadata',f,{once:true});}catch(e){}tBan=setTimeout(f,4000);return;}
-        ms=Math.max(2500,Math.min(Math.round(v.duration*1000)+250,12000));
+        if(!(v.duration>0)){var hecho=false;var f=function(){if(hecho)return;hecho=true;reloj();};try{v.addEventListener('loadedmetadata',f,{once:true});}catch(e){}tBan=setTimeout(function(){if(hecho)return;hecho=true;if(!document.hidden)ir(1);reloj();},4000);return;}
+        ms=Math.max(2500,Math.min(Math.round(v.duration*1000)*2+250,25000));
       }
       tBan=setTimeout(function(){if(!document.hidden)ir(1);reloj();},ms);
     }
