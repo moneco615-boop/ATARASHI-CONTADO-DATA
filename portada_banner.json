@@ -14,34 +14,6 @@
       "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/q_auto,w_1200,c_limit/v1793884787/atarashi_contado/zthbkoht1oykn7gqmukr.mp4",
       "fondo": "#FAF3E4",
       "temporada": "siempre"
-    },
-    {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793563439/atarashi_contado/zewkigrbobu8kh0eveqn.jpg",
-      "fondo": "#E3F2E5",
-      "temporada": "navidad"
-    },
-    {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793635226/atarashi_contado/lhdgx5soqrrj9allygxd.jpg",
-      "fondo": "#FAF3E4",
-      "temporada": "navidad"
-    },
-    {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793635251/atarashi_contado/rvdi7gkyt6jb1pbrkarp.jpg",
-      "fondo": "#FAF3E4",
-      "temporada": "navidad"
-    },
-    {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793635284/atarashi_contado/eba0x2reuexknedrgpkk.jpg",
-      "fondo": "#FAF3E4",
-      "temporada": "navidad"
-    },
-    {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793635359/atarashi_contado/t2qfnxmrk7gvrccmelmc.jpg",
-      "fondo": "#FAF3E4"
-    },
-    {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793635378/atarashi_contado/disu4zwywhlbkjicawfe.jpg",
-      "fondo": "#FAF3E4"
     }
   ],
   "temporada": "auto"
