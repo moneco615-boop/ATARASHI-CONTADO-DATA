@@ -2575,7 +2575,7 @@ document.addEventListener('input',function(e){var t=e.target;if(window.__atrVist
 /* ---------- 2) BLOQUES ---------- */
 var st=ce('style');
 st.textContent=''
- +'.atr-blk{grid-column:1/-1;margin:8px 0 6px;}'
+ +'.atr-blk{grid-column:1/-1;margin:8px 0 6px;}' +'.atr-vid{position:relative;max-width:460px;margin:0 auto;aspect-ratio:4/5;max-height:78vh;border-radius:18px;overflow:hidden;background:#111;cursor:pointer;box-shadow:0 8px 22px -12px rgba(0,0,0,.55);-webkit-tap-highlight-color:transparent;}' +'.atr-vid video{width:100%;height:100%;object-fit:cover;display:block;background:#111;}' +'.atr-vid .vinfo{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 13px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0));color:#fff;pointer-events:none;}' +'.atr-vid .vnom{font-weight:800;font-size:15px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}' +'.atr-vid .vpie{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;}' +'.atr-vid .vpre{font-weight:900;font-size:18px;color:#F0C040;}' +'.atr-vid .vver{font-weight:800;font-size:13px;background:#C9A02A;color:#1A1A1A;padding:7px 12px;border-radius:999px;white-space:nowrap;}' +'.atr-vid .vsnd{all:unset;position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:19px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;}'
  +'.atr-blk .ai-sec{margin-top:4px;}'
  +'.atr-blk .ai-h{padding:0 2px!important;}'
  +'.atr-blk .ai-fila{padding:0 2px 6px!important;scroll-padding:0 2px!important;}'
@@ -2917,6 +2917,49 @@ function bloqueDato(){
   }
   return null;
 }
+/* ---------- VIDEOS ENTRE PRODUCTOS ----------
+   Toma los productos que tienen video en el catalogo y los va mostrando al azar mientras la gente baja.
+   El video solo se descarga cuando esta cerca de la pantalla, arranca sin sonido y se pausa al salir.
+   Tocar el video abre el producto; el parlantico activa el sonido. */
+var colaVid=[],ultVid=null;
+function conVideo(p){return disponible(p)&&p.video&&String(p.video).trim().length>0;}
+function sigVideo(){
+  for(var i=0;i<2;i++){
+    if(!colaVid.length)colaVid=mezclar(todos().filter(conVideo));
+    while(colaVid.length){var p=colaVid.shift();if(p&&p.id!==ultVid){ultVid=p.id;return p;}}
+  }
+  return null;
+}
+function vidUrl(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return u;var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return u;return u.replace('/video/upload/','/video/upload/q_auto,vc_auto,w_720,c_limit/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.mp4');}
+function vidPoster(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return '';var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return '';return u.replace('/video/upload/','/video/upload/so_0,w_720,c_limit,q_auto/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.jpg');}
+var ioVid=null;
+try{if('IntersectionObserver' in window)ioVid=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+  if(e.isIntersecting&&!v.getAttribute('src')){v.src=v.getAttribute('data-src');try{v.load();}catch(x){}}
+  if(e.isIntersecting&&e.intersectionRatio>=0.5){var r=v.play();if(r&&r.catch)r.catch(function(){});}
+  else if(!v.paused)v.pause();
+});},{rootMargin:'300px 0px',threshold:[0,0.5,1]});}catch(e){}
+function bloqueVideo(){
+  var p=sigVideo();if(!p)return null;
+  var sec=titulo('🎬 Míralo en video','#8A6410');
+  var box=ce('div','atr-vid');
+  var v=ce('video');v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.loop=true;v.playsInline=true;
+  v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.setAttribute('disablepictureinpicture','');v.preload='none';
+  var po=vidPoster(p.video);if(po)v.poster=po;else{var f=foto(p);if(f)v.poster=img(f,720);}
+  var orig=String(p.video).trim();v.setAttribute('data-src',vidUrl(orig));
+  v.addEventListener('error',function(){if(v.getAttribute('src')!==orig){v.src=orig;try{v.load();var r=v.play();if(r&&r.catch)r.catch(function(){});}catch(x){}}});
+  box.appendChild(v);
+  var snd=ce('button','vsnd','🔇');snd.type='button';snd.setAttribute('aria-label','Activar sonido');
+  snd.onclick=function(e){e.stopPropagation();var on=v.muted;
+    if(on){var L=document.querySelectorAll('.atr-vid video');for(var i=0;i<L.length;i++){if(L[i]!==v){L[i].muted=true;var b=L[i].parentNode.querySelector('.vsnd');if(b)b.textContent='🔇';}}}
+    v.muted=!on;snd.textContent=on?'🔊':'🔇';if(on){var r=v.play();if(r&&r.catch)r.catch(function(){});}clr(on?'video_sonido':'video_mute');};
+  box.appendChild(snd);
+  var inf=ce('div','vinfo');inf.appendChild(ce('div','vnom',p.nombre||''));
+  var pie=ce('div','vpie');if(p.precioContado>0)pie.appendChild(ce('span','vpre',precio(p.precioContado)));else pie.appendChild(ce('span'));
+  pie.appendChild(ce('span','vver','Ver producto →'));inf.appendChild(pie);box.appendChild(inf);
+  box.onclick=function(){v.muted=true;snd.textContent='🔇';try{abrirModal(p.id);}catch(x){}clr('video_producto');};
+  if(ioVid)ioVid.observe(v);else{v.src=v.getAttribute('data-src');}
+  sec.appendChild(box);return sec;
+}
 /* Orden de los bloques: el de regalo primero; luego todos los demas en orden distinto cada visita.
    "Pasos" y "Compartir" salen una sola vez. Cuando se acaban, vuelve a empezar en otro orden. */
 var SEQ=[],UNA={pasos:1,compartir:1};
@@ -3005,6 +3048,16 @@ function poner(){
       if(!blk.firstChild)continue;
       g.insertBefore(blk,cs[pos]);
       vigilarBloque(blk);
+    }
+    for(var w=0;w<POS.length;w++){
+      var a0=w?POS[w-1]:0,a1=POS[w];
+      var vp=Math.round((a0+a1)/2/cols)*cols;
+      if(vp<=a0+cols*2||vp>=a1-cols*2||vp>=cs.length)continue;
+      var kv='v'+vp;if(hay[kv])continue;
+      if(cs[vp-1].classList.contains('oculta'))break;
+      var sv=bloqueVideo();if(!sv)break;
+      var bv=ce('div','atr-blk');bv.setAttribute('data-pos',kv);bv.setAttribute('data-t','video');bv.appendChild(sv);
+      g.insertBefore(bv,cs[vp]);
     }
   }catch(e){}
   finally{ocupado=false;}
