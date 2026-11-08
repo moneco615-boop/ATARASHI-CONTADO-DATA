@@ -6332,21 +6332,28 @@ function sigVideo(){
   }
   return null;
 }
-function vidUrl(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return u;var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return u;return u.replace('/video/upload/','/video/upload/q_auto,vc_auto,w_720,c_limit/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.mp4');}
+function vidUrl(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return u;var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return u;return u.replace('/video/upload/','/video/upload/q_auto:eco,vc_auto,w_540,c_limit/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.mp4');}
 function vidPoster(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return '';var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return '';return u.replace('/video/upload/','/video/upload/so_0,w_720,c_limit,q_auto/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.jpg');}
-var ioVid=null;
-try{if('IntersectionObserver' in window)ioVid=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
-  if(e.isIntersecting&&!v.getAttribute('src')){v.src=v.getAttribute('data-src');try{v.load();}catch(x){}}
-  if(e.isIntersecting&&e.intersectionRatio>=0.5){var r=v.play();if(r&&r.catch)r.catch(function(){});}
-  else if(!v.paused)v.pause();
-});},{rootMargin:'300px 0px',threshold:[0,0.5,1]});}catch(e){}
+var ioVid=null,ioPlay=null;
+function apagar(v){if(!v.paused)v.pause();if(!v.muted){v.muted=true;var b=v.parentNode&&v.parentNode.querySelector('.vsnd');if(b)b.textContent='🔇';}}
+try{if('IntersectionObserver' in window){
+  /* 1) descarga el video con anticipacion (unas dos pantallas antes de llegar) */
+  ioVid=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting&&!v.getAttribute('src')){v.preload='auto';v.src=v.getAttribute('data-src');try{v.load();}catch(x){}}
+  });},{rootMargin:'1600px 0px'});
+  /* 2) reproduce solo si se ve mas de la mitad; si sale de la mitad: pausa y sin sonido */
+  ioPlay=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target.querySelector('video');if(!v)return;
+    if(e.isIntersecting&&e.intersectionRatio>=0.5){if(!v.getAttribute('src')){v.src=v.getAttribute('data-src');}var r=v.play();if(r&&r.catch)r.catch(function(){});}
+    else apagar(v);
+  });},{rootMargin:'-90px 0px 0px 0px',threshold:[0,0.25,0.5,0.75,1]});
+}}catch(e){}
 function bloqueVideo(){
   var p=sigVideo();if(!p)return null;
   var sec=titulo('🎬 Míralo en video','#8A6410');
   var box=ce('div','atr-vid');
   var v=ce('video');v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');v.loop=true;v.playsInline=true;
   v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.setAttribute('disablepictureinpicture','');v.preload='none';
-  var po=vidPoster(p.video);if(po)v.poster=po;else{var f=foto(p);if(f)v.poster=img(f,720);}
+  var f=foto(p);if(f)v.poster=img(f,600);else{var po=vidPoster(p.video);if(po)v.poster=po;}
   var orig=String(p.video).trim();v.setAttribute('data-src',vidUrl(orig));
   v.addEventListener('error',function(){if(v.getAttribute('src')!==orig){v.src=orig;try{v.load();var r=v.play();if(r&&r.catch)r.catch(function(){});}catch(x){}}});
   v.addEventListener('loadedmetadata',function(){var w=v.videoWidth,h=v.videoHeight;if(w&&h&&w>h*1.05)box.style.aspectRatio=w+'/'+h;});
@@ -6360,7 +6367,7 @@ function bloqueVideo(){
   var pie=ce('div','vpie');if(p.precioContado>0)pie.appendChild(ce('span','vpre',precio(p.precioContado)));else pie.appendChild(ce('span'));
   pie.appendChild(ce('span','vver','Ver producto →'));inf.appendChild(pie);box.appendChild(inf);
   box.onclick=function(){v.muted=true;snd.textContent='🔇';try{abrirModal(p.id);}catch(x){}clr('video_producto');};
-  if(ioVid)ioVid.observe(v);else{v.src=v.getAttribute('data-src');}
+  if(ioVid){ioVid.observe(v);ioPlay.observe(box);}else{v.src=v.getAttribute('data-src');}
   sec.appendChild(box);return sec;
 }
 /* Orden de los bloques: el de regalo primero; luego todos los demas en orden distinto cada visita.
