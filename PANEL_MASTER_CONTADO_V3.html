@@ -6987,6 +6987,11 @@ function poner(d){
   var els=document.querySelectorAll('.atr-ver');
   for(var i=0;i<els.length;i++)els[i].textContent=t;
 }
+/* Cloudflare no envia la fecha del archivo: se toma la fecha del ultimo guardado del panel en GitHub */
+function desdeGitHub(){
+  try{fetch('https://api.github.com/repos/moneco615-boop/ATARASHI-CONTADO-DATA/commits?path=PANEL_MASTER_CONTADO_V3.html&per_page=1',{cache:'no-store'})
+    .then(function(r){return r.json();}).then(function(j){var f=j&&j[0]&&j[0].commit&&j[0].commit.committer&&j[0].commit.committer.date;if(f){var d3=new Date(f);if(!isNaN(d3.getTime()))poner(d3);}}).catch(function(){});}catch(e){}
+}
 function iniciar(){
   var d=new Date(document.lastModified);
   var dudosa=isNaN(d.getTime())||(location.protocol!=='file:'&&Math.abs(Date.now()-d.getTime())<15000);
@@ -6994,8 +6999,9 @@ function iniciar(){
   try{
     fetch(location.href.split('#')[0],{method:'HEAD',cache:'force-cache'}).then(function(r){
       var h=r.headers.get('last-modified');var d2=h?new Date(h):null;
-      if(d2&&!isNaN(d2.getTime()))poner(d2);
-    }).catch(function(){});
+      if(d2&&!isNaN(d2.getTime())){poner(d2);return;}
+      desdeGitHub();
+    }).catch(desdeGitHub);
   }catch(e){}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
