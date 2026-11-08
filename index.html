@@ -1835,7 +1835,7 @@ try{
       lst.forEach(function(p){h+=tarjeta(p);});
       return h+'</div></section>';
     }
-    var h=sec('🎄 Regalos de Navidad',nav,'Navidad','#C62828')+sec('🧸 Para los niños',nin,'@ninos','#7B3FE4')+sec('🔥 Lo más vendido',top,'','#E65100')+sec('🆕 Llegó a la tienda',nue,'','#1565C0')+sec('💸 Menos de $50.000',bar,'','#2E7D32');
+    var h=sec('🎄 Navidad',nav,'Navidad','#C62828')+sec('🧸 Para los niños',nin,'@ninos','#7B3FE4')+sec('🔥 Lo más vendido',top,'','#E65100')+sec('🆕 Llegó a la tienda',nue,'','#1565C0')+sec('💸 Menos de $50.000',bar,'','#2E7D32');
     var vistos={},hc='',nc=0;
     var PAL=[['#E53935','#FFEBEE'],['#1E88E5','#E3F2FD'],['#F9A825','#FFF8E1',1],['#43A047','#E8F5E9'],['#8E24AA','#F3E5F5'],['#FB8C00','#FFF3E0']];
     var cats=[];
@@ -2678,7 +2678,7 @@ function estr(n){n=parseInt(n,10);if(!(n>=1&&n<=5))n=5;return '★★★★★'.
 function llenarConf(blk,n){
   blk.textContent='';
   var hay=OPI&&OPI.length;
-  var sec=titulo(hay?'💛 Opiniones de clientes':'🤝 Compra tranquila','#8A6410');
+  var sec=titulo(hay?'💛 Opiniones de clientes':'🤝 Compra con tranquilidad','#8A6410');
   var box=ce('div','atr-conf');
   if(hay){
     for(var k=0;k<Math.min(2,OPI.length);k++){
