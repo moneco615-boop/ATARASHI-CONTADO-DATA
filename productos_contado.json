@@ -2619,8 +2619,11 @@
       "tipoTalla": "",
       "descripcion": "Vive emocionantes aventuras con esta increíble pista de 44 piezas temática de dinosaurios. Incluye un carro con control remoto para que los niños disfruten de horas de diversión y creatividad.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784151014/atarashi_contado/gvmbc0aozy1dgn9j1jeq.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784151014/atarashi_contado/pfismisirlyu1dqkacts.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794172040/atarashi_contado/m6kjjnw7se7gpma6o36l.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794172041/atarashi_contado/ysn352rnd528nprfu3j9.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794172041/atarashi_contado/ahdzezznsf1juc1cjgvm.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794172042/atarashi_contado/r8lnu8z90rmdmemo9dgb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794172043/atarashi_contado/hkawbmunrwdyfpjb53ed.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1784151014/atarashi_contado/b7isryx7pnftfzdi3t1w.jpg"
       ],
       "agotadas": [],
@@ -31969,24 +31972,6 @@
       "id": 1793757648105
     },
     {
-      "nombre": "ADIDAS ADISTAR VERDE",
-      "categoria": "Calzado caballero",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 130000,
-      "fotosModelos": false,
-      "tipoTalla": "calzado",
-      "descripcion": "Adidas: comodidad y estilo deportivo para todos los días. También disponible en: negro.\nTallas: 40 al 44.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757667/atarashi_contado/ldbexeiw5ueomgg2m4h2.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757668/atarashi_contado/wjsxsvqxludn1feuvr2b.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757669/atarashi_contado/omhoqyxndtloq6kyreb5.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1793757648103
-    },
-    {
       "nombre": "NEW BALANCE 1000 BLANCO FUCSIA",
       "categoria": "Calzado dama",
       "badge": "",
@@ -32903,7 +32888,8 @@
       "tipoTalla": "calzado",
       "descripcion": "Nike TN: amortiguación Air y un diseño agresivo que no pasa desapercibido.\nTallas: Dama y caballero.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757751/atarashi_contado/i2fafdzeac6chfzcl3uw.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794171023/atarashi_contado/ckf1xxtut3ndy5xmokkz.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794171023/atarashi_contado/gpjym87j6z6wnzuz2yhu.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757751/atarashi_contado/ei3fdecqip9npqziahyh.jpg"
       ],
       "agotadas": [],
@@ -33154,7 +33140,8 @@
       "tipoTalla": "calzado",
       "descripcion": "Asics: comodidad y soporte para caminar o entrenar.\nTallas: Dama y caballero.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757756/atarashi_contado/awe566fqdqgvb9pik6jb.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794171329/atarashi_contado/jhcaf9c7pnwy8xxuflbf.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794171330/atarashi_contado/yebpu7v3gfzvbyrx0dnr.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757756/atarashi_contado/vbnyuh418c8akvp2crpu.jpg"
       ],
       "agotadas": [],
@@ -35317,5 +35304,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1794170165251"
+  "ver": "1794172264847"
 }
