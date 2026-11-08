@@ -6349,6 +6349,7 @@ function bloqueVideo(){
   var po=vidPoster(p.video);if(po)v.poster=po;else{var f=foto(p);if(f)v.poster=img(f,720);}
   var orig=String(p.video).trim();v.setAttribute('data-src',vidUrl(orig));
   v.addEventListener('error',function(){if(v.getAttribute('src')!==orig){v.src=orig;try{v.load();var r=v.play();if(r&&r.catch)r.catch(function(){});}catch(x){}}});
+  v.addEventListener('loadedmetadata',function(){var w=v.videoWidth,h=v.videoHeight;if(w&&h&&w>h*1.05)box.style.aspectRatio=w+'/'+h;});
   box.appendChild(v);
   var snd=ce('button','vsnd','🔇');snd.type='button';snd.setAttribute('aria-label','Activar sonido');
   snd.onclick=function(e){e.stopPropagation();var on=v.muted;
