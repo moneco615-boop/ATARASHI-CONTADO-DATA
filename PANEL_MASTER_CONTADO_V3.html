@@ -6332,8 +6332,8 @@ function sigVideo(){
   }
   return null;
 }
-function vidUrl(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return u;var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return u;return u.replace('/video/upload/','/video/upload/q_auto:eco,vc_auto,w_540,c_limit/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.mp4');}
-function vidPoster(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return '';var r=u.split('/video/upload/')[1]||'';if(!/^v\d+\//.test(r))return '';return u.replace('/video/upload/','/video/upload/so_0,w_720,c_limit,q_auto/').replace(/\.[a-z0-9]+(\?.*)?$/i,'.jpg');}
+function vidUrl(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return u;var r=u.split('/video/upload/')[1]||'';if(!/^v\\d+\\//.test(r))return u;return u.replace('/video/upload/','/video/upload/q_auto:eco,vc_auto,w_540,c_limit/').replace(/\\.[a-z0-9]+(\\?.*)?$/i,'.mp4');}
+function vidPoster(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/video/upload/')<0)return '';var r=u.split('/video/upload/')[1]||'';if(!/^v\\d+\\//.test(r))return '';return u.replace('/video/upload/','/video/upload/so_0,w_720,c_limit,q_auto/').replace(/\\.[a-z0-9]+(\\?.*)?$/i,'.jpg');}
 var ioVid=null,ioPlay=null;
 var vidSonido=true,VOL=0.3;
 function iconoSnd(v){var b=v.parentNode&&v.parentNode.querySelector('.vsnd');if(b)b.textContent=v.muted?'🔇':'🔊';}
@@ -6929,7 +6929,57 @@ try{
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
 }catch(e){}
 })();
-<\/script></html>`;
+<\/script><script>
+/* ---------- VIDEO LIMPIO EN EL PRODUCTO ----------
+   El video del producto arranca solo, sin sonido y sin botones encima.
+   Si la persona lo toca, aparecen los controles (sonido, pausa, adelantar). */
+(function(){try{
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting&&e.intersectionRatio>=0.6){if(v.paused&&!v.__atrPausado){var r=v.play();if(r&&r.catch)r.catch(function(){v.controls=true;});}}
+    else if(!v.paused){v.pause();}
+  });},{threshold:[0,0.6,1]}):null;
+  function limpiar(v){
+    if(v.__atrLimpio)return;v.__atrLimpio=1;
+    v.controls=false;v.removeAttribute('controls');
+    v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');
+    v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');
+    v.preload='auto';
+    v.addEventListener('click',function(e){if(!v.controls){e.preventDefault();e.stopPropagation();v.controls=true;}},true);
+    v.addEventListener('pause',function(){if(v.controls)v.__atrPausado=1;});
+    v.addEventListener('play',function(){v.__atrPausado=0;});
+    if(io)io.observe(v);else{var r=v.play();if(r&&r.catch)r.catch(function(){v.controls=true;});}
+  }
+  function revisar(){var L=document.querySelectorAll('.m-slide-video video');for(var i=0;i<L.length;i++)limpiar(L[i]);}
+  new MutationObserver(revisar).observe(document.documentElement,{childList:true,subtree:true});
+  revisar();
+}catch(e){}})();
+<\/script>
+<script>
+/* ---------- BOTON X EN EL BUSCADOR: borra lo escrito y vuelve al catalogo ---------- */
+(function(){try{
+  var st=document.createElement('style');
+  st.textContent='.cat-search input{padding-right:46px!important;}'
+   +'.cat-search-x{all:unset;position:absolute;top:50%;right:22px;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:#1A1A1A;color:#fff;font-size:15px;font-weight:900;line-height:30px;text-align:center;cursor:pointer;display:none;z-index:2;-webkit-tap-highlight-color:transparent;}'
+   +'.cat-search.con-texto .cat-search-x{display:block;}';
+  document.head.appendChild(st);
+  function montar(){
+    var inp=document.getElementById('buscarCat');if(!inp){setTimeout(montar,400);return;}
+    var box=inp.parentNode;if(box.querySelector('.cat-search-x'))return;
+    var x=document.createElement('button');x.type='button';x.className='cat-search-x';x.textContent='✕';x.setAttribute('aria-label','Borrar búsqueda');
+    function ver(){box.classList.toggle('con-texto',!!inp.value);}
+    x.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
+      inp.value='';ver();
+      try{inp.dispatchEvent(new Event('input',{bubbles:true}));}catch(z){}
+      try{inp.blur();}catch(z){}
+      try{if(window.clarity)window.clarity('event','buscar_borrar');}catch(z){}
+    });
+    inp.addEventListener('input',ver);ver();
+    box.appendChild(x);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',montar);else montar();
+}catch(e){}})();
+<\/script>
+</html>`;
 }
 
 

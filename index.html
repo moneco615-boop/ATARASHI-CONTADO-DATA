@@ -3552,4 +3552,29 @@ try{
   new MutationObserver(revisar).observe(document.documentElement,{childList:true,subtree:true});
   revisar();
 }catch(e){}})();
-</script></html>
+</script><script>
+/* ---------- BOTON X EN EL BUSCADOR: borra lo escrito y vuelve al catalogo ---------- */
+(function(){try{
+  var st=document.createElement('style');
+  st.textContent='.cat-search input{padding-right:46px!important;}'
+   +'.cat-search-x{all:unset;position:absolute;top:50%;right:22px;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:#1A1A1A;color:#fff;font-size:15px;font-weight:900;line-height:30px;text-align:center;cursor:pointer;display:none;z-index:2;-webkit-tap-highlight-color:transparent;}'
+   +'.cat-search.con-texto .cat-search-x{display:block;}';
+  document.head.appendChild(st);
+  function montar(){
+    var inp=document.getElementById('buscarCat');if(!inp){setTimeout(montar,400);return;}
+    var box=inp.parentNode;if(box.querySelector('.cat-search-x'))return;
+    var x=document.createElement('button');x.type='button';x.className='cat-search-x';x.textContent='✕';x.setAttribute('aria-label','Borrar búsqueda');
+    function ver(){box.classList.toggle('con-texto',!!inp.value);}
+    x.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
+      inp.value='';ver();
+      try{inp.dispatchEvent(new Event('input',{bubbles:true}));}catch(z){}
+      try{inp.blur();}catch(z){}
+      try{if(window.clarity)window.clarity('event','buscar_borrar');}catch(z){}
+    });
+    inp.addEventListener('input',ver);ver();
+    box.appendChild(x);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',montar);else montar();
+}catch(e){}})();
+</script>
+</html>
