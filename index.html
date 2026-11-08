@@ -3403,4 +3403,28 @@ try{
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
 }catch(e){}
 })();
+</script><script>
+/* ---------- VIDEO LIMPIO EN EL PRODUCTO ----------
+   El video del producto arranca solo, sin sonido y sin botones encima.
+   Si la persona lo toca, aparecen los controles (sonido, pausa, adelantar). */
+(function(){try{
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+    if(e.isIntersecting&&e.intersectionRatio>=0.6){if(v.paused&&!v.__atrPausado){var r=v.play();if(r&&r.catch)r.catch(function(){v.controls=true;});}}
+    else if(!v.paused){v.pause();}
+  });},{threshold:[0,0.6,1]}):null;
+  function limpiar(v){
+    if(v.__atrLimpio)return;v.__atrLimpio=1;
+    v.controls=false;v.removeAttribute('controls');
+    v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');
+    v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');
+    v.preload='auto';
+    v.addEventListener('click',function(e){if(!v.controls){e.preventDefault();e.stopPropagation();v.controls=true;}},true);
+    v.addEventListener('pause',function(){if(v.controls)v.__atrPausado=1;});
+    v.addEventListener('play',function(){v.__atrPausado=0;});
+    if(io)io.observe(v);else{var r=v.play();if(r&&r.catch)r.catch(function(){v.controls=true;});}
+  }
+  function revisar(){var L=document.querySelectorAll('.m-slide-video video');for(var i=0;i<L.length;i++)limpiar(L[i]);}
+  new MutationObserver(revisar).observe(document.documentElement,{childList:true,subtree:true});
+  revisar();
+}catch(e){}})();
 </script></html>
