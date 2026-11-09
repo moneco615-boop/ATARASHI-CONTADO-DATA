@@ -7321,6 +7321,28 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       'No agregues textos, logos, precios, marcos ni marcas de agua que no estén en el producto original.',
       'Formato vertical 4:5.'
     ].join('\n'),
+    zapatos: [
+      'Analiza cuidadosamente la fotografía de referencia e identifica el calzado: modelo, forma, colores, materiales, texturas, cordones, suela, logos y todos los detalles visibles.',
+      'Tu objetivo es crear una fotografía comercial profesional del MISMO par de zapatos, en la pose estándar de catálogo de la tienda.',
+      'POSE DE CATÁLOGO (obligatoria, sin importar cómo vengan en la foto original):',
+      '- El par completo (zapato izquierdo y derecho), parados sobre la suela, uno al lado del otro y ligeramente escalonados: un zapato un poco más adelante que el otro, ambos mirando hacia el mismo lado.',
+      '- Vista de tres cuartos desde el frente y el costado exterior, con la cámara un poco por encima de la altura del zapato, de modo que se vea la punta, el costado con el logo principal, los cordones y la suela.',
+      '- La dirección (hacia la izquierda o hacia la derecha) puede ser cualquiera.',
+      '- Si en la foto solo se ve un zapato, el otro es su par simétrico idéntico.',
+      'FIDELIDAD (prioridad absoluta):',
+      '- Conserva exactamente el modelo, la forma, las proporciones, los colores, los materiales, la suela, los cordones, los logos, las rayas y los textos impresos del calzado original.',
+      '- No diseñes un zapato nuevo ni cambies combinaciones de color. No agregues ni quites logos, rayas, costuras ni piezas.',
+      '- Si alguna parte no se ve en la foto original, represéntala de la forma más simple y coherente con el resto del zapato, sin inventar detalles llamativos.',
+      'LIMPIEZA:',
+      '- Retira hormas, resortes, papel de relleno, etiquetas colgantes, cajas, bolsas, manos, pies, piso, tapetes, precios y marcas de agua.',
+      '- Cordones amarrados de forma ordenada y natural.',
+      '- Presenta el par completo, centrado y ocupando la mayor parte de la imagen, con un margen blanco pequeño.',
+      'FONDO: blanco puro de estudio (#FFFFFF), sin degradados ni texturas.',
+      'ILUMINACIÓN: luz suave de catálogo, sombra natural y sutil bajo las suelas, excelente nitidez y colores reales.',
+      'ESTILO: fotografía hiperrealista de calzado para catálogo de comercio electrónico premium.',
+      'No agregues textos, precios, marcos ni marcas de agua que no estén en el zapato original.',
+      'Formato vertical 4:5.'
+    ].join('\n'),
     caja: [
       'Analiza cuidadosamente la imagen del empaque que te proporciono. Identifica el producto que viene dentro: su diseño, forma, colores, piezas, accesorios y detalles, tal como aparecen representados en la caja.',
       'Tu objetivo es crear una fotografía comercial hiperrealista del producto completamente armado y fuera de su empaque, como si se hubiera sacado de la caja y fotografiado en estudio.',
@@ -7379,6 +7401,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
   var IA_MODOS = [
     { id: 'limpiar',  tit: '🧼 Limpiar producto',    sub: 'Quita celofán, moños, tapete y precio. Fondo blanco.' },
+    { id: 'zapatos',  tit: '👟 Zapatos catálogo',    sub: 'El par en la pose de la tienda, sin hormas ni papel. Fondo blanco.' },
     { id: 'caja',     tit: '📦 Armar desde la caja', sub: 'Saca el juguete de la caja y lo muestra armado.' },
     { id: 'detalles', tit: '🔍 Foto de detalles',    sub: 'Producto arriba + 3 acercamientos. Úsala con una foto ya limpia.' }
   ];
