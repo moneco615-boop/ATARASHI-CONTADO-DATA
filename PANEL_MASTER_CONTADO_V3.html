@@ -721,6 +721,98 @@
   </div>
 </div>
 
+<!-- ══ CELULAR: fotos grandes + ventanas que no se salen con zoom (nov 2026) ══ -->
+<style id="cel-fotos-css">
+@media (max-width: 899px) {
+  /* Fotos del producto: 2 por fila, grandes, con botones abajo fáciles de tocar */
+  .preview-fotos-caja { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .preview-foto-wrapper { width: auto; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; background: #0d0d0d; border: 1px solid rgba(201,160,42,.25); border-radius: 10px; padding: 6px; }
+  .preview-mini-foto { grid-column: 1 / -1; grid-row: 1; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; background: #fff; border-radius: 6px; }
+  .preview-foto-p, .preview-foto-f, .preview-foto-b { position: static; transform: none; width: 100%; height: 44px; grid-row: 2; font-size: 20px; line-height: 1; border-radius: 8px; box-shadow: none; padding: 0; }
+  .preview-foto-p { grid-column: 1; background: #2e2e2e; color: #999; }
+  .preview-foto-f { grid-column: 2; }
+  .preview-foto-b { grid-column: 3; }
+  .preview-foto-wrapper.portada .preview-foto-p { background: var(--dorado); color: #000; }
+  .preview-foto-wrapper.portada { border-color: var(--dorado); }
+  .preview-foto-ago { position: static; grid-column: 1 / -1; grid-row: 3; height: 34px; line-height: 34px; font-size: 12px; letter-spacing: 1px; border-radius: 8px; background: #222; color: #aaa; }
+  .preview-foto-x { top: 10px; right: 10px; width: 34px; height: 34px; font-size: 22px; box-shadow: 0 2px 8px rgba(0,0,0,.5); }
+  /* Letra de 16px en los campos: así el iPhone no hace zoom solo al escribir */
+  input, select, textarea { font-size: 16px !important; }
+  /* Botones del borrador un poco más grandes */
+  .br-barra button, .br-herr .br-modo, .br-herr .br-sec { padding: 12px 14px; font-size: 14px; }
+}
+</style>
+<script id="cel-fotos-js">
+(function () {
+  // Si la pantalla está con zoom, estas ventanas se ajustan a lo que se ve,
+  // para que Cancelar / Listo / Cerrar siempre queden a la mano.
+  var CAPAS = ['brCapa', 'vpCapa'];
+  var vv = window.visualViewport;
+  function abierta(el) { return el && getComputedStyle(el).display !== 'none'; }
+  function ajustar() {
+    var hayAbierta = false;
+    CAPAS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var s = el.style;
+      if (!abierta(el) || !vv || vv.scale <= 1.01) {
+        s.left = s.top = s.width = s.height = s.right = s.bottom = s.transform = s.transformOrigin = '';
+        if (abierta(el)) hayAbierta = true;
+        return;
+      }
+      hayAbierta = true;
+      var k = vv.scale;
+      s.right = s.bottom = 'auto';
+      s.left = vv.offsetLeft + 'px';
+      s.top = vv.offsetTop + 'px';
+      s.width = (vv.width * k) + 'px';
+      s.height = (vv.height * k) + 'px';
+      s.transformOrigin = '0 0';
+      s.transform = 'scale(' + (1 / k) + ')';
+    });
+    return hayAbierta;
+  }
+  if (vv) { vv.addEventListener('resize', ajustar); vv.addEventListener('scroll', ajustar); }
+  function vigilar() {
+    CAPAS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && window.MutationObserver) new MutationObserver(ajustar).observe(el, { attributes: true, attributeFilter: ['class'] });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vigilar); else vigilar();
+
+  // Dentro del borrador no se permite pellizcar (para eso está el botón Acercar)
+  function capaBorradorAbierta() { return abierta(document.getElementById('brCapa')); }
+  document.addEventListener('gesturestart', function (e) { if (capaBorradorAbierta()) e.preventDefault(); }, { passive: false });
+  document.addEventListener('touchmove', function (e) {
+    if (e.touches && e.touches.length > 1 && capaBorradorAbierta()) e.preventDefault();
+  }, { passive: false });
+
+  // Si se pone un segundo dedo sobre la foto, NO se borra nada:
+  // se cancela el trazo que alcanzó a empezar el primer dedo.
+  var zona = document.getElementById('brZona');
+  if (zona) {
+    var dedos = {}, n = 0;
+    zona.addEventListener('pointerdown', function (ev) {
+      if (ev.pointerType !== 'touch') return;
+      if (!dedos[ev.pointerId]) { dedos[ev.pointerId] = 1; n++; }
+      if (n > 1) {
+        ev.stopPropagation(); ev.preventDefault();
+        if (typeof br !== 'undefined' && br.pintando) {
+          br.pintando = false; br.ultimo = null;
+          var d = br.historial.pop();
+          if (d && br.ctx) br.ctx.putImageData(d, 0, 0);
+          if (!br.historial.length) br.cambios = false;
+        }
+      }
+    }, true);
+    var soltar = function (ev) { if (dedos[ev.pointerId]) { delete dedos[ev.pointerId]; n--; } };
+    window.addEventListener('pointerup', soltar, true);
+    window.addEventListener('pointercancel', soltar, true);
+  }
+})();
+</script>
+
 <div id="vpCapa" class="vp-capa" aria-hidden="true">
   <div class="vp-barra">
     <span id="vpTitulo">👁️ Vista previa — aún no publicado</span>
