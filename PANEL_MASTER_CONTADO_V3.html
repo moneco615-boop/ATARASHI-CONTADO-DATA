@@ -473,6 +473,16 @@
 </div>
 
 <!-- ══ CELULAR: el recuadro de Estado solo aparece si hay un problema (nov 2026) ══ -->
+<style id="cel-espacio-css">
+/* CELULAR: título en una línea pequeña y panel más ancho (nov 2026) */
+@media (max-width: 899px) {
+  body { padding: 8px 4px 72px !important; }
+  header { margin-bottom: 8px; padding-bottom: 0; border-bottom: none; }
+  header h1 { font-size: 22px; letter-spacing: 2px; line-height: 1.1; }
+  header p { display: none; }           /* la versión se sigue viendo en la pantalla del PIN */
+  .panel-formulario { padding: 14px 10px; border-radius: 10px; }
+}
+</style>
 <style id="cel-estado-css">
 @media (max-width: 899px) {
   #statusNube button:not(#btnRepararNube) { display: none !important; }  /* ya están en ⚙️ Config y en la barra de abajo */
