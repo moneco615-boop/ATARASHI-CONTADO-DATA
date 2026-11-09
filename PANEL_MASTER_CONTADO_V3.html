@@ -481,7 +481,15 @@
   header h1 { font-size: 22px; letter-spacing: 2px; line-height: 1.1; }
   header p { display: none; }           /* la versión se sigue viendo en la pantalla del PIN */
   .panel-formulario { padding: 14px 10px; border-radius: 10px; }
+  header { position: relative; }
+  .cel-luz { display: flex; }
 }
+.cel-luz { display: none; position: absolute; right: 2px; top: 50%; transform: translateY(-50%); align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: .3px; color: #aaa; }
+.cel-luz i { width: 10px; height: 10px; border-radius: 50%; background: #e6a23c; display: block; }
+.cel-luz.ok { color: #2ecc71; } .cel-luz.ok i { background: #2ecc71; box-shadow: 0 0 6px #2ecc71; }
+.cel-luz.mal { color: #ff5c5c; } .cel-luz.mal i { background: #e74c3c; box-shadow: 0 0 6px #e74c3c; }
+.cel-luz.esp { color: #f0c040; } .cel-luz.esp i { background: #f0c040; }
+@media (max-width: 899px) { .cel-luz { display: flex; } header h1 { font-size: 20px; padding: 0 92px 0 0; text-align: left; } }
 </style>
 <style id="cel-estado-css">
 @media (max-width: 899px) {
@@ -499,7 +507,26 @@
     var t = txt.textContent || '';
     var ok = (t.indexOf('CONECTADO') !== -1 && t.indexOf('sin publicar') === -1) || t.indexOf('PUBLICADO') !== -1;
     caja.classList.toggle('todo-ok', ok);
+    // Puntico de estado al lado de ATARASHI MASTER
+    var luz = document.getElementById('celLuz');
+    if (!luz) {
+      var hdr = document.querySelector('header');
+      if (!hdr) return;
+      luz = document.createElement('span'); luz.id = 'celLuz'; luz.className = 'cel-luz';
+      luz.innerHTML = '<i></i><b></b>'; hdr.appendChild(luz);
+      luz.onclick = function () { alert('Estado: ' + (txt.textContent || '')); };
+    }
+    var clase, letrero;
+    if (navigator.onLine === false) { clase = 'mal'; letrero = 'Sin internet'; }
+    else if (ok) { clase = 'ok'; letrero = 'Conectado'; }
+    else if (t.indexOf('sin publicar') !== -1) { clase = 'esp'; letrero = 'Sin publicar'; }
+    else if (t.indexOf('⏳') !== -1) { clase = 'esp'; letrero = 'Conectando'; }
+    else { clase = 'mal'; letrero = 'Sin conexión'; }
+    luz.className = 'cel-luz ' + clase;
+    luz.querySelector('b').textContent = letrero;
   }
+  window.addEventListener('online', revisar);
+  window.addEventListener('offline', revisar);
   revisar();
   if (window.MutationObserver) new MutationObserver(revisar).observe(txt, { childList: true, characterData: true, subtree: true });
 })();
