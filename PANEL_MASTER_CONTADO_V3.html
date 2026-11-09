@@ -325,6 +325,9 @@
   border-top: 1px solid rgba(255,255,255,.06); padding-top: 14px;
 }
 .cfg-nota strong { color: var(--dorado-brillante); }
+  .adm-bus{position:relative;}
+  .adm-bus-x{display:none;position:absolute;top:50%;right:8px;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:50%;background:#C9A02A;color:#000;font-size:15px;font-weight:900;line-height:30px;text-align:center;padding:0;cursor:pointer;}
+  .adm-bus.con-texto .adm-bus-x{display:block;}
 </style>
 </head>
 <body>
@@ -727,11 +730,12 @@
   <!-- ── PANEL DERECHO: TABLA ── -->
   <div id="panelInventario" class="panel-vista panel-lista">
     <h2>Inventario Contado — <span id="contador">0</span> productos</h2>
-    <div style="margin-bottom:12px;">
+    <div class="adm-bus" style="margin-bottom:12px;">
       <input type="text" id="buscarAdmin"
         placeholder="🔍 Buscar por nombre o categoría..."
-        oninput="filtrarTablaAdmin(this.value)"
-        style="width:100%;background:#0d0d0d;border:1px solid rgba(201,160,42,.28);color:#fff;padding:10px 14px;border-radius:7px;font-family:var(--fuente-cuerpo);font-size:14px;outline:none;">
+        oninput="filtrarTablaAdmin(this.value)" autocomplete="off"
+        style="width:100%;background:#0d0d0d;border:1px solid rgba(201,160,42,.28);color:#fff;padding:10px 46px 10px 14px;border-radius:7px;font-family:var(--fuente-cuerpo);font-size:14px;outline:none;">
+      <button type="button" class="adm-bus-x" onclick="borrarBusquedaAdmin()" aria-label="Borrar búsqueda">✕</button>
     </div>
     <div class="tabla-wrap">
       <table class="tabla-productos">
@@ -1524,6 +1528,11 @@ function loteDataURL(file) {
 }
 async function loteSubirFoto(file) {
   var b64 = await loteDataURL(file);
+  try {
+    var imgL = await new Promise(function(ok, mal) { var i = new Image(); i.onload = function() { ok(i); }; i.onerror = mal; i.src = b64; });
+    var enc = crEncuadrar(imgL);
+    if (enc) b64 = enc;
+  } catch (e) {}
   for (var i = 0; i < 3; i++) {
     try { var u = await subirACloudinary(b64); if (u) return u; } catch (e) { if (i === 2) throw e; }
     await crEsperar(1500 * (i + 1));
@@ -1725,6 +1734,75 @@ function crReducir(img, maxD, calidad) {
   return c.toDataURL('image/jpeg', calidad);
 }
 
+// ── ENCUADRE AUTOMÁTICO ──
+// Si la foto tiene fondo blanco (o casi blanco), corta el blanco que sobra y deja el
+// producto centrado y GRANDE en un cuadro blanco, siempre del mismo tamaño.
+// Si el fondo no es blanco (ej. modelo en la calle), devuelve null y la foto sigue igual.
+var CR_LLENADO = 0.90;   // el producto ocupa el 90% del cuadro
+function crEncuadrar(img, lado, calidad) {
+  try {
+    lado = lado || 1000; calidad = calidad || 0.84;
+    var W = img.naturalWidth || img.width, H = img.naturalHeight || img.height;
+    if (!W || !H) return null;
+    // 1) Mirar la foto en pequeño (rápido, también en celular)
+    var k = Math.min(1, 420 / Math.max(W, H));
+    var aw = Math.max(1, Math.round(W * k)), ah = Math.max(1, Math.round(H * k));
+    var ca = document.createElement('canvas'); ca.width = aw; ca.height = ah;
+    var xa = ca.getContext('2d');
+    xa.fillStyle = '#ffffff'; xa.fillRect(0, 0, aw, ah);
+    xa.drawImage(img, 0, 0, aw, ah);
+    var px = xa.getImageData(0, 0, aw, ah).data;
+    // 2) ¿El borde de la foto es blanco? (fondo de estudio)
+    var anillo = Math.max(2, Math.round(Math.min(aw, ah) * 0.02));
+    var claros = 0, total = 0, sr = 0, sg = 0, sb = 0;
+    for (var y = 0; y < ah; y++) {
+      for (var x = 0; x < aw; x++) {
+        if (x >= anillo && x < aw - anillo && y >= anillo && y < ah - anillo) { x = aw - anillo - 1; continue; }
+        var o = (y * aw + x) * 4, r = px[o], g = px[o + 1], b = px[o + 2];
+        total++;
+        if (r > 212 && g > 212 && b > 212 && Math.max(r, g, b) - Math.min(r, g, b) < 26) { claros++; sr += r; sg += g; sb += b; }
+      }
+    }
+    if (!total || claros / total < 0.80) return null;          // fondo no blanco: no se toca
+    var fr = sr / claros, fg = sg / claros, fb = sb / claros;  // color del fondo
+    // 3) Buscar dónde está el producto (lo que se distingue del fondo)
+    var filas = new Uint32Array(ah), cols = new Uint32Array(aw);
+    for (var y2 = 0; y2 < ah; y2++) {
+      for (var x2 = 0; x2 < aw; x2++) {
+        var q = (y2 * aw + x2) * 4;
+        var d = Math.max(Math.abs(px[q] - fr), Math.abs(px[q + 1] - fg), Math.abs(px[q + 2] - fb));
+        if (d > 30) { filas[y2]++; cols[x2]++; }
+      }
+    }
+    var minF = Math.max(2, Math.round(aw * 0.004)), minC = Math.max(2, Math.round(ah * 0.004));
+    var y0 = 0, y1 = ah - 1, x0 = 0, x1 = aw - 1;
+    while (y0 < ah && filas[y0] < minF) y0++;
+    while (y1 > y0 && filas[y1] < minF) y1--;
+    while (x0 < aw && cols[x0] < minC) x0++;
+    while (x1 > x0 && cols[x1] < minC) x1--;
+    if (y0 >= y1 || x0 >= x1) return null;
+    var bwA = x1 - x0 + 1, bhA = y1 - y0 + 1;
+    if (bwA * bhA < aw * ah * 0.01) return null;              // casi nada: mejor no tocar
+    // 4) Pasar la caja a la foto grande (con 1 punto de holgura)
+    var inv = 1 / k;
+    var sx = Math.max(0, Math.floor((x0 - 1) * inv)), sy = Math.max(0, Math.floor((y0 - 1) * inv));
+    var ex = Math.min(W, Math.ceil((x1 + 2) * inv)), ey = Math.min(H, Math.ceil((y1 + 2) * inv));
+    var bw = ex - sx, bh = ey - sy;
+    // 5) Armar el cuadro blanco con el producto grande y centrado
+    var esc = Math.min(lado * CR_LLENADO / bw, lado * CR_LLENADO / bh, 4);
+    var dw = Math.round(bw * esc), dh = Math.round(bh * esc);
+    var c = document.createElement('canvas'); c.width = lado; c.height = lado;
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, lado, lado);
+    ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, sx, sy, bw, bh, Math.round((lado - dw) / 2), Math.round((lado - dh) / 2), dw, dh);
+    return c.toDataURL('image/jpeg', calidad);
+  } catch (e) {
+    console.warn('Encuadre no aplicado:', e);
+    return null;
+  }
+}
+
 function crEstadoFondo(txt) {
   var el = document.getElementById('estadoFondo');
   if (el) { el.textContent = txt || ''; el.style.display = txt ? 'block' : 'none'; }
@@ -1786,7 +1864,7 @@ async function crComponerBlanco(blobPNG) {
   // Si casi no quedó nada (o quedó todo), el recorte no sirvió
   if (maxX < 0 || cuenta < W * H * 0.02 || cuenta > W * H * 0.97) throw new Error('recorte no confiable');
   var bw = maxX - minX + 1, bh = maxY - minY + 1;
-  var S = 1000, caja = S * 0.82;
+  var S = 1000, caja = S * CR_LLENADO;
   var esc = Math.min(caja / bw, caja / bh);
   var dw = Math.round(bw * esc), dh = Math.round(bh * esc);
   var dx = Math.round((S - dw) / 2), dy = Math.round((S - dh) / 2);
@@ -2026,7 +2104,11 @@ function procesarFotos(input) {
             crEstadoFondo('⚠️ A esta foto no se le pudo quitar el fondo; se sube tal cual.');
           }
         }
-        if (!base64) base64 = crReducir(img, 800, 0.72);   // igual que antes
+        if (!base64) {
+          base64 = crEncuadrar(img);                        // fondo blanco: producto grande y centrado
+          if (base64) v.imgPrev.src = base64;
+          else base64 = crReducir(img, 800, 0.72);          // otro fondo: igual que antes
+        }
       } catch (errLeer) {
         v.badge.style.background = 'rgba(160,0,0,0.85)';
         v.badge.style.color = '#ffaaaa';
@@ -2952,6 +3034,8 @@ function renderMobileCards() {
       + '</div>';
     cont.appendChild(div);
   });
+  var bq = document.getElementById('buscarAdmin');
+  if (bq && bq.value && typeof filtrarTablaAdmin === 'function') filtrarTablaAdmin(bq.value);
 }
 
 function eliminarProdMobile(idx) {
@@ -2974,6 +3058,9 @@ renderTabla = function() {
   // Actualizar badge del tab siempre
   var badge = document.getElementById('mobCnt');
   if (badge) badge.textContent = productos.length ? 'Inventario (' + productos.length + ')' : 'Inventario';
+  // Si había una búsqueda escrita, se vuelve a aplicar después de guardar/editar
+  var bq = document.getElementById('buscarAdmin');
+  if (bq && bq.value && typeof filtrarTablaAdmin === 'function') filtrarTablaAdmin(bq.value);
 };
 
 // ── CONFIG ──
@@ -7149,14 +7236,32 @@ function toggleCats(){
   }
 }
 
+/* Buscador del inventario: ignora tildes, mayúsculas y signos; cada palabra puede ir en cualquier orden */
+function admNorm(t){
+  t=String(t||"").toLowerCase();
+  try{t=t.normalize("NFD").replace(/[\u0300-\u036f]/g,"");}catch(e){}
+  return t.replace(/ñ/g,"n").replace(/[^a-z0-9]+/g," ").trim();
+}
+var _admReloj=null;
 function filtrarTablaAdmin(term){
-  var t=(term||"").toLowerCase().trim();
-  document.querySelectorAll("#tablaCuerpo tr").forEach(function(r){
-    r.style.display=(!t||r.textContent.toLowerCase().indexOf(t)!==-1)?"":"none";
-  });
-  document.querySelectorAll("#mobileCardsCont .pcm").forEach(function(r){
-    r.style.display=(!t||r.textContent.toLowerCase().indexOf(t)!==-1)?"":"none";
-  });
+  var inp=document.getElementById("buscarAdmin");
+  if(inp&&inp.parentNode)inp.parentNode.classList.toggle("con-texto",!!String(term||"").length);
+  clearTimeout(_admReloj);
+  _admReloj=setTimeout(function(){
+    var pal=admNorm(term).split(" ").filter(Boolean);
+    function ve(r){
+      if(!pal.length)return true;
+      var tx=" "+admNorm(r.textContent)+" ";
+      for(var i=0;i<pal.length;i++){if(tx.indexOf(pal[i])===-1)return false;}
+      return true;
+    }
+    document.querySelectorAll("#tablaCuerpo tr").forEach(function(r){r.style.display=ve(r)?"":"none";});
+    document.querySelectorAll("#mobileCardsCont .pcm").forEach(function(r){r.style.display=ve(r)?"":"none";});
+  },120);
+}
+function borrarBusquedaAdmin(){
+  var inp=document.getElementById("buscarAdmin");if(!inp)return;
+  inp.value="";filtrarTablaAdmin("");inp.focus();
 }
 
 crPintarAvisoPendientes();
