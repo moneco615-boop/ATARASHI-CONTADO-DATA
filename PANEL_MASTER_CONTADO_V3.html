@@ -472,6 +472,29 @@
   <button id="btnRepararNube" style="display:none;margin-left:8px;background:#7d2a00;color:#ffcc99;border:1px solid #e74c3c;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;font-weight:bold;" onclick="repararNube()">🔧 Reparar Nube</button>
 </div>
 
+<!-- ══ CELULAR: el recuadro de Estado solo aparece si hay un problema (nov 2026) ══ -->
+<style id="cel-estado-css">
+@media (max-width: 899px) {
+  #statusNube button:not(#btnRepararNube) { display: none !important; }  /* ya están en ⚙️ Config y en la barra de abajo */
+  #statusNube.todo-ok { display: none !important; }
+  #statusNube { margin-bottom: 12px !important; }
+  #btnRepararNube { font-size: 13px !important; padding: 8px 14px !important; margin: 6px 0 0 !important; }
+}
+</style>
+<script id="cel-estado-js">
+(function () {
+  var caja = document.getElementById('statusNube'), txt = document.getElementById('statusTexto');
+  if (!caja || !txt) return;
+  function revisar() {
+    var t = txt.textContent || '';
+    var ok = (t.indexOf('CONECTADO') !== -1 && t.indexOf('sin publicar') === -1) || t.indexOf('PUBLICADO') !== -1;
+    caja.classList.toggle('todo-ok', ok);
+  }
+  revisar();
+  if (window.MutationObserver) new MutationObserver(revisar).observe(txt, { childList: true, characterData: true, subtree: true });
+})();
+</script>
+
 <div class="desk-tabs">
   <button type="button" class="desk-tab on" data-tab="form" onclick="switchTab('form')">📝 Producto</button>
   <button type="button" class="desk-tab" data-tab="inventario" onclick="switchTab('inventario')">📦 <span id="deskCnt">Inventario</span></button>
