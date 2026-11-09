@@ -7365,7 +7365,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 <!-- ══ 🎨 MEJORAR FOTO CON IA (Google, imágenes) — nov 2026 ══
      Usa la misma clave de Google de "Llenar con IA" (queda guardada solo en este aparato).
      Tres modos: limpiar producto, armar desde la caja y foto de detalles.
-     Después de generar: fondo blanco puro, recorte 4:5 y el producto grande. Nada se sube hasta tocar "Usar". -->
+     Después de generar: fondo blanco puro, recorte cuadrado y el producto grande. Nada se sube hasta tocar "Usar". -->
 <style id="ia-fotos-css">
   .preview-foto-ia { position: absolute; bottom: -9px; left: 50%; transform: translateX(-50%); width: 26px; height: 26px; background: linear-gradient(135deg,#C9A02A,#F0C040); color: #000; border: 2px solid #000; border-radius: 50%; font-size: 13px; cursor: pointer; padding: 0; line-height: 22px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.5); z-index: 2; }
   @media (max-width: 899px) {
@@ -7413,7 +7413,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       'CÁMARA: si la foto original muestra bien el producto, conserva el mismo ángulo. Si la foto está totalmente de frente y el producto se ve plano, usa una perspectiva de tres cuartos ligeramente lateral para mostrar su profundidad, mostrando solo las partes visibles en la foto original sin inventar el lado oculto. Sin deformación de lente.',
       'ESTILO: fotografía hiperrealista de producto para catálogo de comercio electrónico premium.',
       'No agregues textos, logos, precios, marcos ni marcas de agua que no estén en el producto original.',
-      'Formato vertical 4:5.'
+      'Formato cuadrado 1:1.'
     ].join('\n'),
     zapatos: [
       'Analiza cuidadosamente la fotografía de referencia e identifica el calzado: modelo, forma, colores, materiales, texturas, cordones, suela, logos y todos los detalles visibles.',
@@ -7436,7 +7436,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       'ILUMINACIÓN: luz suave de catálogo, sombra natural y sutil bajo las suelas, excelente nitidez y colores reales.',
       'ESTILO: fotografía hiperrealista de calzado para catálogo de comercio electrónico premium.',
       'No agregues textos, precios, marcos ni marcas de agua que no estén en el zapato original.',
-      'Formato vertical 4:5.'
+      'Formato cuadrado 1:1.'
     ].join('\n'),
     caja: [
       'Analiza cuidadosamente la imagen del empaque que te proporciono. Identifica el producto que viene dentro: su diseño, forma, colores, piezas, accesorios y detalles, tal como aparecen representados en la caja.',
@@ -7461,7 +7461,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       'CÁMARA: perspectiva de tres cuartos ligeramente lateral que permita apreciar la forma y profundidad del producto, sin deformación de lente.',
       'ESTILO: fotografía hiperrealista de producto para catálogo de comercio electrónico premium.',
       'No agregues textos, precios, marcos ni marcas de agua.',
-      'Formato vertical 4:5.'
+      'Formato cuadrado 1:1.'
     ].join('\n'),
     detalles: [
       'Actúa como un fotógrafo profesional especializado en fotografía de productos para catálogos de comercio electrónico de alta calidad.',
@@ -7490,7 +7490,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       '- Sin personas ni manos.',
       '- Sin fondos de colores ni elementos decorativos.',
       'RESULTADO: una fotografía de catálogo premium, hiperrealista, limpia y profesional, con el producto completo en la parte superior y tres acercamientos de detalles en la parte inferior.',
-      'Formato vertical 4:5. Alta resolución. Calidad de fotografía comercial para comercio electrónico.'
+      'Formato cuadrado 1:1. Alta resolución. Calidad de fotografía comercial para comercio electrónico.'
     ].join('\n')
   };
 
@@ -7541,7 +7541,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
     async function pedir(modelo, conFormato) {
       var gen = { responseModalities: ['IMAGE'] };
-      if (conFormato) gen.imageConfig = { aspectRatio: '4:5' };
+      if (conFormato) gen.imageConfig = { aspectRatio: '1:1' };
       var ctrl = new AbortController();
       var reloj = setTimeout(function() { ctrl.abort(); }, 120000);
       var r;
@@ -7578,7 +7578,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
         var img;
         try { img = await pedir(m, true); }
         catch (eF) {
-          // algunos modelos no aceptan el formato 4:5: se pide sin él (el panel recorta después)
+          // algunos modelos no aceptan el formato cuadrado: se pide sin él (el panel recorta después)
           if (eF.status === 400 && /aspect|imageConfig|image_config|Unknown name/i.test(eF.message)) img = await pedir(m, false);
           else throw eF;
         }
@@ -7599,7 +7599,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     throw ultimo || new Error('No hay un modelo de imágenes disponible para esta clave.');
   }
 
-  // Fondo blanco puro (solo lo que toca el borde y es casi blanco), recorte y lienzo 4:5 con el producto grande
+  // Fondo blanco puro (solo lo que toca el borde y es casi blanco), recorte y lienzo cuadrado con el producto grande
   async function iaPulir(dataUrl, modo) {
     var img = await new Promise(function(ok, mal) { var i = new Image(); i.onload = function() { ok(i); }; i.onerror = mal; i.src = dataUrl; });
     var W = img.naturalWidth, H = img.naturalHeight;
@@ -7627,7 +7627,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     }
     if (maxX < 0) { minX = 0; minY = 0; maxX = W - 1; maxY = H - 1; }
     var bw = maxX - minX + 1, bh = maxY - minY + 1;
-    var SW = 1080, SH = 1350, margen = modo === 'detalles' ? 0.03 : 0.06;
+    var SW = 1080, SH = 1080, margen = modo === 'detalles' ? 0.03 : 0.05;
     var esc = Math.min(SW * (1 - 2 * margen) / bw, SH * (1 - 2 * margen) / bh);
     var dw = Math.round(bw * esc), dh = Math.round(bh * esc);
     var f = document.createElement('canvas'); f.width = SW; f.height = SH;
@@ -7718,7 +7718,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     iaEstado('🎨 Generando con IA… (puede tardar 10 a 40 segundos)');
     try {
       var cruda = await iaGenerarImagen(clave, prompt, iaActual.original);
-      iaEstado('🧽 Dejando el fondo blanco y el formato 4:5…');
+      iaEstado('🧽 Dejando el fondo blanco y el formato cuadrado…');
       var lista = await iaPulir(cruda, iaActual.modo);
       iaActual.resultado = lista;
       document.getElementById('iaImgDespues').src = lista;
