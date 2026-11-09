@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="icon" href="./iconos/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="192x192" href="./iconos/icon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="./iconos/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Panel Atarashi"><meta name="theme-color" content="#0a0a0a">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atarashi MASTER — Panel de Control (Contado)</title>
@@ -2844,7 +2845,11 @@ async function publicarEnGitHub() {
       theme_color: '#C9A02A',
       orientation: 'portrait-primary',
       lang: 'es',
-      categories: ['shopping']
+      categories: ['shopping'],
+      icons: [
+        { src: './iconos/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+        { src: './iconos/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+      ]
     }, null, 2);
     await guardarArchivoEnGitHub('manifest.json', manifestData, '📱 Manifest PWA Atarashi Store');
 
@@ -3598,7 +3603,7 @@ return new Response(JSON.stringify(filtrar(j)),{status:200,headers:{'Content-Typ
 <title>Atarashi Store — Pago Contraentrega Cali</title>
 <meta name="description" content="Domicilio GRATIS desde $60.000 en Cali. Pagas al recibir: efectivo, Nequi o Bancolombia. Calzado, ropa, lociones, gorras, tecnología y más.">
 <link rel="icon" type="image/png" href="./favicon.png">
-<link rel="apple-touch-icon" href="./favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./iconos/apple-touch-icon.png"><link rel="icon" href="./iconos/favicon.ico" sizes="any">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Atarashi Store">
 <meta property="og:locale" content="es_CO">
