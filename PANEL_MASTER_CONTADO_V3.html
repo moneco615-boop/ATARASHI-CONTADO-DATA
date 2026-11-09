@@ -2267,6 +2267,7 @@ function crCrearBtnBorrador(wrapper, url) {
   b.title = 'Borrar manchas a mano (pinta de blanco)';
   b.onclick = () => brAbrir(wrapper, url);
   wrapper.appendChild(b);
+  if (typeof window.iaCrearBtn === 'function') window.iaCrearBtn(wrapper, url);   // 🎨 Mejorar con IA
 }
 
 function brAbrir(wrapper, url) {
@@ -7265,6 +7266,383 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     try{var tabs=document.querySelectorAll('.mob-tab');for(var i=0;i<tabs.length;i++){if(tabs[i].textContent.indexOf('Portada')>-1){var sp=tabs[i].lastChild;if(sp&&sp.nodeType===3)sp.nodeValue='Banners';}}}catch(e){}
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
+})();
+</script>
+<!-- ══ 🎨 MEJORAR FOTO CON IA (Google, imágenes) — nov 2026 ══
+     Usa la misma clave de Google de "Llenar con IA" (queda guardada solo en este aparato).
+     Tres modos: limpiar producto, armar desde la caja y foto de detalles.
+     Después de generar: fondo blanco puro, recorte 4:5 y el producto grande. Nada se sube hasta tocar "Usar". -->
+<style id="ia-fotos-css">
+  .preview-foto-ia { position: absolute; bottom: -9px; left: 50%; transform: translateX(-50%); width: 26px; height: 26px; background: linear-gradient(135deg,#C9A02A,#F0C040); color: #000; border: 2px solid #000; border-radius: 50%; font-size: 13px; cursor: pointer; padding: 0; line-height: 22px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.5); z-index: 2; }
+  @media (max-width: 899px) {
+    .preview-foto-ia { position: static; transform: none; grid-column: 1 / -1; grid-row: 4; width: 100%; height: 40px; border-radius: 8px; font-size: 14px; font-weight: 800; line-height: 1; border: none; box-shadow: none; }
+  }
+  .ia-fondo { position: fixed; inset: 0; background: rgba(0,0,0,.82); z-index: 99999; display: flex; align-items: flex-start; justify-content: center; overflow-y: auto; padding: 14px 10px 40px; }
+  .ia-caja { background: #141414; border: 1px solid #C9A02A; border-radius: 14px; width: 100%; max-width: 560px; padding: 16px; color: #eee; font-family: inherit; }
+  .ia-caja h3 { margin: 0 0 10px; color: #F0C040; font-size: 18px; }
+  .ia-modos { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 10px; }
+  .ia-modo { text-align: left; background: #1f1f1f; color: #eee; border: 2px solid #333; border-radius: 10px; padding: 10px 12px; cursor: pointer; font-size: 15px; }
+  .ia-modo small { display: block; color: #999; font-size: 12px; margin-top: 2px; }
+  .ia-modo.activo { border-color: #F0C040; background: #2a2410; }
+  .ia-caja label { display: block; font-size: 13px; color: #ccc; margin: 6px 0 4px; }
+  .ia-caja textarea { width: 100%; box-sizing: border-box; background: #0d0d0d; color: #fff; border: 1px solid #444; border-radius: 8px; padding: 8px; font-family: inherit; }
+  .ia-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+  .ia-fotos figure { margin: 0; text-align: center; font-size: 12px; color: #aaa; }
+  .ia-fotos img { width: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #fff; border-radius: 8px; display: block; margin-bottom: 4px; }
+  .ia-estado { min-height: 20px; font-size: 13px; color: #F0C040; margin: 6px 0; white-space: pre-line; }
+  .ia-botones { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ia-botones button { flex: 1 1 30%; min-height: 46px; border-radius: 10px; border: none; font-weight: 800; font-size: 15px; cursor: pointer; }
+  .ia-btn-gen { background: linear-gradient(135deg,#C9A02A,#F0C040); color: #000; }
+  .ia-btn-usar { background: #1e7e34; color: #fff; }
+  .ia-btn-cerrar { background: #333; color: #eee; }
+  .ia-botones button:disabled { opacity: .45; cursor: default; }
+</style>
+<script>
+(function(){
+  // ── Los 3 prompts aprobados (9 nov 2026) ──
+  var IA_PROMPTS = {
+    limpiar: [
+      'Analiza cuidadosamente la fotografía de referencia e identifica el producto principal y todos sus componentes, accesorios, colores, texturas y detalles impresos visibles.',
+      'Tu objetivo es convertirla en una fotografía comercial profesional del MISMO producto.',
+      'FIDELIDAD (prioridad absoluta):',
+      '- Conserva exactamente el diseño, forma, proporciones, colores, materiales, piezas y accesorios del producto original.',
+      '- Conserva los logos, etiquetas y gráficos que vienen impresos en el producto mismo.',
+      '- No diseñes un producto nuevo. No agregues, quites ni cambies piezas, botones, ruedas, accesorios ni mecanismos.',
+      '- Si alguna parte no se ve con claridad, no inventes detalles.',
+      'LIMPIEZA:',
+      '- Retira por completo el celofán, bolsas plásticas, moños, cintas, papel de regalo y cualquier envoltura o adorno que no sea parte del producto. Muestra el producto limpio y descubierto, como si se hubiera sacado del empaque.',
+      '- Elimina todo lo que no sea el producto: piso, tapete, pasto, manos, otros objetos, precios escritos, stickers de precio y marcas de agua.',
+      '- Elimina reflejos y brillos fuertes que impidan ver el producto.',
+      '- Presenta el producto completo, con todas sus piezas y accesorios visibles, centrado, bien organizado y ocupando la mayor parte de la imagen, con un margen blanco pequeño.',
+      'FONDO: blanco puro de estudio (#FFFFFF), sin degradados ni texturas.',
+      'ILUMINACIÓN: luz suave de catálogo, sombra natural y sutil bajo el producto, excelente nitidez y colores reales.',
+      'CÁMARA: si la foto original muestra bien el producto, conserva el mismo ángulo. Si la foto está totalmente de frente y el producto se ve plano, usa una perspectiva de tres cuartos ligeramente lateral para mostrar su profundidad, mostrando solo las partes visibles en la foto original sin inventar el lado oculto. Sin deformación de lente.',
+      'ESTILO: fotografía hiperrealista de producto para catálogo de comercio electrónico premium.',
+      'No agregues textos, logos, precios, marcos ni marcas de agua que no estén en el producto original.',
+      'Formato vertical 4:5.'
+    ].join('\n'),
+    caja: [
+      'Analiza cuidadosamente la imagen del empaque que te proporciono. Identifica el producto que viene dentro: su diseño, forma, colores, piezas, accesorios y detalles, tal como aparecen representados en la caja.',
+      'Tu objetivo es crear una fotografía comercial hiperrealista del producto completamente armado y fuera de su empaque, como si se hubiera sacado de la caja y fotografiado en estudio.',
+      'REFERENCIA:',
+      '- Si la caja muestra varias imágenes del producto, usa como guía principal la foto más grande y clara del producto armado.',
+      '- Usa las fotos pequeñas, los costados y los detalles de la caja solo para confirmar colores, piezas y accesorios.',
+      '- No copies niños, manos, personas, escenarios, fondos ni efectos que aparezcan en la caja.',
+      '{{CONTENIDO}}',
+      'FIDELIDAD (prioridad absoluta):',
+      '- Reproduce fielmente el diseño, forma, proporciones, colores y características que se identifican en la caja.',
+      '- Conserva los logos, calcomanías y gráficos que vienen impresos en el producto mismo.',
+      '- No inventes piezas, accesorios, luces, mecanismos ni características que no estén representados en la caja.',
+      '- Si algún detalle no se aprecia con claridad, no lo inventes; represéntalo de la forma más simple y fiel posible.',
+      '- La prioridad es mostrar el producto real que recibirá el cliente, no una versión imaginaria o mejorada.',
+      'COMPOSICIÓN:',
+      '- Muestra el producto completo, armado, sin recortes, centrado y ocupando la mayor parte de la imagen, con un margen blanco pequeño.',
+      '- Si incluye varias piezas o accesorios, organízalos de forma ordenada y visible junto al producto principal.',
+      '- No muestres la caja ni sus textos comerciales.',
+      'FONDO: blanco puro de estudio (#FFFFFF), sin degradados ni texturas.',
+      'ILUMINACIÓN: luz suave de catálogo, sombras naturales y sutiles, excelente nitidez y colores reales.',
+      'CÁMARA: perspectiva de tres cuartos ligeramente lateral que permita apreciar la forma y profundidad del producto, sin deformación de lente.',
+      'ESTILO: fotografía hiperrealista de producto para catálogo de comercio electrónico premium.',
+      'No agregues textos, precios, marcos ni marcas de agua.',
+      'Formato vertical 4:5.'
+    ].join('\n'),
+    detalles: [
+      'Actúa como un fotógrafo profesional especializado en fotografía de productos para catálogos de comercio electrónico de alta calidad.',
+      'A partir de la imagen de referencia que te proporciono, crea una composición fotográfica profesional del MISMO producto con las siguientes características:',
+      'COMPOSICIÓN PRINCIPAL (parte superior):',
+      '- El producto completo aparece en la parte superior, ocupando un espacio amplio y siendo el protagonista absoluto.',
+      '- Debe verse exactamente igual a la imagen de referencia: mismo producto, mismo ángulo, mismos colores y mismos detalles.',
+      '- Perfectamente centrado, enfocado y completamente visible, sin recortes.',
+      '- Fondo blanco puro (#FFFFFF), limpio y uniforme.',
+      '- Iluminación profesional de estudio, sombras suaves y definición nítida.',
+      'TRES FOTOGRAFÍAS DE DETALLE (parte inferior):',
+      '- En la parte inferior incorpora tres fotografías adicionales del mismo producto, distribuidas horizontalmente en tres recuadros independientes del mismo tamaño.',
+      '- Cada recuadro muestra un acercamiento a una característica diferente y atractiva del producto, por ejemplo: materiales y texturas, piezas o accesorios destacados, controles, mecanismos, acabados o detalles de diseño.',
+      '- Elige las tres características más llamativas para un comprador.',
+      '- Haz acercamientos solo de partes que se vean claramente en la imagen de referencia. No muestres partes ocultas como la parte de atrás, de abajo o el interior si no se ven en la referencia.',
+      '- Evita que los acercamientos se centren en etiquetas, calcomanías con texto o letras pequeñas; enfócate en formas, texturas y funciones.',
+      '- Los acercamientos deben ser fotográficamente realistas, con el mismo fondo blanco e iluminación, y corresponder exactamente al producto original.',
+      'FIDELIDAD ABSOLUTA DEL PRODUCTO:',
+      '- No cambies su diseño, forma, dimensiones ni proporciones.',
+      '- No alteres colores, materiales, accesorios ni componentes.',
+      '- No agregues piezas, accesorios, moños, empaques ni adornos que no estén en la imagen de referencia.',
+      '- No inventes características.',
+      '- Si algún detalle no se aprecia con claridad, no lo inventes.',
+      'RESTRICCIONES:',
+      '- Sin textos, descripciones, precios, logos agregados ni marcas de agua.',
+      '- Sin personas ni manos.',
+      '- Sin fondos de colores ni elementos decorativos.',
+      'RESULTADO: una fotografía de catálogo premium, hiperrealista, limpia y profesional, con el producto completo en la parte superior y tres acercamientos de detalles en la parte inferior.',
+      'Formato vertical 4:5. Alta resolución. Calidad de fotografía comercial para comercio electrónico.'
+    ].join('\n')
+  };
+
+  var IA_MODOS = [
+    { id: 'limpiar',  tit: '🧼 Limpiar producto',    sub: 'Quita celofán, moños, tapete y precio. Fondo blanco.' },
+    { id: 'caja',     tit: '📦 Armar desde la caja', sub: 'Saca el juguete de la caja y lo muestra armado.' },
+    { id: 'detalles', tit: '🔍 Foto de detalles',    sub: 'Producto arriba + 3 acercamientos. Úsala con una foto ya limpia.' }
+  ];
+
+  // Modelos de imagen de Google, del preferido al de respaldo
+  var IA_MODELOS_BASE = ['gemini-2.5-flash-image', 'gemini-3.1-flash-image-preview', 'gemini-3.1-flash-image'];
+
+  function iaClave() {
+    var k = '';
+    try { k = localStorage.getItem('atarashi_gemini_key') || ''; } catch (e) {}
+    if (!k && typeof crPedirClaveGemini === 'function') k = crPedirClaveGemini();
+    return k;
+  }
+
+  async function iaListarModelos(clave) {
+    try {
+      var r = await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=' + encodeURIComponent(clave));
+      var d = await r.json();
+      return (d.models || []).filter(function(m) {
+        return (m.supportedGenerationMethods || []).indexOf('generateContent') !== -1 && /image/.test(m.name) && /flash/.test(m.name);
+      }).map(function(m) { return m.name.replace('models/', ''); });
+    } catch (e) { return []; }
+  }
+
+  function iaTraducirError(e) {
+    var m = (e && e.message) || '';
+    if (e && (e.status === 429 || /quota|exhausted|free.?tier|billing/i.test(m)))
+      return '💳 Google no dejó generar la imagen por límite o porque falta activar la facturación.\nEntra a aistudio.google.com/apikey → "Configurar la facturación" en tu proyecto.\n(' + m.slice(0, 160) + ')';
+    if (e && (e.status === 400 || e.status === 403) && /api key|API_KEY|permission/i.test(m))
+      return '🔑 La clave de Google no sirve. Bórrala y pega una nueva (botón "Cambiar clave").';
+    if (/SAFETY|bloque|blocked|prohibit/i.test(m))
+      return '🚫 Google no quiso generar esta imagen (filtro de seguridad). Prueba con otra foto.';
+    return '❌ ' + (m || 'No se pudo generar la imagen.');
+  }
+
+  async function iaGenerarImagen(clave, prompt, base64jpg) {
+    var datos = base64jpg.split(',')[1];
+    var preferido = '';
+    try { preferido = localStorage.getItem('atarashi_gemini_modelo_img') || ''; } catch (e) {}
+    var cola = (preferido ? [preferido] : []).concat(IA_MODELOS_BASE.filter(function(m) { return m !== preferido; }));
+    var listaCargada = false, ultimo = null, probados = {};
+
+    async function pedir(modelo, conFormato) {
+      var gen = { responseModalities: ['IMAGE'] };
+      if (conFormato) gen.imageConfig = { aspectRatio: '4:5' };
+      var ctrl = new AbortController();
+      var reloj = setTimeout(function() { ctrl.abort(); }, 120000);
+      var r;
+      try {
+        r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + modelo + ':generateContent?key=' + encodeURIComponent(clave), {
+          method: 'POST', signal: ctrl.signal,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: prompt }, { inline_data: { mime_type: 'image/jpeg', data: datos } }] }],
+            generationConfig: gen
+          })
+        });
+      } catch (eRed) {
+        var eT = new Error(eRed.name === 'AbortError' ? 'Google tardó demasiado. Intenta de nuevo.' : 'Sin conexión con Google.');
+        eT.status = 504; throw eT;
+      } finally { clearTimeout(reloj); }
+      var d = await r.json().catch(function() { return {}; });
+      if (!r.ok) { var e = new Error((d.error && d.error.message) || ('Error ' + r.status)); e.status = r.status; throw e; }
+      var c = (d.candidates || [])[0] || {};
+      var partes = (c.content && c.content.parts) || [];
+      for (var i = 0; i < partes.length; i++) {
+        var p = partes[i].inlineData || partes[i].inline_data;
+        if (p && p.data) return 'data:' + (p.mimeType || p.mime_type || 'image/png') + ';base64,' + p.data;
+      }
+      var e2 = new Error(c.finishReason && c.finishReason !== 'STOP' ? 'Google bloqueó la imagen (' + c.finishReason + ').' : 'Google no devolvió ninguna imagen.');
+      e2.status = 422; throw e2;
+    }
+
+    for (var n = 0; n < 6 && cola.length; n++) {
+      var m = cola.shift();
+      if (probados[m]) continue;
+      probados[m] = true;
+      try {
+        var img;
+        try { img = await pedir(m, true); }
+        catch (eF) {
+          // algunos modelos no aceptan el formato 4:5: se pide sin él (el panel recorta después)
+          if (eF.status === 400 && /aspect|imageConfig|image_config|Unknown name/i.test(eF.message)) img = await pedir(m, false);
+          else throw eF;
+        }
+        try { localStorage.setItem('atarashi_gemini_modelo_img', m); } catch (e) {}
+        return img;
+      } catch (e) {
+        ultimo = e;
+        var noExiste = e.status === 404 || (e.status === 400 && /model|not found|not supported/i.test(e.message));
+        var pasajero = e.status === 500 || e.status === 503 || e.status === 504;
+        if (!noExiste && !pasajero) throw e;
+        if (!listaCargada) {
+          listaCargada = true;
+          (await iaListarModelos(clave)).forEach(function(x) { if (!probados[x] && cola.indexOf(x) === -1) cola.push(x); });
+        }
+        if (pasajero && n === 0) { await new Promise(function(r) { setTimeout(r, 2500); }); cola.unshift(m); delete probados[m]; }
+      }
+    }
+    throw ultimo || new Error('No hay un modelo de imágenes disponible para esta clave.');
+  }
+
+  // Fondo blanco puro (solo lo que toca el borde y es casi blanco), recorte y lienzo 4:5 con el producto grande
+  async function iaPulir(dataUrl, modo) {
+    var img = await new Promise(function(ok, mal) { var i = new Image(); i.onload = function() { ok(i); }; i.onerror = mal; i.src = dataUrl; });
+    var W = img.naturalWidth, H = img.naturalHeight;
+    var c = document.createElement('canvas'); c.width = W; c.height = H;
+    var x = c.getContext('2d'); x.drawImage(img, 0, 0);
+    var id = x.getImageData(0, 0, W, H), px = id.data;
+    var visto = new Uint8Array(W * H), pila = [];
+    function casiBlanco(k) { var o = k * 4; return px[o] > 222 && px[o + 1] > 222 && px[o + 2] > 222 && (Math.max(px[o], px[o + 1], px[o + 2]) - Math.min(px[o], px[o + 1], px[o + 2])) < 22; }
+    function sembrar(k) { if (!visto[k] && casiBlanco(k)) { visto[k] = 1; pila.push(k); } }
+    for (var i = 0; i < W; i++) { sembrar(i); sembrar((H - 1) * W + i); }
+    for (var j = 0; j < H; j++) { sembrar(j * W); sembrar(j * W + W - 1); }
+    while (pila.length) {
+      var k = pila.pop(), kx = k % W;
+      px[k * 4] = px[k * 4 + 1] = px[k * 4 + 2] = 255;
+      if (kx > 0) sembrar(k - 1);
+      if (kx < W - 1) sembrar(k + 1);
+      if (k >= W) sembrar(k - W);
+      if (k < W * (H - 1)) sembrar(k + W);
+    }
+    x.putImageData(id, 0, 0);
+    // Caja del producto: todo lo que no quedó como fondo
+    var minX = W, minY = H, maxX = -1, maxY = -1;
+    for (var y = 0; y < H; y++) for (var xx = 0; xx < W; xx++) {
+      if (!visto[y * W + xx]) { if (xx < minX) minX = xx; if (xx > maxX) maxX = xx; if (y < minY) minY = y; if (y > maxY) maxY = y; }
+    }
+    if (maxX < 0) { minX = 0; minY = 0; maxX = W - 1; maxY = H - 1; }
+    var bw = maxX - minX + 1, bh = maxY - minY + 1;
+    var SW = 1080, SH = 1350, margen = modo === 'detalles' ? 0.03 : 0.06;
+    var esc = Math.min(SW * (1 - 2 * margen) / bw, SH * (1 - 2 * margen) / bh);
+    var dw = Math.round(bw * esc), dh = Math.round(bh * esc);
+    var f = document.createElement('canvas'); f.width = SW; f.height = SH;
+    var fx = f.getContext('2d');
+    fx.fillStyle = '#ffffff'; fx.fillRect(0, 0, SW, SH);
+    fx.imageSmoothingQuality = 'high';
+    fx.drawImage(c, minX, minY, bw, bh, Math.round((SW - dw) / 2), Math.round((SH - dh) / 2), dw, dh);
+    return f.toDataURL('image/jpeg', 0.9);
+  }
+
+  var iaActual = null;   // { wrapper, url, original, modo, resultado }
+
+  function iaCerrar() { var f = document.getElementById('iaFondo'); if (f) f.remove(); iaActual = null; }
+
+  function iaEstado(t, color) { var e = document.getElementById('iaEstado'); if (e) { e.textContent = t || ''; e.style.color = color || '#F0C040'; } }
+
+  function iaPintarModos() {
+    document.querySelectorAll('.ia-modo').forEach(function(b) { b.classList.toggle('activo', b.dataset.modo === iaActual.modo); });
+    var cc = document.getElementById('iaContenidoCaja');
+    if (cc) cc.style.display = iaActual.modo === 'caja' ? 'block' : 'none';
+  }
+
+  async function iaAbrir(wrapper, url) {
+    iaCerrar();
+    iaActual = { wrapper: wrapper, url: url, original: null, modo: 'limpiar', resultado: null };
+    var fondo = document.createElement('div');
+    fondo.className = 'ia-fondo'; fondo.id = 'iaFondo';
+    var h = '<div class="ia-caja"><h3>🎨 Mejorar foto con IA</h3><div class="ia-modos">';
+    IA_MODOS.forEach(function(m) { h += '<button type="button" class="ia-modo" data-modo="' + m.id + '">' + m.tit + '<small>' + m.sub + '</small></button>'; });
+    h += '</div>' +
+      '<div id="iaContenidoCaja" style="display:none"><label>📋 ¿Qué trae la caja? (recomendado)</label>' +
+      '<textarea id="iaContenido" rows="2" placeholder="Ej: 1 locomotora, 1 vagón de carbón, 1 vagón rojo y la carrilera"></textarea></div>' +
+      '<div class="ia-fotos"><figure><img id="iaImgAntes" alt=""><figcaption>Antes</figcaption></figure>' +
+      '<figure><img id="iaImgDespues" alt=""><figcaption>Después</figcaption></figure></div>' +
+      '<div class="ia-estado" id="iaEstado"></div>' +
+      '<div class="ia-botones">' +
+      '<button type="button" class="ia-btn-gen" id="iaBtnGen">✨ Generar</button>' +
+      '<button type="button" class="ia-btn-usar" id="iaBtnUsar" disabled>✅ Usar</button>' +
+      '<button type="button" class="ia-btn-cerrar" id="iaBtnCerrar">Cerrar</button>' +
+      '</div>' +
+      '<p style="font-size:11px;color:#888;margin:10px 0 0;">Cada imagen generada cuesta unos centavos de dólar en tu cuenta de Google. Revisa siempre que el producto sea el mismo antes de tocar "Usar". La foto original se queda en el producto. ' +
+      '<a href="#" id="iaCambiarClave" style="color:#aaa;">Cambiar clave</a></p></div>';
+    fondo.innerHTML = h;
+    document.body.appendChild(fondo);
+    fondo.addEventListener('click', function(ev) { if (ev.target === fondo) iaCerrar(); });
+    fondo.querySelectorAll('.ia-modo').forEach(function(b) {
+      b.onclick = function() { iaActual.modo = b.dataset.modo; iaPintarModos(); };
+    });
+    document.getElementById('iaBtnCerrar').onclick = iaCerrar;
+    document.getElementById('iaBtnGen').onclick = iaGenerar;
+    document.getElementById('iaBtnUsar').onclick = iaUsar;
+    document.getElementById('iaCambiarClave').onclick = function(ev) {
+      ev.preventDefault();
+      try { localStorage.removeItem('atarashi_gemini_key'); localStorage.removeItem('atarashi_gemini_modelo_img'); } catch (e) {}
+      if (typeof crPedirClaveGemini === 'function') crPedirClaveGemini();
+    };
+    iaPintarModos();
+    var antes = document.getElementById('iaImgAntes');
+    antes.src = typeof crMini === 'function' ? crMini(url, 240) : url;
+    iaEstado('⏳ Cargando la foto…');
+    try {
+      var r = await fetch(url);
+      var b = await r.blob();
+      var bmp = await createImageBitmap(b);
+      iaActual.original = crReducir(bmp, 1536, 0.9);
+      antes.src = iaActual.original;
+      iaEstado('Elige qué quieres hacer y toca ✨ Generar.');
+    } catch (e) {
+      iaEstado('❌ No se pudo leer esta foto: ' + e.message, '#ff8080');
+    }
+  }
+
+  async function iaGenerar() {
+    if (!iaActual || !iaActual.original) return;
+    var clave = iaClave();
+    if (!clave) return;
+    var prompt = IA_PROMPTS[iaActual.modo];
+    if (iaActual.modo === 'caja') {
+      var cont = (document.getElementById('iaContenido').value || '').trim();
+      prompt = prompt.replace('{{CONTENIDO}}', cont
+        ? 'CONTENIDO EXACTO: ' + cont + '. Muestra exactamente esas piezas y esas cantidades. No agregues ni dupliques ninguna pieza.'
+        : '- Si la caja indica qué piezas o accesorios incluye, muestra exactamente esas piezas, ni más ni menos. No dupliques piezas.');
+    }
+    var bGen = document.getElementById('iaBtnGen'), bUsar = document.getElementById('iaBtnUsar');
+    bGen.disabled = true; bUsar.disabled = true;
+    iaActual.resultado = null;
+    document.getElementById('iaImgDespues').removeAttribute('src');
+    iaEstado('🎨 Generando con IA… (puede tardar 10 a 40 segundos)');
+    try {
+      var cruda = await iaGenerarImagen(clave, prompt, iaActual.original);
+      iaEstado('🧽 Dejando el fondo blanco y el formato 4:5…');
+      var lista = await iaPulir(cruda, iaActual.modo);
+      iaActual.resultado = lista;
+      document.getElementById('iaImgDespues').src = lista;
+      iaEstado('✅ Listo. Revisa que sea el mismo producto. Si te gusta toca "Usar"; si no, "Generar" otra vez.', '#7fff7f');
+      bUsar.disabled = false;
+      bGen.textContent = '🔁 Repetir';
+    } catch (e) {
+      console.warn('IA fotos:', e);
+      iaEstado(iaTraducirError(e), '#ff8080');
+    } finally { bGen.disabled = false; }
+  }
+
+  function iaUsar() {
+    if (!iaActual || !iaActual.resultado) return;
+    var contenedor = document.getElementById('previewFotosContenedor');
+    var datos = iaActual.resultado, modo = iaActual.modo, wrapper = iaActual.wrapper, url = iaActual.url;
+    var v = crCrearPreview(contenedor, false);
+    v.imgPrev.src = datos;
+    var alInicio = modo !== 'detalles';
+    if (alInicio) {
+      contenedor.insertBefore(v.wrapper, contenedor.firstChild);
+    } else {
+      // la de detalles va justo después de la foto que se usó
+      if (wrapper && wrapper.parentNode === contenedor) contenedor.insertBefore(v.wrapper, wrapper.nextSibling);
+      var i = imagenesCargadasActuales.indexOf(url);
+      v.puesto = i === -1 ? imagenesCargadasActuales.length : i + 1;
+    }
+    iaCerrar();
+    colaFotos = colaFotos.then(function() { return crSubirYMontar(v, datos, alInicio, null); });
+  }
+
+  // Botón 🎨 en cada foto del producto
+  window.iaCrearBtn = function(wrapper, url) {
+    if (!wrapper || wrapper.querySelector('.preview-foto-ia')) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'preview-foto-ia';
+    b.title = 'Mejorar esta foto con IA';
+    b.textContent = window.matchMedia && window.matchMedia('(max-width: 899px)').matches ? '🎨 Mejorar con IA' : '🎨';
+    b.onclick = function() { iaAbrir(wrapper, url); };
+    wrapper.appendChild(b);
+  };
 })();
 </script>
 </body>
