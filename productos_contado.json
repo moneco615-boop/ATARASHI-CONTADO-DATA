@@ -10693,7 +10693,7 @@
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793718467/atarashi_contado/qge6oiirlbyeqhbqpujp.jpg"
       ],
       "agotadas": [],
-      "video": "",
+      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/v1794197413/atarashi_contado/videos/ypi7bvlknc8ohxkedccb.mp4",
       "id": 1793155687610
     },
     {
@@ -35304,5 +35304,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1794172264847"
+  "ver": "1794197449763"
 }
