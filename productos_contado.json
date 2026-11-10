@@ -3735,6 +3735,8 @@
       "tipoTalla": "",
       "descripcion": "El Llavero para Pared Gatito combina funcionalidad y un diseño encantador para mantener tus llaves siempre organizadas.",
       "imagenes": [
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794320663/atarashi_contado/ewwh0opazubynnylvfny.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794320670/atarashi_contado/jjrdopffwbdn9oyqlmew.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296265/atarashi_contado/evbbacuqucqbbnjwfiux.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296265/atarashi_contado/p9kgyacrf870x8jwbben.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1785296265/atarashi_contado/jho1iesiwpuibixt1cpe.jpg",
@@ -9515,7 +9517,8 @@
       "descripcion": "¡Lleva tu estilo al siguiente nivel con estos tenis Fila de diseño urbano y moderno! Su combinación de texturas y detalles de color los hace perfectos para destacar con tus jeans o ropa deportiva en cualquier ocasión informal. Su suela gruesa ranurada te brinda la estabilidad y comodidad que necesitas para caminar durante todo el día. Es la opción ideal para lucir a la moda sin sacrificar confort.",
       "imagenes": [
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018371/atarashi_contado/r1ukdff5kmcw4dsn5alb.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018371/atarashi_contado/sqmlnr81tkeiva71degh.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794322214/atarashi_contado/nwcojldqlix4k1fqqxx4.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794322232/atarashi_contado/ooa8omuyarsg5tso7e9b.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793018372/atarashi_contado/j74qwlgmmodjvwk4sk01.jpg"
       ],
       "agotadas": [],
@@ -31226,29 +31229,14 @@
       "tipoTalla": "calzado",
       "descripcion": "Fila: robustos, cómodos y con estilo retro. También disponible en: gris azul.\nTallas: 36 al 40.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757650/atarashi_contado/t0dyrg9kyvt1bgqq5j42.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794322276/atarashi_contado/u6rmgx411pzrpxduykrj.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794322286/atarashi_contado/mirhwvm11dr2igy3g5zr.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1794322293/atarashi_contado/mujncowhhavor5hhjfxb.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757651/atarashi_contado/swksns7pfcjzhytyihhv.jpg"
       ],
       "agotadas": [],
       "video": "",
       "id": 1793757648061
-    },
-    {
-      "nombre": "FILA ZAGATO GRIS AZUL",
-      "categoria": "Calzado dama",
-      "badge": "",
-      "disponibilidad": "inmediata",
-      "precioContado": 130000,
-      "fotosModelos": false,
-      "tipoTalla": "calzado",
-      "descripcion": "Fila: robustos, cómodos y con estilo retro. También disponible en: negro dama.\nTallas: 36 al 40.",
-      "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757651/atarashi_contado/gsxxtbaozqfpqrmy0gze.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757651/atarashi_contado/r03rxxbzgkn9jmwwdpil.jpg"
-      ],
-      "agotadas": [],
-      "video": "",
-      "id": 1793757648062
     },
     {
       "nombre": "LE COQ SPORTIF AZUL",
@@ -36744,5 +36732,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1794284735358"
+  "ver": "1794322391414"
 }
