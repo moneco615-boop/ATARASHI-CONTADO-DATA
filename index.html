@@ -2924,7 +2924,13 @@ function vidPoster(u){u=String(u||'').trim();if(u.indexOf('res.cloudinary.com')<
 var ioVid=null,ioPlay=null;
 var vidSonido=true,VOL=0.3;
 function iconoSnd(v){var b=v.parentNode&&v.parentNode.querySelector('.vsnd');if(b)b.textContent=v.muted?'🔇':'🔊';}
+/* Si hay un producto o el carrito abierto encima, el video de la pagina no suena ni avanza */
+function tapado(){
+  var m=document.getElementById('modalProd'),c=document.getElementById('cartOv');
+  return !!((m&&m.classList.contains('show'))||(c&&(c.classList.contains('show')||c.classList.contains('open'))));
+}
 function arrancar(v){
+  if(tapado())return;
   if(!v.getAttribute('src')){v.src=v.getAttribute('data-src');}
   if(vidSonido){v.muted=false;try{v.volume=VOL;}catch(x){}}else v.muted=true;
   var r=v.play();
@@ -2943,6 +2949,25 @@ try{if('IntersectionObserver' in window){
     else apagar(v);
   });},{rootMargin:'-90px 0px 0px 0px',threshold:[0,0.25,0.5,0.75,1]});
 }}catch(e){}
+/* Al abrir un producto (o el carrito): pausa el video. Al cerrarlo: sigue donde iba, si esta a la vista */
+(function vigilarTapa(){
+  var m=document.getElementById('modalProd');
+  if(!m||!('MutationObserver' in window)){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',vigilarTapa);return;}
+  var antes=false;
+  function revisar(){
+    var ahora=tapado();if(ahora===antes)return;antes=ahora;
+    var L=document.querySelectorAll('.atr-vid');
+    for(var i=0;i<L.length;i++){var v=L[i].querySelector('video');if(!v)continue;
+      if(ahora){if(!v.paused)v.pause();}
+      else{var r=L[i].getBoundingClientRect(),alto=window.innerHeight||document.documentElement.clientHeight;
+        var visible=Math.min(r.bottom,alto)-Math.max(r.top,90);
+        if(r.height>0&&visible>=r.height*0.5)arrancar(v);}
+    }
+  }
+  var mo=new MutationObserver(revisar);
+  mo.observe(m,{attributes:true,attributeFilter:['class']});
+  var c=document.getElementById('cartOv');if(c)mo.observe(c,{attributes:true,attributeFilter:['class']});
+})();
 function bloqueVideo(){
   var p=sigVideo();if(!p)return null;
   var sec=ce('section','ai-sec');
