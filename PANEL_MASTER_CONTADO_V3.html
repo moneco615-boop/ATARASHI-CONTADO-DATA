@@ -6464,7 +6464,7 @@ var DATOS=[
  {k:'d_pbank',v:'Ver power banks',o:['power bank','powerbank'],t:'Ningún power bank entrega toda su capacidad: una parte de la energía se pierde en calor. Por eso uno de 10.000 mAh carga menos de lo que dice la caja.'},
  {k:'d_nike',v:'Ver Nike',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['nike'],t:'Nike se llama así por Niké, la diosa griega de la victoria. Y el famoso «chulito» lo diseñó en 1971 una estudiante que cobró apenas 35 dólares.'},
  {k:'d_adidas',v:'Ver Adidas',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['adidas'],t:'Adidas viene del nombre de su fundador, Adolf «Adi» Dassler: Adi + Das = Adidas.'},
- {k:'d_puma',v:'Ver Puma',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['puma'],t:'Puma la fundó Rudolf Dassler, el hermano del creador de Adidas. Se pelearon y cada uno montó su marca en el mismo pueblito de Alemania.'},
+ {k:'d_puma',v:'Ver Puma',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['puma'],t:'Adidas y Puma los fundaron dos hermanos que terminaron siendo enemigos. Se pelearon en 1948, partieron la fábrica en dos y nunca se reconciliaron: hasta los enterraron en extremos opuestos del mismo cementerio.'},
  {k:'d_af1',v:'Ver Air Force 1',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['force'],t:'Los Air Force 1 (1982) se llaman como el avión del presidente de Estados Unidos. Fueron los primeros tenis de baloncesto con la cámara de aire de Nike.'},
  {k:'d_superstar',v:'Ver Superstar',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['superstar'],t:'Los Superstar nacieron en 1969 para el baloncesto. Su punta de caucho, la famosa «concha», protegía los dedos de los pisotones.'},
  {k:'d_samba',v:'Ver Samba',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['samba'],t:'Los Samba se crearon hacia 1950 para que los futbolistas pudieran entrenar en canchas congeladas sin resbalarse.'},
@@ -6510,7 +6510,8 @@ var DATOS=[
  {k:'d_hanway',v:'Ver sombrillas',o:['sombrilla','paraguas','parasol'],t:'Hacia 1750, al primer hombre que salió con sombrilla en Londres se le burlaban en la calle, porque era «cosa de mujeres». Los cocheros lo odiaban: con lluvia, les quitaba clientes.'},
  {k:'d_control',v:'Ver juguetes a control',o:['control remoto','con control','radio control'],t:'El primer aparato a control remoto lo mostró Nikola Tesla en 1898: un barquito en una piscina. Mucha gente del público creyó que lo movía con la mente.'},
  {k:'d_mochila',v:'Ver mochilas',o:['mochila','morral'],t:'La palabra «mochila» viene del vasco «motxil», que quiere decir muchacho: así le decían al mandadero, el que cargaba la bolsa. Con el tiempo, el nombre se le pasó a la bolsa.'},
- {k:'d_squishy',v:'Ver squishys',o:['squish'],t:'La espuma que se aplasta y vuelve despacito a su forma, como la de los squishys, se creó en 1966 en un proyecto de la NASA para hacer más seguros los asientos de avión.'}
+ {k:'d_squishy',v:'Ver squishys',o:['squish'],t:'La espuma que se aplasta y vuelve despacito a su forma, como la de los squishys, se creó en 1966 en un proyecto de la NASA para hacer más seguros los asientos de avión.'},
+ {k:'d_cuellos',v:'Ver Adidas y Puma',c:['calzado'],b:{c:['calzado'],v:'Ver tenis'},o:['adidas','puma'],t:'Por la pelea entre Adidas y Puma, a su pueblo en Alemania le dicen «el pueblo de los cuellos doblados»: antes de saludar, la gente miraba qué tenis llevaba el otro para saber de qué bando era.'}
 ];
 var RX_AC=new RegExp('['+String.fromCharCode(768)+'-'+String.fromCharCode(879)+']','g');
 function limpio(s){return ' '+String(s==null?'':s).toLowerCase().normalize('NFD').replace(RX_AC,'').replace(/[^a-z0-9]+/g,' ').trim()+' ';}
