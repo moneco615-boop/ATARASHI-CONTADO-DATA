@@ -62,7 +62,7 @@ return new Response(JSON.stringify(filtrar(j)),{status:200,headers:{'Content-Typ
 <meta name="twitter:title" content="Atarashi Store — Pago contraentrega en Cali">
 <meta name="twitter:description" content="Domicilio GRATIS desde $60.000 en Cali. Pagas al recibir: efectivo, Nequi o Bancolombia. Calzado, ropa, lociones, gorras, tecnología y más.">
 <meta name="twitter:image" content="https://moneco615-boop.github.io/ATARASHI-CONTADO-DATA/og.jpg">
-<link rel="preconnect" href="https://res.cloudinary.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://res.cloudinary.com"><link rel="preconnect" href="https://fotos.atarashi-store.com"><script>window.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!=="IMG"||t.dataset.fb)return;var p="https://fotos.atarashi-store.com/w560/",s=t.src||"";if(s.indexOf(p)!==0)return;t.dataset.fb="1";t.src="https://res.cloudinary.com/dgnxurwkp/image/upload/f_auto,q_auto:good,c_limit,w_560/"+s.slice(p.length);},true);</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 
 :root{--fo:#FAFAFA;--po:#FAF3E4;--ca:#FFFFFF;--pa:#FFFFFF;--go:#8A6410;--br:#8A6410;--wh:#1A1A1A;--gr:#1A1A1A;--T:'Bebas Neue',sans-serif;--B:'Outfit',sans-serif;}
@@ -1697,7 +1697,7 @@ try{
     }
     return '';
   }
-  function img(u,w){u=String(u||'');if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/upload/')<0)return u;var r=u.split('/upload/')[1]||'';if(/^(f_|q_|w_|c_)/.test(r))return u;return u.replace('/upload/','/upload/f_auto,q_auto:good,c_limit,w_'+((w&&w>600)?w:560)+'/');}
+  function img(u,w){u=String(u||'');var _m=u.match(/^https:\/\/res\.cloudinary\.com\/dgnxurwkp\/image\/upload\/v\d+\/(atarashi_contado\/[^?#]+)$/);if(_m&&!(w&&w>600))return 'https://fotos.atarashi-store.com/w560/'+_m[1];if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/upload/')<0)return u;var r=u.split('/upload/')[1]||'';if(/^(f_|q_|w_|c_)/.test(r))return u;return u.replace('/upload/','/upload/f_auto,q_auto:good,c_limit,w_'+((w&&w>600)?w:560)+'/');}
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function precio(n){try{if(typeof fmtP==='function')return fmtP(n);}catch(e){}try{return '$'+Math.round(n||0).toLocaleString('es-CO');}catch(e){return '$'+n;}}
   function norm(s){return String(s||'').toLowerCase().trim();}
@@ -2485,7 +2485,7 @@ var BARATO=50000;
 function norm(s){return String(s==null?'':s).toLowerCase().trim();}
 function mezclar(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
 function ce(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
-function img(u,w){u=String(u||'');if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/upload/')<0)return u;var r=u.split('/upload/')[1]||'';if(/^(f_|q_|w_|c_)/.test(r))return u;return u.replace('/upload/','/upload/f_auto,q_auto:good,c_limit,w_'+((w&&w>600)?w:560)+'/');}
+function img(u,w){u=String(u||'');var _m=u.match(/^https:\/\/res\.cloudinary\.com\/dgnxurwkp\/image\/upload\/v\d+\/(atarashi_contado\/[^?#]+)$/);if(_m&&!(w&&w>600))return 'https://fotos.atarashi-store.com/w560/'+_m[1];if(u.indexOf('res.cloudinary.com')<0||u.indexOf('/upload/')<0)return u;var r=u.split('/upload/')[1]||'';if(/^(f_|q_|w_|c_)/.test(r))return u;return u.replace('/upload/','/upload/f_auto,q_auto:good,c_limit,w_'+((w&&w>600)?w:560)+'/');}
 function foto(p){var ago=p.agotadas||[];var L=(p.imagenes||[]).filter(function(u){return ago.indexOf(u)<0;});return L[0]||(p.imagenes||[])[0]||'';}
 function precio(n){try{if(typeof fmtP==='function')return fmtP(n);}catch(e){}return '$'+Math.round(n||0).toLocaleString('es-CO');}
 function clr(ev){try{if(window.clarity)window.clarity('event',ev);}catch(e){}}
