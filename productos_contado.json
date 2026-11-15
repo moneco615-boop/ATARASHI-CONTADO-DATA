@@ -36691,6 +36691,24 @@
       "agotadas": [],
       "video": "",
       "id": 1794256537650
+    },
+    {
+      "nombre": "CHANCLAS NIKE BENASSI JDI SB",
+      "categoria": "Chanclas",
+      "badge": "",
+      "disponibilidad": "inmediata",
+      "precioContado": 55000,
+      "fotosModelos": false,
+      "tipoTalla": "calzado",
+      "descripcion": "Disfruta del máximo confort y estilo urbano en cada paso durante tus días de descanso. Estas chanclas destacan por su banda blanca superior con el distintivo logo en negro y detalles dorados, sobre una base negra de gran comodidad. Son perfectas para relajarte en casa, ir a la piscina o complementar un outfit fresco en tus salidas casuales. El calzado ideal para quienes buscan practicidad y un toque deportivo impecable.",
+      "imagenes": [
+        "https://fotos.atarashi-store.com/orig/atarashi_contado/2l3e6t622w6i0u063t03.jpg",
+        "https://fotos.atarashi-store.com/orig/atarashi_contado/5v2c2x2h031i441e0a4k.jpg",
+        "https://fotos.atarashi-store.com/orig/atarashi_contado/4s506n4w22070v4b3i2m.jpg"
+      ],
+      "agotadas": [],
+      "video": "",
+      "id": 1794759888580
     }
   ],
   "categorias": [
@@ -36783,5 +36801,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1794759073908"
+  "ver": "1794759895344"
 }
