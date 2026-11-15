@@ -2354,16 +2354,30 @@ async function llenarConIA() {
     var txt = await crLlamarGemini(clave, partes);
     txt = txt.replace(/^```(?:json)?/i, '').replace(/```\s*$/, '').trim();
     var r = JSON.parse(txt);
+    // La IA a veces envuelve la respuesta (lista, o un objeto dentro de otro): se desenvuelve
+    if (Array.isArray(r)) r = r[0] || {};
+    if (r && !r.nombre && !r.descripcion && !r.categoria) {
+      var _in = Object.keys(r).map(function(k) { return r[k]; }).filter(function(v) { return v && typeof v === 'object'; })[0];
+      if (_in) r = Array.isArray(_in) ? (_in[0] || {}) : _in;
+    }
+    // Claves sin importar mayúsculas, tildes ni espacios (descripción = descripcion)
+    var _n = {};
+    Object.keys(r || {}).forEach(function(k) { _n[k.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z]/g, '')] = r[k]; });
+    r = { nombre: _n.nombre || _n.name || _n.titulo, categoria: _n.categoria || _n.category, tipoTalla: _n.tipotalla, descripcion: _n.descripcion || _n.description };
+    var llenados = 0;
 
-    if (r.nombre) document.getElementById('pNombre').value = String(r.nombre).toUpperCase().trim();
+    if (r.nombre) { document.getElementById('pNombre').value = String(r.nombre).toUpperCase().trim(); llenados++; }
     if (r.categoria) {
-      var buscada = String(r.categoria).toLowerCase().trim();
-      var cat = categoriasValidas.find(function(c) { return c.nombre.toLowerCase() === buscada; });
-      if (cat) document.getElementById('pCategoria').value = cat.nombre;
+      var _lim = function(t) { return String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, ''); };
+      var buscada = _lim(r.categoria);
+      var cat = categoriasValidas.find(function(c) { return _lim(c.nombre) === buscada; }) ||
+                categoriasValidas.find(function(c) { return buscada && (_lim(c.nombre).indexOf(buscada) !== -1 || buscada.indexOf(_lim(c.nombre)) !== -1); });
+      if (cat) { document.getElementById('pCategoria').value = cat.nombre; llenados++; }
     }
     var tt = document.getElementById('pTipoTalla');
     if (tt && typeof r.tipoTalla === 'string' && ['', 'calzado', 'ropa'].indexOf(r.tipoTalla) !== -1) tt.value = r.tipoTalla;
-    if (r.descripcion) document.getElementById('pDescripcion').value = String(r.descripcion).trim();
+    if (r.descripcion) { document.getElementById('pDescripcion').value = String(r.descripcion).trim(); llenados++; }
+    if (!llenados) throw new SyntaxError('La IA respondió pero sin datos útiles');
 
     crEstadoIA('✅ Listo. Revisa el texto, pon el precio y guarda.', '#7fff7f');
     var precio = document.getElementById('pPrecioContado');
