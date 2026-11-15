@@ -1,9 +1,15 @@
 {
-  // Configuracion de Cloudflare para la tienda Atarashi (sitio estatico, sin servidor)
+  // Configuracion de Cloudflare para la tienda Atarashi
   "name": "atarashistore",
+  "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "./",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+    // El Worker solo se despierta para /api/*; el resto sigue siendo archivos estaticos
+    "run_worker_first": ["/api/*"]
+  },
+  "r2_buckets": [
+    { "binding": "FOTOS", "bucket_name": "atarashi-fotos" }
+  ]
 }

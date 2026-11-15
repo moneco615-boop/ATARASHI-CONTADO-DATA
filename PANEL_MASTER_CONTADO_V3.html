@@ -471,6 +471,7 @@
   Estado: <span id="statusTexto" style="color:#e67e22;font-weight:bold;">⏳ Esperando configuración...</span>
   <button style="margin-left:10px;background:#333;color:#fff;border:1px solid var(--dorado);padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarTokenManualmente()">🔑 GitHub Token</button>
   <button style="margin-left:5px;background:#333;color:#fff;border:1px solid #7B68EE;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarCloudinary()">☁️ Cloudinary</button>
+  <button style="margin-left:5px;background:#333;color:#fff;border:1px solid #f6821f;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarClaveFotos()">🔑 Clave fotos</button>
   <button style="margin-left:5px;background:#1a3a1a;color:#7fff7f;border:1px solid #25D366;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarWA()">📱 WhatsApp N°</button>
   <button style="margin-left:5px;background:#333;color:#fff;border:1px solid var(--dorado);padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;" onclick="configurarLogoPortada()">🖼️ Logo Portada</button>
   <button id="btnRepararNube" style="display:none;margin-left:8px;background:#7d2a00;color:#ffcc99;border:1px solid #e74c3c;padding:3px 9px;border-radius:4px;cursor:pointer;font-size:11px;font-weight:bold;" onclick="repararNube()">🔧 Reparar Nube</button>
@@ -1101,6 +1102,49 @@ const CONFIG_CLOUDINARY = {
   isReady: function() { return !!(this.getCloudName() && this.getPreset()); }
 };
 
+// ── Fotos en Cloudflare R2 (reemplaza a Cloudinary para fotos nuevas) ──
+const CONFIG_R2 = {
+  getClave: () => localStorage.getItem('atarashi_clave_fotos') || '',
+  url: 'https://atarashi-store.com/api/subir',
+  isReady: function() { return !!this.getClave(); }
+};
+function FOTOS_LISTO() { return CONFIG_R2.isReady() || CONFIG_CLOUDINARY.isReady(); }
+function configurarClaveFotos() {
+  var c = prompt('🔑 Clave para subir fotos (la misma que pusiste en Cloudflare como CLAVE_SUBIDA).\n\nActual: ' + (CONFIG_R2.getClave() ? '(guardada)' : '(vacía)') + '\n\nEscríbela:');
+  if (c === null) return;
+  localStorage.setItem('atarashi_clave_fotos', c.trim());
+  alert(c.trim() ? '✅ Clave guardada. Las fotos nuevas se subirán a tu Cloudflare.' : 'Clave borrada. Se usará Cloudinary.');
+}
+function dataURLaBlob(d) {
+  var p = d.split(','), mime = (p[0].match(/:(.*?);/) || [])[1] || 'image/jpeg', b = atob(p[1]), n = b.length, u = new Uint8Array(n);
+  while (n--) u[n] = b.charCodeAt(n);
+  return new Blob([u], { type: mime });
+}
+// Reduce una foto (dataURL) a como maximo `max` px por lado y la devuelve como JPG
+function reducirFoto(dataURL, max, calidad) {
+  return new Promise(function(ok, mal) {
+    var im = new Image();
+    im.onload = function() {
+      var w = im.width, h = im.height;
+      if (w > max || h > max) { if (w > h) { h = Math.round(h * max / w); w = max; } else { w = Math.round(w * max / h); h = max; } }
+      var c = document.createElement('canvas'); c.width = w; c.height = h;
+      var x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, w, h); x.drawImage(im, 0, 0, w, h);
+      ok(c.toDataURL('image/jpeg', calidad));
+    };
+    im.onerror = function() { mal(new Error('No se pudo leer la foto')); };
+    im.src = dataURL;
+  });
+}
+async function subirAR2(base64) {
+  var fd = new FormData();
+  fd.append('orig', dataURLaBlob(await reducirFoto(base64, 1200, 0.85)), 'o.jpg');
+  fd.append('w560', dataURLaBlob(await reducirFoto(base64, 560, 0.8)), 'c.jpg');
+  var res = await fetch(CONFIG_R2.url, { method: 'POST', headers: { 'x-clave': CONFIG_R2.getClave() }, body: fd });
+  var d = await res.json().catch(function() { return {}; });
+  if (!res.ok) throw new Error('Error al subir foto: ' + (d.error || res.status));
+  return d.url;
+}
+
 // ── Configurar Cloudinary ──
 function configurarCloudinary() {
   const nombre = prompt(
@@ -1356,6 +1400,7 @@ var crCargandoNube = false;
 function crMini(url, px) {
   if (!url) return 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
   px = px > 150 ? 240 : 116;
+  if (String(url).indexOf('https://fotos.atarashi-store.com/orig/') === 0) return String(url).replace('/orig/', '/w560/');
   return String(url).replace('/image/upload/', '/image/upload/w_' + px + ',h_' + px + ',c_pad,b_white,q_auto,f_auto/');
 }
 
@@ -1496,6 +1541,7 @@ function renderTabla() {
 // ═══════════════════════════════════════════════════════════
 
 async function subirACloudinary(base64) {
+  if (CONFIG_R2.isReady()) return subirAR2(base64);
   const cloudName = CONFIG_CLOUDINARY.getCloudName();
   const preset    = CONFIG_CLOUDINARY.getPreset();
   if (!cloudName || !preset) throw new Error('Configura Cloudinary primero (botón ☁️ Cloudinary).');
@@ -1523,7 +1569,7 @@ function loteNorm(t) {
   return String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 }
 function abrirCargaLote() {
-  if (!CONFIG_CLOUDINARY.isReady()) { alert('Primero configura Cloudinary (botón ☁️).'); configurarCloudinary(); return; }
+  if (!FOTOS_LISTO()) { alert('Primero configura Cloudinary (botón ☁️).'); configurarCloudinary(); return; }
   alert('📦 CARGA POR LOTE\n\nEn la ventana que se abre, elige la carpeta "LISTO PARA SUBIR" (la que tiene el archivo importar.json) y dale "Subir".\n\nSi el navegador pregunta si confías en el sitio, acepta.');
   document.getElementById('inLote').click();
 }
@@ -2072,7 +2118,7 @@ function procesarFotos(input) {
   const contenedor = document.getElementById('previewFotosContenedor');
   if (!input.files || input.files.length === 0) return;
 
-  if (!CONFIG_CLOUDINARY.isReady()) {
+  if (!FOTOS_LISTO()) {
     alert('⚠️ Configura Cloudinary antes de subir fotos.\nHaz clic en el botón ☁️ Cloudinary.');
     configurarCloudinary();
     return;
@@ -3132,7 +3178,7 @@ function cambiarModoPortada(valor) {
 
 function agregarFotoPortada(input) {
   if (!input.files || !input.files[0]) return;
-  if (!CONFIG_CLOUDINARY.isReady()) {
+  if (!FOTOS_LISTO()) {
     alert('⚠️ Configura Cloudinary antes de subir fotos.');
     configurarCloudinary();
     return;
@@ -3174,7 +3220,7 @@ function quitarFotoPortada(idx) {
 
 function subirBannerPortada(input) {
   if (!input.files || !input.files[0]) return;
-  if (!CONFIG_CLOUDINARY.isReady()) {
+  if (!FOTOS_LISTO()) {
     alert('⚠️ Configura Cloudinary antes de subir el banner.');
     configurarCloudinary();
     return;
@@ -3510,7 +3556,7 @@ function opiElegirEstrellas(n) {
 }
 function opiSubirCaptura(input) {
   if (!input.files || !input.files[0]) return;
-  if (!CONFIG_CLOUDINARY.isReady()) { alert('⚠️ Configura Cloudinary antes de subir la captura.'); configurarCloudinary(); input.value = ''; return; }
+  if (!FOTOS_LISTO()) { alert('⚠️ Configura Cloudinary antes de subir la captura.'); configurarCloudinary(); input.value = ''; return; }
   var lector = new FileReader();
   lector.onload = function(e) {
     var img = new Image();
