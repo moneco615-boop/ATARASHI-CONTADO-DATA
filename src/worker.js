@@ -10,12 +10,9 @@ function json(obj, status = 200, extra = {}) {
   });
 }
 
-function cors(request) {
-  const origen = request.headers.get("Origin") || "";
-  const ok = origen === "https://atarashi-store.com" || origen === "https://www.atarashi-store.com" || origen === "null" || origen === "";
-  return ok
-    ? { "access-control-allow-origin": origen || "*", "access-control-allow-headers": "x-clave", "access-control-allow-methods": "POST, OPTIONS", vary: "Origin" }
-    : {};
+function cors() {
+  // La seguridad es la clave secreta (no hay cookies), asi que se permite desde cualquier pagina (el panel puede abrirse desde varios sitios)
+  return { "access-control-allow-origin": "*", "access-control-allow-headers": "x-clave", "access-control-allow-methods": "POST, OPTIONS" };
 }
 
 function iguales(a, b) {
@@ -34,7 +31,7 @@ function idNuevo() {
 
 export default {
   async fetch(request, env) {
-    const h = cors(request);
+    const h = cors();
     if (new URL(request.url).pathname !== "/api/subir") return new Response("No encontrado", { status: 404 });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: h });
     if (request.method !== "POST") return json({ error: "No permitido" }, 405, h);
