@@ -2973,11 +2973,9 @@ async function publicarEnGitHub() {
 
     // 2. Publicar index.html (catálogo dinámico que carga el JSON en vivo)
     btn.innerHTML = '⏳ Paso 2/2 — Publicando catálogo web...';
-    await guardarArchivoEnGitHub(
-      'index.html',
-      generarCatalogoDinamico(waNum, logoUrl),
-      '🌐 Catálogo CONTADO actualizado'
-    );
+    // OJO: desde nov-2026 el index.html de la tienda se mantiene directamente en el repositorio
+    // (fotos en R2, mejoras del formulario, etc.). Ya NO se sobrescribe desde el panel porque
+    // esta plantilla vieja borraba esas mejoras. El catálogo (productos) se publica con el JSON.
 
     const msg = '✅ ¡Todo publicado con éxito!\n\n' +
       productos.length + ' producto(s) ahora en línea.\n\n' +
