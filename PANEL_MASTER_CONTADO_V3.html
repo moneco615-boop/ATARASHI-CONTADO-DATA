@@ -897,6 +897,10 @@
       <input type="password" id="cfgToken" placeholder="ghp_... o github_pat_..." autocomplete="off">
     </div>
     <div class="cfg-grupo">
+      <label>🔑 Clave para subir fotos (Cloudflare)</label>
+      <input type="password" id="cfgClaveFotos" placeholder="La clave que pusiste en CLAVE_SUBIDA" autocomplete="off">
+    </div>
+    <div class="cfg-grupo">
       <label>☁️ Cloudinary — Cloud Name</label>
       <input type="text" id="cfgCloud" placeholder="Ej: dgnxurwkp">
     </div>
@@ -3116,6 +3120,7 @@ renderTabla = function() {
 // ── CONFIG ──
 function abrirConfig() {
   document.getElementById('cfgToken').value  = localStorage.getItem('atarashi_cloud_token') || '';
+  document.getElementById('cfgClaveFotos').value = localStorage.getItem('atarashi_clave_fotos') || '';
   document.getElementById('cfgCloud').value  = localStorage.getItem('atarashi_cloudinary_name') || '';
   document.getElementById('cfgPreset').value = localStorage.getItem('atarashi_cloudinary_preset') || '';
   document.getElementById('cfgWA').value     = localStorage.getItem('atarashi_wa_contado') || '';
@@ -3459,6 +3464,8 @@ function guardarConfig() {
 
   if (token)  localStorage.setItem('atarashi_cloud_token', token);
   else        localStorage.removeItem('atarashi_cloud_token');
+  var _cf = (document.getElementById('cfgClaveFotos') || {value:''}).value.trim();
+  if (_cf) localStorage.setItem('atarashi_clave_fotos', _cf); else localStorage.removeItem('atarashi_clave_fotos');
   if (cloud)  localStorage.setItem('atarashi_cloudinary_name', cloud);
   if (preset) localStorage.setItem('atarashi_cloudinary_preset', preset);
   if (wa)     localStorage.setItem('atarashi_wa_contado', wa);
