@@ -2949,6 +2949,27 @@ async function publicarEnGitHub() {
   const logoUrl = localStorage.getItem('atarashi_logo_portada') || '';
   const urlPublica = 'https://moneco615-boop.github.io/ATARASHI-CONTADO-DATA/';
 
+  // Protección: si hay un producto a medias en el formulario (sin guardar), no publicar todavía
+  try {
+    const _nom = (document.getElementById('pNombre').value || '').trim();
+    const _sinGuardar = (imagenesCargadasActuales && imagenesCargadasActuales.length > 0) || _nom !== '';
+    if (_sinGuardar) {
+      const _editando = !!document.getElementById('pIdModo').value;
+      const _quiereVolver = confirm(
+        '⚠️ ' + (_editando ? 'Tienes cambios SIN GUARDAR' : 'Tienes un producto SIN GUARDAR') + (_nom ? ' (' + _nom + ')' : '') + '.\n\n' +
+        'Si publicas ahora, ese producto NO saldrá en la tienda.\n\n' +
+        'Aceptar = volver para guardarlo (recomendado)\n' +
+        'Cancelar = publicar de todos modos, sin ese producto'
+      );
+      if (_quiereVolver) {
+        try { switchTab('form'); } catch (e) {}
+        const _bg = document.getElementById('btnGuardarForm');
+        if (_bg && _bg.scrollIntoView) _bg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+    }
+  } catch (e) {}
+
   if (!waNum) {
     const ok = confirm('⚠️ No has configurado el número de WhatsApp.\nLos pedidos del catálogo no llegarán a ningún lado.\n\n¿Configurar ahora?');
     if (ok) { configurarWA(); return; }
