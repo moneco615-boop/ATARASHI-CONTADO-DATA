@@ -1585,16 +1585,11 @@ try{
     window.open('https://wa.me/'+numeroWA()+'?text='+encodeURIComponent(msg),'_blank');
   };
   function armarFormulario(){
-    var box=document.querySelector('#modalForm .fmodal-box');if(!box||box.querySelector('.atr-chat'))return !!box;
+    var box=document.querySelector('#modalForm .fmodal-box');if(!box||box.querySelector('.atr-confia'))return !!box;
     var res=box.querySelector('.f-resumen');if(!res)return false;
     var cf=document.createElement('div');cf.className='atr-confia';
     cf.innerHTML='<span class="ic">🔒</span><span><b>Aquí no pagas nada.</b> Tu pedido nos llega por WhatsApp y te lo confirmamos antes de enviarlo. Recibes, revisas y pagas.</span>';
     res.parentNode.insertBefore(cf,res);
-    var b=document.createElement('button');b.type='button';b.className='atr-chat';
-    b.innerHTML='<span class="t">💬 ¿Prefieres pedir por chat?</span><span class="s">Envía tu pedido a WhatsApp sin llenar datos</span>';
-    b.onclick=window.atrPedirChat;
-    var o=document.createElement('p');o.className='atr-o';o.textContent='o llena tus datos aquí';
-    if(res.nextSibling){res.parentNode.insertBefore(b,res.nextSibling);b.parentNode.insertBefore(o,b.nextSibling);}else{res.parentNode.appendChild(b);res.parentNode.appendChild(o);}
     return true;
   }
 
