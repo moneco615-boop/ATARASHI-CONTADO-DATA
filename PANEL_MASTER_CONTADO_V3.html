@@ -120,6 +120,8 @@
   .campo-precio-box label { display: block; font-size: 12px; color: var(--dorado-brillante); font-weight: 800; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
   .input-precio { width: 100%; background: #0a0a0a; border: 2px solid var(--dorado-brillante); color: var(--dorado-brillante); padding: 10px; border-radius: 6px; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 2px; outline: none; text-align: center; }
   .input-precio::placeholder { color: rgba(240,192,64,0.3); }
+  #pPrecioContado.input-precio { font-size: 28px !important; letter-spacing: 1px; padding: 12px 10px; }
+  #precioLegible { display:block; margin-top:6px; font-size:20px; color:var(--dorado-brillante); font-family:'Bebas Neue',sans-serif; letter-spacing:1px; min-height:24px; }
   .input-precio:focus { border-color: #FFD700; box-shadow: 0 0 12px rgba(255,215,0,0.2); }
 
   /* ── BOTONES ── */
@@ -676,7 +678,8 @@
       <!-- PRECIO DESTACADO -->
       <div class="campo-precio-box">
         <label>💰 PRECIO DE CONTADO (COP)</label>
-        <input type="number" id="pPrecioContado" class="input-precio" required placeholder="180000" min="1000">
+        <input type="number" id="pPrecioContado" class="input-precio" required placeholder="180000" min="1000" oninput="var v=parseFloat(this.value);document.getElementById('precioLegible').textContent=v?'$ '+v.toLocaleString('es-CO'):''">
+        <span id="precioLegible"></span>
       </div>
 
       <div class="grupo-campo">
