@@ -712,6 +712,8 @@
     </form>
 
     <div id="avisoPendientes" class="aviso-pend"></div>
+    <button type="button" class="vp-btn" id="btnVerPorPublicar" onclick="verPorPublicar()" title="Muestra solo los productos que tienes aquí y que todavía no están publicados en la tienda (o que cambiaron). Desde ahí los puedes editar.">📌 Ver los que faltan por publicar</button>
+    <div id="infoPorPublicar" style="display:none;margin:6px 0;font-size:13px;color:#F0C040;"></div>
     <button type="button" class="vp-btn" onclick="abrirCargaLote()" title="Sube de una vez una carpeta preparada con productos de bodega (solo desde el PC)">📦 Carga por lote (bodega)</button>
     <input type="file" id="inLote" webkitdirectory directory multiple style="display:none" onchange="procesarLote(this)">
     <div id="loteCapa" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99999;align-items:center;justify-content:center;padding:16px;">
@@ -1509,6 +1511,47 @@ function eliminarCategoria(i) {
   }
 }
 
+
+// ── Ver solo los productos que faltan por publicar (comparando con lo que hay en la nube) ──
+async function verPorPublicar() {
+  const btn = document.getElementById('btnVerPorPublicar');
+  const info = document.getElementById('infoPorPublicar');
+  if (window.__filtroPorPublicar) {
+    window.__filtroPorPublicar = null;
+    btn.textContent = '📌 Ver los que faltan por publicar';
+    info.style.display = 'none';
+    renderTabla();
+    return;
+  }
+  const tk = CONFIG_GITHUB.getToken();
+  if (!tk) { alert('Primero conecta la nube (token de GitHub).'); return; }
+  btn.disabled = true; btn.textContent = '⏳ Comparando con la tienda...';
+  try {
+    const r = await fetch('https://api.github.com/repos/' + CONFIG_GITHUB.REPOSITORIO + '/contents/' + ARCHIVO_DATOS + '?t=' + Date.now(), {
+      headers: { 'Authorization': 'Bearer ' + tk, 'Accept': 'application/vnd.github.raw' }, cache: 'no-store'
+    });
+    if (!r.ok) throw new Error('GitHub respondió ' + r.status);
+    const nube = JSON.parse(await r.text());
+    const mapa = new Map((nube.productos || []).map(p => [p.id, JSON.stringify(p)]));
+    const faltan = new Set();
+    let nuevos = 0, cambiados = 0;
+    productos.forEach(p => {
+      if (!mapa.has(p.id)) { faltan.add(p.id); nuevos++; }
+      else if (mapa.get(p.id) !== JSON.stringify(p)) { faltan.add(p.id); cambiados++; }
+    });
+    if (!faltan.size) { alert('✅ Todo lo que tienes aquí ya está publicado en la tienda.'); btn.textContent = '📌 Ver los que faltan por publicar'; return; }
+    window.__filtroPorPublicar = faltan;
+    btn.textContent = '↩️ Volver a ver todos los productos';
+    info.innerHTML = '📌 Mostrando <b>' + faltan.size + '</b> por publicar (' + nuevos + ' nuevos, ' + cambiados + ' con cambios). Toca <b>Editar</b> en cualquiera.';
+    info.style.display = 'block';
+    renderTabla();
+    try { switchTab('inventario'); } catch (e) {}
+  } catch (e) {
+    alert('No pude comparar con la tienda: ' + e.message);
+    btn.textContent = '📌 Ver los que faltan por publicar';
+  } finally { btn.disabled = false; }
+}
+
 function renderTabla() {
   const tbody = document.getElementById('tablaCuerpo');
   if (!tbody) return;
@@ -1521,6 +1564,7 @@ function renderTabla() {
   }
 
   productos.forEach((p, idx) => {
+    if (window.__filtroPorPublicar && !window.__filtroPorPublicar.has(p.id)) return;
     const cat       = categoriasValidas.find(c => c.nombre === p.categoria) || {};
     const emojiCat  = cat.emoji || '';
     const precioFmt = '$' + p.precioContado.toLocaleString('es-CO');
