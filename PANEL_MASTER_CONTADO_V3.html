@@ -2869,6 +2869,7 @@ async function cargarDesdeGitHub() {
         // Sin cambios pendientes: se toma lo que está publicado en la nube
         if (datosParsed.productos)   productos         = datosParsed.productos;
         if (datosParsed.categorias)  categoriasValidas = datosParsed.categorias;
+        try { localStorage.setItem('atr_ver_base', String(datosParsed.ver || '')); } catch (e) {}
       }
       asegurarCategoriaNavidad();
 
@@ -2975,6 +2976,35 @@ async function publicarEnGitHub() {
     if (ok) { configurarWA(); return; }
   }
 
+  // Protección anti-pisado: si en la nube hay una versión más nueva que la que tiene este aparato, no publicar a ciegas
+  try {
+    const _tk = CONFIG_GITHUB.getToken();
+    if (_tk) {
+      btn.innerHTML = '⏳ Revisando que no pises cambios...';
+      btn.disabled = true;
+      const _r = await fetch('https://api.github.com/repos/' + CONFIG_GITHUB.REPOSITORIO + '/contents/' + ARCHIVO_DATOS + '?t=' + Date.now(), {
+        headers: { 'Authorization': 'Bearer ' + _tk, 'Accept': 'application/vnd.github.raw' }, cache: 'no-store'
+      });
+      if (_r.ok) {
+        const _nube = JSON.parse(await _r.text());
+        const _verNube = String((_nube && _nube.ver) || '');
+        let _verBase = '';
+        try { _verBase = localStorage.getItem('atr_ver_base') || ''; } catch (e) {}
+        if (_verNube && _verNube !== _verBase) {
+          const _n = (_nube.productos || []).length;
+          const _cancelar = confirm(
+            '🛑 CUIDADO: la tienda tiene cambios más nuevos que los de este aparato.\n\n' +
+            'Si publicas ahora, podrías BORRAR trabajo que ya habías hecho (en la nube hay ' + _n + ' productos, aquí ' + productos.length + ').\n\n' +
+            'Aceptar = NO publicar (recomendado). Recarga el panel con 🔄 / Ctrl+F5 y revisa tus productos.\n' +
+            'Cancelar = publicar de todos modos y pisar lo que hay en la nube'
+          );
+          if (_cancelar) { btn.disabled = false; btn.innerHTML = btn.getAttribute('data-txt-orig') || '🚀 PUBLICAR'; try { location.reload(); } catch (e) {} return; }
+        }
+      }
+      btn.disabled = false;
+    }
+  } catch (e) { try { btn.disabled = false; } catch (e2) {} }
+
   btn.innerHTML = '⏳ Paso 1/2 — Subiendo datos...';
   btn.disabled = true;
 
@@ -2987,6 +3017,7 @@ async function publicarEnGitHub() {
       JSON.stringify(datosNube, null, 2),
       '📦 Actualización catálogo CONTADO — Panel Master V2'
     );
+    try { localStorage.setItem('atr_ver_base', String(window.__verPub)); } catch (e) {}
 
     // 1B. Publicar configuracion del banner de portada
     await guardarArchivoEnGitHub(
