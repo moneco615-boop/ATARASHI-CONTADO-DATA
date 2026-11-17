@@ -32585,10 +32585,8 @@
       "tipoTalla": "calzado",
       "descripcion": "Adidas: comodidad y estilo deportivo para todos los días. También disponible en: gris naranja.\nTallas: 40 al 44.",
       "imagenes": [
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793763210/atarashi_contado/wfouthrczkcnwxfun9yv.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757685/atarashi_contado/vvnrswv98ebkyovbyc78.jpg",
-        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757685/atarashi_contado/arb75cwqjcvfeigl3kbh.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757686/atarashi_contado/rkpmfshizp8zwtstwlck.jpg",
+        "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757685/atarashi_contado/arb75cwqjcvfeigl3kbh.jpg",
         "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793757687/atarashi_contado/m8rorwpyvjfmezydx7q4.jpg"
       ],
       "agotadas": [],
@@ -42402,5 +42400,5 @@
       "nombre": "Chanclas"
     }
   ],
-  "ver": "1794894313765"
+  "ver": "1794895502545"
 }
