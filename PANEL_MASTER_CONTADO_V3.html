@@ -1652,7 +1652,7 @@ async function loteSubirFoto(file) {
   return null;
 }
 async function procesarReemplazoFotos(datos, mapa) {
-  var pos = datos.posicion || 1;
+  var pos = (datos.posicion === 0 || datos.posicion) ? datos.posicion : 1;
   if (crHayPendientes()) {
     alert('⚠️ Tienes cambios guardados sin publicar en este equipo.\nPublícalos primero (⚡ PUBLICAR) y vuelve a intentar.');
     return;
