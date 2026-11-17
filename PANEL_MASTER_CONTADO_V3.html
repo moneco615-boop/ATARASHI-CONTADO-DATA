@@ -1435,6 +1435,14 @@ function crMarcarPendiente(idProducto) {
   } catch(e) {}
   crPintarAvisoPendientes();
 }
+// Deja este aparato igual que la tienda: borra lo guardado aquí sin publicar y baja lo publicado
+async function crBajarDeLaTienda() {
+  if (!confirm('🔄 Esto BORRA lo que tengas guardado en este aparato sin publicar y baja lo que hay publicado en la tienda.\n\nHazlo solo si ese trabajo ya está publicado desde otro aparato (o ya no lo necesitas).\n\nAceptar = descartar y bajar de la tienda\nCancelar = no tocar nada')) return;
+  crLimpiarPendientes();
+  try { await cargarDesdeGitHub(); } catch (e) { alert('No se pudo bajar de la tienda. Revisa el internet e intenta otra vez.'); return; }
+  try { location.reload(); } catch (e) {}
+}
+
 function crLimpiarPendientes() {
   try { localStorage.removeItem('atarashi_pendientes'); localStorage.removeItem('atarashi_pend_ids'); } catch(e) {}
   crPintarAvisoPendientes();
@@ -1444,7 +1452,8 @@ function crPintarAvisoPendientes() {
   if (!el) return;
   if (!crHayPendientes()) { el.style.display = 'none'; return; }
   var n = crIdsPendientes().filter(function(id) { return productos.some(function(p) { return p.id === id; }); }).length;
-  el.innerHTML = '📌 <strong>' + (n ? n + ' producto(s) guardado(s)' : 'Cambios guardados') + ' sin publicar</strong><br><small>Están seguros en este celular. Se quedan aunque cierres el panel; salen a la tienda cuando toques Publicar.</small>';
+  el.innerHTML = '📌 <strong>' + (n ? n + ' producto(s) guardado(s)' : 'Cambios guardados') + ' sin publicar</strong><br><small>Están seguros en este celular. Se quedan aunque cierres el panel; salen a la tienda cuando toques Publicar.</small>'
+    + '<br><button type="button" onclick="crBajarDeLaTienda()" style="margin-top:8px;background:#2a2a2a;color:#F0C040;border:1px solid #F0C040;border-radius:8px;padding:8px 10px;font-size:12px;cursor:pointer;">🔄 Descartar lo guardado aquí y bajar lo último de la tienda</button>';
   el.style.display = 'block';
 }
 
