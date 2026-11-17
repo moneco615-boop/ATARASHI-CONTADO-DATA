@@ -3092,14 +3092,31 @@ async function publicarEnGitHub() {
         let _verBase = '';
         try { _verBase = localStorage.getItem('atr_ver_base') || ''; } catch (e) {}
         if (_verNube && _verNube !== _verBase) {
-          const _n = (_nube.productos || []).length;
-          const _cancelar = confirm(
-            '🛑 CUIDADO: la tienda tiene cambios más nuevos que los de este aparato.\n\n' +
-            'Si publicas ahora, podrías BORRAR trabajo que ya habías hecho (en la nube hay ' + _n + ' productos, aquí ' + productos.length + ').\n\n' +
-            'Aceptar = NO publicar (recomendado). Recarga el panel con 🔄 / Ctrl+F5 y revisa tus productos.\n' +
-            'Cancelar = publicar de todos modos y pisar lo que hay en la nube'
-          );
-          if (_cancelar) { btn.disabled = false; btn.innerHTML = btn.getAttribute('data-txt-orig') || '🚀 PUBLICAR'; try { location.reload(); } catch (e) {} return; }
+          // Solo avisar si de verdad se podría perder trabajo: comparar producto por producto
+          const _nProd = (_nube.productos || []);
+          const _locales = new Map(productos.map(function(p) { return [p.id, p]; }));
+          const _pend = crIdsPendientes();
+          const _clave = function(p) { return JSON.stringify([p.nombre, p.categoria, p.badge, p.disponibilidad, p.precioContado, p.fotosModelos, p.tipoTalla, p.descripcion, p.imagenes, p.agotadas, p.video]); };
+          const _faltan = [], _distintos = [];
+          _nProd.forEach(function(c) {
+            const l = _locales.get(c.id);
+            if (!l) _faltan.push(c);
+            else if (_pend.indexOf(c.id) === -1 && _clave(l) !== _clave(c)) _distintos.push(c);
+          });
+          if (_faltan.length === 0 && _distintos.length === 0) {
+            // Todo lo de la tienda está aquí tal cual (o lo cambiaste tú a propósito): es seguro publicar
+            try { localStorage.setItem('atr_ver_base', _verNube); } catch (e) {}
+          } else {
+            const _nom = function(arr) { return arr.slice(0, 4).map(function(p) { return '• ' + (p.nombre || p.id); }).join('\n'); };
+            let _txt = '🛑 CUIDADO: si publicas ahora, perderías trabajo que está en la tienda.\n\n';
+            if (_faltan.length) _txt += '• En la tienda hay ' + _faltan.length + ' producto(s) que este aparato NO tiene:\n' + _nom(_faltan) + (_faltan.length > 4 ? '\n  …y ' + (_faltan.length - 4) + ' más' : '') + '\n\n';
+            if (_distintos.length) _txt += '• ' + _distintos.length + ' producto(s) están distintos en la tienda y no los cambiaste tú aquí:\n' + _nom(_distintos) + (_distintos.length > 4 ? '\n  …y ' + (_distintos.length - 4) + ' más' : '') + '\n\n';
+            _txt += '(en la tienda hay ' + _nProd.length + ' productos, aquí ' + productos.length + ')\n\n' +
+              'Aceptar = NO publicar (recomendado). Recarga el panel y revisa tus productos.\n' +
+              'Cancelar = publicar de todos modos y pisar lo que hay en la tienda';
+            const _cancelar = confirm(_txt);
+            if (_cancelar) { btn.disabled = false; btn.innerHTML = btn.getAttribute('data-txt-orig') || '🚀 PUBLICAR'; try { location.reload(); } catch (e) {} return; }
+          }
         }
       }
       btn.disabled = false;
