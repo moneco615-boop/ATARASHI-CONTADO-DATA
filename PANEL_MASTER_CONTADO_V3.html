@@ -1443,16 +1443,42 @@ async function crBajarDeLaTienda() {
   try { location.reload(); } catch (e) {}
 }
 
+// Foto de cómo estaba cada producto cuando se publicó / se bajó de la tienda (para contar cuántos cambiaste)
+function crHashProd(p) { var s = JSON.stringify(p), h = 5381; for (var i = 0; i < s.length; i++) { h = ((h << 5) + h + s.charCodeAt(i)) | 0; } return h; }
+function crGuardarBase() {
+  try {
+    var m = {};
+    productos.forEach(function(p) { m[p.id] = crHashProd(p); });
+    localStorage.setItem('atarashi_base_h', JSON.stringify(m));
+  } catch(e) {}
+}
+function crContarCambiados() {
+  try {
+    var raw = localStorage.getItem('atarashi_base_h');
+    if (!raw) return -1;
+    var base = JSON.parse(raw), n = 0, vistos = {};
+    productos.forEach(function(p) { vistos[p.id] = 1; if (base[p.id] !== crHashProd(p)) n++; });
+    Object.keys(base).forEach(function(id) { if (!vistos[id]) n++; });
+    return n;
+  } catch(e) { return -1; }
+}
 function crLimpiarPendientes() {
   try { localStorage.removeItem('atarashi_pendientes'); localStorage.removeItem('atarashi_pend_ids'); } catch(e) {}
+  crGuardarBase();
   crPintarAvisoPendientes();
 }
+var _crTimerAviso = null;
 function crPintarAvisoPendientes() {
+  if (_crTimerAviso) clearTimeout(_crTimerAviso);
+  _crTimerAviso = setTimeout(crPintarAvisoPendientesYa, 250);
+}
+function crPintarAvisoPendientesYa() {
   var el = document.getElementById('avisoPendientes');
   if (!el) return;
   if (!crHayPendientes()) { el.style.display = 'none'; return; }
-  var n = crIdsPendientes().filter(function(id) { return productos.some(function(p) { return p.id === id; }); }).length;
-  el.innerHTML = '📌 <strong>' + (n ? n + ' producto(s) guardado(s)' : 'Cambios guardados') + ' sin publicar</strong><br><small>Están seguros en este celular. Se quedan aunque cierres el panel; salen a la tienda cuando toques Publicar.</small>'
+  var n = crContarCambiados();
+  if (n < 0) n = crIdsPendientes().filter(function(id) { return productos.some(function(p) { return p.id === id; }); }).length;
+  el.innerHTML = '📌 <strong>' + (n ? n + (n === 1 ? ' producto guardado' : ' productos guardados') : 'Cambios guardados') + ' sin publicar</strong><br><small>Están seguros en este celular. Se quedan aunque cierres el panel; salen a la tienda cuando toques Publicar.</small>'
     + '<br><button type="button" onclick="crBajarDeLaTienda()" style="margin-top:8px;background:#2a2a2a;color:#F0C040;border:1px solid #F0C040;border-radius:8px;padding:8px 10px;font-size:12px;cursor:pointer;">🔄 Descartar lo guardado aquí y bajar lo último de la tienda</button>';
   el.style.display = 'block';
 }
@@ -2971,6 +2997,7 @@ async function cargarDesdeGitHub() {
         if (datosParsed.productos)   productos         = datosParsed.productos;
         if (datosParsed.categorias)  categoriasValidas = datosParsed.categorias;
         try { localStorage.setItem('atr_ver_base', String(datosParsed.ver || '')); } catch (e) {}
+        crGuardarBase();
       }
       asegurarCategoriaNavidad();
 
