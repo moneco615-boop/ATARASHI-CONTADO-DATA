@@ -2511,6 +2511,13 @@ function crCrearBtnBorrador(wrapper, url) {
   if (typeof window.iaCrearBtn === 'function') window.iaCrearBtn(wrapper, url);   // 🎨 Mejorar con IA
 }
 
+// Las fotos que están en R2 (fotos.atarashi-store.com) no dejan leerse desde el panel; se piden por el Worker, que sí da permiso
+function crUrlLegible(url) {
+  var pre = 'https://fotos.atarashi-store.com/';
+  if (String(url).indexOf(pre) === 0) return 'https://atarashi-store.com/api/foto?k=' + encodeURIComponent(String(url).slice(pre.length).split('?')[0]).replace(/%2F/g, '/');
+  return url;
+}
+
 // ↻ Gira la foto un cuarto de vuelta (a la derecha) y la deja en el mismo puesto
 function crGirarFoto(wrapperViejo, urlVieja) {
   if (!wrapperViejo || !wrapperViejo.parentNode) return;
@@ -2547,7 +2554,8 @@ function crGirarFoto(wrapperViejo, urlVieja) {
     botones.forEach(b => b.disabled = false);
     alert('❌ No se pudo abrir la foto para girarla. Revisa el internet e intenta otra vez.');
   };
-  img.src = urlVieja + (urlVieja.indexOf('?') === -1 ? '?' : '&') + 'gr=' + Date.now();
+  var _uLeer = crUrlLegible(urlVieja);
+  img.src = _uLeer + (_uLeer.indexOf('?') === -1 ? '?' : '&') + 'gr=' + Date.now();
 }
 
 function brAbrir(wrapper, url) {
@@ -2572,7 +2580,8 @@ function brAbrir(wrapper, url) {
     document.body.style.overflow = 'hidden';
   };
   img.onerror = () => alert('❌ No se pudo abrir la foto para editarla. Revisa el internet e intenta otra vez.');
-  img.src = url + (url.indexOf('?') === -1 ? '?' : '&') + 'br=' + Date.now();
+  var _uBr = crUrlLegible(url);
+  img.src = _uBr + (_uBr.indexOf('?') === -1 ? '?' : '&') + 'br=' + Date.now();
 }
 
 function brCerrar(forzar) {
@@ -7984,7 +7993,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     antes.src = typeof crMini === 'function' ? crMini(url, 240) : url;
     iaEstado('⏳ Cargando la foto…');
     try {
-      var r = await fetch(url);
+      var r = await fetch(crUrlLegible(url));
       var b = await r.blob();
       var bmp = await createImageBitmap(b);
       iaActual.original = crReducir(bmp, 1536, 0.9);
