@@ -3574,7 +3574,7 @@ try{
     if(slide&&!slide.querySelector('.atr-psnd')){
       var b=document.createElement('button');b.type='button';b.className='atr-psnd';b.textContent='🔊';b.setAttribute('aria-label','Quitar sonido');
       b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
-        if(v.muted){v.muted=false;v.__atrSilencio=0;try{v.volume=VOLP;}catch(x){}if(v.paused){var r=v.play();if(r&&r.catch)r.catch(function(){});}}
+        if(v.muted){v.muted=false;v.__atrSilencio=0;try{v.volume=VOLP;}catch(x){}var r=v.play();if(r&&r.catch)r.catch(function(){});setTimeout(function(){if(v.paused&&!v.muted){var r3=v.play();if(r3&&r3.catch)r3.catch(function(){});}},350);}
         else{v.muted=true;v.__atrSilencio=1;}
         icono(v);
       });
