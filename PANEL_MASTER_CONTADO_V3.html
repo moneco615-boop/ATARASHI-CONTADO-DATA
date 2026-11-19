@@ -3007,6 +3007,27 @@ async function cargarDesdeGitHub() {
         if (datosParsed.categorias)  categoriasValidas = datosParsed.categorias;
         try { localStorage.setItem('atr_ver_base', String(datosParsed.ver || '')); } catch (e) {}
         crGuardarBase();
+      } else if (datosParsed.productos) {
+        // Hay cambios sin publicar aquí: se MEZCLA (lo de la tienda + tus cambios pendientes) en vez de quedarse con una copia vieja
+        try {
+          var _pend = crIdsPendientes();
+          var _locMap = new Map(productos.map(function(p) { return [p.id, p]; }));
+          var _nubeIds = new Set(datosParsed.productos.map(function(p) { return p.id; }));
+          var _base = {}; try { _base = JSON.parse(localStorage.getItem('atarashi_base_h') || '{}') || {}; } catch (e) {}
+          var _mezcla = datosParsed.productos.map(function(c) {
+            if (_pend.indexOf(c.id) !== -1 && _locMap.has(c.id)) return _locMap.get(c.id);
+            _base[c.id] = crHashProd(c);
+            return c;
+          });
+          productos.forEach(function(p) { if (!_nubeIds.has(p.id)) _mezcla.push(p); });
+          productos = _mezcla;
+          localStorage.setItem('atarashi_base_h', JSON.stringify(_base));
+          if (datosParsed.categorias) {
+            var _nomsC = new Set(datosParsed.categorias.map(function(c) { return c.nombre; }));
+            categoriasValidas = datosParsed.categorias.concat(categoriasValidas.filter(function(c) { return !_nomsC.has(c.nombre); }));
+          }
+          localStorage.setItem('atr_ver_base', String(datosParsed.ver || ''));
+        } catch (e) { console.warn('mezcla', e); }
       }
       asegurarCategoriaNavidad();
 
