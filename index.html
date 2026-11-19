@@ -3539,24 +3539,53 @@ try{
 }catch(e){}
 })();
 </script><script>
-/* ---------- VIDEO LIMPIO EN EL PRODUCTO ----------
-   El video del producto arranca solo, sin sonido y sin botones encima.
-   Si la persona lo toca, aparecen los controles (sonido, pausa, adelantar). */
+/* ---------- VIDEO EN EL PRODUCTO ----------
+   El video arranca solo CON sonido. Si el celular no deja (algunos exigen un toque),
+   arranca en silencio y queda a la vista el boton de sonido para activarlo con un toque.
+   El boton 🔊 / 🔇 siempre esta visible sobre el video. Si la persona toca el video, aparecen los controles. */
 (function(){try{
+  var VOLP=0.6;
+  var st=document.createElement('style');
+  st.textContent='.m-slide-video{position:relative;}.atr-psnd{all:unset;position:absolute;right:12px;bottom:14px;z-index:5;width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:22px;line-height:46px;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent;box-shadow:0 2px 8px rgba(0,0,0,.4);}';
+  document.head.appendChild(st);
+  function icono(v){var b=v.__atrBtn;if(b){b.textContent=v.muted?'🔇':'🔊';b.setAttribute('aria-label',v.muted?'Activar sonido':'Quitar sonido');}}
+  function tocar(v){
+    /* primero con sonido; si el navegador lo rechaza, en silencio (y el boton queda para activarlo) */
+    if(!v.__atrSilencio){v.muted=false;try{v.volume=VOLP;}catch(x){}}
+    var r=v.play();
+    if(r&&r.catch)r.catch(function(){
+      v.muted=true;icono(v);
+      var r2=v.play();if(r2&&r2.catch)r2.catch(function(){v.controls=true;});
+    });
+    icono(v);
+  }
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
-    if(e.isIntersecting&&e.intersectionRatio>=0.6){if(v.paused&&!v.__atrPausado){var r=v.play();if(r&&r.catch)r.catch(function(){v.controls=true;});}}
+    if(e.isIntersecting&&e.intersectionRatio>=0.6){if(v.paused&&!v.__atrPausado){tocar(v);}}
     else if(!v.paused){v.pause();}
   });},{threshold:[0,0.6,1]}):null;
   function limpiar(v){
     if(v.__atrLimpio)return;v.__atrLimpio=1;
     v.controls=false;v.removeAttribute('controls');
-    v.muted=true;v.defaultMuted=true;v.setAttribute('muted','');
+    v.removeAttribute('muted');v.removeAttribute('autoplay');v.defaultMuted=false;if(!v.paused){try{v.pause();}catch(x){}}
     v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');
     v.preload='auto';
+    /* boton de sonido siempre visible */
+    var slide=v.parentNode;
+    if(slide&&!slide.querySelector('.atr-psnd')){
+      var b=document.createElement('button');b.type='button';b.className='atr-psnd';b.textContent='🔊';b.setAttribute('aria-label','Quitar sonido');
+      b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();
+        if(v.muted){v.muted=false;v.__atrSilencio=0;try{v.volume=VOLP;}catch(x){}if(v.paused){var r=v.play();if(r&&r.catch)r.catch(function(){});}}
+        else{v.muted=true;v.__atrSilencio=1;}
+        icono(v);
+      });
+      b.addEventListener('touchstart',function(e){e.stopPropagation();},{passive:true});
+      slide.appendChild(b);v.__atrBtn=b;
+    }
+    v.addEventListener('volumechange',function(){icono(v);});
     v.addEventListener('click',function(e){if(!v.controls){e.preventDefault();e.stopPropagation();v.controls=true;}},true);
     v.addEventListener('pause',function(){if(v.controls)v.__atrPausado=1;});
     v.addEventListener('play',function(){v.__atrPausado=0;});
-    if(io)io.observe(v);else{var r=v.play();if(r&&r.catch)r.catch(function(){v.controls=true;});}
+    if(io)io.observe(v);else{tocar(v);}
   }
   function revisar(){var L=document.querySelectorAll('.m-slide-video video');for(var i=0;i<L.length;i++)limpiar(L[i]);}
   new MutationObserver(revisar).observe(document.documentElement,{childList:true,subtree:true});
