@@ -1691,7 +1691,7 @@ async function procesarReemplazoFotos(datos, mapa) {
     return !hechos[x.id] && productos.some(function(p) { return p.id === x.id; });
   });
   if (!lista.length) { alert('✅ Todas estas fotos ya fueron reemplazadas.'); return; }
-  if (!confirm('🖼️ Se va a cambiar la foto ' + (pos + 1) + ' de ' + lista.length + ' productos.\n\nTarda unos ' + Math.max(1, Math.round(lista.length * 2 / 60)) + ' minutos. ¿Empezar?')) return;
+  if (!confirm((datos.insertar ? '🖼️ Se va a AGREGAR una foto nueva como foto ' + (pos + 1) + ' (las demás se quedan) en ' + lista.length + ' productos.' : '🖼️ Se va a cambiar la foto ' + (pos + 1) + ' de ' + lista.length + ' productos.') + '\n\nTarda unos ' + Math.max(1, Math.round(lista.length * 2 / 60)) + ' minutos. ¿Empezar?')) return;
   loteCancelar = false;
   var capa = document.getElementById('loteCapa'); capa.style.display = 'flex';
   document.getElementById('loteBtnParar').textContent = 'Pausar';
@@ -1706,7 +1706,7 @@ async function procesarReemplazoFotos(datos, mapa) {
         var p = productos.find(function(q) { return q.id === x.id; });
         if (p && url) {
           p.imagenes = p.imagenes || [];
-          if (p.imagenes.length > pos) p.imagenes[pos] = url; else p.imagenes.push(url);
+          if (datos.insertar) p.imagenes.splice(pos, 0, url); else if (p.imagenes.length > pos) p.imagenes[pos] = url; else p.imagenes.push(url);
           hechos[x.id] = 1; ok++;
           try { localStorage.setItem('atarashi_lote_reemplazos', JSON.stringify(hechos)); } catch (e) {}
           det.textContent = '✅ ' + p.nombre;
