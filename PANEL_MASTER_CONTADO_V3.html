@@ -2992,7 +2992,7 @@ async function cargarDesdeGitHub() {
         contenido = base64ToUtf8(data.content.replace(/\s/g, ''));
       } else if (data.download_url) {
         statusTexto.innerHTML = '⏳ Descargando (archivo grande)...';
-        const rd = await fetch(data.download_url);
+        const rd = await fetch(data.download_url + (data.download_url.indexOf('?') < 0 ? '?' : '&') + 'nc=' + Date.now(), { cache: 'no-store' });
         contenido = await rd.text();
       } else {
         throw new Error('GitHub no entregó el contenido del archivo.');
