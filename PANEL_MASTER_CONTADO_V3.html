@@ -1687,11 +1687,12 @@ async function procesarReemplazoFotos(datos, mapa) {
   try { await cargarDesdeGitHub(); } catch (e) {}
   var hechos = {};
   try { hechos = JSON.parse(localStorage.getItem('atarashi_lote_reemplazos') || '{}'); } catch (e) {}
+  var hk = function(x) { return (datos.lote ? datos.lote + ':' : '') + x.id; };
   var lista = (datos.productos || []).filter(function(x) {
-    return !hechos[x.id] && productos.some(function(p) { return p.id === x.id; });
+    return !hechos[hk(x)] && productos.some(function(p) { return p.id === x.id; });
   });
   if (!lista.length) { alert('✅ Todas estas fotos ya fueron reemplazadas.'); return; }
-  if (!confirm((datos.insertar ? '🖼️ Se va a AGREGAR una foto nueva como foto ' + (pos + 1) + ' (las demás se quedan) en ' + lista.length + ' productos.' : '🖼️ Se va a cambiar la foto ' + (pos + 1) + ' de ' + lista.length + ' productos.') + '\n\nTarda unos ' + Math.max(1, Math.round(lista.length * 2 / 60)) + ' minutos. ¿Empezar?')) return;
+  if (!confirm((datos.insertar ? '🖼️ Se va a AGREGAR ' + ((lista[0] && lista[0].fotos) ? lista[0].fotos.length + ' fotos nuevas desde la foto ' : 'una foto nueva como foto ') + (pos + 1) + ' (las demás se quedan) en ' + lista.length + ' productos.' : '🖼️ Se va a cambiar la foto ' + (pos + 1) + ' de ' + lista.length + ' productos.') + '\n\nTarda unos ' + Math.max(1, Math.round(lista.length * 2 / 60)) + ' minutos. ¿Empezar?')) return;
   loteCancelar = false;
   var capa = document.getElementById('loteCapa'); capa.style.display = 'flex';
   document.getElementById('loteBtnParar').textContent = 'Pausar';
@@ -1701,13 +1702,19 @@ async function procesarReemplazoFotos(datos, mapa) {
     while (!loteCancelar && i < lista.length) {
       var x = lista[i++];
       try {
-        var f = mapa[x.foto]; if (!f) throw new Error('falta la foto');
-        var url = await loteSubirFoto(f);
+        var fl = x.fotos ? x.fotos : [x.foto], urls = [];
+        for (var qi = 0; qi < fl.length; qi++) {
+          var f = mapa[fl[qi]]; if (!f) throw new Error('falta la foto ' + fl[qi]);
+          var u1 = await loteSubirFoto(f); if (!u1) throw new Error('no se pudo subir');
+          urls.push(u1);
+        }
         var p = productos.find(function(q) { return q.id === x.id; });
-        if (p && url) {
+        if (p && urls.length) {
           p.imagenes = p.imagenes || [];
-          if (datos.insertar) p.imagenes.splice(pos, 0, url); else if (p.imagenes.length > pos) p.imagenes[pos] = url; else p.imagenes.push(url);
-          hechos[x.id] = 1; ok++;
+          urls.forEach(function(url, k) {
+            if (datos.insertar) p.imagenes.splice(pos + k, 0, url); else if (p.imagenes.length > pos + k) p.imagenes[pos + k] = url; else p.imagenes.push(url);
+          });
+          hechos[hk(x)] = 1; ok++;
           try { localStorage.setItem('atarashi_lote_reemplazos', JSON.stringify(hechos)); } catch (e) {}
           det.textContent = '✅ ' + p.nombre;
           if (ok % 10 === 0) sincStorage();
