@@ -726,6 +726,7 @@
         <button type="button" id="loteBtnParar" onclick="loteCancelar=true;this.textContent='Deteniendo...';" style="margin-top:14px;background:#721c24;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;">Pausar</button>
       </div>
     </div>
+    <button type="button" class="vp-btn vp-btn-todos" onclick="abrirVideosPendientes()" style="background:#1d4f91;">🎬 Videos pendientes (subir desde el celular)</button>
     <button type="button" class="vp-btn vp-btn-todos" onclick="abrirVistaPrevia('todos')">👁️ Revisar la tienda antes de publicar</button>
 
     <button class="btn-verde" id="btnCloudSync" onclick="publicarEnGitHub()">
@@ -8150,6 +8151,68 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     wrapper.appendChild(b);
   };
 })();
+</script>
+
+<div id="vpModal" style="display:none;position:fixed;inset:0;z-index:99999;background:#111;overflow:auto;-webkit-overflow-scrolling:touch;">
+  <div style="position:sticky;top:0;background:#111;padding:10px 12px;border-bottom:1px solid #333;z-index:2;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+      <b style="color:#fff;font-size:15px;">🎬 Videos pendientes <span id="vpCuenta" style="color:#aaa;font-weight:normal;"></span></b>
+      <button type="button" onclick="cerrarVideosPendientes()" style="background:#333;color:#fff;border:none;padding:8px 14px;border-radius:6px;font-size:14px;">Cerrar</button>
+    </div>
+    <input id="vpBuscar" type="search" placeholder="Buscar por nombre…" oninput="vpPintar()" style="width:100%;box-sizing:border-box;margin-top:8px;padding:10px;font-size:16px;border-radius:6px;border:1px solid #444;background:#222;color:#fff;">
+    <div style="color:#aaa;font-size:12px;margin-top:6px;">Toca "Subir video", escoge el video de tu galería y espera el ✅. Al terminar, cierra y toca ⚡ PUBLICAR una sola vez.</div>
+  </div>
+  <div id="vpLista" style="padding:8px 12px 80px;"></div>
+</div>
+<script>
+var vpIds = null;
+function vpEsc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function vpNorm(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+async function abrirVideosPendientes(){
+  document.getElementById('vpModal').style.display='block';
+  document.getElementById('vpLista').innerHTML='<p style="color:#aaa;">Cargando lista…</p>';
+  try{
+    var r=await fetch('videos_perdidos_cloudinary.json?v='+Date.now(),{cache:'no-store'});
+    var d=await r.json(); vpIds=d.map(function(x){return String(x.id);});
+  }catch(e){ document.getElementById('vpLista').innerHTML='<p style="color:#f66;">No pude cargar la lista: '+vpEsc(e.message)+'</p>'; return; }
+  vpPintar();
+}
+function cerrarVideosPendientes(){ document.getElementById('vpModal').style.display='none'; try{renderTabla();}catch(e){} }
+function vpPintar(){
+  if(!vpIds) return;
+  var q=vpNorm(document.getElementById('vpBuscar').value);
+  var lista=productos.filter(function(p){return vpIds.indexOf(String(p.id))>=0;});
+  var faltan=lista.filter(function(p){return !p.video;}).length;
+  document.getElementById('vpCuenta').textContent='('+faltan+' faltan de '+lista.length+')';
+  lista.sort(function(a,b){return (a.video?1:0)-(b.video?1:0);});
+  var h='';
+  lista.forEach(function(p){
+    if(q && vpNorm(p.nombre).indexOf(q)<0) return;
+    var foto=(p.imagenes&&p.imagenes[0])||'';
+    var ok=!!p.video;
+    h+='<div style="display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #2a2a2a;">'
+     +'<img src="'+vpEsc(crMini(foto,116))+'" style="width:52px;height:52px;object-fit:cover;border-radius:6px;background:#222;flex:none;">'
+     +'<div style="flex:1;min-width:0;"><div style="color:#fff;font-size:14px;line-height:1.25;">'+vpEsc(p.nombre)+'</div>'
+     +'<div id="vpEst'+vpEsc(p.id)+'" style="font-size:12px;color:'+(ok?'#6fdc8c':'#aaa')+';margin-top:3px;">'+(ok?'✅ Video listo':p.categoria||'')+'</div></div>'
+     +'<label style="flex:none;background:'+(ok?'#2d5a3a':'#1d4f91')+';color:#fff;padding:10px 12px;border-radius:8px;font-size:13px;cursor:pointer;">'+(ok?'Cambiar':'Subir video')
+     +'<input type="file" accept="video/*" style="display:none" onchange="vpSubir(this,\''+vpEsc(p.id)+'\')"></label></div>';
+  });
+  document.getElementById('vpLista').innerHTML=h||'<p style="color:#aaa;">No hay productos con ese nombre.</p>';
+}
+async function vpSubir(inp,id){
+  var file=inp.files&&inp.files[0]; if(!file) return;
+  var est=document.getElementById('vpEst'+id);
+  if(!CONFIG_R2.isReady()){ alert('Falta la clave para subir (botón 🔑).'); try{configurarClaveFotos();}catch(e){} inp.value=''; return; }
+  if(file.size>50*1024*1024){ est.style.color='#f66'; est.textContent='❌ Pesa más de 50 MB'; inp.value=''; return; }
+  est.style.color='#F0C040'; est.textContent='⏳ Subiendo… 0%';
+  try{
+    var url=await subirVideoAR2(file,function(p){est.textContent='⏳ Subiendo… '+p+'%';});
+    var p=productos.find(function(x){return String(x.id)===String(id);});
+    if(!p) throw new Error('No encontré el producto');
+    p.video=url; sincStorage();
+    vpPintar();
+  }catch(e){ est.style.color='#f66'; est.textContent='❌ '+e.message; inp.value=''; }
+}
 </script>
 </body>
 </html>
