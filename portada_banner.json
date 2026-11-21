@@ -1,22 +1,22 @@
 {
   "modo": "banner",
   "fotos": [
-    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429704/atarashi_contado/xynsgsnbmiehy6tjw4gh.jpg",
-    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429713/atarashi_contado/m4a5ueowczrzsqaeazlg.jpg",
-    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429722/atarashi_contado/n5b9mzr03fa2eq6pst6h.jpg",
-    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429740/atarashi_contado/er6lm62z6niurxqbbofn.jpg",
-    "https://res.cloudinary.com/dgnxurwkp/image/upload/v1792429764/atarashi_contado/hil1a2sn52biyour7yyw.jpg"
+    "https://fotos.atarashi-store.com/orig/atarashi_contado/xynsgsnbmiehy6tjw4gh.jpg",
+    "https://fotos.atarashi-store.com/orig/atarashi_contado/m4a5ueowczrzsqaeazlg.jpg",
+    "https://fotos.atarashi-store.com/orig/atarashi_contado/n5b9mzr03fa2eq6pst6h.jpg",
+    "https://fotos.atarashi-store.com/orig/atarashi_contado/er6lm62z6niurxqbbofn.jpg",
+    "https://fotos.atarashi-store.com/orig/atarashi_contado/hil1a2sn52biyour7yyw.jpg"
   ],
-  "bannerUrl": "https://res.cloudinary.com/dgnxurwkp/video/upload/w_1200,c_limit,q_auto,so_0/v1793884787/atarashi_contado/zthbkoht1oykn7gqmukr.jpg",
+  "bannerUrl": "https://atarashi-store.com/banners/portada_poster.jpg",
   "banners": [
     {
-      "url": "https://res.cloudinary.com/dgnxurwkp/video/upload/w_1200,c_limit,q_auto,so_0/v1793884787/atarashi_contado/zthbkoht1oykn7gqmukr.jpg",
-      "video": "https://res.cloudinary.com/dgnxurwkp/video/upload/q_auto,w_1200,c_limit/v1793884787/atarashi_contado/zthbkoht1oykn7gqmukr.mp4",
+      "url": "https://atarashi-store.com/banners/portada_poster.jpg",
+      "video": "https://atarashi-store.com/banners/portada_video.mp4",
       "fondo": "#FAF3E4",
       "temporada": "siempre"
     },
     {
-      "url": "https://res.cloudinary.com/dgnxurwkp/image/upload/v1793886997/atarashi_contado/dgzzapowonfbtvqmlvfw.jpg",
+      "url": "https://fotos.atarashi-store.com/orig/atarashi_contado/dgzzapowonfbtvqmlvfw.jpg",
       "fondo": "#FAF3E4",
       "temporada": "navidad"
     }
