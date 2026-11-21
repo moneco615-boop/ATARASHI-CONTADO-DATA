@@ -1,7 +1,8 @@
-// Worker de Atarashi: atiende POST /api/subir (subir fotos nuevas a R2) y GET /api/foto (leer una foto de R2 desde el panel).
+// Worker de Atarashi: atiende POST /api/subir (subir fotos nuevas a R2) POST /api/subir-video (videos) y GET /api/foto (leer una foto de R2 desde el panel).
 // Todo lo demas (la tienda) lo sirve Cloudflare directamente como archivos estaticos.
 const BASE_PUBLICA = "https://fotos.atarashi-store.com";
 const MAX_BYTES = 6 * 1024 * 1024;
+const MAX_VIDEO = 60 * 1024 * 1024;
 
 function json(obj, status = 200, extra = {}) {
   return new Response(JSON.stringify(obj), {
@@ -12,7 +13,7 @@ function json(obj, status = 200, extra = {}) {
 
 function cors() {
   // La seguridad es la clave secreta (no hay cookies), asi que se permite desde cualquier pagina (el panel puede abrirse desde varios sitios)
-  return { "access-control-allow-origin": "*", "access-control-allow-headers": "x-clave", "access-control-allow-methods": "POST, OPTIONS" };
+  return { "access-control-allow-origin": "*", "access-control-allow-headers": "x-clave, content-type", "access-control-allow-methods": "POST, OPTIONS" };
 }
 
 function iguales(a, b) {
@@ -40,6 +41,22 @@ export default {
       const o = await env.FOTOS.get(k);
       if (!o) return new Response("No encontrado", { status: 404, headers: h });
       return new Response(o.body, { headers: { "content-type": "image/jpeg", "cache-control": "no-store", "access-control-allow-origin": "*" } });
+    }
+    // POST /api/subir-video: guarda un video (mp4, mov o webm, hasta 60 MB) en R2 y devuelve su direccion publica
+    if (u.pathname === "/api/subir-video") {
+      if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: h });
+      if (request.method !== "POST") return json({ error: "No permitido" }, 405, h);
+      const clv = request.headers.get("x-clave") || "";
+      if (!env.CLAVE_SUBIDA || !iguales(clv, env.CLAVE_SUBIDA)) return json({ error: "Clave incorrecta" }, 401, h);
+      const tipo = (request.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
+      const ext = { "video/mp4": "mp4", "video/quicktime": "mov", "video/webm": "webm" }[tipo];
+      if (!ext) return json({ error: "Solo mp4, mov o webm" }, 415, h);
+      const largo = parseInt(request.headers.get("content-length") || "0", 10);
+      if (!largo) return json({ error: "Falta el tamano del video" }, 411, h);
+      if (largo > MAX_VIDEO) return json({ error: "Video muy pesado (maximo 60 MB)" }, 413, h);
+      const vid = idNuevo();
+      await env.FOTOS.put(`videos/atarashi_contado/${vid}.${ext}`, request.body, { httpMetadata: { contentType: tipo, cacheControl: "public, max-age=31536000, immutable" } });
+      return json({ url: `${BASE_PUBLICA}/videos/atarashi_contado/${vid}.${ext}` }, 200, h);
     }
     if (u.pathname !== "/api/subir") return new Response("No encontrado", { status: 404 });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: h });

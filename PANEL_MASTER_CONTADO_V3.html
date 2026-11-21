@@ -1117,6 +1117,7 @@ const CONFIG_CLOUDINARY = {
 const CONFIG_R2 = {
   getClave: () => localStorage.getItem('atarashi_clave_fotos') || '',
   url: 'https://atarashi-store.com/api/subir',
+  urlVideo: 'https://atarashi-store.com/api/subir-video',
   isReady: function() { return !!this.getClave(); }
 };
 function FOTOS_LISTO() { return CONFIG_R2.isReady() || CONFIG_CLOUDINARY.isReady(); }
@@ -1144,6 +1145,43 @@ function reducirFoto(dataURL, max, calidad) {
     };
     im.onerror = function() { mal(new Error('No se pudo leer la foto')); };
     im.src = dataURL;
+  });
+}
+
+// Sube un video (mp4, mov o webm, hasta 60 MB) a R2 y devuelve su direccion. onProg(porcentaje) es opcional.
+function subirVideoAR2(file, onProg) {
+  return new Promise(function(ok, mal) {
+    var tipo = (file.type || '').toLowerCase();
+    if (!tipo) { var n = (file.name || '').toLowerCase(); tipo = /\.mov$/.test(n) ? 'video/quicktime' : /\.webm$/.test(n) ? 'video/webm' : 'video/mp4'; }
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', CONFIG_R2.urlVideo);
+    xhr.setRequestHeader('x-clave', CONFIG_R2.getClave());
+    xhr.setRequestHeader('content-type', tipo);
+    xhr.upload.onprogress = function(e) { if (onProg && e.lengthComputable) onProg(Math.round(e.loaded * 100 / e.total)); };
+    xhr.onerror = function() { mal(new Error('No se pudo subir el video. Revisa tu conexion.')); };
+    xhr.onload = function() {
+      var d = {}; try { d = JSON.parse(xhr.responseText); } catch (e) {}
+      if (xhr.status < 200 || xhr.status >= 300 || !d.url) return mal(new Error('Error al subir video: ' + (d.error || xhr.status)));
+      ok(d.url);
+    };
+    xhr.send(file);
+  });
+}
+// Saca el primer cuadro de un video como foto (dataURL) para usarlo de portada del video
+function cuadroDeVideo(file) {
+  return new Promise(function(ok, mal) {
+    var v = document.createElement('video'), u = URL.createObjectURL(file);
+    v.muted = true; v.preload = 'auto'; v.playsInline = true;
+    v.onloadeddata = function() { try { v.currentTime = 0.1; } catch (e) {} };
+    v.onseeked = function() {
+      try {
+        var c = document.createElement('canvas'); c.width = v.videoWidth; c.height = v.videoHeight;
+        c.getContext('2d').drawImage(v, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(u); ok(c.toDataURL('image/jpeg', 0.85));
+      } catch (e) { mal(e); }
+    };
+    v.onerror = function() { URL.revokeObjectURL(u); mal(new Error('No se pudo leer el video')); };
+    v.src = u;
   });
 }
 async function subirAR2(base64) {
@@ -2787,9 +2825,9 @@ function cerrarVistaPrevia() {
 
 async function procesarVideo(input) {
   if (!input.files || !input.files[0]) return;
-  if (!CONFIG_CLOUDINARY.isReady()) {
-    alert('⚠️ Configura Cloudinary primero (botón ☁️ Cloudinary).');
-    configurarCloudinary(); return;
+  if (!CONFIG_R2.isReady() && !CONFIG_CLOUDINARY.isReady()) {
+    alert('⚠️ Falta la clave para subir (botón 🔑 de fotos). Los videos ahora se guardan en tu Cloudflare.');
+    configurarClaveFotos(); return;
   }
   const file = input.files[0];
   const maxSize = 50 * 1024 * 1024;
@@ -2798,17 +2836,19 @@ async function procesarVideo(input) {
   const cont = document.getElementById('previewVideoContenedor');
   cont.innerHTML = '<p style="color:#F0C040;font-size:13px;margin-top:8px;">⏳ Subiendo video... (puede tardar 1-2 min)</p>';
 
-  const fd = new FormData();
-  fd.append('file', file);
-  fd.append('upload_preset', CONFIG_CLOUDINARY.getPreset());
-  fd.append('folder', 'atarashi_contado/videos');
-
   try {
-    const res  = await fetch('https://api.cloudinary.com/v1_1/' + CONFIG_CLOUDINARY.getCloudName() + '/video/upload', { method:'POST', body:fd });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message || 'Error Cloudinary');
-
-    videoActualUrl = data.secure_url;
+    if (CONFIG_R2.isReady()) {
+      videoActualUrl = await subirVideoAR2(file, function(p) { cont.innerHTML = '<p style="color:#F0C040;font-size:13px;margin-top:8px;">⏳ Subiendo video… ' + p + '%</p>'; });
+    } else {
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', CONFIG_CLOUDINARY.getPreset());
+      fd.append('folder', 'atarashi_contado/videos');
+      const res  = await fetch('https://api.cloudinary.com/v1_1/' + CONFIG_CLOUDINARY.getCloudName() + '/video/upload', { method:'POST', body:fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error?.message || 'Error Cloudinary');
+      videoActualUrl = data.secure_url;
+    }
     cont.innerHTML =
       '<video src="' + videoActualUrl + '" controls muted style="width:100%;max-height:120px;border-radius:6px;margin-top:8px;background:#000;"></video>' +
       '<button type="button" onclick="videoActualUrl=\'\';document.getElementById(\'previewVideoContenedor\').innerHTML=\'\';document.getElementById(\'pArchivoVideo\').value=\'\'" style="background:#721c24;color:#fff;border:none;padding:4px 12px;border-radius:4px;font-size:12px;margin-top:6px;cursor:pointer;">✕ Quitar video</button>';
@@ -3516,7 +3556,7 @@ function subirVideoBanner(input) {
   if (!file) return;
   const est = document.getElementById('pbVideoEstado');
   const fin = (msg) => { if (est) est.textContent = msg || ''; input.value = ''; };
-  if (!CONFIG_CLOUDINARY.isReady()) { alert('⚠️ Configura Cloudinary antes de subir el video.'); configurarCloudinary(); return fin(); }
+  if (!CONFIG_R2.isReady() && !CONFIG_CLOUDINARY.isReady()) { alert('⚠️ Falta la clave para subir (botón 🔑 de fotos).'); configurarClaveFotos(); return fin(); }
   if (!/^video\//.test(file.type || 'video/')) { alert('⚠️ Ese archivo no es un video.'); return fin(); }
   const mb = file.size / 1048576;
   if (mb > 40) { alert('⚠️ El video pesa ' + mb.toFixed(1) + ' MB. Es demasiado para el celular de tus clientes.\n\nHazlo más corto (4 a 8 segundos) e intenta otra vez.'); return fin(); }
@@ -3538,6 +3578,22 @@ function subirVideoBanner(input) {
   tmp.onerror = () => { URL.revokeObjectURL(url0); enviarVideo(); };
   tmp.src = url0;
   function enviarVideo() {
+    if (CONFIG_R2.isReady()) {
+      if (est) est.textContent = '⏳ Subiendo video… 0%';
+      Promise.all([
+        subirVideoAR2(file, function(p) { if (est) est.textContent = '⏳ Subiendo video… ' + p + '%'; }),
+        cuadroDeVideo(file).then(function(d) { return subirAR2(d); })
+      ]).then(function(r) {
+        const nuevo = { url: r[1], video: r[0], fondo: PB_COLORES[0].c, temporada: 'siempre' };
+        normalizarBanners();
+        portadaBanner.banners = portadaBanner.banners.filter(b => !(b && b.video));
+        portadaBanner.banners.unshift(nuevo);
+        sincBannerPrincipal();
+        renderPortadaModal();
+        fin('✅ Video listo. Quedó de primero. Ponle su temporada y dale ⚡ Publicar.');
+      }).catch(function(e) { alert('❌ ' + e.message); fin(); });
+      return;
+    }
     const cloud = CONFIG_CLOUDINARY.getCloudName(), preset = CONFIG_CLOUDINARY.getPreset();
     const fd = new FormData();
     fd.append('file', file);
